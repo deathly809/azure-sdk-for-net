@@ -28,7 +28,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static PublishedProductResourcessPage List(this IPublishedProductsOperations operations)
+            public static IPage<PublishedProductResource> List(this IPublishedProductsOperations operations)
             {
                 return operations.ListAsync().GetAwaiter().GetResult();
             }
@@ -42,9 +42,77 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<PublishedProductResourcessPage> ListAsync(this IPublishedProductsOperations operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<PublishedProductResource>> ListAsync(this IPublishedProductsOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Return product name.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='productName'>
+            /// Name of the product.
+            /// </param>
+            public static PublishedProductResource Get(this IPublishedProductsOperations operations, string productName)
+            {
+                return operations.GetAsync(productName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Return product name.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='productName'>
+            /// Name of the product.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<PublishedProductResource> GetAsync(this IPublishedProductsOperations operations, string productName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetWithHttpMessagesAsync(productName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Return product name.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<PublishedProductResource> ListNext(this IPublishedProductsOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Return product name.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<PublishedProductResource>> ListNextAsync(this IPublishedProductsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

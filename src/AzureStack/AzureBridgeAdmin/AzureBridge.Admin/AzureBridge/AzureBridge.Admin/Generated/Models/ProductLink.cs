@@ -15,6 +15,9 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Link to a product.
+    /// </summary>
     public partial class ProductLink
     {
         /// <summary>

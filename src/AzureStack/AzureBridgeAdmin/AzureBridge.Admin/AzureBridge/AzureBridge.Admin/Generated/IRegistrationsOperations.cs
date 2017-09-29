@@ -20,12 +20,12 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// PublishedProductsOperations operations.
+    /// RegistrationsOperations operations.
     /// </summary>
-    public partial interface IPublishedProductsOperations
+    public partial interface IRegistrationsOperations
     {
         /// <summary>
-        /// Return product name.
+        /// Return all registrations.
         /// </summary>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -42,12 +42,12 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<PublishedProductResource>>> ListWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<RegistrationResource>>> ListWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Return product name.
         /// </summary>
-        /// <param name='productName'>
-        /// Name of the product.
+        /// <param name='registrationName'>
+        /// Name of the registration.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -64,9 +64,9 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<PublishedProductResource>> GetWithHttpMessagesAsync(string productName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<RegistrationResource>> GetWithHttpMessagesAsync(string registrationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Return product name.
+        /// Return all registrations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -86,6 +86,6 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<PublishedProductResource>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<RegistrationResource>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

@@ -20,21 +20,21 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Downloaded product resource.
+    /// Product resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
-    public partial class DownloadedProductResource : Resource
+    public partial class ProductResource : Resource
     {
         /// <summary>
-        /// Initializes a new instance of the DownloadedProductResource class.
+        /// Initializes a new instance of the ProductResource class.
         /// </summary>
-        public DownloadedProductResource()
+        public ProductResource()
         {
           CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the DownloadedProductResource class.
+        /// Initializes a new instance of the ProductResource class.
         /// </summary>
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// <param name="links">Gallery item identity.</param>
         /// <param name="legalTerms">Legal terms for the product.</param>
         /// <param name="privacyPolicy">Privacy policy of the product.</param>
-        public DownloadedProductResource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string displayName = default(string), string description = default(string), string publisherDisplayName = default(string), string publisherIdentifier = default(string), string offer = default(string), string offerVersion = default(string), string sku = default(string), string billingPartNumber = default(string), string galleryItemIdentity = default(string), string iconUris = default(string), long? payloadLength = default(long?), string productKind = default(string), string productProperties = default(string), string vmExtensionType = default(string), IList<ProductLink> links = default(IList<ProductLink>), string legalTerms = default(string), string privacyPolicy = default(string))
+        public ProductResource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string displayName = default(string), string description = default(string), string publisherDisplayName = default(string), string publisherIdentifier = default(string), string offer = default(string), string offerVersion = default(string), string sku = default(string), string billingPartNumber = default(string), string galleryItemIdentity = default(string), string iconUris = default(string), long? payloadLength = default(long?), string productKind = default(string), string productProperties = default(string), string vmExtensionType = default(string), IList<ProductLink> links = default(IList<ProductLink>), string legalTerms = default(string), string privacyPolicy = default(string))
             : base(id, name, type, location, tags)
         {
             DisplayName = displayName;

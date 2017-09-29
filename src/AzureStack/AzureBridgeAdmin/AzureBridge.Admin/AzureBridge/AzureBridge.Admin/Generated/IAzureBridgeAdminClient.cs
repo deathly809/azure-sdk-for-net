@@ -81,5 +81,25 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// </summary>
         IDownloadedProductsOperations DownloadedProducts { get; }
 
+        /// <summary>
+        /// Gets the IProductsOperations.
+        /// </summary>
+        IProductsOperations Products { get; }
+
+        /// <summary>
+        /// Gets the IActivationsOperations.
+        /// </summary>
+        IActivationsOperations Activations { get; }
+
+        /// <summary>
+        /// Gets the IRegistrationsOperations.
+        /// </summary>
+        IRegistrationsOperations Registrations { get; }
+
+        /// <summary>
+        /// Gets the IGalleryItemsOperations.
+        /// </summary>
+        IGalleryItemsOperations GalleryItems { get; }
+
     }
 }

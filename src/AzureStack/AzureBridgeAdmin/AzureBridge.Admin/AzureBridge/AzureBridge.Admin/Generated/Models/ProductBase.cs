@@ -12,35 +12,25 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
     using Microsoft.AzureStack.Management;
     using Microsoft.AzureStack.Management.AzureBridge;
     using Microsoft.AzureStack.Management.AzureBridge.Admin;
-    using Microsoft.Rest;
-    using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
-    /// Downloaded product resource.
+    /// Base object for all product classes.
     /// </summary>
-    [Rest.Serialization.JsonTransformation]
-    public partial class DownloadedProductResource : Resource
+    public partial class ProductBase
     {
         /// <summary>
-        /// Initializes a new instance of the DownloadedProductResource class.
+        /// Initializes a new instance of the ProductBase class.
         /// </summary>
-        public DownloadedProductResource()
+        public ProductBase()
         {
           CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the DownloadedProductResource class.
+        /// Initializes a new instance of the ProductBase class.
         /// </summary>
-        /// <param name="id">URI of the resource.</param>
-        /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
         /// <param name="displayName">Name displayed for the product.</param>
         /// <param name="description">Description of the product.</param>
         /// <param name="publisherDisplayName">Name of publisher.</param>
@@ -58,12 +48,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// SolutionTemplate.</param>
         /// <param name="productProperties">the product properties. At the
         /// moment only VirtualMachineProductProperties is allowed.</param>
-        /// <param name="vmExtensionType">Extension type of the VM.</param>
-        /// <param name="links">Gallery item identity.</param>
-        /// <param name="legalTerms">Legal terms for the product.</param>
-        /// <param name="privacyPolicy">Privacy policy of the product.</param>
-        public DownloadedProductResource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string displayName = default(string), string description = default(string), string publisherDisplayName = default(string), string publisherIdentifier = default(string), string offer = default(string), string offerVersion = default(string), string sku = default(string), string billingPartNumber = default(string), string galleryItemIdentity = default(string), string iconUris = default(string), long? payloadLength = default(long?), string productKind = default(string), string productProperties = default(string), string vmExtensionType = default(string), IList<ProductLink> links = default(IList<ProductLink>), string legalTerms = default(string), string privacyPolicy = default(string))
-            : base(id, name, type, location, tags)
+        public ProductBase(string displayName = default(string), string description = default(string), string publisherDisplayName = default(string), string publisherIdentifier = default(string), string offer = default(string), string offerVersion = default(string), string sku = default(string), string billingPartNumber = default(string), string galleryItemIdentity = default(string), string iconUris = default(string), long? payloadLength = default(long?), string productKind = default(string), string productProperties = default(string))
         {
             DisplayName = displayName;
             Description = description;
@@ -78,10 +63,6 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
             PayloadLength = payloadLength;
             ProductKind = productKind;
             ProductProperties = productProperties;
-            VmExtensionType = vmExtensionType;
-            Links = links;
-            LegalTerms = legalTerms;
-            PrivacyPolicy = privacyPolicy;
             CustomInit();
         }
 
@@ -93,67 +74,67 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// <summary>
         /// Gets or sets name displayed for the product.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.displayName")]
+        [JsonProperty(PropertyName = "displayName")]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or sets description of the product.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.description")]
+        [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or sets name of publisher.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.publisherDisplayName")]
+        [JsonProperty(PropertyName = "publisherDisplayName")]
         public string PublisherDisplayName { get; set; }
 
         /// <summary>
         /// Gets or sets publisher identifier.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.publisherIdentifier")]
+        [JsonProperty(PropertyName = "publisherIdentifier")]
         public string PublisherIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets offer name.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.offer")]
+        [JsonProperty(PropertyName = "offer")]
         public string Offer { get; set; }
 
         /// <summary>
         /// Gets or sets offer version.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.offerVersion")]
+        [JsonProperty(PropertyName = "offerVersion")]
         public string OfferVersion { get; set; }
 
         /// <summary>
         /// Gets or sets product SKU.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.sku")]
+        [JsonProperty(PropertyName = "sku")]
         public string Sku { get; set; }
 
         /// <summary>
         /// Gets or sets billing part number.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.billingPartNumber")]
+        [JsonProperty(PropertyName = "billingPartNumber")]
         public string BillingPartNumber { get; set; }
 
         /// <summary>
         /// Gets or sets gallery item identity.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.galleryItemIdentity")]
+        [JsonProperty(PropertyName = "galleryItemIdentity")]
         public string GalleryItemIdentity { get; set; }
 
         /// <summary>
         /// Gets or sets information about gallery icons. Deprecated.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.iconUris")]
+        [JsonProperty(PropertyName = "iconUris")]
         public string IconUris { get; set; }
 
         /// <summary>
         /// Gets or sets size in bytes.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.payloadLength")]
+        [JsonProperty(PropertyName = "payloadLength")]
         public long? PayloadLength { get; set; }
 
         /// <summary>
@@ -161,39 +142,15 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// VirtualMachineProductProperties.ProductKind or WebApp,
         /// SolutionTemplate.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.productKind")]
+        [JsonProperty(PropertyName = "productKind")]
         public string ProductKind { get; set; }
 
         /// <summary>
         /// Gets or sets the product properties. At the moment only
         /// VirtualMachineProductProperties is allowed.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.productProperties")]
+        [JsonProperty(PropertyName = "productProperties")]
         public string ProductProperties { get; set; }
-
-        /// <summary>
-        /// Gets or sets extension type of the VM.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.vmExtensionType")]
-        public string VmExtensionType { get; set; }
-
-        /// <summary>
-        /// Gets or sets gallery item identity.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.links")]
-        public IList<ProductLink> Links { get; set; }
-
-        /// <summary>
-        /// Gets or sets legal terms for the product.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.legalTerms")]
-        public string LegalTerms { get; set; }
-
-        /// <summary>
-        /// Gets or sets privacy policy of the product.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.privacyPolicy")]
-        public string PrivacyPolicy { get; set; }
 
     }
 }

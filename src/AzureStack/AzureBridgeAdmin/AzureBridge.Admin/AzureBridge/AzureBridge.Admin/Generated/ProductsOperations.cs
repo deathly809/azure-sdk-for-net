@@ -24,12 +24,12 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// DownloadedProductsOperations operations.
+    /// ProductsOperations operations.
     /// </summary>
-    internal partial class DownloadedProductsOperations : IServiceOperations<AzureBridgeAdminClient>, IDownloadedProductsOperations
+    internal partial class ProductsOperations : IServiceOperations<AzureBridgeAdminClient>, IProductsOperations
     {
         /// <summary>
-        /// Initializes a new instance of the DownloadedProductsOperations class.
+        /// Initializes a new instance of the ProductsOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
@@ -37,7 +37,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        internal DownloadedProductsOperations(AzureBridgeAdminClient client)
+        internal ProductsOperations(AzureBridgeAdminClient client)
         {
             if (client == null)
             {
@@ -52,11 +52,8 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         public AzureBridgeAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Get a list of downloaded products.
+        /// Return product name.
         /// </summary>
-        /// <param name='activationName'>
-        /// Name of the activation.
-        /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -78,15 +75,11 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<DownloadedProductResource>>> ListWithHttpMessagesAsync(string activationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<ProductResource>>> ListWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
-            }
-            if (activationName == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "activationName");
             }
             if (Client.ApiVersion == null)
             {
@@ -99,15 +92,13 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("activationName", activationName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/{activationName}/downloadedProducts").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/products").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{activationName}", System.Uri.EscapeDataString(activationName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
@@ -206,7 +197,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<DownloadedProductResource>>();
+            var _result = new AzureOperationResponse<IPage<ProductResource>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -219,7 +210,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<DownloadedProductResource>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<ProductResource>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -239,11 +230,8 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         }
 
         /// <summary>
-        /// Get a downloaded product.
+        /// Return product name.
         /// </summary>
-        /// <param name='activationName'>
-        /// Name of the activation.
-        /// </param>
         /// <param name='productName'>
         /// Name of the product.
         /// </param>
@@ -268,15 +256,11 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<DownloadedProductResource>> GetWithHttpMessagesAsync(string activationName, string productName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ProductResource>> GetWithHttpMessagesAsync(string productName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
-            }
-            if (activationName == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "activationName");
             }
             if (productName == null)
             {
@@ -293,16 +277,14 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("activationName", activationName);
                 tracingParameters.Add("productName", productName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}/downloadedProducts/{productName}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/products/{productName}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{activationName}", System.Uri.EscapeDataString(activationName));
             _url = _url.Replace("{productName}", System.Uri.EscapeDataString(productName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
@@ -402,7 +384,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<DownloadedProductResource>();
+            var _result = new AzureOperationResponse<ProductResource>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -415,7 +397,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<DownloadedProductResource>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<ProductResource>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -435,7 +417,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         }
 
         /// <summary>
-        /// Get a list of downloaded products.
+        /// Return product name.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -461,7 +443,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<DownloadedProductResource>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<ProductResource>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -575,7 +557,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<DownloadedProductResource>>();
+            var _result = new AzureOperationResponse<IPage<ProductResource>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -588,7 +570,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<DownloadedProductResource>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<ProductResource>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

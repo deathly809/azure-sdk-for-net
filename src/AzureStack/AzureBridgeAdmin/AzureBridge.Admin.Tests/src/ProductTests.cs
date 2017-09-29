@@ -4,7 +4,7 @@
 //
 
 using Microsoft.AzureStack.Management.AzureBridge.Admin;
-// using Microsoft.AzureStack.Management.AzureBridge.Admin.Models;
+using Microsoft.AzureStack.Management.AzureBridge.Admin.Models;
 using System;
 using Xunit;
 
@@ -17,8 +17,18 @@ namespace AzureBridge.Tests
         [Fact]
         public void TestListPublishedProducts() {
             RunTest((client) => {
-                var list = client.PublishedProducts.List();
-                Common.WriteIPagesToFile(list, client.PublishedProducts.ListNext, "TestListPublishedProducts");
+
+                var activation = new Activation()
+                {
+                    DisplayName = "activationName",
+                    AzureRegistrationResourceIdentifier = "asdf",
+                    Expiration = new DateTime(2020, 01, 01),
+                    MarketplaceSyndicationEnabled = true,
+                    UsageReportingEnabled = false
+                };
+                client.Activations.Put("activationName", activation);
+                var list = client.Activations.List();
+                Common.WriteIPagesToFile(list, client.Activations.ListNext, "TestListPublishedProducts");
             });
         }
 

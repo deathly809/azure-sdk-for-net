@@ -41,7 +41,6 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
-        /// <param name="productName">Name of the product.</param>
         /// <param name="displayName">Name displayed for the product.</param>
         /// <param name="description">Description of the product.</param>
         /// <param name="publisherDisplayName">Name of publisher.</param>
@@ -50,25 +49,27 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// <param name="offerVersion">Offer version.</param>
         /// <param name="sku">Product SKU.</param>
         /// <param name="billingPartNumber">Billing part number.</param>
-        /// <param name="provisioningState">Provisioning state of the resource.
-        /// Possible values include: 'Stopped', 'Starting', 'Running',
-        /// 'Stopping'</param>
-        /// <param name="galleryPackageBlobSasUri">Gallery package BLOB SAS
-        /// URI.</param>
         /// <param name="galleryItemIdentity">Gallery item identity.</param>
-        /// <param name="payloadLength">Payload size in bytes.
-        /// Deprecated.</param>
         /// <param name="iconUris">Information about gallery icons.
         /// Deprecated.</param>
+        /// <param name="payloadLength">Size in bytes.</param>
         /// <param name="productKind">The kind. E.g.
         /// VirtualMachineProductProperties.ProductKind or WebApp,
         /// SolutionTemplate.</param>
         /// <param name="productProperties">the product properties. At the
         /// moment only VirtualMachineProductProperties is allowed.</param>
-        public PublishedProductResource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string productName = default(string), string displayName = default(string), string description = default(string), string publisherDisplayName = default(string), string publisherIdentifier = default(string), string offer = default(string), string offerVersion = default(string), string sku = default(string), string billingPartNumber = default(string), string provisioningState = default(string), string galleryPackageBlobSasUri = default(string), string galleryItemIdentity = default(string), long? payloadLength = default(long?), string iconUris = default(string), string productKind = default(string), string productProperties = default(string))
+        /// <param name="productName">Resource name (is used in URI when
+        /// calling platform image repository).</param>
+        /// <param name="provisioningState">Provisioning state of the resource.
+        /// Possible values include: 'Stopped', 'Starting', 'Running',
+        /// 'Stopping'</param>
+        /// <param name="galleryPackageBlobSasUri">Extension type of the
+        /// VM.</param>
+        /// <param name="vmExtensionType">Extension type of the VM.</param>
+        /// <param name="links">Gallery item identity.</param>
+        public PublishedProductResource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string displayName = default(string), string description = default(string), string publisherDisplayName = default(string), string publisherIdentifier = default(string), string offer = default(string), string offerVersion = default(string), string sku = default(string), string billingPartNumber = default(string), string galleryItemIdentity = default(string), string iconUris = default(string), long? payloadLength = default(long?), string productKind = default(string), string productProperties = default(string), string productName = default(string), string provisioningState = default(string), string galleryPackageBlobSasUri = default(string), string vmExtensionType = default(string), IList<ProductLink> links = default(IList<ProductLink>))
             : base(id, name, type, location, tags)
         {
-            ProductName = productName;
             DisplayName = displayName;
             Description = description;
             PublisherDisplayName = publisherDisplayName;
@@ -77,13 +78,16 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
             OfferVersion = offerVersion;
             Sku = sku;
             BillingPartNumber = billingPartNumber;
-            ProvisioningState = provisioningState;
-            GalleryPackageBlobSasUri = galleryPackageBlobSasUri;
             GalleryItemIdentity = galleryItemIdentity;
-            PayloadLength = payloadLength;
             IconUris = iconUris;
+            PayloadLength = payloadLength;
             ProductKind = productKind;
             ProductProperties = productProperties;
+            ProductName = productName;
+            ProvisioningState = provisioningState;
+            GalleryPackageBlobSasUri = galleryPackageBlobSasUri;
+            VmExtensionType = vmExtensionType;
+            Links = links;
             CustomInit();
         }
 
@@ -91,12 +95,6 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// An initialization method that performs custom operations like setting defaults
         /// </summary>
         partial void CustomInit();
-
-        /// <summary>
-        /// Gets or sets name of the product.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.productName")]
-        public string ProductName { get; set; }
 
         /// <summary>
         /// Gets or sets name displayed for the product.
@@ -147,35 +145,22 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         public string BillingPartNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets provisioning state of the resource. Possible values
-        /// include: 'Stopped', 'Starting', 'Running', 'Stopping'
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.provisioningState")]
-        public string ProvisioningState { get; set; }
-
-        /// <summary>
-        /// Gets or sets gallery package BLOB SAS URI.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.galleryPackageBlobSasUri")]
-        public string GalleryPackageBlobSasUri { get; set; }
-
-        /// <summary>
         /// Gets or sets gallery item identity.
         /// </summary>
         [JsonProperty(PropertyName = "properties.galleryItemIdentity")]
         public string GalleryItemIdentity { get; set; }
 
         /// <summary>
-        /// Gets or sets payload size in bytes. Deprecated.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.payloadLength")]
-        public long? PayloadLength { get; set; }
-
-        /// <summary>
         /// Gets or sets information about gallery icons. Deprecated.
         /// </summary>
         [JsonProperty(PropertyName = "properties.iconUris")]
         public string IconUris { get; set; }
+
+        /// <summary>
+        /// Gets or sets size in bytes.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.payloadLength")]
+        public long? PayloadLength { get; set; }
 
         /// <summary>
         /// Gets or sets the kind. E.g.
@@ -191,6 +176,38 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.productProperties")]
         public string ProductProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets resource name (is used in URI when calling platform
+        /// image repository).
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.productName")]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// Gets or sets provisioning state of the resource. Possible values
+        /// include: 'Stopped', 'Starting', 'Running', 'Stopping'
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.provisioningState")]
+        public string ProvisioningState { get; set; }
+
+        /// <summary>
+        /// Gets or sets extension type of the VM.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.galleryPackageBlobSasUri")]
+        public string GalleryPackageBlobSasUri { get; set; }
+
+        /// <summary>
+        /// Gets or sets extension type of the VM.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.vmExtensionType")]
+        public string VmExtensionType { get; set; }
+
+        /// <summary>
+        /// Gets or sets gallery item identity.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.links")]
+        public IList<ProductLink> Links { get; set; }
 
     }
 }

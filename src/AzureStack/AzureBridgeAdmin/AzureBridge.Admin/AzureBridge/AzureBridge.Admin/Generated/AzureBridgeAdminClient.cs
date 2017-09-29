@@ -87,6 +87,26 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         public virtual IDownloadedProductsOperations DownloadedProducts { get; private set; }
 
         /// <summary>
+        /// Gets the IProductsOperations.
+        /// </summary>
+        public virtual IProductsOperations Products { get; private set; }
+
+        /// <summary>
+        /// Gets the IActivationsOperations.
+        /// </summary>
+        public virtual IActivationsOperations Activations { get; private set; }
+
+        /// <summary>
+        /// Gets the IRegistrationsOperations.
+        /// </summary>
+        public virtual IRegistrationsOperations Registrations { get; private set; }
+
+        /// <summary>
+        /// Gets the IGalleryItemsOperations.
+        /// </summary>
+        public virtual IGalleryItemsOperations GalleryItems { get; private set; }
+
+        /// <summary>
         /// Initializes a new instance of the AzureBridgeAdminClient class.
         /// </summary>
         /// <param name='handlers'>
@@ -289,6 +309,10 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         {
             PublishedProducts = new PublishedProductsOperations(this);
             DownloadedProducts = new DownloadedProductsOperations(this);
+            Products = new ProductsOperations(this);
+            Activations = new ActivationsOperations(this);
+            Registrations = new RegistrationsOperations(this);
+            GalleryItems = new GalleryItemsOperations(this);
             BaseUri = new System.Uri("https://management.local.azurestack.external");
             ApiVersion = "2016-01-01";
             AcceptLanguage = "en-US";

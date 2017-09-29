@@ -18,69 +18,57 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Extension methods for DownloadedProductsOperations.
+    /// Extension methods for ProductsOperations.
     /// </summary>
-    public static partial class DownloadedProductsOperationsExtensions
+    public static partial class ProductsOperationsExtensions
     {
             /// <summary>
-            /// Get a list of downloaded products.
+            /// Return product name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='activationName'>
-            /// Name of the activation.
-            /// </param>
-            public static IPage<DownloadedProductResource> List(this IDownloadedProductsOperations operations, string activationName)
+            public static IPage<ProductResource> List(this IProductsOperations operations)
             {
-                return operations.ListAsync(activationName).GetAwaiter().GetResult();
+                return operations.ListAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of downloaded products.
+            /// Return product name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='activationName'>
-            /// Name of the activation.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<DownloadedProductResource>> ListAsync(this IDownloadedProductsOperations operations, string activationName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<ProductResource>> ListAsync(this IProductsOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(activationName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a downloaded product.
+            /// Return product name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='activationName'>
-            /// Name of the activation.
             /// </param>
             /// <param name='productName'>
             /// Name of the product.
             /// </param>
-            public static DownloadedProductResource Get(this IDownloadedProductsOperations operations, string activationName, string productName)
+            public static ProductResource Get(this IProductsOperations operations, string productName)
             {
-                return operations.GetAsync(activationName, productName).GetAwaiter().GetResult();
+                return operations.GetAsync(productName).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a downloaded product.
+            /// Return product name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='activationName'>
-            /// Name of the activation.
             /// </param>
             /// <param name='productName'>
             /// Name of the product.
@@ -88,16 +76,16 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<DownloadedProductResource> GetAsync(this IDownloadedProductsOperations operations, string activationName, string productName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ProductResource> GetAsync(this IProductsOperations operations, string productName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(activationName, productName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(productName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of downloaded products.
+            /// Return product name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -105,13 +93,13 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IPage<DownloadedProductResource> ListNext(this IDownloadedProductsOperations operations, string nextPageLink)
+            public static IPage<ProductResource> ListNext(this IProductsOperations operations, string nextPageLink)
             {
                 return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of downloaded products.
+            /// Return product name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -122,7 +110,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<DownloadedProductResource>> ListNextAsync(this IDownloadedProductsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<ProductResource>> ListNextAsync(this IProductsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
