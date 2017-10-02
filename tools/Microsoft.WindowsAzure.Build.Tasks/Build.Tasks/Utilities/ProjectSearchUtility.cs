@@ -14,12 +14,14 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
         const string DEFAULT_PROJECT_EXTENSION = "*.csproj";
 
         private List<string> _projExtList;
-        private List<string> _ignorePathTokenList;
         private List<string> _testProjectTokenList;
-
+        private List<string> _ignorePathTokenList;
+        private List<string> _whitelistPathTokenList;
+        
         private List<string> _allProjs;
         private List<string> _testProjs;
         private List<string> _ignoreProjs;
+        private List<string> _whitelist;
 
         #endregion
 
@@ -50,6 +52,24 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
             private set
             {
                 _ignorePathTokenList = value;
+            }
+
+        }
+
+        public List<string> WhitelistPathTokenList
+        {
+            get
+            {
+                if (_whitelistPathTokenList == null)
+                {
+                    _whitelistPathTokenList = new List<string>();
+                }
+                return _whitelistPathTokenList;
+            }
+
+            private set
+            {
+                _whitelistPathTokenList = value;
             }
 
         }
@@ -117,6 +137,28 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
             }
         }
 
+        public IReadOnlyList<string> WhitelistProjectList
+        {
+            get
+            {
+                if (_whitelist == null)
+                {
+                    _whitelist = new List<string>();
+
+                    foreach (string iP in WhitelistPathTokenList)
+                    {
+                        var whitelisted = from proj in AllProjectList where proj.Contains(iP) select proj;
+                        if (whitelisted.Any<string>())
+                        {
+                            _whitelist.AddRange(whitelisted);
+                        }
+                    }
+                }
+
+                return _ignoreProjs.AsReadOnly();
+        }
+        }
+
         /// <summary>
         /// In Azure SDK For NET repo, this path will be until src e.g 'C:\Azure-SDK-FOR-NET\src'
         /// </summary>
@@ -130,13 +172,14 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
             RootDirForSearch = rootDirPath;
         }
 
-        public ProjectSearchUtility(string rootDirPath, List<string> ignorePathTokens) : this(rootDirPath)
+        public ProjectSearchUtility(string rootDirPath, List<string> ignorePathTokens, List<string> whitelist) : this(rootDirPath)
         {
             //Check.NotNull(projectExtensions, "Project Extensions param array");
             IgnorePathTokenList = ignorePathTokens;
+            WhitelistPathTokenList = whitelist;
         }
 
-        public ProjectSearchUtility(string rootDirPath, List<string> ignorePathTokens, params string[] projectExtensionsToSearch) : this(rootDirPath, ignorePathTokens)
+        public ProjectSearchUtility(string rootDirPath, List<string> ignorePathTokens, List<string> whitelist, params string[] projectExtensionsToSearch) : this(rootDirPath, ignorePathTokens, whitelist)
         {
             //Check.NotNull(ignorePathTokens, "Ignore Token Path List");
             foreach (string ext in projectExtensionsToSearch)
@@ -146,6 +189,15 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
             }
         }
         #endregion
+
+        /// <summary>
+        /// Returns true if whitelisted
+        /// </summary>
+        /// <param name="name">Name of the solution</param>
+        /// <returns>true if whitelisted, false otherwise</returns>
+        public bool WhiteListed(string name) {
+            return WhitelistProjectList.Count(listItem => name.ToLower().Contains(listItem.ToLower())) > 0;
+        }
         
         /// <summary>
         /// Finds all projects that can be found under RootDirForSearch using ProjectExtensionList.
@@ -154,13 +206,13 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
         /// <returns></returns>
         public List<string> GetFilteredProjects()
         {
-            IEnumerable<string> filteredProjects = AllProjectList.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase)));
+            IEnumerable<string> filteredProjects = AllProjectList.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase) && !WhiteListed(left)));
             return filteredProjects?.ToList<string>();
         }
 
         public List<string> GetFilteredTestProjects()
         {
-            IEnumerable<string> filteredTestProjects = AllTestProjectList.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase)));
+            IEnumerable<string> filteredTestProjects = AllTestProjectList.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase) && !WhiteListed(left)));
             return filteredTestProjects?.ToList<string>();
         }
 
@@ -180,7 +232,7 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
                 List<string> testProjs = SearchTestProjects(searchProjInDirPath);
 
                 var filteredProjs = scopedProjects.Except<string>(testProjs, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase)));
-                filteredProjs = filteredProjs.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase)));
+                filteredProjs = filteredProjs.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase) && !WhiteListed(left)));
 
                 scopedProjects = filteredProjs.ToList<string>();
             }
@@ -196,7 +248,7 @@ namespace Microsoft.WindowsAzure.Build.Tasks.Utilities
             if (Directory.Exists(searchDir))
             {
                 testScopedProjects = SearchTestProjects(searchDir);
-                var filteredProjs = testScopedProjects.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase)));
+                var filteredProjs = testScopedProjects.Except<string>(IgnoredProjectList, new ObjectComparer<string>((left, right) => left.Equals(right, StringComparison.OrdinalIgnoreCase) && !WhiteListed(left)));
 
                 testScopedProjects = filteredProjs.ToList<string>();
             }

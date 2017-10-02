@@ -19,6 +19,7 @@
     <NugetPackageName/>
     <ImportDirectoryBuildTargets>true</ImportDirectoryBuildTargets>
     <DefaultPathTokenToIgnore>$(IgnorePathTokens) Microsoft.Azure.KeyVault.Samples Gallery Intune AzureBatchFileConventions.IntegrationTests Batch.FileStaging.Tests Azure.Batch.IntegrationTests Azure.Batch.ProtocolTests</DefaultPathTokenToIgnore>
+    <DefaultPathTokenToWhitelist>$(WhitelistPathTokens) Admin</DefaultPathTokenToWhitelist>
   </PropertyGroup>
   <PropertyGroup>
     <CIToolsPath>$(OnPremiseBuildTasks)</CIToolsPath>

@@ -33,6 +33,7 @@ namespace Microsoft.WindowsAzure.Build.Tasks
         #region fields
         private string KV_IGNOREDIRNAME = "Microsoft.Azure.KeyVault.Samples";
         private string _ignoreDirNameForSearchingProjects;
+        private string _whitelistDirNameForSearchingProjects;
         #endregion
 
         public SDKCategorizeProjects()
@@ -71,6 +72,18 @@ namespace Microsoft.WindowsAzure.Build.Tasks
             set
             {
                 _ignoreDirNameForSearchingProjects = value;
+            }
+        }
+        
+        public string WhitelistDirNameForSearchingProjects
+        {
+            get
+            {
+                return _whitelistDirNameForSearchingProjects;
+            }
+            set
+            {
+                _whitelistDirNameForSearchingProjects = value;
             }
         }
 
@@ -137,6 +150,7 @@ namespace Microsoft.WindowsAzure.Build.Tasks
             List<string> testProjects = new List<string>();
             List<string> allProjects = new List<string>();
             List<string> ignorePathList = new List<string>();
+            List<string> whitelist = new List<string>();
 
             string[] ignoreTokens = IgnoreDirNameForSearchingProjects.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string igTkn in ignoreTokens)
@@ -144,11 +158,17 @@ namespace Microsoft.WindowsAzure.Build.Tasks
                 ignorePathList.Add(igTkn);
             }
 
+            string[] whitelistTokens = WhitelistDirNameForSearchingProjects.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string token in whitelistTokens)
+            {
+                whitelist.Add(token);
+            }
+
             if(!ignorePathList.Contains(KV_IGNOREDIRNAME))
             {
                 ignorePathList.Add(KV_IGNOREDIRNAME);
             }
-            ProjectSearchUtility ProjUtil = new ProjectSearchUtility(SourceRootDirPath, ignorePathList);
+            ProjectSearchUtility ProjUtil = new ProjectSearchUtility(SourceRootDirPath, ignorePathList, whitelist);
             if (BuildScope.Equals("All", StringComparison.OrdinalIgnoreCase))
             {
                 sdkProjects = ProjUtil.GetAllSDKProjects();

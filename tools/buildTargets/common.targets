@@ -249,6 +249,7 @@
       SourceRootDirPath="$(LibrarySourceFolder)"
       BuildScope="$(Scope)"
       IgnoreDirNameForSearchingProjects="$(DefaultPathTokenToIgnore)"
+      WhitelistDirNameForSearchingProjects="$(DefaultPathTokenToWhitelist)"
       >
       <Output TaskParameter="net452SdkProjectsToBuild" ItemName="net452SDKProj" />
       <Output TaskParameter="netStd14SdkProjectsToBuild" ItemName="netStd14SDKProj" />

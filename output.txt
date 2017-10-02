@@ -1,0 +1,436 @@
+Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 10/2/2017 2:05:41 PM.
+Project "E:\github\azure-sdk-for-net\build.proj" on node 1 (CreateNugetPackage target(s)).
+GetBuildEnv:
+  OnPremiseBuild .... false
+  CIToolsPath .... 
+  CodeSign .... false
+  PackageOutputPath .... E:\github\azure-sdk-for-net\binaries\packages
+  Scope .... AzureStack
+  BuildInParallel .... true
+BuildMsBuildTask:
+  dotnet restore E:\github\azure-sdk-for-net\tools\Microsoft.WindowsAzure.Build.Tasks\Microsoft.WindowsAzure.Build.Tasks.sln
+    Restore completed in 12.6 ms for E:\github\azure-sdk-for-net\tools\Microsoft.WindowsAzure.Build.Tasks\Build.Tasks.Tests\Build.Tasks.Tests.csproj.
+    Restore completed in 12.47 ms for E:\github\azure-sdk-for-net\tools\Microsoft.WindowsAzure.Build.Tasks\Build.Tasks\Microsoft.WindowsAzure.Build.Tasks.csproj.
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\tools\Microsoft.WindowsAzure.Build.Tasks\Build.Tasks\Microsoft.WindowsAzure.Build.Tasks.csproj" (2) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\tools\Microsoft.WindowsAzure.Build.Tasks\Build.Tasks\obj\Debug\net46\Microsoft.WindowsAzure.Build.Tasks.csproj.CopyComplete".
+CopyFilesToOutputDirectory:
+  Microsoft.WindowsAzure.Build.Tasks -> E:\github\azure-sdk-for-net\tools\net46\Microsoft.WindowsAzure.Build.Tasks.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\tools\net46\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\tools\Microsoft.WindowsAzure.Build.Tasks\Build.Tasks\Microsoft.WindowsAzure.Build.Tasks.csproj" (Build target(s)).
+CategorizeProjects:
+  Categorizing Projects.....
+  Scope = AzureStack
+  Total ... 6
+  SDKProjects ....... 3
+  E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj
+  E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj
+  E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj
+   
+  TestSDKProjects ....... 3
+  E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj
+  E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj
+  E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj
+  UnSupported Projects ....... 0
+RestoreLatestProjects:
+  Now Restoring E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj;
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (3) on node 1 (Restore target(s)).
+Restore:
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\obj\project.assets.json
+  Restore completed in 21.17 ms for E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj.
+  
+  NuGet Config files used:
+      E:\github\azure-sdk-for-net\NuGet.Config
+      C:\Users\jerobins.REDMOND\AppData\Roaming\NuGet\NuGet.Config
+      C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+  
+  Feeds used:
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      E:\github\azure-sdk-for-net\tools/LocalNugetFeed
+      https://api.nuget.org/v3/index.json
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (Restore target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (5) on node 1 (Restore target(s)).
+Restore:
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\obj\project.assets.json
+  Restore completed in 4.63 ms for E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj.
+  
+  NuGet Config files used:
+      E:\github\azure-sdk-for-net\NuGet.Config
+      C:\Users\jerobins.REDMOND\AppData\Roaming\NuGet\NuGet.Config
+      C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+  
+  Feeds used:
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      E:\github\azure-sdk-for-net\tools/LocalNugetFeed
+      https://api.nuget.org/v3/index.json
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (Restore target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (6) on node 1 (Restore target(s)).
+Restore:
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\obj\project.assets.json
+  Restore completed in 4.46 ms for E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj.
+  
+  NuGet Config files used:
+      E:\github\azure-sdk-for-net\NuGet.Config
+      C:\Users\jerobins.REDMOND\AppData\Roaming\NuGet\NuGet.Config
+      C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+  
+  Feeds used:
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      E:\github\azure-sdk-for-net\tools/LocalNugetFeed
+      https://api.nuget.org/v3/index.json
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (Restore target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj" (7) on node 1 (Restore target(s)).
+Restore:
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\obj\project.assets.json
+  Restore completed in 4.67 ms for E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj.
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\obj\project.assets.json
+  Restore completed in 15.56 ms for E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj.
+  
+  NuGet Config files used:
+      E:\github\azure-sdk-for-net\NuGet.Config
+      C:\Users\jerobins.REDMOND\AppData\Roaming\NuGet\NuGet.Config
+      C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+  
+  Feeds used:
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      E:\github\azure-sdk-for-net\tools/LocalNugetFeed
+      https://api.nuget.org/v3/index.json
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj" (Restore target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj" (8) on node 1 (Restore target(s)).
+Restore:
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\obj\project.assets.json
+  Restore completed in 10.81 ms for E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj.
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\obj\project.assets.json
+  Restore completed in 10.57 ms for E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj.
+  
+  NuGet Config files used:
+      E:\github\azure-sdk-for-net\NuGet.Config
+      C:\Users\jerobins.REDMOND\AppData\Roaming\NuGet\NuGet.Config
+      C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+  
+  Feeds used:
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      E:\github\azure-sdk-for-net\tools/LocalNugetFeed
+      https://api.nuget.org/v3/index.json
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj" (Restore target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj" (9) on node 1 (Restore target(s)).
+Restore:
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\obj\project.assets.json
+  Restore completed in 11.65 ms for E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj.
+  Committing restore...
+  Assets file has not changed. Skipping assets file writing. Path: E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\obj\project.assets.json
+  Restore completed in 10.92 ms for E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj.
+  
+  NuGet Config files used:
+      E:\github\azure-sdk-for-net\NuGet.Config
+      C:\Users\jerobins.REDMOND\AppData\Roaming\NuGet\NuGet.Config
+      C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+  
+  Feeds used:
+      C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      E:\github\azure-sdk-for-net\tools/LocalNugetFeed
+      https://api.nuget.org/v3/index.json
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj" (Restore target(s)).
+BuildLatestProjects:
+  IsBuildingInVS: false
+  IsCIBuild: true
+  Building SDK Projects ..... E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (3:21) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\obj\Debug\net452\Microsoft.AzureStack.Management.Fabric.Admin.csproj.CopyComplete".
+CopyFilesToOutputDirectory:
+  Microsoft.AzureStack.Management.Fabric.Admin -> E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Fabric.Admin.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\net452\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (Build target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (5:21) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\obj\Debug\net452\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj.CopyComplete".
+CopyFilesToOutputDirectory:
+  Microsoft.AzureStack.Management.InfrastructureInsights.Admin -> E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\net452\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (Build target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (6:21) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\obj\Debug\net452\Microsoft.AzureStack.Management.Commerce.Admin.csproj.CopyComplete".
+CopyFilesToOutputDirectory:
+  Microsoft.AzureStack.Management.Commerce.Admin -> E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Commerce.Admin.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\net452\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (Build target(s)).
+BuildLatestProjects:
+  Building SDK Projects ..... E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (3:22) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+GenerateBuildDependencyFile:
+Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Microsoft.AzureStack.Management.Fabric.Admin -> E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Fabric.Admin.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\netstandard1.4\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (Build target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (5:22) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+GenerateBuildDependencyFile:
+Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Microsoft.AzureStack.Management.InfrastructureInsights.Admin -> E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\netstandard1.4\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (Build target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (6:22) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+GenerateBuildDependencyFile:
+Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Microsoft.AzureStack.Management.Commerce.Admin -> E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Commerce.Admin.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\netstandard1.4\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (Build target(s)).
+BuildLatestProjects:
+  Building SDK Projects ..... 
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj" (7:11) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateProgramFile:
+Skipping target "CoreGenerateProgramFile" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\obj\Debug\netcoreapp1.1\Fabric.Tests.csproj.CopyComplete".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+GenerateBuildDependencyFile:
+Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Fabric.Tests -> E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\bin\Debug\netcoreapp1.1\Fabric.Admin.Tests.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\bin\Debug\netcoreapp1.1\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj" (Build target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj" (8:11) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateProgramFile:
+Skipping target "CoreGenerateProgramFile" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\obj\Debug\netcoreapp1.1\InfrastructureInsights.Tests.csproj.CopyComplete".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+GenerateBuildDependencyFile:
+Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  InfrastructureInsights.Tests -> E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\bin\Debug\netcoreapp1.1\InfrastructureInsights.Tests.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\bin\Debug\netcoreapp1.1\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj" (Build target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj" (9:11) on node 1 (Build target(s)).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreGenerateProgramFile:
+Skipping target "CoreGenerateProgramFile" because all output files are up-to-date with respect to the input files.
+CoreGenerateAssemblyInfo:
+Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyFilesMarkedCopyLocal:
+  Touching "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\obj\Debug\netcoreapp1.1\Commerce.Tests.csproj.CopyComplete".
+_CopyOutOfDateSourceItemsToOutputDirectory:
+Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+GenerateBuildDependencyFile:
+Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Commerce.Tests -> E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\bin\Debug\netcoreapp1.1\Commerce.Admin.Tests.dll
+CleanupEmptyRefsFolder:
+  Directory "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\bin\Debug\netcoreapp1.1\refs" doesn't exist. Skipping.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj" (Build target(s)).
+BuildLatestProjects:
+  Building UnSupported projects ..... 
+Test:
+  Executing Tests......
+  Running .NET Core 1.1 Tests .... E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj
+  dotnet test -f netcoreapp1.1 E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\Fabric.Tests.csproj -l trx;LogFileName=E:\github\azure-sdk-for-net\TestResults\netCore11\Fabric.Tests.trx 
+  Build started, please wait...
+  Build completed.
+  
+  Test run for E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin.Tests\bin\Debug\netcoreapp1.1\Fabric.Admin.Tests.dll(.NETCoreApp,Version=v1.1)
+  Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
+  Copyright (c) Microsoft Corporation.  All rights reserved.
+  
+  Starting test execution, please wait...
+  Skipped  Fabric.Tests.ScaleUnitNodeTests.TestPowerOffScaleUnitNode
+  Standard Output Messages:
+   No hardware
+  Skipped  Fabric.Tests.InfraRoleInstanceTests.TestInfraRoleInstanceReboot
+  Standard Output Messages:
+   No hardware
+  Skipped  Fabric.Tests.InfraRoleInstanceTests.TestInfraRoleInstanceShutdown
+  Standard Output Messages:
+   No hardware
+  Skipped  Fabric.Tests.InfraRoleInstanceTests.TestInfraRoleInstancePowerOff
+  Standard Output Messages:
+   No hardware
+  Skipped  Fabric.Tests.OperationTests.TestGetNetworkFabricOperations
+  Standard Output Messages:
+   Need operation first, we run this in another test.
+  Skipped  Fabric.Tests.OperationTests.TestGetComputeFabricOperations
+  Standard Output Messages:
+   Need operation first, we run this in another test.
+EXEC : warning : Overwriting results file: E:\github\azure-sdk-for-net\TestResults\netCore11\Fabric.Tests.trx [E:\github\azure-sdk-for-net\build.proj]
+  Results File: E:\github\azure-sdk-for-net\TestResults\netCore11\Fabric.Tests.trx
+  
+  Total tests: 68. Passed: 62. Failed: 0. Skipped: 6.
+  Test Run Successful.
+  Test execution time: 2.0232 Seconds
+  
+  
+  dotnet test -f netcoreapp1.1 E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\InfrastructureInsights.Tests.csproj -l trx;LogFileName=E:\github\azure-sdk-for-net\TestResults\netCore11\InfrastructureInsights.Tests.trx 
+  Build started, please wait...
+  Build completed.
+  
+  Test run for E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin.Tests\bin\Debug\netcoreapp1.1\InfrastructureInsights.Tests.dll(.NETCoreApp,Version=v1.1)
+  Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
+  Copyright (c) Microsoft Corporation.  All rights reserved.
+  
+  Starting test execution, please wait...
+EXEC : warning : Overwriting results file: E:\github\azure-sdk-for-net\TestResults\netCore11\InfrastructureInsights.Tests.trx [E:\github\azure-sdk-for-net\build.proj]
+  Results File: E:\github\azure-sdk-for-net\TestResults\netCore11\InfrastructureInsights.Tests.trx
+  
+  Total tests: 13. Passed: 13. Failed: 0. Skipped: 0.
+  Test Run Successful.
+  Test execution time: 1.4043 Seconds
+  
+  
+  dotnet test -f netcoreapp1.1 E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\Commerce.Tests.csproj -l trx;LogFileName=E:\github\azure-sdk-for-net\TestResults\netCore11\Commerce.Tests.trx 
+  Build started, please wait...
+  Build completed.
+  
+  Test run for E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin.Tests\bin\Debug\netcoreapp1.1\Commerce.Admin.Tests.dll(.NETCoreApp,Version=v1.1)
+  Microsoft (R) Test Execution Command Line Tool Version 15.0.0.0
+  Copyright (c) Microsoft Corporation.  All rights reserved.
+  
+  Starting test execution, please wait...
+EXEC : warning : Overwriting results file: E:\github\azure-sdk-for-net\TestResults\netCore11\Commerce.Tests.trx [E:\github\azure-sdk-for-net\build.proj]
+  Results File: E:\github\azure-sdk-for-net\TestResults\netCore11\Commerce.Tests.trx
+  
+  Total tests: 1. Passed: 1. Failed: 0. Skipped: 0.
+  Test Run Successful.
+  Test execution time: 1.2797 Seconds
+  
+  
+PreSign:
+  Unsigned files .... E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Fabric.Admin.dll;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Commerce.Admin.dll;E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Fabric.Admin.dll;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Commerce.Admin.dll
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Fabric.Admin.dll" had the expected strong name token of "31bf3856ad364e35"
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Fabric.Admin.dll" was delay signed.
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll" had the expected strong name token of "31bf3856ad364e35"
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll" was delay signed.
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Commerce.Admin.dll" had the expected strong name token of "31bf3856ad364e35"
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\net452\Microsoft.AzureStack.Management.Commerce.Admin.dll" was delay signed.
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Fabric.Admin.dll" had the expected strong name token of "31bf3856ad364e35"
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Fabric.Admin.dll" was delay signed.
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll" had the expected strong name token of "31bf3856ad364e35"
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.dll" was delay signed.
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Commerce.Admin.dll" had the expected strong name token of "31bf3856ad364e35"
+  The assembly "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\bin\Debug\netstandard1.4\Microsoft.AzureStack.Management.Commerce.Admin.dll" was delay signed.
+Package:
+  Packaging..... E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj;E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (3:27) on node 1 (Pack target(s)).
+GenerateNuspec:
+  Successfully created package 'E:\github\azure-sdk-for-net\binaries\packages\Microsoft.AzureStack.Management.Fabric.Admin.0.1.1-preview.nupkg'.
+  
+  Attempting to build symbols package for 'Microsoft.AzureStack.Management.Fabric.Admin.csproj'.
+  Successfully created package 'E:\github\azure-sdk-for-net\binaries\packages\Microsoft.AzureStack.Management.Fabric.Admin.0.1.1-preview.symbols.nupkg'.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\FabricAdmin\Fabric.Admin\Microsoft.AzureStack.Management.Fabric.Admin.csproj" (Pack target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (5:27) on node 1 (Pack target(s)).
+GenerateNuspec:
+  Successfully created package 'E:\github\azure-sdk-for-net\binaries\packages\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.0.1.0-preview.nupkg'.
+  
+  Attempting to build symbols package for 'Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj'.
+  Successfully created package 'E:\github\azure-sdk-for-net\binaries\packages\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.0.1.0-preview.symbols.nupkg'.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\InfrastructureInsightsAdmin\InfrastructureInsights.Admin\Microsoft.AzureStack.Management.InfrastructureInsights.Admin.csproj" (Pack target(s)).
+Project "E:\github\azure-sdk-for-net\build.proj" (1) is building "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (6:27) on node 1 (Pack target(s)).
+GenerateNuspec:
+  Successfully created package 'E:\github\azure-sdk-for-net\binaries\packages\Microsoft.AzureStack.Management.Commerce.Admin.0.1.0-preview.nupkg'.
+  
+  Attempting to build symbols package for 'Microsoft.AzureStack.Management.Commerce.Admin.csproj'.
+  Successfully created package 'E:\github\azure-sdk-for-net\binaries\packages\Microsoft.AzureStack.Management.Commerce.Admin.0.1.0-preview.symbols.nupkg'.
+Done Building Project "E:\github\azure-sdk-for-net\src\AzureStack\CommerceAdmin\Commerce.Admin\Microsoft.AzureStack.Management.Commerce.Admin.csproj" (Pack target(s)).
+Package:
+  Built Nugets 
+Done Building Project "E:\github\azure-sdk-for-net\build.proj" (CreateNugetPackage target(s)).
+
+Build succeeded.
+
+"E:\github\azure-sdk-for-net\build.proj" (CreateNugetPackage target) (1) ->
+(Test target) -> 
+  EXEC : warning : Overwriting results file: E:\github\azure-sdk-for-net\TestResults\netCore11\Fabric.Tests.trx [E:\github\azure-sdk-for-net\build.proj]
+
+
+"E:\github\azure-sdk-for-net\build.proj" (CreateNugetPackage target) (1) ->
+  EXEC : warning : Overwriting results file: E:\github\azure-sdk-for-net\TestResults\netCore11\InfrastructureInsights.Tests.trx [E:\github\azure-sdk-for-net\build.proj]
+
+
+"E:\github\azure-sdk-for-net\build.proj" (CreateNugetPackage target) (1) ->
+  EXEC : warning : Overwriting results file: E:\github\azure-sdk-for-net\TestResults\netCore11\Commerce.Tests.trx [E:\github\azure-sdk-for-net\build.proj]
+
+    3 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:14.96
