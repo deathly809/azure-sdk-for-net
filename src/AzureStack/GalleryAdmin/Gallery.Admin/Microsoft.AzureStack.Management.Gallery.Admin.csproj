@@ -7,7 +7,7 @@
     <VersionPrefix>0.1.0-preview</VersionPrefix>
     <AssemblyName>Microsoft.AzureStack.Management.Gallery.Admin</AssemblyName>
     <PackageTags>Microsoft Azure Stack;Gallery;REST HTTP client;azureostackfficial;netcore451511</PackageTags>
-    <PackageReleaseNotes>This is a preview release of the AzureStack Gallery Admin SDK.</PackageReleaseNotes>
+    <PackageReleaseNotes>This is a preview release of the AzureStack Gallery Admin SDK.  Included in this release is the ability to list, register, get, and delete gallery items.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworks>net452;netstandard1.4</TargetFrameworks>

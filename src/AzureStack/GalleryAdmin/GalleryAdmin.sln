@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{45953CE8-37BB-46FE-9063-5336891E5436}") = "Solution Items", "Solution Items", "{45953CE8-37BB-46FE-9063-5336891E5436}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gallery.Tests", "Gallery.Admin.Tests\Gallery.Tests.csproj", "{F78F0A9A-91E2-4222-BD8A-10B38D18D1CB}"
 EndProject
-Project("{F78F0A9A-91E2-4222-BD8A-10B38D18D1CB}") = "Gallery.Tests", "Gallery.Admin.Tests\Gallery.Tests.csproj", "{F78F0A9A-91E2-4222-BD8A-10B38D18D1CB}"
-EndProject
-Project("{10FA4755-87A6-48BC-9141-5CEFC93AF360}") = "Gallery.Admin", "Gallery.Admin\Microsoft.AzureStack.Management.Gallery.Admin.csproj", "{10FA4755-87A6-48BC-9141-5CEFC93AF360}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gallery.Admin", "Gallery.Admin\Microsoft.AzureStack.Management.Gallery.Admin.csproj", "{10FA4755-87A6-48BC-9141-5CEFC93AF360}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
