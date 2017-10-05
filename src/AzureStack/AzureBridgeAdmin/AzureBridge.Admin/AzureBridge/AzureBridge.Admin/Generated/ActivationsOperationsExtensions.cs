@@ -95,9 +95,9 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='activation'>
             /// new activation.
             /// </param>
-            public static ActivationResource Put(this IActivationsOperations operations, string activationName, Activation activation)
+            public static ActivationResource CreateOrUpdate(this IActivationsOperations operations, string activationName, Activation activation)
             {
-                return operations.PutAsync(activationName, activation).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(activationName, activation).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -115,9 +115,9 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ActivationResource> PutAsync(this IActivationsOperations operations, string activationName, Activation activation, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ActivationResource> CreateOrUpdateAsync(this IActivationsOperations operations, string activationName, Activation activation, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.PutWithHttpMessagesAsync(activationName, activation, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(activationName, activation, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

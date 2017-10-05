@@ -445,7 +445,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<ActivationResource>> PutWithHttpMessagesAsync(string activationName, Activation activation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ActivationResource>> CreateOrUpdateWithHttpMessagesAsync(string activationName, Activation activation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -473,7 +473,7 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
                 tracingParameters.Add("activationName", activationName);
                 tracingParameters.Add("activation", activation);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Put", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "CreateOrUpdate", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
