@@ -12,21 +12,10 @@ namespace AzureBridge.Tests
 {
     public class ProductTests : AzureBridgeTestBase
     {
-
         
         [Fact]
         public void TestListPublishedProducts() {
             RunTest((client) => {
-
-                var activation = new Activation()
-                {
-                    DisplayName = "activationName",
-                    AzureRegistrationResourceIdentifier = "asdf",
-                    Expiration = new DateTime(2020, 01, 01),
-                    MarketplaceSyndicationEnabled = true,
-                    UsageReportingEnabled = false
-                };
-                client.Activations.Put("activationName", activation);
                 var list = client.Activations.List();
                 Common.WriteIPagesToFile(list, client.Activations.ListNext, "TestListPublishedProducts");
             });
