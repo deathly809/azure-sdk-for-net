@@ -11,7 +11,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 
-namespace Fabric.Tests
+namespace Network.Tests
 {
 
     /// <summary>
@@ -275,7 +275,7 @@ public static class Extensions
     public static IList<T> PageToList<T>(this IPage<T> start, Func<string, IPage<T>> getNext)
     {
         List<T> result = new List<T>();
-        Fabric.Tests.Common.MapOverIPage(start, getNext, (page) =>
+        Network.Tests.Common.MapOverIPage(start, getNext, (page) =>
         {
             result.Add(page);
         });
