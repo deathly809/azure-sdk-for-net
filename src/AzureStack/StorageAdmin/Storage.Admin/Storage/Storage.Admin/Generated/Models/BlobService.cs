@@ -42,13 +42,57 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="version">TODO</param>
         /// <param name="healthStatus">Possible values include: 'Unknown',
         /// 'Healthy', 'Warning', 'Critical'</param>
-        /// <param name="settings">TODO</param>
-        public BlobService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), BlobServiceSettings settings = default(BlobServiceSettings))
+        /// <param name="frontEndCallbackThreadsCount">TODO</param>
+        /// <param
+        /// name="frontEndCpuBasedKeepAliveThrottlingEnabled">TODO</param>
+        /// <param
+        /// name="frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold">TODO</param>
+        /// <param
+        /// name="frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle">TODO</param>
+        /// <param
+        /// name="frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds">TODO</param>
+        /// <param name="frontEndMemoryThrottlingEnabled">TODO</param>
+        /// <param
+        /// name="frontEndMaxMillisecondsBetweenMemorySamples">TODO</param>
+        /// <param name="frontEndMemoryThrottleThresholdSettings">TODO</param>
+        /// <param name="frontEndMinThreadPoolThreads">TODO</param>
+        /// <param
+        /// name="frontEndThreadPoolBasedKeepAliveIOCompletionThreshold">TODO</param>
+        /// <param
+        /// name="frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold">TODO</param>
+        /// <param
+        /// name="frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds">TODO</param>
+        /// <param
+        /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
+        /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
+        /// <param name="blobSvcContainerGcInterval">TODO</param>
+        /// <param name="blobSvcShallowGcInterval">TODO</param>
+        /// <param
+        /// name="blobSvcStreamMapMinContainerOccupancyPercent">TODO</param>
+        public BlobService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpListenPort = default(int?), int? backEndHttpListenPort = default(int?), int? blobSvcContainerGcInterval = default(int?), int? blobSvcShallowGcInterval = default(int?), int? blobSvcStreamMapMinContainerOccupancyPercent = default(int?))
             : base(id, name, type, location, tags)
         {
             Version = version;
             HealthStatus = healthStatus;
-            Settings = settings;
+            FrontEndCallbackThreadsCount = frontEndCallbackThreadsCount;
+            FrontEndCpuBasedKeepAliveThrottlingEnabled = frontEndCpuBasedKeepAliveThrottlingEnabled;
+            FrontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold;
+            FrontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle;
+            FrontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds;
+            FrontEndMemoryThrottlingEnabled = frontEndMemoryThrottlingEnabled;
+            FrontEndMaxMillisecondsBetweenMemorySamples = frontEndMaxMillisecondsBetweenMemorySamples;
+            FrontEndMemoryThrottleThresholdSettings = frontEndMemoryThrottleThresholdSettings;
+            FrontEndMinThreadPoolThreads = frontEndMinThreadPoolThreads;
+            FrontEndThreadPoolBasedKeepAliveIOCompletionThreshold = frontEndThreadPoolBasedKeepAliveIOCompletionThreshold;
+            FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold;
+            FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds;
+            FrontEndThreadPoolBasedKeepAlivePercentage = frontEndThreadPoolBasedKeepAlivePercentage;
+            FrontEndUseSlaTimeInAvailability = frontEndUseSlaTimeInAvailability;
+            FrontEndHttpListenPort = frontEndHttpListenPort;
+            BackEndHttpListenPort = backEndHttpListenPort;
+            BlobSvcContainerGcInterval = blobSvcContainerGcInterval;
+            BlobSvcShallowGcInterval = blobSvcShallowGcInterval;
+            BlobSvcStreamMapMinContainerOccupancyPercent = blobSvcStreamMapMinContainerOccupancyPercent;
             CustomInit();
         }
 
@@ -73,8 +117,114 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.settings")]
-        public BlobServiceSettings Settings { get; set; }
+        [JsonProperty(PropertyName = "properties.settings.frontEndCallbackThreadsCount")]
+        public int? FrontEndCallbackThreadsCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingEnabled")]
+        public bool? FrontEndCpuBasedKeepAliveThrottlingEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold")]
+        public double? FrontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle")]
+        public double? FrontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds")]
+        public int? FrontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndMemoryThrottlingEnabled")]
+        public bool? FrontEndMemoryThrottlingEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndMaxMillisecondsBetweenMemorySamples")]
+        public int? FrontEndMaxMillisecondsBetweenMemorySamples { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndMemoryThrottleThresholdSettings")]
+        public string FrontEndMemoryThrottleThresholdSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndMinThreadPoolThreads")]
+        public int? FrontEndMinThreadPoolThreads { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAliveIOCompletionThreshold")]
+        public int? FrontEndThreadPoolBasedKeepAliveIOCompletionThreshold { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold")]
+        public int? FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds")]
+        public int? FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAlivePercentage")]
+        public double? FrontEndThreadPoolBasedKeepAlivePercentage { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndUseSlaTimeInAvailability")]
+        public bool? FrontEndUseSlaTimeInAvailability { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.frontEndHttpListenPort")]
+        public int? FrontEndHttpListenPort { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.backEndHttpListenPort")]
+        public int? BackEndHttpListenPort { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.blobSvcContainerGcInterval")]
+        public int? BlobSvcContainerGcInterval { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.blobSvcShallowGcInterval")]
+        public int? BlobSvcShallowGcInterval { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings.blobSvcStreamMapMinContainerOccupancyPercent")]
+        public int? BlobSvcStreamMapMinContainerOccupancyPercent { get; set; }
 
     }
 }
