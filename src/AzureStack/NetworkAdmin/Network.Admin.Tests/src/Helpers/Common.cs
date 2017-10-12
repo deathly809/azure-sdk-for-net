@@ -5,21 +5,17 @@
 using Microsoft.Rest;
 using Microsoft.Rest.Azure;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 
 namespace Network.Tests
 {
-
     /// <summary>
     /// A collection of common values and functions
     /// </summary>
     public class Common
     {
-
         public const string AcceptableCharactersForResourceName = "abcdefghijklmnopqrstuvwxyz0123456789";
         public const int MaxResourceNameLength = 24;
 
@@ -205,7 +201,6 @@ namespace Network.Tests
 
 public static class Extensions
 {
-
     /// <summary>
     /// Round down the dateTimeOffset to interval.
     /// </summary>

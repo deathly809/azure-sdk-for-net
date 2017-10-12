@@ -26,8 +26,15 @@ namespace Network.Tests {
             Assert.NotNull(client);
 
             // validate objects
-            // TODO add object validation
-            // ex Assert.NotNull(client.ComputeNetworkOperations);
+            Assert.NotNull(client.BackendAddressPools);
+            Assert.NotNull(client.ConnectionSkus);
+            Assert.NotNull(client.LoadBalancerMuxes);
+            Assert.NotNull(client.LoadBalancers);
+            Assert.NotNull(client.MacAddressPools);
+            Assert.NotNull(client.Operations);
+            Assert.NotNull(client.PublicIPAddresses);
+            Assert.NotNull(client.Quotas);
+            Assert.NotNull(client.ViritualNetworks);
 
             // validate properties
             Assert.NotNull(client.SubscriptionId);

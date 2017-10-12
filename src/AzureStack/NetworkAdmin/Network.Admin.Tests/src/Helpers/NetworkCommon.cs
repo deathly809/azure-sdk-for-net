@@ -10,7 +10,7 @@ namespace Network.Tests {
     
     class NetworkCommon {
 
-        public static bool ResourceAreSame(Resource expected, Resource found) {
+        public static bool CheckBaseResourcesAreSame(Resource expected, Resource found) {
             if (expected == null) return found == null;
             return expected.Id == found.Id &&
                 expected.Location == found.Location &&
