@@ -16,20 +16,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     /// <summary>
     /// TODO
     /// </summary>
-    public partial class FarmModelBase
+    public partial class FarmPropertiesBase
     {
         /// <summary>
-        /// Initializes a new instance of the FarmModelBase class.
+        /// Initializes a new instance of the FarmPropertiesBase class.
         /// </summary>
-        public FarmModelBase()
+        public FarmPropertiesBase()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the FarmModelBase class.
+        /// Initializes a new instance of the FarmPropertiesBase class.
         /// </summary>
-        public FarmModelBase(FarmSettings settings = default(FarmSettings))
+        public FarmPropertiesBase(FarmSettings settings = default(FarmSettings))
         {
             Settings = settings;
             CustomInit();

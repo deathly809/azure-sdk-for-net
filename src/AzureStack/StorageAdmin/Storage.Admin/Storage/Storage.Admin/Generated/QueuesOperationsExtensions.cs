@@ -34,7 +34,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static QueueServiceResource Get(this IQueuesOperations operations, string resourceGroupName, string farmId)
+            public static QueueService Get(this IQueuesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.GetAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
@@ -54,7 +54,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<QueueServiceResource> GetAsync(this IQueuesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<QueueService> GetAsync(this IQueuesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {

@@ -34,7 +34,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static TableServiceResource Get(this ITableServicesOperations operations, string resourceGroupName, string farmId)
+            public static TableService Get(this ITableServicesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.GetAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
@@ -54,7 +54,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<TableServiceResource> GetAsync(this ITableServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<TableService> GetAsync(this ITableServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {

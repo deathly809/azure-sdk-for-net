@@ -10,13 +10,18 @@
 
 namespace Microsoft.AzureStack.Management.Storage.Admin.Models
 {
+    using Microsoft.Rest;
+    using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
     /// TODO
     /// </summary>
-    public partial class BlobService : Service
+    [Rest.Serialization.JsonTransformation]
+    public partial class BlobService : Resource
     {
         /// <summary>
         /// Initializes a new instance of the BlobService class.
@@ -29,13 +34,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the BlobService class.
         /// </summary>
+        /// <param name="id">URI of the resource.</param>
+        /// <param name="name">Name of the resource.</param>
+        /// <param name="type">Type of resource.</param>
+        /// <param name="location">Location where resource is location.</param>
+        /// <param name="tags">List of key value pairs.</param>
         /// <param name="version">TODO</param>
         /// <param name="healthStatus">Possible values include: 'Unknown',
         /// 'Healthy', 'Warning', 'Critical'</param>
         /// <param name="settings">TODO</param>
-        public BlobService(string version = default(string), string healthStatus = default(string), BlobServiceSettings settings = default(BlobServiceSettings))
-            : base(version, healthStatus)
+        public BlobService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), BlobServiceSettings settings = default(BlobServiceSettings))
+            : base(id, name, type, location, tags)
         {
+            Version = version;
+            HealthStatus = healthStatus;
             Settings = settings;
             CustomInit();
         }
@@ -48,7 +60,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "settings")]
+        [JsonProperty(PropertyName = "properties.version ")]
+        public string Version { get; set; }
+
+        /// <summary>
+        /// Gets or sets possible values include: 'Unknown', 'Healthy',
+        /// 'Warning', 'Critical'
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.healthStatus")]
+        public string HealthStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets TODO
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settings")]
         public BlobServiceSettings Settings { get; set; }
 
     }

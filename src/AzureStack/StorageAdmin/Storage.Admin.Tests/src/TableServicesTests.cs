@@ -22,23 +22,22 @@ namespace Storage.Tests
         {
             Assert.NotNull(tableService);
             Assert.NotNull(tableService.HealthStatus);
-            Assert.NotNull(tableService.Properties);
-            Assert.NotNull(tableService.Properties.BackEndHttpListenPort);
-            Assert.NotNull(tableService.Properties.FrontEndCallbackThreadsCount);
-            Assert.NotNull(tableService.Properties.FrontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds);
-            Assert.NotNull(tableService.Properties.FrontEndCpuBasedKeepAliveThrottlingEnabled);
-            Assert.NotNull(tableService.Properties.FrontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold);
-            Assert.NotNull(tableService.Properties.FrontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle);
-            Assert.NotNull(tableService.Properties.FrontEndHttpListenPort);
-            Assert.NotNull(tableService.Properties.FrontEndMaxMillisecondsBetweenMemorySamples);
-            Assert.NotNull(tableService.Properties.FrontEndMemoryThrottleThresholdSettings);
-            Assert.NotNull(tableService.Properties.FrontEndMemoryThrottlingEnabled);
-            Assert.NotNull(tableService.Properties.FrontEndMinThreadPoolThreads);
-            Assert.NotNull(tableService.Properties.FrontEndThreadPoolBasedKeepAliveIOCompletionThreshold);
-            Assert.NotNull(tableService.Properties.FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds);
-            Assert.NotNull(tableService.Properties.FrontEndThreadPoolBasedKeepAlivePercentage);
-            Assert.NotNull(tableService.Properties.FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold);
-            Assert.NotNull(tableService.Properties.FrontEndUseSlaTimeInAvailability);
+            Assert.NotNull(tableService.BackEndHttpListenPort);
+            Assert.NotNull(tableService.FrontEndCallbackThreadsCount);
+            Assert.NotNull(tableService.FrontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds);
+            Assert.NotNull(tableService.FrontEndCpuBasedKeepAliveThrottlingEnabled);
+            Assert.NotNull(tableService.FrontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold);
+            Assert.NotNull(tableService.FrontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle);
+            Assert.NotNull(tableService.FrontEndHttpListenPort);
+            Assert.NotNull(tableService.FrontEndMaxMillisecondsBetweenMemorySamples);
+            Assert.NotNull(tableService.FrontEndMemoryThrottleThresholdSettings);
+            Assert.NotNull(tableService.FrontEndMemoryThrottlingEnabled);
+            Assert.NotNull(tableService.FrontEndMinThreadPoolThreads);
+            Assert.NotNull(tableService.FrontEndThreadPoolBasedKeepAliveIOCompletionThreshold);
+            Assert.NotNull(tableService.FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds);
+            Assert.NotNull(tableService.FrontEndThreadPoolBasedKeepAlivePercentage);
+            Assert.NotNull(tableService.FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold);
+            Assert.NotNull(tableService.FrontEndUseSlaTimeInAvailability);
         }
 
         [Fact]
