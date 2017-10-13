@@ -21,10 +21,7 @@ namespace Network.Tests
             {
                 Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
 
-                Assert.Equal(expected.SkuCapabilityGatewayPoolName, found.SkuCapabilityGatewayPoolName);
-                Assert.Equal(expected.SkuCapabilityRxBandwidthName, found.SkuCapabilityRxBandwidthName);
-                Assert.Equal(expected.SkuCapabilityTxBandwidthName, found.SkuCapabilityTxBandwidthName);
-                Assert.Equal(expected.SkuCapabilityTypeName, found.SkuCapabilityTypeName);
+                Assert.Equal(expected.Capabilities, found.Capabilities);
             }
         }
 

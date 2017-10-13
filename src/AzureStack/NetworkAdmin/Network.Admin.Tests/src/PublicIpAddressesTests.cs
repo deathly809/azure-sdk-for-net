@@ -11,12 +11,33 @@ namespace Network.Tests
 {
     public class PublicIPAddressesTests : NetworkTestBase
     {
+        private void Setup()
+        {
+            // TODO Setup public IP Address
+        }
+
         [Fact]
         public void TestGetAllPublicIpAddresses()
         {
             RunTest((client) =>
             {
-                var operation = client.PublicIPAddresses.List();
+                var addresses = client.PublicIPAddresses.List();
+                if (addresses != null)
+                {
+                    Common.MapOverIPage(addresses, client.PublicIPAddresses.ListNext, (address) =>
+                    {
+                        NetworkCommon.ValidateBaseResources(address);
+
+                        NetworkCommon.ValidateBaseResourceTenant(address);
+
+                        Assert.NotNull(address.IpAddress);
+                        Assert.NotNull(address.IpPool);
+                    });
+                }
+                else
+                {
+                    // Setup
+                }
             });
         }
     }

@@ -25,5 +25,20 @@ namespace Network.Tests {
                 resource.Name != null &&
                 resource.Type != null;
         }
+
+        public static bool ValidateBaseResources(Resource resource)
+        {
+            return resource != null &&
+                resource.Id == null &&
+                resource.Name != null;
+        }
+
+        public static bool ValidateBaseResourceTenant(ResourceTenant tenant)
+        {
+            return tenant != null &&
+                tenant.SubscriptionId == null &&
+                tenant.TenantResourceUri != null;
+        }
+
     }
 }

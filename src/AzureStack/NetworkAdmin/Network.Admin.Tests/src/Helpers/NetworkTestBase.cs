@@ -34,7 +34,7 @@ namespace Network.Tests {
             Assert.NotNull(client.Operations);
             Assert.NotNull(client.PublicIPAddresses);
             Assert.NotNull(client.Quotas);
-            Assert.NotNull(client.ViritualNetworks);
+            Assert.NotNull(client.VirtualNetworks);
 
             // validate properties
             Assert.NotNull(client.SubscriptionId);

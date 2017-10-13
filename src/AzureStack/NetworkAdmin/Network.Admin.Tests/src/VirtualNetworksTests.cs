@@ -16,7 +16,7 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                var operation = client.VirtualNetworks.List();
+                var networks = client.VirtualNetworks.List();
             });
         }
 
@@ -25,7 +25,9 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                var operation = client.VirtualNetworks.List();
+                var network = client.VirtualNetworks.List().GetFirst();
+
+                client.VirtualNetworks.Get(network.Name);
             });
         }
     }

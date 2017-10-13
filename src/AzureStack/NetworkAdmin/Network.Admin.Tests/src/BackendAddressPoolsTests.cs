@@ -30,7 +30,7 @@ namespace Network.Tests
             }
         }
 
-        [Fact(Skip = "Get is broken")]
+        [Fact]
         public void TestGetAllBackendAddressPools()
         {
             RunTest((client) => {
@@ -39,14 +39,24 @@ namespace Network.Tests
                 {
                     Common.MapOverIPage(pools, client.BackendAddressPools.ListNext, (pool) =>
                     {
-                        var retrieved = client.BackendAddressPools.Get(pool.Name);
-                        AssertBackendAddressPoolsAreSame(pool, retrieved);
+                        // GET isn't implemented
+                        //var retrieved = client.BackendAddressPools.Get(pool.Name);
+                        //AssertBackendAddressPoolsAreSame(pool, retrieved);
+
+                        NetworkCommon.ValidateBaseResources(pool);
+
+                        Assert.NotNull(pool.ProvisioningState);
+                        Assert.NotNull(pool.StartIpAddress);
+                        Assert.NotNull(pool.EndIpAddress);
+                        Assert.NotNull(pool.NumberOfIPAddresses);
+                        Assert.NotNull(pool.NumberOfIPAddressesAllocated);
+                        Assert.NotNull(pool.NumberOfIPAddressesInTransition);
                     });
                 }
             });
         }
 
-        [Fact(Skip = "Get is broken")]
+        [Fact(Skip = "Get isn't implemented")]
         public void TestGetBackendAddressPool()
         {
             RunTest((client) =>

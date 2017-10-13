@@ -11,6 +11,11 @@ namespace Network.Tests
 {
     public class LoadBalancers : NetworkTestBase
     {
+        private void Setup()
+        {
+            // TODO Create Load Balancer
+        }
+
         private void AssertLoadBalancersAreSame(LoadBalancer expected, LoadBalancer found)
         {
             if (expected == null)
@@ -21,8 +26,8 @@ namespace Network.Tests
             {
                 Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
 
-                Assert.Equal(expected.LoadBalancerName, found.LoadBalancerName);
-                Assert.Equal(expected.PublicIpAddress, found.PublicIpAddress);
+                Assert.Equal(expected.PublicIpAddresses, found.PublicIpAddresses);
+                Assert.Equal(expected.SubscriptionId, found.SubscriptionId);
                 Assert.Equal(expected.TenantResourceUri, found.TenantResourceUri);
             }
         }
@@ -37,14 +42,27 @@ namespace Network.Tests
                 {
                     Common.MapOverIPage(balancers, client.LoadBalancers.ListNext, (loadBalancer) =>
                     {
-                        var retrieved = client.LoadBalancers.Get(loadBalancer.Name);
-                        AssertLoadBalancersAreSame(loadBalancer, retrieved);
+                        //var retrieved = client.LoadBalancers.Get(loadBalancer.Name);
+                        //AssertLoadBalancersAreSame(loadBalancer, retrieved);
+
+                        NetworkCommon.ValidateBaseResources(loadBalancer);
+
+                        NetworkCommon.ValidateBaseResourceTenant(loadBalancer);
+
+                        Assert.NotNull(loadBalancer.PublicIpAddresses);
+                        foreach(string IpAddress in loadBalancer.PublicIpAddresses) {
+                            Assert.NotNull(IpAddress);
+                        }
                     });
+                }
+                else
+                {
+                    // Setup
                 }
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Getter not implemented")]
         public void TestGetLoadBalancers()
         {
             RunTest((client) =>
