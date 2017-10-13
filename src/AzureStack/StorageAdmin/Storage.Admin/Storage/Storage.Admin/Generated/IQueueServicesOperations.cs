@@ -19,9 +19,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// QueuesOperations operations.
+    /// QueueServicesOperations operations.
     /// </summary>
-    public partial interface IQueuesOperations
+    public partial interface IQueueServicesOperations
     {
         /// <summary>
         /// TODO

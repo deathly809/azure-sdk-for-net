@@ -96,9 +96,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         IFarmsOperations Farms { get; }
 
         /// <summary>
-        /// Gets the IQueuesOperations.
+        /// Gets the IQueueServicesOperations.
         /// </summary>
-        IQueuesOperations Queues { get; }
+        IQueueServicesOperations QueueServices { get; }
 
         /// <summary>
         /// Gets the IQuotasOperations.

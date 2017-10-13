@@ -20,7 +20,7 @@ namespace Storage.Tests
             Assert.NotNull(client.Blobs);
             Assert.NotNull(client.Containers);
             Assert.NotNull(client.Farms);
-            Assert.NotNull(client.Queues);
+            Assert.NotNull(client.QueueServices);
             Assert.NotNull(client.Quotas);
             Assert.NotNull(client.Shares);
             Assert.NotNull(client.StorageAccounts);

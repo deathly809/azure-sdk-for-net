@@ -101,9 +101,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public virtual IFarmsOperations Farms { get; private set; }
 
         /// <summary>
-        /// Gets the IQueuesOperations.
+        /// Gets the IQueueServicesOperations.
         /// </summary>
-        public virtual IQueuesOperations Queues { get; private set; }
+        public virtual IQueueServicesOperations QueueServices { get; private set; }
 
         /// <summary>
         /// Gets the IQuotasOperations.
@@ -330,7 +330,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             Blobs = new BlobsOperations(this);
             Containers = new ContainersOperations(this);
             Farms = new FarmsOperations(this);
-            Queues = new QueuesOperations(this);
+            QueueServices = new QueueServicesOperations(this);
             Quotas = new QuotasOperations(this);
             Shares = new SharesOperations(this);
             StorageAccounts = new StorageAccountsOperations(this);

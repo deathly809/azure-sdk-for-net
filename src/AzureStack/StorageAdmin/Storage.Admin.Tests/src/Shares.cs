@@ -15,6 +15,20 @@ namespace Storage.Tests
             else
             {
                 ValidateShare(found);
+                Assert.Equal(expected.FreeCapacity, found.FreeCapacity);
+                Assert.Equal(expected.HealthStatus, found.HealthStatus);
+                Assert.Equal(expected.Id, found.Id);
+                Assert.Equal(expected.Location, found.Location);
+                Assert.Equal(expected.Name, found.Name);
+                Assert.Equal(expected.ShareName, found.ShareName);
+                foreach(var expectedTag in expected.Tags)
+                {
+                    Assert.True(found.Tags.ContainsKey(expectedTag.Key));
+                }
+                Assert.Equal(expected.TotalCapacity, found.TotalCapacity);
+                Assert.Equal(expected.Type, found.Type);
+                Assert.Equal(expected.UncPath, found.UncPath);
+                Assert.Equal(expected.UsedCapacity, found.UsedCapacity);
             }
         }
 
@@ -24,6 +38,7 @@ namespace Storage.Tests
             Assert.NotNull(share.FreeCapacity);
             Assert.NotNull(share.HealthStatus);
             Assert.NotNull(share.Id);
+            Assert.NotNull(share.Location);
             Assert.NotNull(share.Name);
             Assert.NotNull(share.ShareName);
             Assert.NotNull(share.Tags);
@@ -73,26 +88,9 @@ namespace Storage.Tests
             });
         }
 
-        [Fact]
-        public void ListAllShareMetricDefinitionsOData()
-        {
-            RunTest((client) => {
-                // var result = client.Shares.ListMetricDefinitions(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
-            });
-        }
 
         [Fact]
         public void ListAllShareMetricsDefinitions()
-        {
-            RunTest((client) => {
-                // var result = client.Shares.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
-            });
-        }
-
-        [Fact]
-        public void ListAllShareMetricsOData()
         {
             RunTest((client) => {
                 // var result = client.Shares.ListMetrics(Location);

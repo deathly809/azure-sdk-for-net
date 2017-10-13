@@ -23,12 +23,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// QueuesOperations operations.
+    /// QueueServicesOperations operations.
     /// </summary>
-    internal partial class QueuesOperations : IServiceOperations<StorageAdminClient>, IQueuesOperations
+    internal partial class QueueServicesOperations : IServiceOperations<StorageAdminClient>, IQueueServicesOperations
     {
         /// <summary>
-        /// Initializes a new instance of the QueuesOperations class.
+        /// Initializes a new instance of the QueueServicesOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
@@ -36,7 +36,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        internal QueuesOperations(StorageAdminClient client)
+        internal QueueServicesOperations(StorageAdminClient client)
         {
             if (client == null)
             {

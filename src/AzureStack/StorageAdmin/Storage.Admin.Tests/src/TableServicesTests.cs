@@ -59,15 +59,6 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void ListAllTableServiceMetricDefinitionsOData()
-        {
-            RunTest((client) => {
-                // var result = client.TableServices.ListMetricDefinitions(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllTableServiceMetricDefinitions.txt");
-            });
-        }
-
-        [Fact]
         public void ListAllTableServiceMetricsDefinitions()
         {
             RunTest((client) => {
