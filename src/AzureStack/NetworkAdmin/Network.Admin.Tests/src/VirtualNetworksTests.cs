@@ -11,23 +11,68 @@ namespace Network.Tests
 {
     public class VirtualNetworksTests : NetworkTestBase
     {
+        private void AssertVirtualNetworksAreSame(VirtualNetwork expected, VirtualNetwork found)
+        {
+            if (expected == null)
+            {
+                Assert.Null(found);
+            }
+            else
+            {
+                Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
+            }
+        }
+
+        private void ValidateConfigurationState(VirtualNetworkConfigurationState state) 
+        {
+            Assert.NotNull(state);
+            Assert.NotNull(state.Status);
+            Assert.NotNull(state.LastUpdatedTime);
+            Assert.NotNull(state.VirtualNetworkInterfaceErrors);
+            Assert.NotNull(state.HostErrors);
+        }
+
         [Fact]
         public void TestGetAllVirtualNetworks()
         {
             RunTest((client) =>
             {
                 var networks = client.VirtualNetworks.List();
+                Common.MapOverIPage(networks, client.VirtualNetworks.ListNext, (network) =>
+                {
+                    // var retrieved = client.VirtualNetworks.Get(network.Name);
+                    // AssertVirtualNetworksAreSame(network, retrieved);
+                    NetworkCommon.ValidateBaseResources(network);
+
+                    NetworkCommon.ValidateBaseResourceTenant(network);
+
+                    ValidateConfigurationState(network.ConfigurationState);
+                });
+
             });
         }
 
-        [Fact(Skip = "Testing")]
+        [Fact(Skip = "Not implemented")]
         public void TestGetVirtualNetworks()
         {
             RunTest((client) =>
             {
                 var network = client.VirtualNetworks.List().GetFirst();
+                if (network != null)
+                {
+                    var retrieved = client.VirtualNetworks.Get(network.Name);
+                    AssertVirtualNetworksAreSame(network, retrieved);
+                }
+            });
+        }
 
-                client.VirtualNetworks.Get(network.Name);
+        [Fact(Skip = "Not implemented")]
+        public void TestGetVirtualNetworksInvalid()
+        {
+            RunTest((client) =>
+            {
+                var network = client.VirtualNetworks.Get("InvalidVirtualNetwork");
+                Assert.Null(network);
             });
         }
     }

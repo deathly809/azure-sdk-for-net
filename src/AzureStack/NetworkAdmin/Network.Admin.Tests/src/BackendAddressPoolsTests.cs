@@ -69,5 +69,11 @@ namespace Network.Tests
                 }
             });
         }
+        [Fact(Skip = "Get isn't implemented")]
+        public void TestGetInvalidBackendAddressPool()
+        {
+            var pool = client.BackendAddressPools.Get("InvalidBackendAddressPool");
+            Assert.Null(pool);
+        }
     }
 }

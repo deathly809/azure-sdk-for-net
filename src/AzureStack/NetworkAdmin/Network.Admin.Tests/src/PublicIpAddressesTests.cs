@@ -40,5 +40,14 @@ namespace Network.Tests
                 }
             });
         }
+
+        [Fact(Skip = "Not implemented")]
+        public void TestGetPublicIpAddress()
+        {
+            RunTest((client) =>
+            {
+                var addresses = client.PublicIPAddresses.Get("192.168.102.32");
+            });
+        }
     }
 }

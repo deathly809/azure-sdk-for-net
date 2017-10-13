@@ -26,9 +26,9 @@ namespace Network.Tests
             {
                 Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
 
+                Assert.True(NetworkCommon.CheckBaseResourceTenantAreSame(expected, found));
+
                 Assert.Equal(expected.PublicIpAddresses, found.PublicIpAddresses);
-                Assert.Equal(expected.SubscriptionId, found.SubscriptionId);
-                Assert.Equal(expected.TenantResourceUri, found.TenantResourceUri);
             }
         }
 

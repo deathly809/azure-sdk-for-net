@@ -12,12 +12,43 @@ namespace Network.Tests
     public class OperationsTests : NetworkTestBase
     {
 
-        [Fact(Skip = "Need to investigate operationId")]
-        public void TestGetOperations()
+        [Fact]
+        public void TestGetOperationsInvalidOperationId()
         {
             RunTest((client) =>
             {
-                var operation = client.Operations.Get(Location, 1);
+                var operation = client.Operations.Get(Location, "NonExistantId");
+                Assert.Null(operation);
+            });
+        }
+
+        [Fact]
+        public void TestGetOperationsInvalidLocation()
+        {
+            RunTest((client) =>
+            {
+                var operation = client.Operations.Get("InvalidLocation", "NonExistantId");
+                Assert.Null(operation);
+            });
+        }
+
+        [Fact]
+        public void TestGetOperationResultssInvalidOperationId()
+        {
+            RunTest((client) =>
+            {
+                var operation = client.OperationResults.Get(Location, "NonExistantId");
+                Assert.Null(operation);
+            });
+        }
+
+        [Fact]
+        public void TestGetOperationResultsInvalidLocation()
+        {
+            RunTest((client) =>
+            {
+                var operation = client.OperationResults.Get("InvalidLocation", "NonExistantId");
+                Assert.Null(operation);
             });
         }
     }

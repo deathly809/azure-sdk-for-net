@@ -10,7 +10,8 @@ namespace Network.Tests {
     
     class NetworkCommon {
 
-        public static bool CheckBaseResourcesAreSame(Resource expected, Resource found) {
+        public static bool CheckBaseResourcesAreSame(Resource expected, Resource found)
+        {
             if (expected == null) return found == null;
             return expected.Id == found.Id &&
                 expected.Location == found.Location &&
@@ -18,7 +19,8 @@ namespace Network.Tests {
                 expected.Type == found.Type;
         }
 
-        public static bool ValidateResource(Resource resource) {
+        public static bool ValidateResource(Resource resource)
+        {
             return resource != null &&
                 resource.Id != null &&
                 resource.Location != null &&
@@ -38,6 +40,17 @@ namespace Network.Tests {
             return tenant != null &&
                 tenant.SubscriptionId == null &&
                 tenant.TenantResourceUri != null;
+        }
+
+        public static bool CheckBaseResourceTenantAreSame(ResourceTenant expected, ResourceTenant found)
+        {
+            if (expected == null)
+            {
+                return found == null;
+            }
+            return expected.ProvisioningState == found.ProvisioningState &&
+                expected.SubscriptionId == found.SubscriptionId &&
+                expected.TenantResourceUri == found.TenantResourceUri;
         }
 
     }

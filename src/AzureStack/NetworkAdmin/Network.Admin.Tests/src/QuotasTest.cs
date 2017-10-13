@@ -3,6 +3,7 @@
 // license information.
 //
 
+using System;
 using System.Threading;
 using Microsoft.AzureStack.Management.Network.Admin;
 using Microsoft.AzureStack.Management.Network.Admin.Models;
@@ -87,24 +88,57 @@ namespace Network.Tests
                 var networkQuotaName = "TestQuotaForRemoval";
                 var newNetworkQuota = CreateTestNetworkQuota();
 
+                Console.WriteLine("Checking for existing quota...");
                 var retrieved = client.Quotas.Get(Location, networkQuotaName);
                 if (retrieved != null)
                 {
                     // Delete quota
+                    Console.WriteLine("Deleting quota...");
                     client.Quotas.Delete(Location, networkQuotaName);
-                    Thread.Sleep(60000);
+                    Thread.Sleep(20000);
                 }
 
+                Console.WriteLine("Creating new test quota...");
                 var quota = client.Quotas.Create(Location, networkQuotaName, newNetworkQuota);
                 var created = client.Quotas.Get(Location, networkQuotaName);
 
                 AssertQuotasAreSame(quota, created);
 
+                Console.WriteLine("Deleting quota...");
                 client.Quotas.Delete(Location, networkQuotaName);
-                Thread.Sleep(60000);
+                Thread.Sleep(20000);
 
                 var deleted = client.Quotas.Get(Location, networkQuotaName);
                 Assert.Null(deleted);
+            });
+        }
+
+        [Fact]
+        public void TestGetQuotaInvalid()
+        {
+            RunTest((client) =>
+            {
+                var quota = client.Quotas.Get(Location, "NonExistantQuota");
+                Assert.Null(quota);
+            });
+        }
+        [Fact]
+        public void TestGetQuotaInvalidLocation()
+        {
+            RunTest((client) =>
+            {
+                var quota = client.Quotas.Get("InvalidateLocation", "NonExistantQuota");
+                Assert.Null(quota);
+            });
+        }
+
+        [Fact(Skip = "BUG 14218404")]
+        public void TestGetAllQuotasInvalidLocation()
+        {
+            RunTest((client) =>
+            {
+                var quotas = client.Quotas.List("InvalidLocation");
+                Assert.Null(quotas);
             });
         }
     }

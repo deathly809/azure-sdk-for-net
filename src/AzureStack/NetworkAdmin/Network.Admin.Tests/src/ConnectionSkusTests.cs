@@ -51,5 +51,34 @@ namespace Network.Tests
                 }
             });
         }
+
+        [Fact]
+        public void TestGetInvalidConnectionSku()
+        {
+            RunTest((client) =>
+            {
+                var sku = client.ConnectionSkus.Get(Location, "NonExistantConnectionSku");
+                Assert.Null(null);
+            });
+        }
+
+        [Fact]
+        public void TestGetInvalidConnectionSkuLocation()
+        {
+            RunTest((client) =>
+            {
+                var sku = client.ConnectionSkus.Get("InvalidLocation", "NonExistantConnectionSku");
+                Assert.Null(sku);
+            });
+        }
+
+        public void TestListInvalidConnectionSkuLocation()
+        {
+            RunTest((client) =>
+            {
+                var skus = client.ConnectionSkus.List("InvalidLocation");
+                Assert.True(skus == null);
+            });
+        }
     }
 }
