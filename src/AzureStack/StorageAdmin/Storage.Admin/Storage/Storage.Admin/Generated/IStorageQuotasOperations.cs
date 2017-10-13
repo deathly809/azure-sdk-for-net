@@ -19,9 +19,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// QuotasOperations operations.
+    /// StorageQuotasOperations operations.
     /// </summary>
-    public partial interface IQuotasOperations
+    public partial interface IStorageQuotasOperations
     {
         /// <summary>
         /// Create or update an existing storage quota
@@ -33,7 +33,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the quota.
         /// </param>
         /// <param name='parameters'>
-        /// parameters used to create or update storage quota
+        /// Parameters used to create or update storage quota
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

@@ -101,9 +101,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         IQueueServicesOperations QueueServices { get; }
 
         /// <summary>
-        /// Gets the IQuotasOperations.
+        /// Gets the IStorageQuotasOperations.
         /// </summary>
-        IQuotasOperations Quotas { get; }
+        IStorageQuotasOperations StorageQuotas { get; }
 
         /// <summary>
         /// Gets the ISharesOperations.

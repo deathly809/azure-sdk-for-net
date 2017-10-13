@@ -29,7 +29,7 @@ namespace Storage.Tests
         [Fact]
         public void ListAllStorageQuotas() {
             RunTest((client) => {
-                var result = client.Quotas.List(Location);
+                var result = client.StorageQuotas.List(Location);
                 Common.WriteIEnumerableToFile(result, "ListAllStorageQuotas.txt");
             });
         }
@@ -37,8 +37,8 @@ namespace Storage.Tests
         [Fact]
         public void GetStorageQuota() {
             RunTest((client) => {
-                var result = client.Quotas.List(Location).First();
-                var retrieved = client.Quotas.Get(Location, result.Name.Replace(Location + "/", ""));
+                var result = client.StorageQuotas.List(Location).First();
+                var retrieved = client.StorageQuotas.Get(Location, result.Name.Replace(Location + "/", ""));
                 ValidateQuota(retrieved);
             });
         }
@@ -46,10 +46,10 @@ namespace Storage.Tests
         [Fact]
         public void GetAllStorageQuotas() {
             RunTest((client) => {
-                var results = client.Quotas.List(Location);
+                var results = client.StorageQuotas.List(Location);
                 foreach(var result in results)
                 {
-                    var retrieved = client.Quotas.Get(Location, result.Name.Replace(Location + "/", ""));
+                    var retrieved = client.StorageQuotas.Get(Location, result.Name.Replace(Location + "/", ""));
                     AssertAreEqual(result, retrieved);
                 }
             });
@@ -59,21 +59,21 @@ namespace Storage.Tests
         public void CreateQuota() {
             RunTest((client) => {
                 var name = "TestCreateQuota";
-                IgnoreExceptions(() => client.Quotas.Delete(Location, name));
+                IgnoreExceptions(() => client.StorageQuotas.Delete(Location, name));
 
                 var parameters = new StorageQuotaParameters()
                 {
                     CapacityInGb = -100000000,
                     NumberOfStorageAccounts = -1000000000
                 };
-                var retrieved = client.Quotas.CreateOrUpdate(Location, name, parameters);
+                var retrieved = client.StorageQuotas.CreateOrUpdate(Location, name, parameters);
 
                 Assert.NotNull(retrieved);
                 Assert.Equal(parameters.CapacityInGb, retrieved.CapacityInGb);
                 Assert.Equal(parameters.NumberOfStorageAccounts, retrieved.NumberOfStorageAccounts);
-                retrieved = client.Quotas.Get(Location, name);
+                retrieved = client.StorageQuotas.Get(Location, name);
 
-                IgnoreExceptions(() => client.Quotas.Delete(Location, name));
+                IgnoreExceptions(() => client.StorageQuotas.Delete(Location, name));
             });
         }
 
@@ -81,26 +81,26 @@ namespace Storage.Tests
         public void UpdateQuota() {
             RunTest((client) => {
                 var quotaName = "TestUpdateQuota";
-                IgnoreExceptions(() => client.Quotas.Delete(Location, quotaName));
+                IgnoreExceptions(() => client.StorageQuotas.Delete(Location, quotaName));
 
                 var parameters = new StorageQuotaParameters()
                 {
                     CapacityInGb = 50,
                     NumberOfStorageAccounts = 100
                 };
-                var retrieved = client.Quotas.CreateOrUpdate(Location, quotaName, parameters);
+                var retrieved = client.StorageQuotas.CreateOrUpdate(Location, quotaName, parameters);
                 ValidateQuota(retrieved);
                 Assert.Equal(parameters.CapacityInGb, retrieved.CapacityInGb);
                 Assert.Equal(parameters.NumberOfStorageAccounts, retrieved.NumberOfStorageAccounts);
 
                 parameters.CapacityInGb = 123;
                 parameters.NumberOfStorageAccounts = 10;
-                retrieved = client.Quotas.CreateOrUpdate(Location, quotaName, parameters);
+                retrieved = client.StorageQuotas.CreateOrUpdate(Location, quotaName, parameters);
                 ValidateQuota(retrieved);
                 Assert.Equal(parameters.CapacityInGb, retrieved.CapacityInGb);
                 Assert.Equal(parameters.NumberOfStorageAccounts, retrieved.NumberOfStorageAccounts);
 
-                IgnoreExceptions(() => client.Quotas.Delete(Location, quotaName));
+                IgnoreExceptions(() => client.StorageQuotas.Delete(Location, quotaName));
             });
         }
 
@@ -108,15 +108,15 @@ namespace Storage.Tests
         public void DeleteQuota() {
             RunTest((client) => {
                 var name = $"TestDeleteQuota";
-                IgnoreExceptions(() => client.Quotas.Delete(Location, name));
+                IgnoreExceptions(() => client.StorageQuotas.Delete(Location, name));
 
                 var parameters = new StorageQuotaParameters() 
                 {
                     CapacityInGb = 0,
                     NumberOfStorageAccounts = -1
                 };
-                IgnoreExceptions(() => client.Quotas.CreateOrUpdate(Location, name, parameters));
-                client.Quotas.Delete(Location, name);
+                IgnoreExceptions(() => client.StorageQuotas.CreateOrUpdate(Location, name, parameters));
+                client.StorageQuotas.Delete(Location, name);
             });
         }
     }

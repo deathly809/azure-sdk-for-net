@@ -23,12 +23,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// QuotasOperations operations.
+    /// StorageQuotasOperations operations.
     /// </summary>
-    internal partial class QuotasOperations : IServiceOperations<StorageAdminClient>, IQuotasOperations
+    internal partial class StorageQuotasOperations : IServiceOperations<StorageAdminClient>, IStorageQuotasOperations
     {
         /// <summary>
-        /// Initializes a new instance of the QuotasOperations class.
+        /// Initializes a new instance of the StorageQuotasOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
@@ -36,7 +36,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        internal QuotasOperations(StorageAdminClient client)
+        internal StorageQuotasOperations(StorageAdminClient client)
         {
             if (client == null)
             {
@@ -60,7 +60,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the quota.
         /// </param>
         /// <param name='parameters'>
-        /// parameters used to create or update storage quota
+        /// Parameters used to create or update storage quota
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
