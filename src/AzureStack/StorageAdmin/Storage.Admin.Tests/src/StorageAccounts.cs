@@ -8,7 +8,7 @@ namespace Storage.Tests
 {
     public class StorageAccountsTests : StorageTestBase
     {
-        private void AssertStorageAccountsAreSame(StorageAccount expected, StorageAccount found) {
+        private void AssertAreEqual(StorageAccount expected, StorageAccount found) {
             if (expected == null)
             {
                 Assert.NotNull(found);

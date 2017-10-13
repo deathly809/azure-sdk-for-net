@@ -7,7 +7,7 @@ namespace Storage.Tests
 {
     public class StorageQuotasTests : StorageTestBase
     {
-        private void AssertStorageQuotasAreSame(StorageQuota expected, StorageQuota found) {
+        private void AssertAreEqual(StorageQuota expected, StorageQuota found) {
             if (expected == null)
             {
                 Assert.NotNull(found);
@@ -50,7 +50,7 @@ namespace Storage.Tests
                 foreach(var result in results)
                 {
                     var retrieved = client.Quotas.Get(Location, result.Name.Replace(Location + "/", ""));
-                    AssertStorageQuotasAreSame(result, retrieved);
+                    AssertAreEqual(result, retrieved);
                 }
             });
         }

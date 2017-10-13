@@ -12,7 +12,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Azure.OData;
     using Models;
     using System.Threading;
     using System.Threading.Tasks;
@@ -120,12 +119,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
-            public static IPage<Container> List(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<Container> odataQuery = default(ODataQuery<Container>))
+            public static IPage<Container> List(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName)
             {
-                return operations.ListAsync(resourceGroupName, farmId, shareName, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -143,15 +139,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Container>> ListAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<Container> odataQuery = default(ODataQuery<Container>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Container>> ListAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, shareName, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -172,12 +165,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
-            public static IPage<Share> ListDestinationShares(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<Share> odataQuery = default(ODataQuery<Share>))
+            public static IPage<Share> ListDestinationShares(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName)
             {
-                return operations.ListDestinationSharesAsync(resourceGroupName, farmId, shareName, odataQuery).GetAwaiter().GetResult();
+                return operations.ListDestinationSharesAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -195,15 +185,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Share>> ListDestinationSharesAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<Share> odataQuery = default(ODataQuery<Share>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Share>> ListDestinationSharesAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListDestinationSharesWithHttpMessagesAsync(resourceGroupName, farmId, shareName, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListDestinationSharesWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

@@ -7,7 +7,7 @@ namespace Storage.Tests
 {
     public class TableServicesTests : StorageTestBase
     {
-        private void AssertTableServicesAreSame(TableService expected, TableService found) {
+        private void AssertAreEqual(TableService expected, TableService found) {
             if (expected == null)
             {
                 Assert.NotNull(found);
@@ -69,15 +69,6 @@ namespace Storage.Tests
 
         [Fact]
         public void ListAllTableServiceMetricsDefinitions()
-        {
-            RunTest((client) => {
-                // var result = client.TableServices.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllTableServiceMetricDefinitions.txt");
-            });
-        }
-
-        [Fact]
-        public void ListAllTableServiceMetricsOData()
         {
             RunTest((client) => {
                 // var result = client.TableServices.ListMetrics(Location);

@@ -12,7 +12,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Azure.OData;
     using Models;
     using System.Collections;
     using System.Collections.Generic;
@@ -89,9 +88,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='summary'>
         /// TODO
         /// </param>
-        /// <param name='odataQuery'>
-        /// OData parameters to apply to the operation.
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -107,7 +103,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<StorageAccount>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, bool summary, ODataQuery<StorageAccount> odataQuery = default(ODataQuery<StorageAccount>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<StorageAccount>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, bool summary, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get a specific storage account
         /// </summary>

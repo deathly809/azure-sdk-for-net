@@ -12,7 +12,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Azure.OData;
     using Models;
     using System.Collections;
     using System.Collections.Generic;
@@ -55,9 +54,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='farmId'>
         /// The name of the farm.
         /// </param>
-        /// <param name='odataQuery'>
-        /// OData parameters to apply to the operation.
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -73,16 +69,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsWithHttpMessagesAsync(string resourceGroupName, string farmId, ODataQuery<MetricDefinition> odataQuery = default(ODataQuery<MetricDefinition>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
         /// <param name='farmId'>
         /// The name of the farm.
         /// </param>
-        /// <param name='odataQuery'>
-        /// OData parameters to apply to the operation.
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -98,7 +91,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<Metric>>> ListMetricsWithHttpMessagesAsync(string resourceGroupName, string farmId, ODataQuery<Metric> odataQuery = default(ODataQuery<Metric>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Metric>>> ListMetricsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

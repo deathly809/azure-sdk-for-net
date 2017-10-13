@@ -7,7 +7,7 @@ namespace Storage.Tests
 {
     public class SharesTests : StorageTestBase
     {
-        private void AssertSharesAreSame(Share expected, Share found) {
+        private void AssertAreEqual(Share expected, Share found) {
             if (expected == null)
             {
                 Assert.NotNull(found);
@@ -34,47 +34,69 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void GetTableService()
+        public void GetShare()
         {
             RunTest((client) => {
-             //   var retrieved = client.TableServices.Get(Location);
-             //   AssertTableServicesAreSame(result, retrieved);
+                //   var retrieved = client.Shares.Get(Location);
+                //   AssertSharesAreSame(result, retrieved);
             });
         }
 
         [Fact]
-        public void ListAllTableServiceMetricDefinitions()
+        public void GetAllShares()
         {
             RunTest((client) => {
-               // var result = client.TableServices.ListMetricDefinitions(Location);
-               // Common.WriteIEnumerableToFile(result, "ListAllTableServiceMetricDefinitions.txt");
+                //var results = client.Shares.List(Location);
+                //foreach (var result in results)
+                //{
+                //    var retrieved = client.Shares.Get(Location, result.Name.Replace(Location + "/", ""));
+                //    AssertSharesAreSame(result, retrieved);
+                //}
             });
         }
 
         [Fact]
-        public void ListAllTableServiceMetricDefinitionsOData()
+        public void ListAllShares()
         {
             RunTest((client) => {
-                // var result = client.TableServices.ListMetricDefinitions(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllTableServiceMetricDefinitions.txt");
+                /*      var result = client.Shares.List(Location);
+                        Common.WriteIEnumerableToFile(result, "ListAllShares.txt"); */
             });
         }
 
         [Fact]
-        public void ListAllTableServiceMetricsDefinitions()
+        public void ListAllShareMetricDefinitions()
         {
             RunTest((client) => {
-                // var result = client.TableServices.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllTableServiceMetricDefinitions.txt");
+               // var result = client.Shares.ListMetricDefinitions(Location);
+               // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
             });
         }
 
         [Fact]
-        public void ListAllTableServiceMetricsOData()
+        public void ListAllShareMetricDefinitionsOData()
         {
             RunTest((client) => {
-                // var result = client.TableServices.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllTableServiceMetricDefinitions.txt");
+                // var result = client.Shares.ListMetricDefinitions(Location);
+                // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
+            });
+        }
+
+        [Fact]
+        public void ListAllShareMetricsDefinitions()
+        {
+            RunTest((client) => {
+                // var result = client.Shares.ListMetrics(Location);
+                // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
+            });
+        }
+
+        [Fact]
+        public void ListAllShareMetricsOData()
+        {
+            RunTest((client) => {
+                // var result = client.Shares.ListMetrics(Location);
+                // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
             });
         }
     }

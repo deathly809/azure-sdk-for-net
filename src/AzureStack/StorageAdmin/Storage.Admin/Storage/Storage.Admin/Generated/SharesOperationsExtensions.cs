@@ -12,7 +12,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Azure.OData;
     using Models;
     using System.Threading;
     using System.Threading.Tasks;
@@ -34,12 +33,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
-            public static IPage<Share> List(this ISharesOperations operations, string resourceGroupName, string farmId, ODataQuery<Share> odataQuery = default(ODataQuery<Share>))
+            public static IPage<Share> List(this ISharesOperations operations, string resourceGroupName, string farmId)
             {
-                return operations.ListAsync(resourceGroupName, farmId, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -54,15 +50,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Share>> ListAsync(this ISharesOperations operations, string resourceGroupName, string farmId, ODataQuery<Share> odataQuery = default(ODataQuery<Share>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Share>> ListAsync(this ISharesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -83,12 +76,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
-            public static IPage<Metric> ListMetrics(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<Acquisition> odataQuery = default(ODataQuery<Acquisition>))
+            public static IPage<Metric> ListMetrics(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
-                return operations.ListMetricsAsync(resourceGroupName, farmId, shareName, odataQuery).GetAwaiter().GetResult();
+                return operations.ListMetricsAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -106,15 +96,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Metric>> ListMetricsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<Acquisition> odataQuery = default(ODataQuery<Acquisition>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Metric>> ListMetricsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListMetricsWithHttpMessagesAsync(resourceGroupName, farmId, shareName, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListMetricsWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -135,12 +122,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
-            public static IPage<MetricDefinition> ListMetricDefinitions(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<MetricDefinition> odataQuery = default(ODataQuery<MetricDefinition>))
+            public static IPage<MetricDefinition> ListMetricDefinitions(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
-                return operations.ListMetricDefinitionsAsync(resourceGroupName, farmId, shareName, odataQuery).GetAwaiter().GetResult();
+                return operations.ListMetricDefinitionsAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -158,15 +142,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, ODataQuery<MetricDefinition> odataQuery = default(ODataQuery<MetricDefinition>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListMetricDefinitionsWithHttpMessagesAsync(resourceGroupName, farmId, shareName, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListMetricDefinitionsWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

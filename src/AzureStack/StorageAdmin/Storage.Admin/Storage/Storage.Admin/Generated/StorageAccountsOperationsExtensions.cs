@@ -12,7 +12,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Azure.OData;
     using Models;
     using System.Threading;
     using System.Threading.Tasks;
@@ -123,12 +122,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='summary'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
-            public static IPage<StorageAccount> List(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary, ODataQuery<StorageAccount> odataQuery = default(ODataQuery<StorageAccount>))
+            public static IPage<StorageAccount> List(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary)
             {
-                return operations.ListAsync(resourceGroupName, farmId, summary, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, farmId, summary).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -146,15 +142,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='summary'>
             /// TODO
             /// </param>
-            /// <param name='odataQuery'>
-            /// OData parameters to apply to the operation.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<StorageAccount>> ListAsync(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary, ODataQuery<StorageAccount> odataQuery = default(ODataQuery<StorageAccount>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<StorageAccount>> ListAsync(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, summary, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, summary, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

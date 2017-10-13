@@ -12,7 +12,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Azure.OData;
     using Models;
     using System.Collections;
     using System.Collections.Generic;
@@ -86,9 +85,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='shareName'>
         /// TODO
         /// </param>
-        /// <param name='odataQuery'>
-        /// OData parameters to apply to the operation.
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -104,7 +100,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, ODataQuery<Container> odataQuery = default(ODataQuery<Container>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// List all containers under the given parameters
         /// </summary>
@@ -117,9 +113,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='shareName'>
         /// TODO
         /// </param>
-        /// <param name='odataQuery'>
-        /// OData parameters to apply to the operation.
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -135,7 +128,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<Share>>> ListDestinationSharesWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, ODataQuery<Share> odataQuery = default(ODataQuery<Share>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Share>>> ListDestinationSharesWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Migration a share
         /// </summary>
