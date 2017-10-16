@@ -95,7 +95,7 @@ namespace Network.Tests
                     // Delete quota
                     Console.WriteLine("Deleting quota...");
                     client.Quotas.Delete(Location, networkQuotaName);
-                    Thread.Sleep(20000);
+                    Thread.Sleep(10000);
                 }
 
                 Console.WriteLine("Creating new test quota...");
@@ -106,7 +106,7 @@ namespace Network.Tests
 
                 Console.WriteLine("Deleting quota...");
                 client.Quotas.Delete(Location, networkQuotaName);
-                Thread.Sleep(20000);
+                Thread.Sleep(10000);
 
                 var deleted = client.Quotas.Get(Location, networkQuotaName);
                 Assert.Null(deleted);

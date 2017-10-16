@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminLoadBalancers?api-version=2015-06-15",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvZmM4NDU2YWEtNDg0My00MDc5LWExNTItZjM0OTdjNjNhYTczL3Byb3ZpZGVycy9NaWNyb3NvZnQuTmV0d29yay5BZG1pbi9hZG1pbkxvYWRCYWxhbmNlcnM/YXBpLXZlcnNpb249MjAxNS0wNi0xNQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "212151dc-a5a9-4df5-af40-66a078603f2e"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Network.Admin.NetworkAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"name\": \"TestLoadBalancer\",\r\n      \"type\": \"Microsoft.Network.Admin/adminLoadBalancers\",\r\n      \"location\": \"\",\r\n      \"id\": \"/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminLoadBalancers/TestLoadBalancer\",\r\n      \"properties\": {\r\n        \"provisioningState\": \"Succeeded\",\r\n        \"publicIpAddresses\": [\r\n          \"192.168.102.32\"\r\n        ],\r\n        \"subscriptionId\": \"fc8456aa-4843-4079-a152-f3497c63aa73\",\r\n        \"tenantResourceUri\": \"/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/resourceGroups/GreatResource/providers/Microsoft.Network/loadBalancers/TestLoadBalancer\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "680"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Mon, 16 Oct 2017 18:08:44 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvUyxa1XrMofrt4Y4tlLGem2sPGft0Xzcq3XTGv0TL+7j0T3wUcdd5LSALAqgygW1wyWq8upljw/JFWeq3GSEpTBDgqeVIs5LfXGtSzaxFcQPEXFggSvgOTVlVFDkMW1Pw2+CM9Y1l8T5pAcWyiW9D"
+        ],
+        "x-ms-correlation-request-id": [
+          "5ae5c175-b83b-48b3-8e7c-088407ba944e"
+        ],
+        "x-ms-request-id": [
+          "80f50c50-d66c-4599-9129-d210681d043a"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14847"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20171016T180844Z:5ae5c175-b83b-48b3-8e7c-088407ba944e"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "SubscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73"
+  }
+}

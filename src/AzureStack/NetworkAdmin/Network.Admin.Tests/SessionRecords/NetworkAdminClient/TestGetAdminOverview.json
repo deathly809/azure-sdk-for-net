@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminOverview?api-version=2015-06-15",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvZmM4NDU2YWEtNDg0My00MDc5LWExNTItZjM0OTdjNjNhYTczL3Byb3ZpZGVycy9NaWNyb3NvZnQuTmV0d29yay5BZG1pbi9hZG1pbk92ZXJ2aWV3P2FwaS12ZXJzaW9uPTIwMTUtMDYtMTU=",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "a34c169f-2ce2-44fe-99cc-b2fd7669caf3"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Network.Admin.NetworkAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"name\": \"\",\r\n  \"type\": \"Microsoft.Network.Admin/adminOverview\",\r\n  \"location\": \"\",\r\n  \"id\": \"/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminOverview/\",\r\n  \"properties\": {\r\n    \"provisioningState\": \"Succeeded\",\r\n    \"virtualNetworkHealth\": {\r\n      \"totalResourceCount\": 1,\r\n      \"healthyResourceCount\": 0,\r\n      \"errorResourceCount\": 0,\r\n      \"warningResourceCount\": 0,\r\n      \"healthUnknownCount\": 1\r\n    },\r\n    \"loadBalancerMuxHealth\": {\r\n      \"totalResourceCount\": 1,\r\n      \"healthyResourceCount\": 1,\r\n      \"errorResourceCount\": 0,\r\n      \"warningResourceCount\": 0,\r\n      \"healthUnknownCount\": 0\r\n    },\r\n    \"virtualGatewayHealth\": {\r\n      \"totalResourceCount\": 1,\r\n      \"healthyResourceCount\": 1,\r\n      \"errorResourceCount\": 0,\r\n      \"warningResourceCount\": 0,\r\n      \"healthUnknownCount\": 0\r\n    },\r\n    \"publicIpAddressUsage\": {\r\n      \"totalResourceCount\": 255,\r\n      \"inUseResourceCount\": 32\r\n    },\r\n    \"backendIpUsage\": {\r\n      \"totalResourceCount\": 411,\r\n      \"inUseResourceCount\": 11\r\n    },\r\n    \"macAddressUsage\": {\r\n      \"totalResourceCount\": 3998720,\r\n      \"inUseResourceCount\": 3\r\n    }\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "1179"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Mon, 16 Oct 2017 18:08:21 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvm6mGWDATwkt7GaL9gj/YdWecIQyACFSZI19wDOTXQuH4YUyMgbiVlYl29Zoz77dtIJfATjgZyYg2mguMWOeZjFYPAu4fUL9AgSTL4P2/WpAz4UMchWjO/YCXSOk43Qt8yR+QRCimqYPT8qnC9tnU"
+        ],
+        "x-ms-correlation-request-id": [
+          "0a97158c-498a-4010-9b75-480c00c9041e"
+        ],
+        "x-ms-request-id": [
+          "6ae6dc53-e16f-4cf4-aac3-2ea4fe6d2503"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14857"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20171016T180822Z:0a97158c-498a-4010-9b75-480c00c9041e"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "SubscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73"
+  }
+}

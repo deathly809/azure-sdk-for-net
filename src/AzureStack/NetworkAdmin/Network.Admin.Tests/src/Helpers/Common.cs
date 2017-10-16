@@ -37,7 +37,6 @@ namespace Network.Tests
             return RetrieveObject(client, creds, new Uri(uri));
         }
 
-
         /// <summary>
         /// Allows tests to retrieve content from Azure Stack directly.
         /// </summary>
@@ -128,6 +127,75 @@ namespace Network.Tests
 
                 curr = getNext(curr.NextPageLink);
             }
+        }
+
+        /// <summary>
+        /// Write IPages to a given file from a starting IPage.
+        /// </summary>
+        /// <typeparam name="T">The type of object each IPage holds.</typeparam>  
+        /// <param name="start">The starting IPage.</param>
+        /// <param name="getNext">Given a valid URI returns the next IPage.</param>
+        /// <param name="filename">The name of the file.</param>
+        /// <param name="toString">Returns a string representation of object of type T.</param>
+        ///
+        public static void WriteIPagesToFile<T>(IPage<T> start, Func<string, IPage<T>> getNext, System.String filename, Func<T, string> toString = null)
+        {
+            using (System.IO.FileStream stream = System.IO.File.Create(filename))
+            {
+                WriteIPagesToStream(start, getNext, stream, toString);
+            }
+        }
+
+        /// <summary>
+        /// Write all element in an enumerable to a file on their own line.
+        /// </summary>
+        /// <typeparam name="T">Type held in Enumerable.</typeparam>
+        /// <param name="iter">Input IEnumerable.</param>
+        /// <param name="filename">The name of the file.</param>
+        /// <param name="toString">Returns a string representation of object of type T.  Default action is to call ToString.</param>
+        public static void WriteIEnumerableToFile<T>(IEnumerable<T> iter, System.String filename, Func<T, string> toString = null)
+        {
+            using (System.IO.FileStream stream = System.IO.File.Create(filename))
+            {
+                WriteIEnumerableToStream(iter, stream, toString);
+            }
+        }
+
+        /// <summary>
+        /// Write all IPage 
+        /// </summary>
+        /// <typeparam name="T">Type held in each page.</typeparam>
+        /// <param name="start">Starting page.</param>
+        /// <param name="getNext">Given a valid URI returns the next IPage.</param>
+        /// <param name="stream">The stream written to.</param>
+        /// <param name="toString">Returns a string representation of object of type T.  Default action is to call ToString.</param>
+        public static void WriteIPagesToStream<T>(IPage<T> start, Func<string, IPage<T>> getNext, System.IO.Stream stream, Func<T, string> toString = null)
+        {
+            toString = toString ?? delegate (T t) { return t.ToString(); };
+            StringBuilder sb = new StringBuilder();
+            Action<T> action = (obj) => { sb.Append(toString(obj)); sb.AppendLine(); };
+            MapOverIPage<T>(start, getNext, action);
+            var str = sb.ToString();
+            var bytes = Encoding.ASCII.GetBytes(sb.ToString());
+            stream.Write(bytes, 0, bytes.Length);
+        }
+
+        /// <summary>
+        /// Iterate through each item in the pages and write its string representation to a file.
+        /// The default action to get a string representation is to call toString on each object.
+        /// </summary>
+        /// <typeparam name="T">Type held in Enumerable.</typeparam>
+        /// <param name="iter">Input IEnumerable.</param>
+        /// <param name="stream">The stream written to.</param>
+        /// <param name="toString">Returns a string representation of object of type T.  Default action is to call ToString.</param>
+        public static void WriteIEnumerableToStream<T>(IEnumerable<T> iter, System.IO.Stream stream, Func<T, string> toString = null)
+        {
+            toString = toString ?? delegate (T t) { return t.ToString(); };
+            StringBuilder sb = new StringBuilder();
+            Action<T> action = (obj) => { sb.Append(toString(obj)); sb.AppendLine(); };
+            iter.ForEach(action);
+            var bytes = Encoding.ASCII.GetBytes(sb.ToString());
+            stream.Write(bytes, 0, bytes.Length);
         }
     }
 }

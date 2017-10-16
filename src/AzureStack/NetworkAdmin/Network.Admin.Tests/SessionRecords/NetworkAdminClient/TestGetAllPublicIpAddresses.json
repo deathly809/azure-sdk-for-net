@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminPublicIpAddresses?api-version=2015-06-15",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvZmM4NDU2YWEtNDg0My00MDc5LWExNTItZjM0OTdjNjNhYTczL3Byb3ZpZGVycy9NaWNyb3NvZnQuTmV0d29yay5BZG1pbi9hZG1pblB1YmxpY0lwQWRkcmVzc2VzP2FwaS12ZXJzaW9uPTIwMTUtMDYtMTU=",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "98adf8f0-15ef-491a-b2c2-c0e3da81a7a3"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Network.Admin.NetworkAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"name\": \"192.168.1.2\",\r\n      \"type\": \"Microsoft.Network.Admin/adminPublicIPAddresses\",\r\n      \"location\": \"\",\r\n      \"id\": \"/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminPublicIPAddresses/192.168.1.2\",\r\n      \"properties\": {\r\n        \"provisioningState\": \"Succeeded\",\r\n        \"ipAddress\": \"192.168.102.32\",\r\n        \"ipPool\": \"5e85a60b-1da2-45e2-8780-11617421a708\",\r\n        \"allocationMethod\": \"Static\",\r\n        \"subscriptionId\": \"fc8456aa-4843-4079-a152-f3497c63aa73\",\r\n        \"tenantResourceUri\": \"/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/resourceGroups/GreatResource/providers/Microsoft.Network/publicIPAddresses/192.168.1.2\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "743"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Mon, 16 Oct 2017 18:08:44 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvjWBXiF+vttfPoWo/T128ksKk5gefoyqGmm8ELhY1n9zxdyjXx9S+5rsXBE/CHntH9VSChhUPj16BsY7RnfENwrKVIDJ+xkxGOWFgOL8RGvP3T8zRaD5svvswuvuQiL7ZYudi7Yn8BXHXoqfQncCs"
+        ],
+        "x-ms-correlation-request-id": [
+          "0a064c65-0d35-4659-bc8c-43b6dff6976a"
+        ],
+        "x-ms-request-id": [
+          "8e696430-4a70-4c54-a51a-0a5c24531768"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14846"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20171016T180845Z:0a064c65-0d35-4659-bc8c-43b6dff6976a"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "SubscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73"
+  }
+}

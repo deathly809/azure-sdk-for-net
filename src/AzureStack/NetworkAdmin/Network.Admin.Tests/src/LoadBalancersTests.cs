@@ -11,10 +11,6 @@ namespace Network.Tests
 {
     public class LoadBalancers : NetworkTestBase
     {
-        private void Setup()
-        {
-            // TODO Create Load Balancer
-        }
 
         private void AssertLoadBalancersAreSame(LoadBalancer expected, LoadBalancer found)
         {
@@ -38,6 +34,7 @@ namespace Network.Tests
             RunTest((client) =>
             {
                 var balancers = client.LoadBalancers.List();
+                // This test should be using the SessionRecord which has an existing LoadBalancer created
                 if (balancers != null)
                 {
                     Common.MapOverIPage(balancers, client.LoadBalancers.ListNext, (loadBalancer) =>
@@ -54,10 +51,6 @@ namespace Network.Tests
                             Assert.NotNull(IpAddress);
                         }
                     });
-                }
-                else
-                {
-                    // Setup
                 }
             });
         }

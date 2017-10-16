@@ -11,10 +11,6 @@ namespace Network.Tests
 {
     public class PublicIPAddressesTests : NetworkTestBase
     {
-        private void Setup()
-        {
-            // TODO Setup public IP Address
-        }
 
         [Fact]
         public void TestGetAllPublicIpAddresses()
@@ -22,6 +18,8 @@ namespace Network.Tests
             RunTest((client) =>
             {
                 var addresses = client.PublicIPAddresses.List();
+
+                // This test should be using the SessionRecord which has an existing PublicIPAddress created
                 if (addresses != null)
                 {
                     Common.MapOverIPage(addresses, client.PublicIPAddresses.ListNext, (address) =>
@@ -33,10 +31,6 @@ namespace Network.Tests
                         Assert.NotNull(address.IpAddress);
                         Assert.NotNull(address.IpPool);
                     });
-                }
-                else
-                {
-                    // Setup
                 }
             });
         }
