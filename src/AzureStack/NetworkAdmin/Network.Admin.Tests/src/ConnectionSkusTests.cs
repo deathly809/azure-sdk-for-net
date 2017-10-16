@@ -62,16 +62,17 @@ namespace Network.Tests
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Defaulting to local")]
         public void TestGetInvalidConnectionSkuLocation()
         {
             RunTest((client) =>
             {
-                var sku = client.ConnectionSkus.Get("InvalidLocation", "NonExistantConnectionSku");
+                var sku = client.ConnectionSkus.Get("InvalidLocation", "Basic");
                 Assert.Null(sku);
             });
         }
 
+        [Fact(Skip = "Defaulting to local")]
         public void TestListInvalidConnectionSkuLocation()
         {
             RunTest((client) =>

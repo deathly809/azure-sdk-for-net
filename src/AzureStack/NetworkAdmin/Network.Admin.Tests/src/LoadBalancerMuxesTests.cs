@@ -11,16 +11,12 @@ namespace Network.Tests
 {
     public class LoadBalancerMuxesTests : NetworkTestBase
     {
-        [Fact(Skip = "Not officially supported")]
+        [Fact(Skip = "Not implemented")]
         public void TestGetAllLoadBalancerMuxes()
         {
             RunTest((client) =>
             {
                 var muxes = client.LoadBalancerMuxes.List();
-                if (muxes != null)
-                {
-                    Assert.NotNull(muxes.Id);
-                }
             });
         }
     }

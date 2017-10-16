@@ -13,6 +13,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -22,28 +24,74 @@ namespace Microsoft.AzureStack.Management.Network.Admin
     public static partial class UsageOperationsExtensions
     {
             /// <summary>
-            /// Return the usage meter.
+            /// Get the usage meter.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static UsageMeter Get(this IUsageOperations operations)
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='filter'>
+            /// OData filter parameter.
+            /// </param>
+            public static IList<UsageMeterModel> List(this IUsageOperations operations, string location, string filter = default(string))
             {
-                return operations.GetAsync().GetAwaiter().GetResult();
+                return operations.ListAsync(location, filter).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Return the usage meter.
+            /// Get the usage meter.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='filter'>
+            /// OData filter parameter.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<UsageMeter> GetAsync(this IUsageOperations operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<UsageMeterModel>> ListAsync(this IUsageOperations operations, string location, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(location, filter, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Get the usage meter.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IList<UsageMeterModel> ListNext(this IUsageOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Get the usage meter.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IList<UsageMeterModel>> ListNextAsync(this IUsageOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

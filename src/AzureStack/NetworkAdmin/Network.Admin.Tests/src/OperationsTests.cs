@@ -22,7 +22,7 @@ namespace Network.Tests
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Need a real operationId")]
         public void TestGetOperationsInvalidLocation()
         {
             RunTest((client) =>
@@ -33,7 +33,7 @@ namespace Network.Tests
         }
 
         [Fact]
-        public void TestGetOperationResultssInvalidOperationId()
+        public void TestGetOperationResultsInvalidOperationId()
         {
             RunTest((client) =>
             {
@@ -42,7 +42,7 @@ namespace Network.Tests
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Need a real operationId")]
         public void TestGetOperationResultsInvalidLocation()
         {
             RunTest((client) =>

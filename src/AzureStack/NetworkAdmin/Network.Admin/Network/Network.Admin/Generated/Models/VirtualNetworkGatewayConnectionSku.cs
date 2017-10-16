@@ -45,8 +45,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// pool.</param>
         /// <param name="provisioningState">The provisioning state.</param>
         /// <param name="resourceType">The resource type.</param>
-        /// <param name="capabilities">The capabilities of the connection
-        /// sku.</param>
+        /// <param name="capabilities">Key value pair of the capabilities of
+        /// the connection sku.</param>
         public VirtualNetworkGatewayConnectionSku(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IDictionary<string, string> metadata = default(IDictionary<string, string>), string provisioningState = default(string), string resourceType = default(string), IList<IDictionary<string, string>> capabilities = default(IList<IDictionary<string, string>>), string isDefault = default(string))
             : base(id, name, type, location, tags)
         {
@@ -82,7 +82,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// Gets or sets the capabilities of the connection sku.
+        /// Gets or sets key value pair of the capabilities of the connection
+        /// sku.
         /// </summary>
         [JsonProperty(PropertyName = "properties.capabilities")]
         public IList<IDictionary<string, string>> Capabilities { get; set; }

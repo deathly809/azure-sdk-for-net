@@ -122,12 +122,12 @@ namespace Network.Tests
                 Assert.Null(quota);
             });
         }
-        [Fact]
+        [Fact(Skip = "Defaulting to local")]
         public void TestGetQuotaInvalidLocation()
         {
             RunTest((client) =>
             {
-                var quota = client.Quotas.Get("InvalidateLocation", "NonExistantQuota");
+                var quota = client.Quotas.Get("InvalidateLocation", "Default Quota");
                 Assert.Null(quota);
             });
         }
