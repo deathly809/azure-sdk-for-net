@@ -29,10 +29,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the ContainerList class.
         /// </summary>
         /// <param name="value">List of Containers.</param>
-        public ContainerList(IList<Container> value = default(IList<Container>), string nextLink = default(string))
+        public ContainerList(IList<Container> value = default(IList<Container>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -46,11 +45,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<Container> Value { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }

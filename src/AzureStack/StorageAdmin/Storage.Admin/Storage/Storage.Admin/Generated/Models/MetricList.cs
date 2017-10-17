@@ -32,10 +32,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the MetricList class.
         /// </summary>
         /// <param name="value">List of metrics.</param>
-        public MetricList(IList<Metric> value = default(IList<Metric>), string nextLink = default(string))
+        public MetricList(IList<Metric> value = default(IList<Metric>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -49,11 +48,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<Metric> Value { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }

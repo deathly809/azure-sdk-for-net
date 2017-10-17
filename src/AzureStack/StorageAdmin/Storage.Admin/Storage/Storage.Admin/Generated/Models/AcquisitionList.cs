@@ -28,10 +28,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the AcquisitionList class.
         /// </summary>
-        public AcquisitionList(IList<Acquisition> value = default(IList<Acquisition>), string nextLink = default(string))
+        /// <param name="value">TODO</param>
+        public AcquisitionList(IList<Acquisition> value = default(IList<Acquisition>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -41,14 +41,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<Acquisition> Value { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }

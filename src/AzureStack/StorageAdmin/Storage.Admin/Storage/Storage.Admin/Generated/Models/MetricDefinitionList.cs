@@ -29,10 +29,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the MetricDefinitionList class.
         /// </summary>
         /// <param name="value">List of metric definition.</param>
-        public MetricDefinitionList(IList<MetricDefinition> value = default(IList<MetricDefinition>), string nextLink = default(string))
+        public MetricDefinitionList(IList<MetricDefinition> value = default(IList<MetricDefinition>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -46,11 +45,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<MetricDefinition> Value { get; private set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }

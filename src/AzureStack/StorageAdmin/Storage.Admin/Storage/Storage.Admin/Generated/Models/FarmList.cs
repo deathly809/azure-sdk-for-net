@@ -15,9 +15,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
-    /// <summary>
-    /// TODO
-    /// </summary>
     public partial class FarmList
     {
         /// <summary>
@@ -32,10 +29,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the FarmList class.
         /// </summary>
         /// <param name="value">TODO</param>
-        public FarmList(IList<Farm> value = default(IList<Farm>), string nextLink = default(string))
+        public FarmList(IList<Farm> value = default(IList<Farm>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -49,11 +45,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<Farm> Value { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }

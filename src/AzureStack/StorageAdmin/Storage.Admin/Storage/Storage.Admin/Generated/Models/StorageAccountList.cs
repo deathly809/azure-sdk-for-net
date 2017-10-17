@@ -15,9 +15,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
-    /// <summary>
-    /// List of storage accounts supported by the Storage resource provider.
-    /// </summary>
     public partial class StorageAccountList
     {
         /// <summary>
@@ -31,10 +28,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the StorageAccountList class.
         /// </summary>
-        public StorageAccountList(IList<StorageAccount> value = default(IList<StorageAccount>), string nextLink = default(string))
+        /// <param name="value">List of storage accounts supported by the
+        /// Storage resource provider.</param>
+        public StorageAccountList(IList<StorageAccount> value = default(IList<StorageAccount>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -44,14 +42,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets list of storage accounts supported by the Storage
+        /// resource provider.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<StorageAccount> Value { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }

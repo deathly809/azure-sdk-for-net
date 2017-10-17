@@ -29,10 +29,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the ShareList class.
         /// </summary>
         /// <param name="value">List of shares.</param>
-        public ShareList(IList<Share> value = default(IList<Share>), string nextLink = default(string))
+        public ShareList(IList<Share> value = default(IList<Share>))
         {
             Value = value;
-            NextLink = nextLink;
             CustomInit();
         }
 
@@ -46,11 +45,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public IList<Share> Value { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "nextLink")]
-        public string NextLink { get; set; }
 
     }
 }
