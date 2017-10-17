@@ -81,9 +81,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         IAcquisitionsOperations Acquisitions { get; }
 
         /// <summary>
-        /// Gets the IBlobsOperations.
+        /// Gets the IBlobServicesOperations.
         /// </summary>
-        IBlobsOperations Blobs { get; }
+        IBlobServicesOperations BlobServices { get; }
 
         /// <summary>
         /// Gets the IContainersOperations.

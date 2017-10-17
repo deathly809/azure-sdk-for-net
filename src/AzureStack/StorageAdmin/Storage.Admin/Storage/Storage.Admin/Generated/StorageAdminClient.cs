@@ -86,9 +86,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public virtual IAcquisitionsOperations Acquisitions { get; private set; }
 
         /// <summary>
-        /// Gets the IBlobsOperations.
+        /// Gets the IBlobServicesOperations.
         /// </summary>
-        public virtual IBlobsOperations Blobs { get; private set; }
+        public virtual IBlobServicesOperations BlobServices { get; private set; }
 
         /// <summary>
         /// Gets the IContainersOperations.
@@ -327,7 +327,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         private void Initialize()
         {
             Acquisitions = new AcquisitionsOperations(this);
-            Blobs = new BlobsOperations(this);
+            BlobServices = new BlobServicesOperations(this);
             Containers = new ContainersOperations(this);
             Farms = new FarmsOperations(this);
             QueueServices = new QueueServicesOperations(this);

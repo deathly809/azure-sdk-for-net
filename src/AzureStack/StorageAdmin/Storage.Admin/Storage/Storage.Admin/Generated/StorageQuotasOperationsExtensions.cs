@@ -13,8 +13,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
     using Models;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -155,7 +153,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='location'>
             /// Location of storage accounts.
             /// </param>
-            public static IEnumerable<StorageQuota> List(this IStorageQuotasOperations operations, string location)
+            public static StorageQuotaList List(this IStorageQuotasOperations operations, string location)
             {
                 return operations.ListAsync(location).GetAwaiter().GetResult();
             }
@@ -172,7 +170,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IEnumerable<StorageQuota>> ListAsync(this IStorageQuotasOperations operations, string location, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<StorageQuotaList> ListAsync(this IStorageQuotasOperations operations, string location, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(location, null, cancellationToken).ConfigureAwait(false))
                 {
