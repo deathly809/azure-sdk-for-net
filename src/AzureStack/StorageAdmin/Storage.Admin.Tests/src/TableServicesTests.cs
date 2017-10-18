@@ -21,7 +21,6 @@ namespace Storage.Tests
         private void ValidateTableService(TableService tableService)
         {
             Assert.NotNull(tableService);
-            Assert.NotNull(tableService.HealthStatus);
             Assert.NotNull(tableService.BackEndHttpListenPort);
             Assert.NotNull(tableService.FrontEndCallbackThreadsCount);
             Assert.NotNull(tableService.FrontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds);
@@ -38,6 +37,12 @@ namespace Storage.Tests
             Assert.NotNull(tableService.FrontEndThreadPoolBasedKeepAlivePercentage);
             Assert.NotNull(tableService.FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold);
             Assert.NotNull(tableService.FrontEndUseSlaTimeInAvailability);
+            Assert.NotNull(tableService.HealthStatus);
+            Assert.NotNull(tableService.Location);
+            Assert.NotNull(tableService.Name);
+            Assert.NotNull(tableService.Type);
+            Assert.NotNull(tableService.Version);
+            //Assert.NotNull(tableService.Tags);
         }
 
         [Fact]

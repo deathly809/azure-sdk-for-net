@@ -113,7 +113,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='filter'>
             /// TODO
             /// </param>
-            public static AcquisitionList List(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string))
+            public static IPage<Acquisition> List(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string))
             {
                 return operations.ListAsync(resourceGroupName, farmId, filter).GetAwaiter().GetResult();
             }
@@ -136,9 +136,43 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<AcquisitionList> ListAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Acquisition>> ListAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, filter, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Get a list of acquistions
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Acquisition> ListNext(this IAcquisitionsOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Get a list of acquistions
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Acquisition>> ListNextAsync(this IAcquisitionsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

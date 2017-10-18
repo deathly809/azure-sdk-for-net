@@ -27,6 +27,7 @@ namespace Storage.Tests
             Assert.NotNull(container.Containername);
             Assert.NotNull(container.ContainerState);
             Assert.NotNull(container.Sharename);
+            Assert.NotNull(container.UsedBytesInPrimaryVolume);
         }
 
         [Fact]

@@ -122,7 +122,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='summary'>
             /// TODO
             /// </param>
-            public static StorageAccountList List(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary)
+            public static IPage<StorageAccount> List(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary)
             {
                 return operations.ListAsync(resourceGroupName, farmId, summary).GetAwaiter().GetResult();
             }
@@ -145,7 +145,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<StorageAccountList> ListAsync(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<StorageAccount>> ListAsync(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, bool summary, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, summary, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -240,6 +240,40 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             public static async Task UndeleteAsync(this IStorageAccountsOperations operations, string resourceGroupName, string farmId, string accountId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 (await operations.UndeleteWithHttpMessagesAsync(resourceGroupName, farmId, accountId, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<StorageAccount> ListNext(this IStorageAccountsOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<StorageAccount>> ListNextAsync(this IStorageAccountsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
             }
 
     }

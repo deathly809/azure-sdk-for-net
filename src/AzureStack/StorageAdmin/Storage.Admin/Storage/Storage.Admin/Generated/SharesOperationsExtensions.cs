@@ -33,7 +33,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static ShareList List(this ISharesOperations operations, string resourceGroupName, string farmId)
+            public static IPage<Share> List(this ISharesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.ListAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
@@ -53,7 +53,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ShareList> ListAsync(this ISharesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Share>> ListAsync(this ISharesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -76,7 +76,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            public static MetricList ListMetrics(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
+            public static IPage<Metric> ListMetrics(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
                 return operations.ListMetricsAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
@@ -99,7 +99,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<MetricList> ListMetricsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Metric>> ListMetricsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListMetricsWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -122,7 +122,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            public static MetricDefinitionList ListMetricDefinitions(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
+            public static IPage<MetricDefinition> ListMetricDefinitions(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
                 return operations.ListMetricDefinitionsAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
@@ -145,7 +145,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<MetricDefinitionList> ListMetricDefinitionsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListMetricDefinitionsWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -194,6 +194,108 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             public static async Task<Share> GetAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Share> ListNext(this ISharesOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Share>> ListNextAsync(this ISharesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Metric> ListMetricsNext(this ISharesOperations operations, string nextPageLink)
+            {
+                return operations.ListMetricsNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Metric>> ListMetricsNextAsync(this ISharesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListMetricsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<MetricDefinition> ListMetricDefinitionsNext(this ISharesOperations operations, string nextPageLink)
+            {
+                return operations.ListMetricDefinitionsNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// TODO
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsNextAsync(this ISharesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListMetricDefinitionsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

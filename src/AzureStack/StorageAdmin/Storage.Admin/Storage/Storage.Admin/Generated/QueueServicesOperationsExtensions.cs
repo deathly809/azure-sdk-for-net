@@ -70,7 +70,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static MetricDefinitionList ListMetricDefinitions(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
+            public static IPage<MetricDefinition> ListMetricDefinitions(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.ListMetricDefinitionsAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
@@ -87,7 +87,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<MetricDefinitionList> ListMetricDefinitionsAsync(this IQueueServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsAsync(this IQueueServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListMetricDefinitionsWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -104,7 +104,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static MetricList ListMetrics(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
+            public static IPage<Metric> ListMetrics(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.ListMetricsAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
@@ -121,9 +121,65 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<MetricList> ListMetricsAsync(this IQueueServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Metric>> ListMetricsAsync(this IQueueServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListMetricsWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<MetricDefinition> ListMetricDefinitionsNext(this IQueueServicesOperations operations, string nextPageLink)
+            {
+                return operations.ListMetricDefinitionsNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsNextAsync(this IQueueServicesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListMetricDefinitionsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Metric> ListMetricsNext(this IQueueServicesOperations operations, string nextPageLink)
+            {
+                return operations.ListMetricsNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Metric>> ListMetricsNextAsync(this IQueueServicesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListMetricsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

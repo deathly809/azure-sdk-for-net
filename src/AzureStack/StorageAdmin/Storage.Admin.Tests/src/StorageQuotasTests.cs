@@ -24,13 +24,18 @@ namespace Storage.Tests
             Assert.NotNull(quota);
             Assert.NotNull(quota.CapacityInGb);
             Assert.NotNull(quota.NumberOfStorageAccounts);
+            Assert.NotNull(quota.Id);
+            Assert.NotNull(quota.Location);
+            Assert.NotNull(quota.Name);
+            Assert.NotNull(quota.Type);
+            //Assert.NotNull(quota.Tags);
         }
 
         [Fact]
         public void ListAllStorageQuotas() {
             RunTest((client) => {
                 var result = client.StorageQuotas.List(Location);
-                Common.WriteIEnumerableToFile(result, "ListAllStorageQuotas.txt");
+                Common.WriteIEnumerableToFile<StorageQuota>(result, "ListAllStorageQuotas.txt");
             });
         }
 

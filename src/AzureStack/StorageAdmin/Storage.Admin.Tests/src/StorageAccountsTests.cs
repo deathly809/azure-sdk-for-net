@@ -37,6 +37,24 @@ namespace Storage.Tests
             Assert.NotNull(account.CurrentOperation);
             Assert.NotNull(account.CustomDomain);
             //Assert.NotNull(account.DeletedTime);
+            Assert.NotNull(account.Id);
+            Assert.NotNull(account.Location);
+            Assert.NotNull(account.Name);
+            Assert.NotNull(account.Permissions);
+            Assert.NotNull(account.PrimaryEndpoints);
+            Assert.NotNull(account.PrimaryLocation);
+            Assert.NotNull(account.ProvisioningState);
+            Assert.NotNull(account.RecoveredTime);
+            Assert.NotNull(account.RecycledTime);
+            Assert.NotNull(account.ResourceAdminApiVersion);
+            Assert.NotNull(account.StatusOfPrimary);
+            //Assert.NotNull(account.Tags);
+            Assert.NotNull(account.TenantResourceGroupName);
+            Assert.NotNull(account.TenantStorageAccountName);
+            Assert.NotNull(account.TenantSubscriptionId);
+            Assert.NotNull(account.TenantViewId);
+            Assert.NotNull(account.Type);
+            Assert.NotNull(account.WacInternalState);
         }
 
         [Fact]

@@ -119,7 +119,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            public static ContainerList List(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName)
+            public static IPage<Container> List(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName)
             {
                 return operations.ListAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
@@ -142,7 +142,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ContainerList> ListAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Container>> ListAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -165,7 +165,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='shareName'>
             /// TODO
             /// </param>
-            public static ShareList ListDestinationShares(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName)
+            public static IPage<Share> ListDestinationShares(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName)
             {
                 return operations.ListDestinationSharesAsync(resourceGroupName, farmId, shareName).GetAwaiter().GetResult();
             }
@@ -188,7 +188,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ShareList> ListDestinationSharesAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Share>> ListDestinationSharesAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListDestinationSharesWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -255,6 +255,74 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             public static async Task<string> MigrateAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, string migrationIntent, int maxCount, int startIndex, MigrationParameters migrationParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.MigrateWithHttpMessagesAsync(resourceGroupName, farmId, shareName, migrationIntent, maxCount, startIndex, migrationParameters, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// List all containers under the given parameters
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Container> ListNext(this IContainersOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// List all containers under the given parameters
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Container>> ListNextAsync(this IContainersOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// List all containers under the given parameters
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<Share> ListDestinationSharesNext(this IContainersOperations operations, string nextPageLink)
+            {
+                return operations.ListDestinationSharesNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// List all containers under the given parameters
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<Share>> ListDestinationSharesNextAsync(this IContainersOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListDestinationSharesNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
