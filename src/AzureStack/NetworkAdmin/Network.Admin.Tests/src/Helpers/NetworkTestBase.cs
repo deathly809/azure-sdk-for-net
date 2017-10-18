@@ -28,7 +28,6 @@ namespace Network.Tests {
             // validate objects
             Assert.NotNull(client.BackendAddressPools);
             Assert.NotNull(client.ConnectionSkus);
-            Assert.NotNull(client.LoadBalancerMuxes);
             Assert.NotNull(client.LoadBalancers);
             Assert.NotNull(client.MacAddressPools);
             Assert.NotNull(client.Operations);

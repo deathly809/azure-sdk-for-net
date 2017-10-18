@@ -31,9 +31,12 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<VirtualNetwork> List(this IVirtualNetworksOperations operations, ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>))
+            /// <param name='inlineCount'>
+            /// OData inline count parameter.
+            /// </param>
+            public static IPage<VirtualNetwork> List(this IVirtualNetworksOperations operations, ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>), string inlineCount = default(string))
             {
-                return operations.ListAsync(odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(odataQuery, inlineCount).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -45,12 +48,15 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
+            /// <param name='inlineCount'>
+            /// OData inline count parameter.
+            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<VirtualNetwork>> ListAsync(this IVirtualNetworksOperations operations, ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<VirtualNetwork>> ListAsync(this IVirtualNetworksOperations operations, ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>), string inlineCount = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(odataQuery, inlineCount, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

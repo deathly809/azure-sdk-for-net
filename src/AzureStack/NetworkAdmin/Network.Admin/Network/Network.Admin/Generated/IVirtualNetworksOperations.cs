@@ -30,6 +30,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
         /// </param>
+        /// <param name='inlineCount'>
+        /// OData inline count parameter.
+        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
@@ -45,7 +48,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<VirtualNetwork>>> ListWithHttpMessagesAsync(ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<VirtualNetwork>>> ListWithHttpMessagesAsync(ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>), string inlineCount = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get a virtual networks.
         /// </summary>

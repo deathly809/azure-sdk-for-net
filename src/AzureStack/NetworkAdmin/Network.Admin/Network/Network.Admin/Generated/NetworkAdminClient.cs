@@ -96,11 +96,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         public virtual IConnectionSkusOperations ConnectionSkus { get; private set; }
 
         /// <summary>
-        /// Gets the ILoadBalancerMuxesOperations.
-        /// </summary>
-        public virtual ILoadBalancerMuxesOperations LoadBalancerMuxes { get; private set; }
-
-        /// <summary>
         /// Gets the ILoadBalancersOperations.
         /// </summary>
         public virtual ILoadBalancersOperations LoadBalancers { get; private set; }
@@ -345,7 +340,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             RotateEncryptionCertificate = new RotateEncryptionCertificateOperations(this);
             BackendAddressPools = new BackendAddressPoolsOperations(this);
             ConnectionSkus = new ConnectionSkusOperations(this);
-            LoadBalancerMuxes = new LoadBalancerMuxesOperations(this);
             LoadBalancers = new LoadBalancersOperations(this);
             MacAddressPools = new MacAddressPoolsOperations(this);
             Operations = new Operations(this);

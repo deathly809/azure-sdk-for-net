@@ -186,6 +186,43 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             }
 
             /// <summary>
+            /// Delete a quota by name.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='resourceName'>
+            /// Name of the resource.
+            /// </param>
+            public static void BeginDelete(this IQuotasOperations operations, string location, string resourceName)
+            {
+                operations.BeginDeleteAsync(location, resourceName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Delete a quota by name.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='resourceName'>
+            /// Name of the resource.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginDeleteAsync(this IQuotasOperations operations, string location, string resourceName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginDeleteWithHttpMessagesAsync(location, resourceName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
             /// List all quotas.
             /// </summary>
             /// <param name='operations'>

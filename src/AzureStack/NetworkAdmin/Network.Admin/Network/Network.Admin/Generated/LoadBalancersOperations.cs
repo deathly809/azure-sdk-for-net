@@ -57,6 +57,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
         /// </param>
+        /// <param name='inlineCount'>
+        /// OData inline count parameter.
+        /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -78,7 +81,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<LoadBalancer>>> ListWithHttpMessagesAsync(ODataQuery<LoadBalancer> odataQuery = default(ODataQuery<LoadBalancer>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<LoadBalancer>>> ListWithHttpMessagesAsync(ODataQuery<LoadBalancer> odataQuery = default(ODataQuery<LoadBalancer>), string inlineCount = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -96,6 +99,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
+                tracingParameters.Add("inlineCount", inlineCount);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
@@ -115,6 +119,10 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             if (Client.ApiVersion != null)
             {
                 _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersion)));
+            }
+            if (inlineCount != null)
+            {
+                _queryParameters.Add(string.Format("$inlineCount={0}", System.Uri.EscapeDataString(inlineCount)));
             }
             if (_queryParameters.Count > 0)
             {

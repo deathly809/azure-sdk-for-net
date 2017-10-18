@@ -50,7 +50,7 @@ namespace Network.Tests
             });
         }
 
-        [Fact]
+        [Fact (Skip = "BUG 14291235")]
         public void TestRotateEncryptionCertificate()
         {
             RunTest((client) =>

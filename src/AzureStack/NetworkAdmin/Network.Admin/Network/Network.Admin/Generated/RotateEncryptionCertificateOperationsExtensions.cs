@@ -46,5 +46,30 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 (await operations.PostWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
+            /// <summary>
+            /// Rotate the encryption certificate.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static void BeginPost(this IRotateEncryptionCertificateOperations operations)
+            {
+                operations.BeginPostAsync().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Rotate the encryption certificate.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginPostAsync(this IRotateEncryptionCertificateOperations operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginPostWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
     }
 }

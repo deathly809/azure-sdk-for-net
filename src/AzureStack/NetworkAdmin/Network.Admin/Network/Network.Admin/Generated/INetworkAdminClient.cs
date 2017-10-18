@@ -91,11 +91,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         IConnectionSkusOperations ConnectionSkus { get; }
 
         /// <summary>
-        /// Gets the ILoadBalancerMuxesOperations.
-        /// </summary>
-        ILoadBalancerMuxesOperations LoadBalancerMuxes { get; }
-
-        /// <summary>
         /// Gets the ILoadBalancersOperations.
         /// </summary>
         ILoadBalancersOperations LoadBalancers { get; }
