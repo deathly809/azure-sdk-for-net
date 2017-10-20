@@ -29,7 +29,6 @@ namespace Network.Tests {
             Assert.NotNull(client.BackendAddressPools);
             Assert.NotNull(client.ConnectionSkus);
             Assert.NotNull(client.LoadBalancers);
-            Assert.NotNull(client.MacAddressPools);
             Assert.NotNull(client.Operations);
             Assert.NotNull(client.PublicIPAddresses);
             Assert.NotNull(client.Quotas);

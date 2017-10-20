@@ -101,11 +101,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         public virtual ILoadBalancersOperations LoadBalancers { get; private set; }
 
         /// <summary>
-        /// Gets the IMacAddressPoolsOperations.
-        /// </summary>
-        public virtual IMacAddressPoolsOperations MacAddressPools { get; private set; }
-
-        /// <summary>
         /// Gets the IOperations.
         /// </summary>
         public virtual IOperations Operations { get; private set; }
@@ -341,7 +336,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             BackendAddressPools = new BackendAddressPoolsOperations(this);
             ConnectionSkus = new ConnectionSkusOperations(this);
             LoadBalancers = new LoadBalancersOperations(this);
-            MacAddressPools = new MacAddressPoolsOperations(this);
             Operations = new Operations(this);
             OperationResults = new OperationResultsOperations(this);
             PublicIPAddresses = new PublicIPAddressesOperations(this);

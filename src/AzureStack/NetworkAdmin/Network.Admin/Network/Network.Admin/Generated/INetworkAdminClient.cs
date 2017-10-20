@@ -96,11 +96,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         ILoadBalancersOperations LoadBalancers { get; }
 
         /// <summary>
-        /// Gets the IMacAddressPoolsOperations.
-        /// </summary>
-        IMacAddressPoolsOperations MacAddressPools { get; }
-
-        /// <summary>
         /// Gets the IOperations.
         /// </summary>
         IOperations Operations { get; }
