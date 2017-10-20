@@ -34,8 +34,33 @@ namespace Network.Tests
                 }
             });
         }
+        [Fact]
+        public void TestGetAllPublicIpAddressesOData()
+        {
+            RunTest((client) =>
+            {
+                Microsoft.Rest.Azure.OData.ODataQuery<PublicIpAddresses> odataQuery = new Microsoft.Rest.Azure.OData.ODataQuery<PublicIpAddresses>();
+                odataQuery.Top = 10;
 
-        [Fact(Skip = "Not implemented")]
+                var addresses = client.PublicIPAddresses.List(odataQuery);
+
+                // This test should be using the SessionRecord which has an existing PublicIPAddress created
+                if (addresses != null)
+                {
+                    Common.MapOverIPage(addresses, client.PublicIPAddresses.ListNext, (address) =>
+                    {
+                        NetworkCommon.ValidateBaseResources(address);
+
+                        NetworkCommon.ValidateBaseResourceTenant(address);
+
+                        Assert.NotNull(address.IpAddress);
+                        Assert.NotNull(address.IpPool);
+                    });
+                }
+            });
+        }
+
+                [Fact(Skip = "Not implemented")]
         public void TestGetPublicIpAddress()
         {
             RunTest((client) =>

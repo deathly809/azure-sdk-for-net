@@ -52,6 +52,29 @@ namespace Network.Tests
             });
         }
 
+        [Fact]
+        public void TestGetAllVirtualNetworksOData()
+        {
+            RunTest((client) =>
+            {
+                Microsoft.Rest.Azure.OData.ODataQuery<VirtualNetwork> odataQuery = new Microsoft.Rest.Azure.OData.ODataQuery<VirtualNetwork>();
+                odataQuery.Top = 10;
+
+                var networks = client.VirtualNetworks.List(odataQuery);
+                Common.MapOverIPage(networks, client.VirtualNetworks.ListNext, (network) =>
+                {
+                    // var retrieved = client.VirtualNetworks.Get(network.Name);
+                    // AssertVirtualNetworksAreSame(network, retrieved);
+                    NetworkCommon.ValidateBaseResources(network);
+
+                    NetworkCommon.ValidateBaseResourceTenant(network);
+
+                    ValidateConfigurationState(network.ConfigurationState);
+                });
+
+            });
+        }
+
         [Fact(Skip = "Not implemented")]
         public void TestGetVirtualNetworks()
         {
