@@ -42,7 +42,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// <param name="provisioningState">The provisioning state.</param>
         /// <param name="subscriptionId">The subscription Id.</param>
         /// <param name="tenantResourceUri">The tenant resource URI.</param>
-        /// <param name="configurationState">The configuration state.</param>
+        /// <param name="configurationState">The Virtual Network configuration
+        /// state.</param>
         public VirtualNetwork(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string provisioningState = default(string), string subscriptionId = default(string), string tenantResourceUri = default(string), VirtualNetworkConfigurationState configurationState = default(VirtualNetworkConfigurationState))
             : base(id, name, type, location, tags, provisioningState, subscriptionId, tenantResourceUri)
         {
@@ -56,7 +57,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the configuration state.
+        /// Gets or sets the Virtual Network configuration state.
         /// </summary>
         [JsonProperty(PropertyName = "properties.configurationState")]
         public VirtualNetworkConfigurationState ConfigurationState { get; set; }

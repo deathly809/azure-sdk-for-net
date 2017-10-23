@@ -50,10 +50,10 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<VirtualNetwork>>> ListWithHttpMessagesAsync(ODataQuery<VirtualNetwork> odataQuery = default(ODataQuery<VirtualNetwork>), string inlineCount = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a virtual networks.
+        /// Get a virtual network.
         /// </summary>
         /// <param name='virtualNetwork'>
-        /// The Virtual Network.
+        /// The name of the virtual network.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

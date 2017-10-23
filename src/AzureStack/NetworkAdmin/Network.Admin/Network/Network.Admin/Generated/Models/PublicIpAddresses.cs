@@ -44,7 +44,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// <param name="tenantResourceUri">The tenant resource URI.</param>
         /// <param name="ipAddress">The IP address.</param>
         /// <param name="ipPool">The IP pool.</param>
-        /// <param name="allocationMethod">The allocation method.</param>
+        /// <param name="allocationMethod">The allocation method. Possible
+        /// values include: 'Dynamic', 'Static'</param>
         public PublicIpAddresses(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string provisioningState = default(string), string subscriptionId = default(string), string tenantResourceUri = default(string), string ipAddress = default(string), string ipPool = default(string), string allocationMethod = default(string))
             : base(id, name, type, location, tags, provisioningState, subscriptionId, tenantResourceUri)
         {
@@ -72,7 +73,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         public string IpPool { get; set; }
 
         /// <summary>
-        /// Gets or sets the allocation method.
+        /// Gets or sets the allocation method. Possible values include:
+        /// 'Dynamic', 'Static'
         /// </summary>
         [JsonProperty(PropertyName = "properties.allocationMethod")]
         public string AllocationMethod { get; set; }

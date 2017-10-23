@@ -81,7 +81,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<NetworkQuota>>> ListWithHttpMessagesAsync(string location, ODataQuery<NetworkQuota> odataQuery = default(ODataQuery<NetworkQuota>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<Quota>>> ListWithHttpMessagesAsync(string location, ODataQuery<Quota> odataQuery = default(ODataQuery<Quota>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -218,7 +218,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<NetworkQuota>>();
+            var _result = new AzureOperationResponse<IPage<Quota>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -231,7 +231,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<NetworkQuota>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<Quota>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -280,7 +280,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<NetworkQuota>> GetWithHttpMessagesAsync(string location, string resourceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string location, string resourceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -414,7 +414,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<NetworkQuota>();
+            var _result = new AzureOperationResponse<Quota>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -427,7 +427,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<NetworkQuota>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Quota>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -447,7 +447,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         }
 
         /// <summary>
-        /// Create a given quota.
+        /// Create a new quota.
         /// </summary>
         /// <param name='location'>
         /// Location of the resource.
@@ -479,7 +479,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<NetworkQuota>> CreateWithHttpMessagesAsync(string location, string resourceName, NetworkQuota quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Quota>> CreateWithHttpMessagesAsync(string location, string resourceName, Quota quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -624,7 +624,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<NetworkQuota>();
+            var _result = new AzureOperationResponse<Quota>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -637,7 +637,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<NetworkQuota>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Quota>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -655,7 +655,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<NetworkQuota>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Quota>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -898,7 +898,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<NetworkQuota>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<Quota>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -1012,7 +1012,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<NetworkQuota>>();
+            var _result = new AzureOperationResponse<IPage<Quota>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1025,7 +1025,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<NetworkQuota>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<Quota>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

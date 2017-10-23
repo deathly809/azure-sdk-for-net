@@ -75,7 +75,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// </exception>
         Task<AzureOperationResponse<VirtualNetworkGatewayConnectionSku>> GetWithHttpMessagesAsync(string location, string resourceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create a given virtual network gateway connection sku.
+        /// Create or update a given virtual network gateway connection sku.
         /// </summary>
         /// <param name='location'>
         /// Location of the resource.
@@ -101,7 +101,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<VirtualNetworkGatewayConnectionSku>> CreateWithHttpMessagesAsync(string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<VirtualNetworkGatewayConnectionSku>> CreateOrUpdateWithHttpMessagesAsync(string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Delete a virtual network gateway connection sku by name.
         /// </summary>

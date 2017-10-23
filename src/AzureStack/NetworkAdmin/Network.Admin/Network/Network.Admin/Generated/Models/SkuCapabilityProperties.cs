@@ -14,27 +14,27 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Virtual Network configuration status.
+    /// Connection Sku capability properties.
     /// </summary>
-    public partial class ConfigurationStatus
+    public partial class SkuCapabilityProperties
     {
         /// <summary>
-        /// Initializes a new instance of the ConfigurationStatus class.
+        /// Initializes a new instance of the SkuCapabilityProperties class.
         /// </summary>
-        public ConfigurationStatus()
+        public SkuCapabilityProperties()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the ConfigurationStatus class.
+        /// Initializes a new instance of the SkuCapabilityProperties class.
         /// </summary>
-        /// <param name="status">The Status.</param>
-        /// <param name="lastUpdatedTime">Last updated dateTime.</param>
-        public ConfigurationStatus(string status = default(string), string lastUpdatedTime = default(string))
+        /// <param name="name">Name of this capability.</param>
+        /// <param name="value">Value of this capability.</param>
+        public SkuCapabilityProperties(string name = default(string), string value = default(string))
         {
-            Status = status;
-            LastUpdatedTime = lastUpdatedTime;
+            Name = name;
+            Value = value;
             CustomInit();
         }
 
@@ -44,16 +44,16 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the Status.
+        /// Gets or sets name of this capability.
         /// </summary>
-        [JsonProperty(PropertyName = "status")]
-        public string Status { get; set; }
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets last updated dateTime.
+        /// Gets or sets value of this capability.
         /// </summary>
-        [JsonProperty(PropertyName = "lastUpdatedTime")]
-        public string LastUpdatedTime { get; set; }
+        [JsonProperty(PropertyName = "value")]
+        public string Value { get; set; }
 
     }
 }

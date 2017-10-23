@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// Get a backend address pool.
         /// </summary>
         /// <param name='backendAddressPool'>
-        /// Backend address pool parameter.
+        /// Name of the backend address pool.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

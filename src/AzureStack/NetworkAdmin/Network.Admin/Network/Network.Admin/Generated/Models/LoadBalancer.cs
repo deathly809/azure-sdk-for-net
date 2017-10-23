@@ -42,14 +42,11 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// <param name="provisioningState">The provisioning state.</param>
         /// <param name="subscriptionId">The subscription Id.</param>
         /// <param name="tenantResourceUri">The tenant resource URI.</param>
-        /// <param name="metadata">Metadata related to this load
-        /// balancer.</param>
         /// <param name="publicIpAddresses">List of public IP
         /// addresses.</param>
-        public LoadBalancer(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string provisioningState = default(string), string subscriptionId = default(string), string tenantResourceUri = default(string), IDictionary<string, string> metadata = default(IDictionary<string, string>), IList<string> publicIpAddresses = default(IList<string>))
+        public LoadBalancer(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string provisioningState = default(string), string subscriptionId = default(string), string tenantResourceUri = default(string), IList<string> publicIpAddresses = default(IList<string>))
             : base(id, name, type, location, tags, provisioningState, subscriptionId, tenantResourceUri)
         {
-            Metadata = metadata;
             PublicIpAddresses = publicIpAddresses;
             CustomInit();
         }
@@ -58,12 +55,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// An initialization method that performs custom operations like setting defaults
         /// </summary>
         partial void CustomInit();
-
-        /// <summary>
-        /// Gets or sets metadata related to this load balancer.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.metadata")]
-        public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// Gets or sets list of public IP addresses.

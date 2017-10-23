@@ -41,7 +41,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="metadata">Metadata related to this backend address
         /// pool.</param>
-        /// <param name="provisioningState">The provisioning state.</param>
+        /// <param name="provisioningState">The provisioning state. Possible
+        /// values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'</param>
         /// <param name="startIpAddress">The start IP address range.</param>
         /// <param name="endIpAddress">The end IP address range.</param>
         /// <param name="numberOfIPAddresses">The number of IP
@@ -50,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// addresses allocated.</param>
         /// <param name="numberOfIPAddressesInTransition">The number of IP
         /// addresses in transition.</param>
-        public BackendAddressPool(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IDictionary<string, string> metadata = default(IDictionary<string, string>), string provisioningState = default(string), string startIpAddress = default(string), string endIpAddress = default(string), int? numberOfIPAddresses = default(int?), int? numberOfIPAddressesAllocated = default(int?), int? numberOfIPAddressesInTransition = default(int?))
+        public BackendAddressPool(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IDictionary<string, string> metadata = default(IDictionary<string, string>), string provisioningState = default(string), string startIpAddress = default(string), string endIpAddress = default(string), long? numberOfIPAddresses = default(long?), long? numberOfIPAddressesAllocated = default(long?), long? numberOfIPAddressesInTransition = default(long?))
             : base(id, name, type, location, tags)
         {
             Metadata = metadata;
@@ -75,7 +77,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state.
+        /// Gets or sets the provisioning state. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }
@@ -96,19 +99,19 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// Gets or sets the number of IP addresses.
         /// </summary>
         [JsonProperty(PropertyName = "properties.numberOfIPAddresses")]
-        public int? NumberOfIPAddresses { get; set; }
+        public long? NumberOfIPAddresses { get; set; }
 
         /// <summary>
         /// Gets or sets the number of IP addresses allocated.
         /// </summary>
         [JsonProperty(PropertyName = "properties.numberOfIPAddressesAllocated")]
-        public int? NumberOfIPAddressesAllocated { get; set; }
+        public long? NumberOfIPAddressesAllocated { get; set; }
 
         /// <summary>
         /// Gets or sets the number of IP addresses in transition.
         /// </summary>
         [JsonProperty(PropertyName = "properties.numberOfIPAddressesInTransition")]
-        public int? NumberOfIPAddressesInTransition { get; set; }
+        public long? NumberOfIPAddressesInTransition { get; set; }
 
     }
 }

@@ -253,7 +253,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// Get a load balancer.
         /// </summary>
         /// <param name='loadBalancer'>
-        /// Load balancer parameter.
+        /// Load balancer name.
         /// </param>
         /// <param name='filter'>
         /// OData filter parameter.

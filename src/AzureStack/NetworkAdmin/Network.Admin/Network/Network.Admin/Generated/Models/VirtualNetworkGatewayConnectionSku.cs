@@ -43,11 +43,14 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="metadata">Metadata related to this backend address
         /// pool.</param>
-        /// <param name="provisioningState">The provisioning state.</param>
-        /// <param name="resourceType">The resource type.</param>
+        /// <param name="provisioningState">The provisioning state. Possible
+        /// values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'</param>
+        /// <param name="resourceType">The resource type that the SKU applies
+        /// to.</param>
         /// <param name="capabilities">Key value pair of the capabilities of
         /// the connection sku.</param>
-        public VirtualNetworkGatewayConnectionSku(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IDictionary<string, string> metadata = default(IDictionary<string, string>), string provisioningState = default(string), string resourceType = default(string), IList<IDictionary<string, string>> capabilities = default(IList<IDictionary<string, string>>), string isDefault = default(string))
+        public VirtualNetworkGatewayConnectionSku(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IDictionary<string, string> metadata = default(IDictionary<string, string>), string provisioningState = default(string), string resourceType = default(string), IList<SkuCapabilityProperties> capabilities = default(IList<SkuCapabilityProperties>), bool? isDefault = default(bool?))
             : base(id, name, type, location, tags)
         {
             Metadata = metadata;
@@ -70,13 +73,14 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state.
+        /// Gets or sets the provisioning state. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource type.
+        /// Gets or sets the resource type that the SKU applies to.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceType")]
         public string ResourceType { get; set; }
@@ -86,12 +90,12 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// sku.
         /// </summary>
         [JsonProperty(PropertyName = "properties.capabilities")]
-        public IList<IDictionary<string, string>> Capabilities { get; set; }
+        public IList<SkuCapabilityProperties> Capabilities { get; set; }
 
         /// <summary>
         /// </summary>
         [JsonProperty(PropertyName = "properties.isDefault")]
-        public string IsDefault { get; set; }
+        public bool? IsDefault { get; set; }
 
     }
 }

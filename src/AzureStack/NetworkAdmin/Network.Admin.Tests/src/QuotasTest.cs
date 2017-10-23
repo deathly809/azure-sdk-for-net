@@ -13,7 +13,7 @@ namespace Network.Tests
 {
     public class QuotasTests : NetworkTestBase
     {
-        private void AssertQuotasAreSame(NetworkQuota expected, NetworkQuota found)
+        private void AssertQuotasAreSame(Quota expected, Quota found)
         {
             if (expected == null)
             {
@@ -65,9 +65,9 @@ namespace Network.Tests
             });
         }
 
-        private NetworkQuota CreateTestNetworkQuota()
+        private Quota CreateTestQuota()
         {
-            var newNetworkQuota = new NetworkQuota()
+            var newQuota = new Quota()
             {
                 MaxPublicIpsPerSubscription = 32,
                 MaxVnetsPerSubscription = 32,
@@ -77,7 +77,7 @@ namespace Network.Tests
                 MaxNicsPerSubscription = 4,
                 MaxSecurityGroupsPerSubscription = 2
             };
-            return newNetworkQuota;
+            return newQuota;
         }
 
         [Fact]
@@ -85,30 +85,30 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                var networkQuotaName = "TestQuotaForRemoval";
-                var newNetworkQuota = CreateTestNetworkQuota();
+                var quotaName = "TestQuotaForRemoval";
+                var newQuota = CreateTestQuota();
 
                 Console.WriteLine("Checking for existing quota...");
-                var retrieved = client.Quotas.Get(Location, networkQuotaName);
+                var retrieved = client.Quotas.Get(Location, quotaName);
                 if (retrieved != null)
                 {
                     // Delete quota
                     Console.WriteLine("Deleting quota...");
-                    client.Quotas.Delete(Location, networkQuotaName);
+                    client.Quotas.Delete(Location, quotaName);
                     Thread.Sleep(10000);
                 }
 
                 Console.WriteLine("Creating new test quota...");
-                var quota = client.Quotas.Create(Location, networkQuotaName, newNetworkQuota);
-                var created = client.Quotas.Get(Location, networkQuotaName);
+                var quota = client.Quotas.Create(Location, quotaName, newQuota);
+                var created = client.Quotas.Get(Location, quotaName);
 
                 AssertQuotasAreSame(quota, created);
 
                 Console.WriteLine("Deleting quota...");
-                client.Quotas.Delete(Location, networkQuotaName);
+                client.Quotas.Delete(Location, quotaName);
                 Thread.Sleep(10000);
 
-                var deleted = client.Quotas.Get(Location, networkQuotaName);
+                var deleted = client.Quotas.Get(Location, quotaName);
                 Assert.Null(deleted);
             });
         }

@@ -35,7 +35,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='filter'>
             /// OData filter parameter.
             /// </param>
-            public static IList<UsageMeterModel> List(this IUsageOperations operations, string location, string filter = default(string))
+            public static IList<UsageMeterProperty> List(this IUsageOperations operations, string location, string filter = default(string))
             {
                 return operations.ListAsync(location, filter).GetAwaiter().GetResult();
             }
@@ -55,7 +55,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<UsageMeterModel>> ListAsync(this IUsageOperations operations, string location, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<UsageMeterProperty>> ListAsync(this IUsageOperations operations, string location, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(location, filter, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -72,7 +72,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IList<UsageMeterModel> ListNext(this IUsageOperations operations, string nextPageLink)
+            public static IList<UsageMeterProperty> ListNext(this IUsageOperations operations, string nextPageLink)
             {
                 return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
             }
@@ -89,7 +89,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<UsageMeterModel>> ListNextAsync(this IUsageOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<UsageMeterProperty>> ListNextAsync(this IUsageOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {

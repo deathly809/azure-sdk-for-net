@@ -16,25 +16,29 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
     /// <summary>
     /// Properties of a UsageMeter.
     /// </summary>
-    public partial class UsageMeterModel
+    public partial class UsageMeterProperty
     {
         /// <summary>
-        /// Initializes a new instance of the UsageMeterModel class.
+        /// Initializes a new instance of the UsageMeterProperty class.
         /// </summary>
-        public UsageMeterModel()
+        public UsageMeterProperty()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsageMeterModel class.
+        /// Initializes a new instance of the UsageMeterProperty class.
         /// </summary>
-        /// <param name="meterId">The meter id.</param>
-        /// <param name="meterName">The meter name.</param>
-        /// <param name="meterCategory">The meter category.</param>
-        /// <param name="meterSubCategory">The meter sub category.</param>
-        /// <param name="unit">The unit.</param>
-        public UsageMeterModel(string meterId = default(string), string meterName = default(string), string meterCategory = default(string), string meterSubCategory = default(string), string unit = default(string))
+        /// <param name="meterId">Unique meter ID that identifies the specific
+        /// resource.</param>
+        /// <param name="meterName">Name of the resource being billed.</param>
+        /// <param name="meterCategory">Category the resource falls under. ex:
+        /// Networking, Compute etc.</param>
+        /// <param name="meterSubCategory">Sub category of the resource,
+        /// generally the resource type ex: IP, VM etc.</param>
+        /// <param name="unit">The unit in which this resource is
+        /// billed.</param>
+        public UsageMeterProperty(string meterId = default(string), string meterName = default(string), string meterCategory = default(string), string meterSubCategory = default(string), string unit = default(string))
         {
             MeterId = meterId;
             MeterName = meterName;
@@ -50,31 +54,33 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the meter id.
+        /// Gets or sets unique meter ID that identifies the specific resource.
         /// </summary>
         [JsonProperty(PropertyName = "meterId")]
         public string MeterId { get; set; }
 
         /// <summary>
-        /// Gets or sets the meter name.
+        /// Gets or sets name of the resource being billed.
         /// </summary>
         [JsonProperty(PropertyName = "meterName")]
         public string MeterName { get; set; }
 
         /// <summary>
-        /// Gets or sets the meter category.
+        /// Gets or sets category the resource falls under. ex: Networking,
+        /// Compute etc.
         /// </summary>
         [JsonProperty(PropertyName = "meterCategory")]
         public string MeterCategory { get; set; }
 
         /// <summary>
-        /// Gets or sets the meter sub category.
+        /// Gets or sets sub category of the resource, generally the resource
+        /// type ex: IP, VM etc.
         /// </summary>
         [JsonProperty(PropertyName = "meterSubCategory")]
         public string MeterSubCategory { get; set; }
 
         /// <summary>
-        /// Gets or sets the unit.
+        /// Gets or sets the unit in which this resource is billed.
         /// </summary>
         [JsonProperty(PropertyName = "unit")]
         public string Unit { get; set; }

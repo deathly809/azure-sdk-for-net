@@ -447,7 +447,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         }
 
         /// <summary>
-        /// Create a given virtual network gateway connection sku.
+        /// Create or update a given virtual network gateway connection sku.
         /// </summary>
         /// <param name='location'>
         /// Location of the resource.
@@ -479,7 +479,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<VirtualNetworkGatewayConnectionSku>> CreateWithHttpMessagesAsync(string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VirtualNetworkGatewayConnectionSku>> CreateOrUpdateWithHttpMessagesAsync(string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -512,7 +512,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 tracingParameters.Add("resourceName", resourceName);
                 tracingParameters.Add("virtualNetworkGatewayConnectionSku", virtualNetworkGatewayConnectionSku);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "Create", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "CreateOrUpdate", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;

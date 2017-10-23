@@ -33,12 +33,16 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         /// Initializes a new instance of the VirtualNetworkConfigurationState
         /// class.
         /// </summary>
-        /// <param name="status">The status.</param>
-        /// <param name="lastUpdatedTime">Last updated dateTime.</param>
-        /// <param name="virtualNetworkInterfaceErrors">Errors for the virtual
-        /// network interface.</param>
-        /// <param name="hostErrors">Errors for the host.</param>
-        public VirtualNetworkConfigurationState(string status = default(string), string lastUpdatedTime = default(string), IList<ConfigurationStatus> virtualNetworkInterfaceErrors = default(IList<ConfigurationStatus>), IList<ConfigurationStatus> hostErrors = default(IList<ConfigurationStatus>))
+        /// <param name="status">The virtual network status. Possible values
+        /// include: 'Failure', 'Warning', 'Success', 'Uninitialized',
+        /// 'InProgress', 'Unknown'</param>
+        /// <param name="lastUpdatedTime">Last updated time for the running
+        /// state.</param>
+        /// <param name="virtualNetworkInterfaceErrors">List of NIC errors
+        /// associated with the resource.</param>
+        /// <param name="hostErrors">List of NIC errors associated with the
+        /// resource.</param>
+        public VirtualNetworkConfigurationState(string status = default(string), System.DateTime? lastUpdatedTime = default(System.DateTime?), IList<VirtualNetworkConfigurationStatus> virtualNetworkInterfaceErrors = default(IList<VirtualNetworkConfigurationStatus>), IList<VirtualNetworkConfigurationStatus> hostErrors = default(IList<VirtualNetworkConfigurationStatus>))
         {
             Status = status;
             LastUpdatedTime = lastUpdatedTime;
@@ -53,28 +57,30 @@ namespace Microsoft.AzureStack.Management.Network.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the status.
+        /// Gets or sets the virtual network status. Possible values include:
+        /// 'Failure', 'Warning', 'Success', 'Uninitialized', 'InProgress',
+        /// 'Unknown'
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or sets last updated dateTime.
+        /// Gets or sets last updated time for the running state.
         /// </summary>
         [JsonProperty(PropertyName = "lastUpdatedTime")]
-        public string LastUpdatedTime { get; set; }
+        public System.DateTime? LastUpdatedTime { get; set; }
 
         /// <summary>
-        /// Gets or sets errors for the virtual network interface.
+        /// Gets or sets list of NIC errors associated with the resource.
         /// </summary>
         [JsonProperty(PropertyName = "virtualNetworkInterfaceErrors")]
-        public IList<ConfigurationStatus> VirtualNetworkInterfaceErrors { get; set; }
+        public IList<VirtualNetworkConfigurationStatus> VirtualNetworkInterfaceErrors { get; set; }
 
         /// <summary>
-        /// Gets or sets errors for the host.
+        /// Gets or sets list of NIC errors associated with the resource.
         /// </summary>
         [JsonProperty(PropertyName = "hostErrors")]
-        public IList<ConfigurationStatus> HostErrors { get; set; }
+        public IList<VirtualNetworkConfigurationStatus> HostErrors { get; set; }
 
     }
 }

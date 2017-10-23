@@ -63,7 +63,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='backendAddressPool'>
-            /// Backend address pool parameter.
+            /// Name of the backend address pool.
             /// </param>
             public static BackendAddressPool Get(this IBackendAddressPoolsOperations operations, string backendAddressPool)
             {
@@ -77,7 +77,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='backendAddressPool'>
-            /// Backend address pool parameter.
+            /// Name of the backend address pool.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

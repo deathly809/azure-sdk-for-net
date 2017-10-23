@@ -5,6 +5,7 @@
 
 using Microsoft.AzureStack.Management.Network.Admin;
 using Microsoft.AzureStack.Management.Network.Admin.Models;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Network.Tests

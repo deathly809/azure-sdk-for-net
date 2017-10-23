@@ -63,13 +63,13 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             }
 
             /// <summary>
-            /// Get a virtual networks.
+            /// Get a virtual network.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='virtualNetwork'>
-            /// The Virtual Network.
+            /// The name of the virtual network.
             /// </param>
             public static VirtualNetwork Get(this IVirtualNetworksOperations operations, string virtualNetwork)
             {
@@ -77,13 +77,13 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             }
 
             /// <summary>
-            /// Get a virtual networks.
+            /// Get a virtual network.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='virtualNetwork'>
-            /// The Virtual Network.
+            /// The name of the virtual network.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

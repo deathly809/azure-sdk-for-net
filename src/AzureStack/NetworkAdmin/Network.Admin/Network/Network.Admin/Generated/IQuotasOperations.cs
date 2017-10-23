@@ -48,7 +48,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<NetworkQuota>>> ListWithHttpMessagesAsync(string location, ODataQuery<NetworkQuota> odataQuery = default(ODataQuery<NetworkQuota>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Quota>>> ListWithHttpMessagesAsync(string location, ODataQuery<Quota> odataQuery = default(ODataQuery<Quota>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get a quota by name.
         /// </summary>
@@ -73,9 +73,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<NetworkQuota>> GetWithHttpMessagesAsync(string location, string resourceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string location, string resourceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create a given quota.
+        /// Create a new quota.
         /// </summary>
         /// <param name='location'>
         /// Location of the resource.
@@ -101,7 +101,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<NetworkQuota>> CreateWithHttpMessagesAsync(string location, string resourceName, NetworkQuota quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Quota>> CreateWithHttpMessagesAsync(string location, string resourceName, Quota quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Delete a quota by name.
         /// </summary>
@@ -167,6 +167,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<NetworkQuota>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Quota>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

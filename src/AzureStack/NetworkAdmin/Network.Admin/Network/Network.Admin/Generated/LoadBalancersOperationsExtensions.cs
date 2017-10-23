@@ -69,7 +69,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='loadBalancer'>
-            /// Load balancer parameter.
+            /// Load balancer name.
             /// </param>
             /// <param name='filter'>
             /// OData filter parameter.
@@ -86,7 +86,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='loadBalancer'>
-            /// Load balancer parameter.
+            /// Load balancer name.
             /// </param>
             /// <param name='filter'>
             /// OData filter parameter.

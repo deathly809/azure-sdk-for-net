@@ -14,6 +14,10 @@ namespace Microsoft.AzureStack.Management.Network.Admin
     using Microsoft.Rest.Azure;
     using Models;
     using Newtonsoft.Json;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Threading;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Network Admin Client
@@ -71,16 +75,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
 
 
         /// <summary>
-        /// Gets the IOverviewOperations.
-        /// </summary>
-        IOverviewOperations Overview { get; }
-
-        /// <summary>
-        /// Gets the IRotateEncryptionCertificateOperations.
-        /// </summary>
-        IRotateEncryptionCertificateOperations RotateEncryptionCertificate { get; }
-
-        /// <summary>
         /// Gets the IBackendAddressPoolsOperations.
         /// </summary>
         IBackendAddressPoolsOperations BackendAddressPools { get; }
@@ -124,6 +118,39 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// Gets the IVirtualNetworksOperations.
         /// </summary>
         IVirtualNetworksOperations VirtualNetworks { get; }
+
+        /// <summary>
+        /// Get an overview of the state of the network resource provider.
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse<AdminOverview>> ResourceProviderStateWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Rotate the encryption certificate.
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> RotateEncryptionCertificateWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Rotate the encryption certificate.
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<AzureOperationResponse> BeginRotateEncryptionCertificateWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
 
     }
 }

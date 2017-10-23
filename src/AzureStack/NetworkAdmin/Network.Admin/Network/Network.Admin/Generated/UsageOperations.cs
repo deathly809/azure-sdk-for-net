@@ -80,7 +80,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IList<UsageMeterModel>>> ListWithHttpMessagesAsync(string location, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<UsageMeterProperty>>> ListWithHttpMessagesAsync(string location, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -213,7 +213,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IList<UsageMeterModel>>();
+            var _result = new AzureOperationResponse<IList<UsageMeterProperty>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -226,7 +226,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<UsageMeterModel>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<UsageMeterProperty>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -272,7 +272,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IList<UsageMeterModel>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<UsageMeterProperty>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -386,7 +386,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IList<UsageMeterModel>>();
+            var _result = new AzureOperationResponse<IList<UsageMeterProperty>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -399,7 +399,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<UsageMeterModel>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<UsageMeterProperty>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

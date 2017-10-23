@@ -34,7 +34,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<NetworkQuota> List(this IQuotasOperations operations, string location, ODataQuery<NetworkQuota> odataQuery = default(ODataQuery<NetworkQuota>))
+            public static IPage<Quota> List(this IQuotasOperations operations, string location, ODataQuery<Quota> odataQuery = default(ODataQuery<Quota>))
             {
                 return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
             }
@@ -54,7 +54,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<NetworkQuota>> ListAsync(this IQuotasOperations operations, string location, ODataQuery<NetworkQuota> odataQuery = default(ODataQuery<NetworkQuota>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Quota>> ListAsync(this IQuotasOperations operations, string location, ODataQuery<Quota> odataQuery = default(ODataQuery<Quota>), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -74,7 +74,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='resourceName'>
             /// Name of the resource.
             /// </param>
-            public static NetworkQuota Get(this IQuotasOperations operations, string location, string resourceName)
+            public static Quota Get(this IQuotasOperations operations, string location, string resourceName)
             {
                 return operations.GetAsync(location, resourceName).GetAwaiter().GetResult();
             }
@@ -94,7 +94,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<NetworkQuota> GetAsync(this IQuotasOperations operations, string location, string resourceName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Quota> GetAsync(this IQuotasOperations operations, string location, string resourceName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetWithHttpMessagesAsync(location, resourceName, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -103,7 +103,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             }
 
             /// <summary>
-            /// Create a given quota.
+            /// Create a new quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,13 +117,13 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='quota'>
             /// New network quota to create.
             /// </param>
-            public static NetworkQuota Create(this IQuotasOperations operations, string location, string resourceName, NetworkQuota quota)
+            public static Quota Create(this IQuotasOperations operations, string location, string resourceName, Quota quota)
             {
                 return operations.CreateAsync(location, resourceName, quota).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Create a given quota.
+            /// Create a new quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -140,7 +140,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<NetworkQuota> CreateAsync(this IQuotasOperations operations, string location, string resourceName, NetworkQuota quota, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Quota> CreateAsync(this IQuotasOperations operations, string location, string resourceName, Quota quota, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.CreateWithHttpMessagesAsync(location, resourceName, quota, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -231,7 +231,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IPage<NetworkQuota> ListNext(this IQuotasOperations operations, string nextPageLink)
+            public static IPage<Quota> ListNext(this IQuotasOperations operations, string nextPageLink)
             {
                 return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
             }
@@ -248,7 +248,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<NetworkQuota>> ListNextAsync(this IQuotasOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Quota>> ListNextAsync(this IQuotasOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {

@@ -103,7 +103,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             }
 
             /// <summary>
-            /// Create a given virtual network gateway connection sku.
+            /// Create or update a given virtual network gateway connection sku.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,13 +117,13 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='virtualNetworkGatewayConnectionSku'>
             /// Virtual Network Gateway Connection Sku.
             /// </param>
-            public static VirtualNetworkGatewayConnectionSku Create(this IConnectionSkusOperations operations, string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku)
+            public static VirtualNetworkGatewayConnectionSku CreateOrUpdate(this IConnectionSkusOperations operations, string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku)
             {
-                return operations.CreateAsync(location, resourceName, virtualNetworkGatewayConnectionSku).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(location, resourceName, virtualNetworkGatewayConnectionSku).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Create a given virtual network gateway connection sku.
+            /// Create or update a given virtual network gateway connection sku.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -140,9 +140,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualNetworkGatewayConnectionSku> CreateAsync(this IConnectionSkusOperations operations, string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualNetworkGatewayConnectionSku> CreateOrUpdateAsync(this IConnectionSkusOperations operations, string location, string resourceName, VirtualNetworkGatewayConnectionSku virtualNetworkGatewayConnectionSku, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateWithHttpMessagesAsync(location, resourceName, virtualNetworkGatewayConnectionSku, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(location, resourceName, virtualNetworkGatewayConnectionSku, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

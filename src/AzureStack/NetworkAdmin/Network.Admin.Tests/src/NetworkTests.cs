@@ -55,7 +55,7 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                client.RotateEncryptionCertificate.Post();
+                client.RotateEncryptionCertificate();
                 // Not sure what else to verify here yet
             });
         }
