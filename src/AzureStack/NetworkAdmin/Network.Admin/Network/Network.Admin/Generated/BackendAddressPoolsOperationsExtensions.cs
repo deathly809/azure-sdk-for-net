@@ -14,6 +14,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin
     using Microsoft.Rest.Azure;
     using Microsoft.Rest.Azure.OData;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -31,7 +33,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<BackendAddressPool> List(this IBackendAddressPoolsOperations operations, ODataQuery<BackendAddressPool> odataQuery = default(ODataQuery<BackendAddressPool>))
+            public static IEnumerable<BackendAddressPool> List(this IBackendAddressPoolsOperations operations, ODataQuery<BackendAddressPool> odataQuery = default(ODataQuery<BackendAddressPool>))
             {
                 return operations.ListAsync(odataQuery).GetAwaiter().GetResult();
             }
@@ -48,77 +50,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<BackendAddressPool>> ListAsync(this IBackendAddressPoolsOperations operations, ODataQuery<BackendAddressPool> odataQuery = default(ODataQuery<BackendAddressPool>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<BackendAddressPool>> ListAsync(this IBackendAddressPoolsOperations operations, ODataQuery<BackendAddressPool> odataQuery = default(ODataQuery<BackendAddressPool>), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(odataQuery, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get a backend address pool.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='backendAddressPool'>
-            /// Name of the backend address pool.
-            /// </param>
-            public static BackendAddressPool Get(this IBackendAddressPoolsOperations operations, string backendAddressPool)
-            {
-                return operations.GetAsync(backendAddressPool).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get a backend address pool.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='backendAddressPool'>
-            /// Name of the backend address pool.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<BackendAddressPool> GetAsync(this IBackendAddressPoolsOperations operations, string backendAddressPool, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetWithHttpMessagesAsync(backendAddressPool, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// List all backend address pools.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IPage<BackendAddressPool> ListNext(this IBackendAddressPoolsOperations operations, string nextPageLink)
-            {
-                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// List all backend address pools.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IPage<BackendAddressPool>> ListNextAsync(this IBackendAddressPoolsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

@@ -14,6 +14,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin
     using Microsoft.Rest.Azure;
     using Microsoft.Rest.Azure.OData;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -34,7 +36,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='inlineCount'>
             /// OData inline count parameter.
             /// </param>
-            public static IPage<PublicIpAddresses> List(this IPublicIPAddressesOperations operations, ODataQuery<PublicIpAddresses> odataQuery = default(ODataQuery<PublicIpAddresses>), string inlineCount = default(string))
+            public static IEnumerable<PublicIpAddresses> List(this IPublicIPAddressesOperations operations, ODataQuery<PublicIpAddresses> odataQuery = default(ODataQuery<PublicIpAddresses>), string inlineCount = default(string))
             {
                 return operations.ListAsync(odataQuery, inlineCount).GetAwaiter().GetResult();
             }
@@ -54,77 +56,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<PublicIpAddresses>> ListAsync(this IPublicIPAddressesOperations operations, ODataQuery<PublicIpAddresses> odataQuery = default(ODataQuery<PublicIpAddresses>), string inlineCount = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<PublicIpAddresses>> ListAsync(this IPublicIPAddressesOperations operations, ODataQuery<PublicIpAddresses> odataQuery = default(ODataQuery<PublicIpAddresses>), string inlineCount = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(odataQuery, inlineCount, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get of public ip addresses.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='publicIpAddress'>
-            /// Public IP address parameter.
-            /// </param>
-            public static PublicIpAddresses Get(this IPublicIPAddressesOperations operations, string publicIpAddress)
-            {
-                return operations.GetAsync(publicIpAddress).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get of public ip addresses.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='publicIpAddress'>
-            /// Public IP address parameter.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<PublicIpAddresses> GetAsync(this IPublicIPAddressesOperations operations, string publicIpAddress, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetWithHttpMessagesAsync(publicIpAddress, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// List of public ip addresses.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IPage<PublicIpAddresses> ListNext(this IPublicIPAddressesOperations operations, string nextPageLink)
-            {
-                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// List of public ip addresses.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IPage<PublicIpAddresses>> ListNextAsync(this IPublicIPAddressesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

@@ -34,37 +34,6 @@ namespace Network.Tests
             }
         }
 
-        [Fact]
-        public void TestGetQuota()
-        {
-            RunTest((client) =>
-            {
-                var quota = client.Quotas.List(Location).GetFirst();
-                if (quota != null)
-                {
-                    var retrieved = client.Quotas.Get(Location, quota.Name);
-                    AssertQuotasAreSame(quota, retrieved);
-                }
-            });
-        }
-
-        [Fact]
-        public void TestGetAllQuotas()
-        {
-            RunTest((client) =>
-            {
-                var quotas = client.Quotas.List(Location);
-                if (quotas != null)
-                {
-                    Common.MapOverIPage(quotas, client.Quotas.ListNext, (quota) =>
-                    {
-                        var retrieved = client.Quotas.Get(Location, quota.Name);
-                        AssertQuotasAreSame(quota, retrieved);
-                    });
-                }
-            });
-        }
-
         private Quota CreateTestQuota()
         {
             var newQuota = new Quota()
@@ -88,7 +57,6 @@ namespace Network.Tests
                 var quotaName = "TestQuotaForRemoval";
                 var newQuota = CreateTestQuota();
 
-                Console.WriteLine("Checking for existing quota...");
                 var retrieved = client.Quotas.Get(Location, quotaName);
                 if (retrieved != null)
                 {
@@ -98,13 +66,11 @@ namespace Network.Tests
                     Thread.Sleep(10000);
                 }
 
-                Console.WriteLine("Creating new test quota...");
-                var quota = client.Quotas.Create(Location, quotaName, newQuota);
+                var quota = client.Quotas.CreateOrUpdate(Location, quotaName, newQuota);
                 var created = client.Quotas.Get(Location, quotaName);
 
                 AssertQuotasAreSame(quota, created);
 
-                Console.WriteLine("Deleting quota...");
                 client.Quotas.Delete(Location, quotaName);
                 Thread.Sleep(10000);
 
@@ -114,31 +80,48 @@ namespace Network.Tests
         }
 
         [Fact]
+        public void TestPutAndUpdateQuota()
+        {
+            RunTest((client) =>
+            {
+                var quotaName = "TestQuotaForUpdate";
+                var newQuota = CreateTestQuota();
+
+                var retrieved = client.Quotas.Get(Location, quotaName);
+                if (retrieved != null)
+                {
+                    // Delete quota
+                    Console.WriteLine("Deleting quota...");
+                    client.Quotas.Delete(Location, quotaName);
+                    Thread.Sleep(10000);
+                }
+
+                var quota = client.Quotas.CreateOrUpdate(Location, quotaName, newQuota);
+                var created = client.Quotas.Get(Location, quotaName);
+
+                AssertQuotasAreSame(quota, created);
+                created.MaxNicsPerSubscription = 8;
+
+                var updatedQuota = client.Quotas.CreateOrUpdate(Location, quotaName, newQuota);
+
+                AssertQuotasAreSame(updatedQuota, created);
+
+                client.Quotas.Delete(Location, quotaName);
+                Thread.Sleep(10000);
+
+                var deleted = client.Quotas.Get(Location, quotaName);
+                Assert.Null(deleted);
+            });
+        }
+
+
+        [Fact]
         public void TestGetQuotaInvalid()
         {
             RunTest((client) =>
             {
                 var quota = client.Quotas.Get(Location, "NonExistantQuota");
                 Assert.Null(quota);
-            });
-        }
-        [Fact(Skip = "Defaulting to local")]
-        public void TestGetQuotaInvalidLocation()
-        {
-            RunTest((client) =>
-            {
-                var quota = client.Quotas.Get("InvalidateLocation", "Default Quota");
-                Assert.Null(quota);
-            });
-        }
-
-        [Fact(Skip = "BUG 14218404")]
-        public void TestGetAllQuotasInvalidLocation()
-        {
-            RunTest((client) =>
-            {
-                var quotas = client.Quotas.List("InvalidLocation");
-                Assert.Null(quotas);
             });
         }
     }

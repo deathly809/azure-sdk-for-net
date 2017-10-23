@@ -16,7 +16,6 @@ namespace Network.Tests
     /// </summary>
     public class Common
     {
-        public const string AcceptableCharactersForResourceName = "abcdefghijklmnopqrstuvwxyz0123456789";
         public const int MaxResourceNameLength = 24;
 
         // This is just for code readability
@@ -50,29 +49,6 @@ namespace Network.Tests
             creds.ProcessHttpRequestAsync(message, System.Threading.CancellationToken.None);
             var result = client.SendAsync(message).Result;
             return result.Content.ToString();
-        }
-
-        /// <summary>
-        /// Generate a random name that can be ingested by Azure or AzureStack.
-        /// </summary>
-        /// <param name="prefix">The prefix added to the string.  The default is okaytodelete.</param>
-        /// <returns>The generated string.</returns>
-        public static string GenerateRandomName(string prefix = "okaytodelete", bool useGuid = true)
-        {
-            StringBuilder sb = new StringBuilder(prefix);
-            if (useGuid)
-            {
-                sb.Append(Guid.NewGuid());
-            }
-            else
-            {
-                Random rand = new Random();
-                for (int i = 0; sb.Length < MaxResourceNameLength; ++i)
-                {
-                    sb.Append(AcceptableCharactersForResourceName[rand.Next(AcceptableCharactersForResourceName.Length)]);
-                }
-            }
-            return sb.ToString();
         }
 
         /// <summary>

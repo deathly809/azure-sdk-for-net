@@ -33,7 +33,7 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                var overview = client.Overview.Get();
+                var overview = client.ResourceProviderState();
                 if (overview != null)
                 {
                     Assert.NotNull(overview.Id);
@@ -47,16 +47,6 @@ namespace Network.Tests
                     AssertAdminOverviewResourceUsage(overview.PublicIpAddressUsage);
                     AssertAdminOverviewResourceUsage(overview.BackendIpUsage);
                 }
-            });
-        }
-
-        [Fact (Skip = "BUG 14291235")]
-        public void TestRotateEncryptionCertificate()
-        {
-            RunTest((client) =>
-            {
-                client.RotateEncryptionCertificate();
-                // Not sure what else to verify here yet
             });
         }
     }

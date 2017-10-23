@@ -22,7 +22,7 @@ namespace Network.Tests
                 // This test should be using the SessionRecord which has an existing PublicIPAddress created
                 if (addresses != null)
                 {
-                    Common.MapOverIPage(addresses, client.PublicIPAddresses.ListNext, (address) =>
+                    addresses.ForEach((address) =>
                     {
                         NetworkCommon.ValidateBaseResources(address);
 
@@ -47,7 +47,7 @@ namespace Network.Tests
                 // This test should be using the SessionRecord which has an existing PublicIPAddress created
                 if (addresses != null)
                 {
-                    Common.MapOverIPage(addresses, client.PublicIPAddresses.ListNext, (address) =>
+                    addresses.ForEach((address) =>
                     {
                         NetworkCommon.ValidateBaseResources(address);
 
@@ -57,15 +57,6 @@ namespace Network.Tests
                         Assert.NotNull(address.IpPool);
                     });
                 }
-            });
-        }
-
-                [Fact(Skip = "Not implemented")]
-        public void TestGetPublicIpAddress()
-        {
-            RunTest((client) =>
-            {
-                var addresses = client.PublicIPAddresses.Get("192.168.102.32");
             });
         }
     }

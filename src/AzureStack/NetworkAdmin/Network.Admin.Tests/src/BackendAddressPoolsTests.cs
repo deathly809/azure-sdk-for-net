@@ -37,7 +37,7 @@ namespace Network.Tests
                 var pools = client.BackendAddressPools.List();
                 if (pools != null)
                 {
-                    Common.MapOverIPage(pools, client.BackendAddressPools.ListNext, (pool) =>
+                   pools.ForEach((pool) =>
                     {
                         // GET isn't implemented
                         //var retrieved = client.BackendAddressPools.Get(pool.Name);
@@ -54,26 +54,6 @@ namespace Network.Tests
                     });
                 }
             });
-        }
-
-        [Fact(Skip = "Get isn't implemented")]
-        public void TestGetBackendAddressPool()
-        {
-            RunTest((client) =>
-            {
-                var pool = client.BackendAddressPools.List().GetFirst();
-                if (pool != null)
-                {
-                    var retrieved = client.BackendAddressPools.Get(pool.Name);
-                    AssertBackendAddressPoolsAreSame(pool, retrieved);
-                }
-            });
-        }
-        [Fact(Skip = "Get isn't implemented")]
-        public void TestGetInvalidBackendAddressPool()
-        {
-            var pool = client.BackendAddressPools.Get("InvalidBackendAddressPool");
-            Assert.Null(pool);
         }
     }
 }

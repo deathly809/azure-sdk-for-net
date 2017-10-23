@@ -49,55 +49,5 @@ namespace Microsoft.AzureStack.Management.Network.Admin
                 }
             }
 
-            /// <summary>
-            /// Rotate the encryption certificate.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            public static void RotateEncryptionCertificate(this INetworkAdminClient operations)
-            {
-                operations.RotateEncryptionCertificateAsync().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Rotate the encryption certificate.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task RotateEncryptionCertificateAsync(this INetworkAdminClient operations, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                (await operations.RotateEncryptionCertificateWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
-            }
-
-            /// <summary>
-            /// Rotate the encryption certificate.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            public static void BeginRotateEncryptionCertificate(this INetworkAdminClient operations)
-            {
-                operations.BeginRotateEncryptionCertificateAsync().GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Rotate the encryption certificate.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task BeginRotateEncryptionCertificateAsync(this INetworkAdminClient operations, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                (await operations.BeginRotateEncryptionCertificateWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
-            }
-
     }
 }

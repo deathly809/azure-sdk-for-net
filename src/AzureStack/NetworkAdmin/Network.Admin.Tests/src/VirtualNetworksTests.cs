@@ -74,29 +74,5 @@ namespace Network.Tests
 
             });
         }
-
-        [Fact(Skip = "Not implemented")]
-        public void TestGetVirtualNetworks()
-        {
-            RunTest((client) =>
-            {
-                var network = client.VirtualNetworks.List().GetFirst();
-                if (network != null)
-                {
-                    var retrieved = client.VirtualNetworks.Get(network.Name);
-                    AssertVirtualNetworksAreSame(network, retrieved);
-                }
-            });
-        }
-
-        [Fact(Skip = "Not implemented")]
-        public void TestGetVirtualNetworksInvalid()
-        {
-            RunTest((client) =>
-            {
-                var network = client.VirtualNetworks.Get("InvalidVirtualNetwork");
-                Assert.Null(network);
-            });
-        }
     }
 }

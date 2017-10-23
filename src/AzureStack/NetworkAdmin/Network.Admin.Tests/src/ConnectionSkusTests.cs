@@ -31,24 +31,13 @@ namespace Network.Tests
         {
             RunTest((client) => {
                 var skus = client.ConnectionSkus.List(Location);
-                Common.MapOverIPage(skus, client.ConnectionSkus.ListNext, (sku) =>
+                if (skus != null)
                 {
-                    var retrieved = client.ConnectionSkus.Get(Location, sku.Name);
-                    AssertConnectionSkusAreSame(sku, retrieved);
-                });
-            });
-        }
-
-        [Fact]
-        public void TestGetConnectionSku()
-        {
-            RunTest((client) =>
-            {
-                var sku = client.ConnectionSkus.List(Location).GetFirst();
-                if (sku != null)
-                {
-                    var retrieved = client.ConnectionSkus.Get(Location, sku.Name);
-                    AssertConnectionSkusAreSame(sku, retrieved);
+                    skus.ForEach((sku) =>
+                    {
+                        var retrieved = client.ConnectionSkus.Get(Location, sku.Name);
+                        AssertConnectionSkusAreSame(sku, retrieved);
+                    });
                 }
             });
         }
@@ -60,26 +49,6 @@ namespace Network.Tests
             {
                 var sku = client.ConnectionSkus.Get(Location, "NonExistantConnectionSku");
                 Assert.Null(null);
-            });
-        }
-
-        [Fact(Skip = "Defaulting to local")]
-        public void TestGetInvalidConnectionSkuLocation()
-        {
-            RunTest((client) =>
-            {
-                var sku = client.ConnectionSkus.Get("InvalidLocation", "Basic");
-                Assert.Null(sku);
-            });
-        }
-
-        [Fact(Skip = "Defaulting to local")]
-        public void TestListInvalidConnectionSkuLocation()
-        {
-            RunTest((client) =>
-            {
-                var skus = client.ConnectionSkus.List("InvalidLocation");
-                Assert.True(skus == null);
             });
         }
     }

@@ -14,6 +14,8 @@ namespace Microsoft.AzureStack.Management.Network.Admin
     using Microsoft.Rest.Azure;
     using Microsoft.Rest.Azure.OData;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -34,7 +36,7 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='inlineCount'>
             /// OData inline count parameter.
             /// </param>
-            public static IPage<LoadBalancer> List(this ILoadBalancersOperations operations, ODataQuery<LoadBalancer> odataQuery = default(ODataQuery<LoadBalancer>), string inlineCount = default(string))
+            public static IEnumerable<LoadBalancer> List(this ILoadBalancersOperations operations, ODataQuery<LoadBalancer> odataQuery = default(ODataQuery<LoadBalancer>), string inlineCount = default(string))
             {
                 return operations.ListAsync(odataQuery, inlineCount).GetAwaiter().GetResult();
             }
@@ -54,83 +56,9 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<LoadBalancer>> ListAsync(this ILoadBalancersOperations operations, ODataQuery<LoadBalancer> odataQuery = default(ODataQuery<LoadBalancer>), string inlineCount = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<LoadBalancer>> ListAsync(this ILoadBalancersOperations operations, ODataQuery<LoadBalancer> odataQuery = default(ODataQuery<LoadBalancer>), string inlineCount = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(odataQuery, inlineCount, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get a load balancer.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='loadBalancer'>
-            /// Load balancer name.
-            /// </param>
-            /// <param name='filter'>
-            /// OData filter parameter.
-            /// </param>
-            public static LoadBalancer Get(this ILoadBalancersOperations operations, string loadBalancer, string filter = default(string))
-            {
-                return operations.GetAsync(loadBalancer, filter).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get a load balancer.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='loadBalancer'>
-            /// Load balancer name.
-            /// </param>
-            /// <param name='filter'>
-            /// OData filter parameter.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<LoadBalancer> GetAsync(this ILoadBalancersOperations operations, string loadBalancer, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetWithHttpMessagesAsync(loadBalancer, filter, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get a list of all load balancers.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IPage<LoadBalancer> ListNext(this ILoadBalancersOperations operations, string nextPageLink)
-            {
-                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get a list of all load balancers.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IPage<LoadBalancer>> ListNextAsync(this ILoadBalancersOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
