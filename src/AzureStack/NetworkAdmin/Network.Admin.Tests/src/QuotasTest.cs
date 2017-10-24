@@ -36,7 +36,7 @@ namespace Network.Tests
 
         private Quota CreateTestQuota()
         {
-            var newQuota = new Quota()
+            return new Quota()
             {
                 MaxPublicIpsPerSubscription = 32,
                 MaxVnetsPerSubscription = 32,
@@ -46,7 +46,6 @@ namespace Network.Tests
                 MaxNicsPerSubscription = 4,
                 MaxSecurityGroupsPerSubscription = 2
             };
-            return newQuota;
         }
 
         [Fact]
@@ -61,7 +60,6 @@ namespace Network.Tests
                 if (retrieved != null)
                 {
                     // Delete quota
-                    Console.WriteLine("Deleting quota...");
                     client.Quotas.Delete(Location, quotaName);
                     Thread.Sleep(10000);
                 }
@@ -91,7 +89,6 @@ namespace Network.Tests
                 if (retrieved != null)
                 {
                     // Delete quota
-                    Console.WriteLine("Deleting quota...");
                     client.Quotas.Delete(Location, quotaName);
                     Thread.Sleep(10000);
                 }
@@ -100,11 +97,14 @@ namespace Network.Tests
                 var created = client.Quotas.Get(Location, quotaName);
 
                 AssertQuotasAreSame(quota, created);
+
+                // Change a field to update
                 created.MaxNicsPerSubscription = 8;
 
-                var updatedQuota = client.Quotas.CreateOrUpdate(Location, quotaName, newQuota);
+                var updatedQuota = client.Quotas.CreateOrUpdate(Location, quotaName, created);
+                var getUpdatedQuota = client.Quotas.Get(Location, quotaName);
 
-                AssertQuotasAreSame(updatedQuota, created);
+                AssertQuotasAreSame(updatedQuota, getUpdatedQuota);
 
                 client.Quotas.Delete(Location, quotaName);
                 Thread.Sleep(10000);
@@ -114,7 +114,6 @@ namespace Network.Tests
             });
         }
 
-
         [Fact]
         public void TestGetQuotaInvalid()
         {
@@ -122,6 +121,15 @@ namespace Network.Tests
             {
                 var quota = client.Quotas.Get(Location, "NonExistantQuota");
                 Assert.Null(quota);
+            });
+        }
+
+        [Fact]
+        public void TestDeleteInvalid()
+        {
+            RunTest((client) =>
+            {
+                client.Quotas.Delete(Location, "NonExistantQuota");
             });
         }
     }

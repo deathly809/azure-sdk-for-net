@@ -6,6 +6,7 @@
 using Microsoft.AzureStack.Management.Network.Admin;
 using Microsoft.AzureStack.Management.Network.Admin.Models;
 using System.Collections.Generic;
+using System.Threading;
 using Xunit;
 
 namespace Network.Tests
@@ -22,7 +23,28 @@ namespace Network.Tests
             {
                 Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
 
-                Assert.Equal(expected.Capabilities, found.Capabilities);
+                AssertSkuCapabilitiyAreSame(expected.Capabilities, found.Capabilities);
+            }
+        }
+
+        private void AssertSkuCapabilitiyAreSame(IList<SkuCapabilityProperties> expected, IList<SkuCapabilityProperties> found)
+        {
+            if (expected == null)
+            {
+                Assert.Null(found);
+            }
+            else
+            {
+                Assert.Equal(expected.Count, found.Count);
+
+                for (int i = 0; i < expected.Count; i++)
+                {
+                    var expectedCapability = expected[i];
+                    var foundCapability = found[i];
+
+                    Assert.Equal(expectedCapability.Name, foundCapability.Name);
+                    Assert.Equal(expectedCapability.Value, foundCapability.Value);
+                }
             }
         }
 
@@ -42,13 +64,147 @@ namespace Network.Tests
             });
         }
 
+        private List<SkuCapabilityProperties> CreateTestCapabilitiesList()
+        {
+            var skuList = new List<SkuCapabilityProperties>
+            {
+                new SkuCapabilityProperties()
+                {
+                    Name = "GatewayPool",
+                    Value = "default"
+                },
+                new SkuCapabilityProperties()
+                {
+                    Name = "Type",
+                    Value = "IPSec"
+                },
+                new SkuCapabilityProperties()
+                {
+                    Name = "TxBandwidthInMegabitsPerSecond",
+                    Value = "50"
+                },
+                new SkuCapabilityProperties()
+                {
+                    Name = "RxBandwidthInMegabitsPerSecond",
+                    Value = "50"
+                }
+            };
+            return skuList;
+        }
+
+        private List<SkuCapabilityProperties> UpdateTestCapabilitiesList()
+        {
+            var skuList = new List<SkuCapabilityProperties>
+            {
+                new SkuCapabilityProperties()
+                {
+                    Name = "GatewayPool",
+                    Value = "default"
+                },
+                new SkuCapabilityProperties()
+                {
+                    Name = "Type",
+                    Value = "IPSec"
+                },
+                new SkuCapabilityProperties()
+                {
+                    Name = "TxBandwidthInMegabitsPerSecond",
+                    Value = "80"
+                },
+                new SkuCapabilityProperties()
+                {
+                    Name = "RxBandwidthInMegabitsPerSecond",
+                    Value = "80"
+                }
+            };
+            return skuList;
+        }
+
+        private VirtualNetworkGatewayConnectionSku CreateTestSku()
+        {
+            return new VirtualNetworkGatewayConnectionSku()
+            {
+                Capabilities = CreateTestCapabilitiesList()
+            };
+        }
+
+        [Fact]
+        public void TestPutAndDeleteConnectionSku()
+        {
+            RunTest((client) => {
+                var skuName = "TestVirtualNetworkGatewayConnectionSkuForRemoval";
+                var newSku = CreateTestSku();
+
+                var retrieved = client.ConnectionSkus.Get(Location, skuName);
+                if (retrieved != null)
+                {
+                    // Delete sku
+                    client.ConnectionSkus.Delete(Location, skuName);
+                    Thread.Sleep(10000);
+                }
+
+                var sku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, newSku);
+                var created = client.ConnectionSkus.Get(Location, skuName);
+                AssertConnectionSkusAreSame(sku, created);
+
+                client.ConnectionSkus.Delete(Location, skuName);
+                Thread.Sleep(10000);
+
+                var deleted = client.ConnectionSkus.Get(Location, skuName);
+                Assert.Null(deleted);
+            });
+        }
+
+        [Fact]
+        public void TestUpdateConnectionSku()
+        {
+            RunTest((client) => {
+                var skuName = "TestVirtualNetworkGatewayConnectionSkuForUpdate";
+                var newSku = CreateTestSku();
+
+                var retrieved = client.ConnectionSkus.Get(Location, skuName);
+                if (retrieved != null)
+                {
+                    // Delete sku
+                    client.ConnectionSkus.Delete(Location, skuName);
+                    Thread.Sleep(10000);
+                }
+
+                var sku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, newSku);
+                var created = client.ConnectionSkus.Get(Location, skuName);
+                AssertConnectionSkusAreSame(sku, created);
+
+                // Change capability
+                created.Capabilities = UpdateTestCapabilitiesList();
+
+                var updatedSku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, created);
+                var getUpdatedSku = client.ConnectionSkus.Get(Location, skuName);
+                AssertConnectionSkusAreSame(updatedSku, getUpdatedSku);
+
+                client.ConnectionSkus.Delete(Location, skuName);
+                Thread.Sleep(10000);
+
+                var deleted = client.ConnectionSkus.Get(Location, skuName);
+                Assert.Null(deleted);
+            });
+        }
+
         [Fact]
         public void TestGetInvalidConnectionSku()
         {
             RunTest((client) =>
             {
                 var sku = client.ConnectionSkus.Get(Location, "NonExistantConnectionSku");
-                Assert.Null(null);
+                Assert.Null(sku);
+            });
+        }
+
+        [Fact]
+        public void TestDeleteInvalidConnectionSku()
+        {
+            RunTest((client) =>
+            {
+                client.ConnectionSkus.Delete(Location, "NonExistantConnectionSku");
             });
         }
     }
