@@ -63,40 +63,6 @@ namespace Microsoft.AzureStack.Management.Network.Admin
             }
 
             /// <summary>
-            /// Get a virtual network.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='virtualNetwork'>
-            /// The name of the virtual network.
-            /// </param>
-            public static VirtualNetwork Get(this IVirtualNetworksOperations operations, string virtualNetwork)
-            {
-                return operations.GetAsync(virtualNetwork).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get a virtual network.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='virtualNetwork'>
-            /// The name of the virtual network.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<VirtualNetwork> GetAsync(this IVirtualNetworksOperations operations, string virtualNetwork, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetWithHttpMessagesAsync(virtualNetwork, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
             /// Get a list of all virtual networks.
             /// </summary>
             /// <param name='operations'>

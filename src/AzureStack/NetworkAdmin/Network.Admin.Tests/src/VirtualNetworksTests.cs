@@ -40,8 +40,6 @@ namespace Network.Tests
                 var networks = client.VirtualNetworks.List();
                 Common.MapOverIPage(networks, client.VirtualNetworks.ListNext, (network) =>
                 {
-                    // var retrieved = client.VirtualNetworks.Get(network.Name);
-                    // AssertVirtualNetworksAreSame(network, retrieved);
                     NetworkCommon.ValidateBaseResources(network);
 
                     NetworkCommon.ValidateBaseResourceTenant(network);
@@ -51,7 +49,7 @@ namespace Network.Tests
 
             });
         }
-
+        
         [Fact]
         public void TestGetAllVirtualNetworksOData()
         {
@@ -63,15 +61,12 @@ namespace Network.Tests
                 var networks = client.VirtualNetworks.List(odataQuery);
                 Common.MapOverIPage(networks, client.VirtualNetworks.ListNext, (network) =>
                 {
-                    // var retrieved = client.VirtualNetworks.Get(network.Name);
-                    // AssertVirtualNetworksAreSame(network, retrieved);
                     NetworkCommon.ValidateBaseResources(network);
 
                     NetworkCommon.ValidateBaseResourceTenant(network);
 
                     ValidateConfigurationState(network.ConfigurationState);
                 });
-
             });
         }
     }
