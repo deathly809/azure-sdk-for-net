@@ -6,7 +6,6 @@
 using Microsoft.AzureStack.Management.Network.Admin;
 using Microsoft.AzureStack.Management.Network.Admin.Models;
 using System.Collections.Generic;
-using System.Threading;
 using Xunit;
 
 namespace Network.Tests
@@ -140,7 +139,6 @@ namespace Network.Tests
                 {
                     // Delete sku
                     client.ConnectionSkus.Delete(Location, skuName);
-                    Thread.Sleep(10000);
                 }
 
                 var sku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, newSku);
@@ -148,7 +146,6 @@ namespace Network.Tests
                 AssertConnectionSkusAreSame(sku, created);
 
                 client.ConnectionSkus.Delete(Location, skuName);
-                Thread.Sleep(10000);
 
                 var deleted = client.ConnectionSkus.Get(Location, skuName);
                 Assert.Null(deleted);
@@ -167,7 +164,6 @@ namespace Network.Tests
                 {
                     // Delete sku
                     client.ConnectionSkus.Delete(Location, skuName);
-                    Thread.Sleep(10000);
                 }
 
                 var sku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, newSku);
@@ -182,7 +178,6 @@ namespace Network.Tests
                 AssertConnectionSkusAreSame(updatedSku, getUpdatedSku);
 
                 client.ConnectionSkus.Delete(Location, skuName);
-                Thread.Sleep(10000);
 
                 var deleted = client.ConnectionSkus.Get(Location, skuName);
                 Assert.Null(deleted);
@@ -204,7 +199,8 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                client.ConnectionSkus.Delete(Location, "NonExistantConnectionSku");
+                var sku = client.ConnectionSkus.Delete(Location, "NonExistantConnectionSku");
+                Assert.Null(sku);
             });
         }
     }

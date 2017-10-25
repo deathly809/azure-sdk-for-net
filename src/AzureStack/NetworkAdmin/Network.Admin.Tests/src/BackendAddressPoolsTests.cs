@@ -11,25 +11,6 @@ namespace Network.Tests
 {
     public class BackendAddressPoolsTests : NetworkTestBase
     {
-        private void AssertBackendAddressPoolsAreSame(BackendAddressPool expected, BackendAddressPool found)
-        {
-            if (expected == null)
-            {
-                Assert.Null(found);
-            }
-            else
-            {
-                Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
-
-                Assert.Equal(expected.ProvisioningState, found.ProvisioningState);
-                Assert.Equal(expected.StartIpAddress, found.StartIpAddress);
-                Assert.Equal(expected.EndIpAddress, found.EndIpAddress);
-                Assert.Equal(expected.NumberOfIPAddresses, found.NumberOfIPAddresses);
-                Assert.Equal(expected.NumberOfIPAddressesAllocated, found.NumberOfIPAddressesAllocated);
-                Assert.Equal(expected.NumberOfIPAddressesInTransition, found.NumberOfIPAddressesInTransition);
-            }
-        }
-
         [Fact]
         public void TestGetAllBackendAddressPools()
         {
@@ -39,10 +20,6 @@ namespace Network.Tests
                 {
                    pools.ForEach((pool) =>
                     {
-                        // GET isn't implemented
-                        //var retrieved = client.BackendAddressPools.Get(pool.Name);
-                        //AssertBackendAddressPoolsAreSame(pool, retrieved);
-
                         NetworkCommon.ValidateBaseResources(pool);
 
                         Assert.NotNull(pool.ProvisioningState);

@@ -129,7 +129,8 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                client.Quotas.Delete(Location, "NonExistantQuota");
+                var quota = client.Quotas.Delete(Location, "NonExistantQuota");
+                AssertNull(quota);
             });
         }
     }

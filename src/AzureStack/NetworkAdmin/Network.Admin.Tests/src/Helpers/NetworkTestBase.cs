@@ -33,6 +33,7 @@ namespace Network.Tests {
             Assert.NotNull(client.PublicIPAddresses);
             Assert.NotNull(client.Quotas);
             Assert.NotNull(client.VirtualNetworks);
+            Assert.NotNull(client.Usage);
 
             // validate properties
             Assert.NotNull(client.SubscriptionId);
