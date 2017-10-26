@@ -22,15 +22,6 @@ namespace Network.Tests {
                 expected.Type == found.Type;
         }
 
-        public static bool ValidateResource(Resource resource)
-        {
-            return resource != null &&
-                resource.Id != null &&
-                resource.Location != null &&
-                resource.Name != null &&
-                resource.Type != null;
-        }
-
         public static bool ValidateBaseResources(Resource resource)
         {
             return resource != null &&

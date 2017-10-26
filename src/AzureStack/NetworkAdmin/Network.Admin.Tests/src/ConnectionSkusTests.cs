@@ -22,6 +22,11 @@ namespace Network.Tests
             {
                 Assert.True(NetworkCommon.CheckBaseResourcesAreSame(expected, found));
 
+                Assert.Equal(expected.ProvisioningState, found.ProvisioningState);
+                Assert.Equal(expected.ResourceType, found.ResourceType);
+                Assert.Equal(expected.IsDefault, found.IsDefault);
+                Assert.Equal(expected.Metadata, found.Metadata);
+
                 AssertSkuCapabilitiyAreSame(expected.Capabilities, found.Capabilities);
             }
         }
@@ -142,6 +147,9 @@ namespace Network.Tests
                 }
 
                 var sku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, newSku);
+                // We need to change the status to "Succeeded" because between the create and get it can succeed
+                sku.ProvisioningState = "Succeeded";
+
                 var created = client.ConnectionSkus.Get(Location, skuName);
                 AssertConnectionSkusAreSame(sku, created);
 
@@ -167,6 +175,8 @@ namespace Network.Tests
                 }
 
                 var sku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, newSku);
+                // We need to change the status to "Succeeded" because between the create and get it can succeed
+                sku.ProvisioningState = "Succeeded";
                 var created = client.ConnectionSkus.Get(Location, skuName);
                 AssertConnectionSkusAreSame(sku, created);
 
@@ -174,7 +184,11 @@ namespace Network.Tests
                 created.Capabilities = UpdateTestCapabilitiesList();
 
                 var updatedSku = client.ConnectionSkus.CreateOrUpdate(Location, skuName, created);
+                // We need to change the status to "Succeeded" because between the update and get it can succeed
+                updatedSku.ProvisioningState = "Succeeded";
+
                 var getUpdatedSku = client.ConnectionSkus.Get(Location, skuName);
+
                 AssertConnectionSkusAreSame(updatedSku, getUpdatedSku);
 
                 client.ConnectionSkus.Delete(Location, skuName);
@@ -199,8 +213,7 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                var sku = client.ConnectionSkus.Delete(Location, "NonExistantConnectionSku");
-                Assert.Null(sku);
+                client.ConnectionSkus.Delete(Location, "NonExistantConnectionSku");
             });
         }
     }

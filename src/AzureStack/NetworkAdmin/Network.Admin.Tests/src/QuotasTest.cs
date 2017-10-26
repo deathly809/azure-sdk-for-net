@@ -60,8 +60,7 @@ namespace Network.Tests
                 if (retrieved != null)
                 {
                     // Delete quota
-                    client.Quotas.Delete(Location, quotaName);
-                    Thread.Sleep(10000);
+                    DeleteQuota(client, quotaName);
                 }
 
                 var quota = client.Quotas.CreateOrUpdate(Location, quotaName, newQuota);
@@ -69,8 +68,8 @@ namespace Network.Tests
 
                 AssertQuotasAreSame(quota, created);
 
-                client.Quotas.Delete(Location, quotaName);
-                Thread.Sleep(10000);
+                // Delete quota
+                DeleteQuota(client, quotaName);
 
                 var deleted = client.Quotas.Get(Location, quotaName);
                 Assert.Null(deleted);
@@ -89,8 +88,7 @@ namespace Network.Tests
                 if (retrieved != null)
                 {
                     // Delete quota
-                    client.Quotas.Delete(Location, quotaName);
-                    Thread.Sleep(10000);
+                    DeleteQuota(client, quotaName);
                 }
 
                 var quota = client.Quotas.CreateOrUpdate(Location, quotaName, newQuota);
@@ -106,12 +104,19 @@ namespace Network.Tests
 
                 AssertQuotasAreSame(updatedQuota, getUpdatedQuota);
 
-                client.Quotas.Delete(Location, quotaName);
-                Thread.Sleep(10000);
+                // Delete quota
+                DeleteQuota(client, quotaName);
 
                 var deleted = client.Quotas.Get(Location, quotaName);
                 Assert.Null(deleted);
             });
+        }
+
+        // Delete quota - long running operation
+        private void DeleteQuota(NetworkAdminClient client, String quotaName)
+        {
+            client.Quotas.Delete(Location, quotaName);
+            Thread.Sleep(5000);
         }
 
         [Fact]
@@ -129,8 +134,7 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                var quota = client.Quotas.Delete(Location, "NonExistantQuota");
-                AssertNull(quota);
+                client.Quotas.Delete(Location, "NonExistantQuota");
             });
         }
     }
