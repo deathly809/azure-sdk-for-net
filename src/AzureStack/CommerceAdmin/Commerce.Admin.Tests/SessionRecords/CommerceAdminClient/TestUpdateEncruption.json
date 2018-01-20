@@ -1,13 +1,13 @@
 {
   "Entries": [
     {
-      "RequestUri": "/subscriptions/9ad61516-995c-4873-a21f-7e44904f0ed2/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?api-version=2015-06-01-preview&reportedStartTime=2017-09-06T00:00:00Z&reportedEndTime=2017-09-07T00:00:00Z",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvOWFkNjE1MTYtOTk1Yy00ODczLWEyMWYtN2U0NDkwNGYwZWQyL3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tbWVyY2UuQWRtaW4vc3Vic2NyaWJlclVzYWdlQWdncmVnYXRlcz9hcGktdmVyc2lvbj0yMDE1LTA2LTAxLXByZXZpZXcmcmVwb3J0ZWRTdGFydFRpbWU9MjAxNy0wOS0wNlQwMCUzQTAwJTNBMDBaJnJlcG9ydGVkRW5kVGltZT0yMDE3LTA5LTA3VDAwJTNBMDAlM0EwMFo=",
-      "RequestMethod": "GET",
+      "RequestUri": "/subscriptions/9ad61516-995c-4873-a21f-7e44904f0ed2/providers/Microsoft.Commerce.Admin/updateEncryption?api-version=2015-06-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvOWFkNjE1MTYtOTk1Yy00ODczLWEyMWYtN2U0NDkwNGYwZWQyL3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tbWVyY2UuQWRtaW4vdXBkYXRlRW5jcnlwdGlvbj9hcGktdmVyc2lvbj0yMDE1LTA2LTAxLXByZXZpZXc=",
+      "RequestMethod": "POST",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "093e3389-fa65-4f62-a928-c330a8d8432f"
+          "f08c37cf-d274-49ee-9f50-9f6164e7f35f"
         ],
         "accept-language": [
           "en-US"
@@ -17,13 +17,10 @@
           "Microsoft.AzureStack.Management.Commerce.Admin.CommerceAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": []\r\n}",
+      "ResponseBody": "",
       "ResponseHeaders": {
         "Content-Length": [
-          "12"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
+          "0"
         ],
         "Expires": [
           "-1"
@@ -40,17 +37,17 @@
         "X-Powered-By": [
           "ASP.NET"
         ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14880"
+        "x-ms-ratelimit-remaining-subscription-writes": [
+          "1197"
         ],
         "x-ms-request-id": [
-          "8eb72f8a-b36a-4c67-877b-50b6e33cdbf1"
+          "5d50102a-2af9-4a50-ac42-01b49b303ead"
         ],
         "x-ms-correlation-request-id": [
-          "8eb72f8a-b36a-4c67-877b-50b6e33cdbf1"
+          "5d50102a-2af9-4a50-ac42-01b49b303ead"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180120T013828Z:8eb72f8a-b36a-4c67-877b-50b6e33cdbf1"
+          "LOCAL:20180120T013828Z:5d50102a-2af9-4a50-ac42-01b49b303ead"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
