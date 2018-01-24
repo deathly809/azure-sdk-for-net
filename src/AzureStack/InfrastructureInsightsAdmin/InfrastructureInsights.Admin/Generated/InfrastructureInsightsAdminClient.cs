@@ -76,6 +76,11 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IOperations.
+        /// </summary>
+        public virtual IOperations Operations { get; private set; }
+
+        /// <summary>
         /// Gets the IAlertsOperations.
         /// </summary>
         public virtual IAlertsOperations Alerts { get; private set; }
@@ -296,6 +301,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// </summary>
         private void Initialize()
         {
+            Operations = new Operations(this);
             Alerts = new AlertsOperations(this);
             RegionHealths = new RegionHealthsOperations(this);
             ResourceHealths = new ResourceHealthsOperations(this);

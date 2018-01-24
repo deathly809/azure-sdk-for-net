@@ -54,10 +54,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets URI of the resource.
+        /// Gets URI of the resource.
         /// </summary>
         [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        public string Id { get; private set; }
 
         /// <summary>
         /// Gets name of the resource.
@@ -78,10 +78,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public string Location { get; private set; }
 
         /// <summary>
-        /// Gets list of key value pairs.
+        /// Gets or sets list of key value pairs.
         /// </summary>
         [JsonProperty(PropertyName = "tags")]
-        public IDictionary<string, string> Tags { get; private set; }
+        public IDictionary<string, string> Tags { get; set; }
 
     }
 }

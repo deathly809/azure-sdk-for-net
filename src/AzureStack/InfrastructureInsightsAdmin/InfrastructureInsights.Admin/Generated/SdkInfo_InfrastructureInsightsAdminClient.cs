@@ -11,6 +11,7 @@ internal static partial class SdkInfo
         {
             return new Tuple<string, string, string>[]
             {
+                new Tuple<string, string, string>("InfrastructureInsights", "Operations", "2016-05-01"),
                 new Tuple<string, string, string>("InfrastructureInsights.Admin", "Alerts", "2016-05-01"),
                 new Tuple<string, string, string>("InfrastructureInsights.Admin", "RegionHealths", "2016-05-01"),
                 new Tuple<string, string, string>("InfrastructureInsights.Admin", "ResourceHealths", "2016-05-01"),

@@ -71,6 +71,11 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
 
 
         /// <summary>
+        /// Gets the IOperations.
+        /// </summary>
+        IOperations Operations { get; }
+
+        /// <summary>
         /// Gets the IAlertsOperations.
         /// </summary>
         IAlertsOperations Alerts { get; }
