@@ -54,6 +54,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param
         /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
         /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
+        /// <param name="frontEndHttpListenPort">TODO</param>
+        /// <param name="backEndHttpListenPort">TODO</param>
         /// <param name="blobSvcContainerGcInterval">TODO</param>
         /// <param name="blobSvcShallowGcInterval">TODO</param>
         /// <param

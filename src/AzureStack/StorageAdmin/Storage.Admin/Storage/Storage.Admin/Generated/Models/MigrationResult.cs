@@ -14,6 +14,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public partial class MigrationResult
     {
         /// <summary>
@@ -27,6 +30,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MigrationResult class.
         /// </summary>
+        /// <param name="jobId">TODO</param>
+        /// <param name="sourceShareName">TODO</param>
+        /// <param name="storageAccountName">TODO</param>
+        /// <param name="containerName">TODO</param>
+        /// <param name="destinationShareName">TODO</param>
+        /// <param name="migrationStatus">TODO</param>
+        /// <param name="subEntitiesCompleted">TODO</param>
+        /// <param name="subEntitiesFailed">TODO</param>
+        /// <param name="failureReason">TODO</param>
         public MigrationResult(string jobId, string sourceShareName, string storageAccountName, string containerName, string destinationShareName = default(string), string migrationStatus = default(string), long? subEntitiesCompleted = default(long?), long? subEntitiesFailed = default(long?), string failureReason = default(string))
         {
             JobId = jobId;
@@ -47,46 +59,55 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "jobId")]
         public string JobId { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "sourceShareName")]
         public string SourceShareName { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "storageAccountName")]
         public string StorageAccountName { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "destinationShareName")]
         public string DestinationShareName { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "migrationStatus")]
         public string MigrationStatus { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "subEntitiesCompleted")]
         public long? SubEntitiesCompleted { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "subEntitiesFailed")]
         public long? SubEntitiesFailed { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "failureReason")]
         public string FailureReason { get; set; }

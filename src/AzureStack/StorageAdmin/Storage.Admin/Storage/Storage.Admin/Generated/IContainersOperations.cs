@@ -54,6 +54,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
+        /// <param name='farmId'>
+        /// The name of the farm.
+        /// </param>
         /// <param name='operationId'>
         /// Operation identifier.
         /// </param>
@@ -72,7 +75,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<MigrationResult>> MigrateShareWithHttpMessagesAsync(string resourceGroupName, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<MigrationResult>> MigrateShareWithHttpMessagesAsync(string resourceGroupName, string farmId, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// List all containers under the given parameters
         /// </summary>
@@ -83,6 +86,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='shareName'>
+        /// TODO
+        /// </param>
+        /// <param name='intent'>
+        /// TODO
+        /// </param>
+        /// <param name='maxCount'>
+        /// TODO
+        /// </param>
+        /// <param name='startIndex'>
         /// TODO
         /// </param>
         /// <param name='customHeaders'>
@@ -100,7 +112,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// List all containers under the given parameters
         /// </summary>
@@ -141,11 +153,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='shareName'>
         /// TODO
         /// </param>
-        /// <param name='migrationIntent'>
+        /// <param name='intent'>
+        /// TODO
         /// </param>
         /// <param name='maxCount'>
+        /// TODO
         /// </param>
         /// <param name='startIndex'>
+        /// TODO
         /// </param>
         /// <param name='migrationParameters'>
         /// Parameters needed to perform migration
@@ -165,7 +180,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<string>> MigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string migrationIntent, int maxCount, int startIndex, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<string>> MigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// List all containers under the given parameters
         /// </summary>

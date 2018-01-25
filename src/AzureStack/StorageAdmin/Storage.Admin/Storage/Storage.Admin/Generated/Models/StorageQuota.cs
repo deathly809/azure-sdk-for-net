@@ -17,6 +17,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class StorageQuota : Resource
     {
@@ -36,6 +39,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
+        /// <param name="numberOfStorageAccounts">TODO</param>
+        /// <param name="capacityInGb">TODO</param>
         public StorageQuota(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), int? numberOfStorageAccounts = default(int?), int? capacityInGb = default(int?))
             : base(id, name, type, location, tags)
         {
@@ -50,11 +55,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "properties.numberOfStorageAccounts")]
         public int? NumberOfStorageAccounts { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "properties.capacityInGb")]
         public int? CapacityInGb { get; set; }

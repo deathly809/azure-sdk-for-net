@@ -17,6 +17,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class Acquisition : Resource
     {

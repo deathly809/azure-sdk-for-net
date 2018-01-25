@@ -13,6 +13,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public partial class Container
     {
         /// <summary>

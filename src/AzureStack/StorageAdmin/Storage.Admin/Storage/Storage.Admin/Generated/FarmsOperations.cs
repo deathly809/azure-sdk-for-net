@@ -60,6 +60,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='settingAccessStringProperty'>
+        /// TODO
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -92,17 +93,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -111,7 +101,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
             }
-            FarmParameters parameters = new FarmParameters();
+            FarmCreationProperties parameters = new FarmCreationProperties();
             if (settingAccessStringProperty != null)
             {
                 parameters.SettingAccessStringProperty = settingAccessStringProperty;
@@ -311,17 +301,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -488,6 +467,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='settingAccessStringProperty'>
+        /// TODO
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -524,22 +504,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
             }
-            FarmParameters parameters = new FarmParameters();
+            FarmCreationProperties parameters = new FarmCreationProperties();
             if (settingAccessStringProperty != null)
             {
                 parameters.SettingAccessStringProperty = settingAccessStringProperty;
@@ -739,17 +708,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -946,17 +904,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -1150,17 +1097,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (Client.ApiVersion == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
@@ -1351,17 +1287,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -1546,6 +1471,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='operationId'>
+        /// Operation identifier.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1577,17 +1503,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             if (resourceGroupName == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
-            }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
             }
             if (farmId == null)
             {

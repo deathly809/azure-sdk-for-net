@@ -81,6 +81,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IOperations.
+        /// </summary>
+        public virtual IOperations Operations { get; private set; }
+
+        /// <summary>
         /// Gets the IAcquisitionsOperations.
         /// </summary>
         public virtual IAcquisitionsOperations Acquisitions { get; private set; }
@@ -326,6 +331,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </summary>
         private void Initialize()
         {
+            Operations = new Operations(this);
             Acquisitions = new AcquisitionsOperations(this);
             BlobServices = new BlobServicesOperations(this);
             Containers = new ContainersOperations(this);

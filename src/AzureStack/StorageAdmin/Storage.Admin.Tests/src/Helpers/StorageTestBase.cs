@@ -17,11 +17,11 @@ namespace Storage.Tests
             Assert.NotNull(client);
 
             // validate objects
-            Assert.NotNull(client.Blobs);
+            Assert.NotNull(client.BlobServices);
             Assert.NotNull(client.Containers);
             Assert.NotNull(client.Farms);
             Assert.NotNull(client.QueueServices);
-            Assert.NotNull(client.Quotas);
+            Assert.NotNull(client.StorageQuotas);
             Assert.NotNull(client.Shares);
             Assert.NotNull(client.StorageAccounts);
             Assert.NotNull(client.TableServices);

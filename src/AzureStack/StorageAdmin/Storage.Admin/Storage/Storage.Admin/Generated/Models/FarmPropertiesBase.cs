@@ -32,6 +32,50 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the FarmPropertiesBase class.
         /// </summary>
+        /// <param name="settingsPollingIntervalInSecond">TODO</param>
+        /// <param
+        /// name="retentionPeriodForDeletedStorageAccountsInDays">TODO</param>
+        /// <param name="hostStyleHttpPort">TODO</param>
+        /// <param name="hostStyleHttpsPort">TODO</param>
+        /// <param name="corsAllowedOriginsList">TODO</param>
+        /// <param name="dataCenterUriHostSuffixes">TODO</param>
+        /// <param name="bandwidthThrottleIsEnabled">TODO</param>
+        /// <param name="usageCollectionIntervalInSeconds">TODO</param>
+        /// <param name="feedbackRefreshIntervalInSeconds">TODO</param>
+        /// <param name="numberOfAccountsToSync">TODO</param>
+        /// <param
+        /// name="defaultThrottleProbabilityDecayIntervalInSeconds">TODO</param>
+        /// <param
+        /// name="gracePeriodForFullThrottlingInRefreshIntervals">TODO</param>
+        /// <param name="gracePeriodMaxThrottleProbability">TODO</param>
+        /// <param name="overallRequestThresholdInTps">TODO</param>
+        /// <param name="defaultRequestThresholdInTps">TODO</param>
+        /// <param name="minimumRequestThresholdInTps">TODO</param>
+        /// <param name="toleranceFactorForTps">TODO</param>
+        /// <param name="overallIngressThresholdInGbps">TODO</param>
+        /// <param name="defaultIngressThresholdInGbps">TODO</param>
+        /// <param name="minimumIngressThresholdInGbps">TODO</param>
+        /// <param name="toleranceFactorForIngress">TODO</param>
+        /// <param name="overallIntranetIngressThresholdInGbps">TODO</param>
+        /// <param name="defaultIntranetIngressThresholdInGbps">TODO</param>
+        /// <param name="minimumIntranetIngressThresholdInGbps">TODO</param>
+        /// <param name="toleranceFactorForIntranetIngress">TODO</param>
+        /// <param name="overallEgressThresholdInGbps">TODO</param>
+        /// <param name="defaultEgressThresholdInGbps">TODO</param>
+        /// <param name="minimumEgressThresholdInGbps">TODO</param>
+        /// <param name="toleranceFactorForEgress">TODO</param>
+        /// <param name="overallIntranetEgressThresholdInGbps">TODO</param>
+        /// <param name="defaultIntranetEgressThresholdInGbps">TODO</param>
+        /// <param name="minimumIntranetEgressThresholdInGbps">TODO</param>
+        /// <param name="toleranceFactorForIntranetEgress">TODO</param>
+        /// <param name="overallTotalIngressThresholdInGbps">TODO</param>
+        /// <param name="defaultTotalIngressThresholdInGbps">TODO</param>
+        /// <param name="minimumTotalIngressThresholdInGbps">TODO</param>
+        /// <param name="toleranceFactorForTotalIngress">TODO</param>
+        /// <param name="overallTotalEgressThresholdInGbps">TODO</param>
+        /// <param name="defaultTotalEgressThresholdInGbps">TODO</param>
+        /// <param name="minimumTotalEgressThresholdInGbps">TODO</param>
+        /// <param name="toleranceFactorForTotalEgress">TODO</param>
         public FarmPropertiesBase(int? settingsPollingIntervalInSecond = default(int?), int? retentionPeriodForDeletedStorageAccountsInDays = default(int?), int? hostStyleHttpPort = default(int?), int? hostStyleHttpsPort = default(int?), string corsAllowedOriginsList = default(string), string dataCenterUriHostSuffixes = default(string), bool? bandwidthThrottleIsEnabled = default(bool?), int? usageCollectionIntervalInSeconds = default(int?), int? feedbackRefreshIntervalInSeconds = default(int?), int? numberOfAccountsToSync = default(int?), int? defaultThrottleProbabilityDecayIntervalInSeconds = default(int?), int? gracePeriodForFullThrottlingInRefreshIntervals = default(int?), double? gracePeriodMaxThrottleProbability = default(double?), double? overallRequestThresholdInTps = default(double?), double? defaultRequestThresholdInTps = default(double?), double? minimumRequestThresholdInTps = default(double?), double? toleranceFactorForTps = default(double?), double? overallIngressThresholdInGbps = default(double?), double? defaultIngressThresholdInGbps = default(double?), double? minimumIngressThresholdInGbps = default(double?), double? toleranceFactorForIngress = default(double?), double? overallIntranetIngressThresholdInGbps = default(double?), double? defaultIntranetIngressThresholdInGbps = default(double?), double? minimumIntranetIngressThresholdInGbps = default(double?), double? toleranceFactorForIntranetIngress = default(double?), double? overallEgressThresholdInGbps = default(double?), double? defaultEgressThresholdInGbps = default(double?), double? minimumEgressThresholdInGbps = default(double?), double? toleranceFactorForEgress = default(double?), double? overallIntranetEgressThresholdInGbps = default(double?), double? defaultIntranetEgressThresholdInGbps = default(double?), double? minimumIntranetEgressThresholdInGbps = default(double?), double? toleranceFactorForIntranetEgress = default(double?), double? overallTotalIngressThresholdInGbps = default(double?), double? defaultTotalIngressThresholdInGbps = default(double?), double? minimumTotalIngressThresholdInGbps = default(double?), double? toleranceFactorForTotalIngress = default(double?), double? overallTotalEgressThresholdInGbps = default(double?), double? defaultTotalEgressThresholdInGbps = default(double?), double? minimumTotalEgressThresholdInGbps = default(double?), double? toleranceFactorForTotalEgress = default(double?))
         {
             SettingsPollingIntervalInSecond = settingsPollingIntervalInSecond;
@@ -84,206 +128,247 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.settingsPollingIntervalInSecond")]
         public int? SettingsPollingIntervalInSecond { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.retentionPeriodForDeletedStorageAccountsInDays")]
         public int? RetentionPeriodForDeletedStorageAccountsInDays { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.hostStyleHttpPort")]
         public int? HostStyleHttpPort { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.hostStyleHttpsPort")]
         public int? HostStyleHttpsPort { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.corsAllowedOriginsList")]
         public string CorsAllowedOriginsList { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.dataCenterUriHostSuffixes")]
         public string DataCenterUriHostSuffixes { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.bandwidthThrottleIsEnabled")]
         public bool? BandwidthThrottleIsEnabled { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.usageCollectionIntervalInSeconds")]
         public int? UsageCollectionIntervalInSeconds { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.feedbackRefreshIntervalInSeconds")]
         public int? FeedbackRefreshIntervalInSeconds { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.numberOfAccountsToSync")]
         public int? NumberOfAccountsToSync { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultThrottleProbabilityDecayIntervalInSeconds")]
         public int? DefaultThrottleProbabilityDecayIntervalInSeconds { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.gracePeriodForFullThrottlingInRefreshIntervals")]
         public int? GracePeriodForFullThrottlingInRefreshIntervals { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.gracePeriodMaxThrottleProbability")]
         public double? GracePeriodMaxThrottleProbability { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallRequestThresholdInTps")]
         public double? OverallRequestThresholdInTps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultRequestThresholdInTps")]
         public double? DefaultRequestThresholdInTps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumRequestThresholdInTps")]
         public double? MinimumRequestThresholdInTps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForTps")]
         public double? ToleranceFactorForTps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallIngressThresholdInGbps")]
         public double? OverallIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultIngressThresholdInGbps")]
         public double? DefaultIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumIngressThresholdInGbps")]
         public double? MinimumIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForIngress")]
         public double? ToleranceFactorForIngress { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallIntranetIngressThresholdInGbps")]
         public double? OverallIntranetIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultIntranetIngressThresholdInGbps")]
         public double? DefaultIntranetIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumIntranetIngressThresholdInGbps")]
         public double? MinimumIntranetIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForIntranetIngress")]
         public double? ToleranceFactorForIntranetIngress { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallEgressThresholdInGbps")]
         public double? OverallEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultEgressThresholdInGbps")]
         public double? DefaultEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumEgressThresholdInGbps")]
         public double? MinimumEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForEgress")]
         public double? ToleranceFactorForEgress { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallIntranetEgressThresholdInGbps")]
         public double? OverallIntranetEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultIntranetEgressThresholdInGbps")]
         public double? DefaultIntranetEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumIntranetEgressThresholdInGbps")]
         public double? MinimumIntranetEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForIntranetEgress")]
         public double? ToleranceFactorForIntranetEgress { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallTotalIngressThresholdInGbps")]
         public double? OverallTotalIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultTotalIngressThresholdInGbps")]
         public double? DefaultTotalIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumTotalIngressThresholdInGbps")]
         public double? MinimumTotalIngressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForTotalIngress")]
         public double? ToleranceFactorForTotalIngress { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.overallTotalEgressThresholdInGbps")]
         public double? OverallTotalEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.defaultTotalEgressThresholdInGbps")]
         public double? DefaultTotalEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.minimumTotalEgressThresholdInGbps")]
         public double? MinimumTotalEgressThresholdInGbps { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "settings.toleranceFactorForTotalEgress")]
         public double? ToleranceFactorForTotalEgress { get; set; }

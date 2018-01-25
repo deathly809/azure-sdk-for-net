@@ -83,7 +83,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<StorageQuota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, StorageQuotaParameters parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<StorageQuota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, StorageCreationProperties parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {

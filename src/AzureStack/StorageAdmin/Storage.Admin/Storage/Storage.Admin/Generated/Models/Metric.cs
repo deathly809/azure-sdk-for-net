@@ -15,6 +15,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public partial class Metric
     {
         /// <summary>
@@ -28,8 +31,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Metric class.
         /// </summary>
-        /// <param name="metricUnit">Possible values include: 'Count', 'Bytes',
-        /// 'Seconds', 'CountPerSecond', 'BytesPerSecond'</param>
+        /// <param name="name">TODO</param>
+        /// <param name="metricUnit">TODO. Possible values include: 'Count',
+        /// 'Bytes', 'Seconds', 'CountPerSecond', 'BytesPerSecond'</param>
+        /// <param name="timeGrain">TODO</param>
+        /// <param name="startTime">TODO</param>
+        /// <param name="endTime">TODO</param>
         /// <param name="metricValues">List of metric values.</param>
         public Metric(string name = default(string), string metricUnit = default(string), string timeGrain = default(string), System.DateTime? startTime = default(System.DateTime?), System.DateTime? endTime = default(System.DateTime?), IList<MetricValue> metricValues = default(IList<MetricValue>))
         {
@@ -48,28 +55,32 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Count', 'Bytes', 'Seconds',
-        /// 'CountPerSecond', 'BytesPerSecond'
+        /// Gets or sets TODO. Possible values include: 'Count', 'Bytes',
+        /// 'Seconds', 'CountPerSecond', 'BytesPerSecond'
         /// </summary>
         [JsonProperty(PropertyName = "metricUnit")]
         public string MetricUnit { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "timeGrain")]
         public string TimeGrain { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "startTime")]
         public System.DateTime? StartTime { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "endTime")]
         public System.DateTime? EndTime { get; set; }

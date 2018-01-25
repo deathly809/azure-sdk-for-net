@@ -90,17 +90,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -132,11 +121,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
             _url = _url.Replace("{farmId}", System.Uri.EscapeDataString(farmId));
+            _url = _url.Replace("{operationId}", System.Uri.EscapeDataString(operationId));
             List<string> _queryParameters = new List<string>();
-            if (operationId != null)
-            {
-                _queryParameters.Add(string.Format("operationId={0}", System.Uri.EscapeDataString(operationId)));
-            }
             if (Client.ApiVersion != null)
             {
                 _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersion)));
@@ -254,6 +240,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
+        /// <param name='farmId'>
+        /// The name of the farm.
+        /// </param>
         /// <param name='operationId'>
         /// Operation identifier.
         /// </param>
@@ -278,7 +267,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<MigrationResult>> MigrateShareWithHttpMessagesAsync(string resourceGroupName, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<MigrationResult>> MigrateShareWithHttpMessagesAsync(string resourceGroupName, string farmId, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -288,16 +277,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
+            if (farmId == null)
             {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
+                throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
             }
             if (operationId == null)
             {
@@ -315,6 +297,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
+                tracingParameters.Add("farmId", farmId);
                 tracingParameters.Add("operationId", operationId);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "MigrateShare", tracingParameters);
@@ -324,11 +307,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/operationresults/{operationId}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
+            _url = _url.Replace("{farmId}", System.Uri.EscapeDataString(farmId));
+            _url = _url.Replace("{operationId}", System.Uri.EscapeDataString(operationId));
             List<string> _queryParameters = new List<string>();
-            if (operationId != null)
-            {
-                _queryParameters.Add(string.Format("operationId={0}", System.Uri.EscapeDataString(operationId)));
-            }
             if (Client.ApiVersion != null)
             {
                 _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersion)));
@@ -470,6 +451,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='shareName'>
         /// TODO
         /// </param>
+        /// <param name='intent'>
+        /// TODO
+        /// </param>
+        /// <param name='maxCount'>
+        /// TODO
+        /// </param>
+        /// <param name='startIndex'>
+        /// TODO
+        /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -491,7 +481,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -500,17 +490,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             if (resourceGroupName == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
-            }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
             }
             if (farmId == null)
             {
@@ -524,6 +503,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
             }
+            if (intent == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "intent");
+            }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -534,12 +517,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("farmId", farmId);
                 tracingParameters.Add("shareName", shareName);
+                tracingParameters.Add("intent", intent);
+                tracingParameters.Add("maxCount", maxCount);
+                tracingParameters.Add("startIndex", startIndex);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/containers&Intent={migrationIntent}&MaxCount={maxCount}&StartIndex={startIndex}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/containers").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
             _url = _url.Replace("{farmId}", System.Uri.EscapeDataString(farmId));
@@ -549,6 +535,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersion)));
             }
+            if (intent != null)
+            {
+                _queryParameters.Add(string.Format("Intent={0}", System.Uri.EscapeDataString(intent)));
+            }
+            _queryParameters.Add(string.Format("MaxCount={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(maxCount, Client.SerializationSettings).Trim('"'))));
+            _queryParameters.Add(string.Format("StartIndex={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(startIndex, Client.SerializationSettings).Trim('"'))));
             if (_queryParameters.Count > 0)
             {
                 _url += (_url.Contains("?") ? "&" : "?") + string.Join("&", _queryParameters);
@@ -716,17 +708,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             if (resourceGroupName == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
-            }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
             }
             if (farmId == null)
             {
@@ -902,11 +883,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='shareName'>
         /// TODO
         /// </param>
-        /// <param name='migrationIntent'>
+        /// <param name='intent'>
+        /// TODO
         /// </param>
         /// <param name='maxCount'>
+        /// TODO
         /// </param>
         /// <param name='startIndex'>
+        /// TODO
         /// </param>
         /// <param name='migrationParameters'>
         /// Parameters needed to perform migration
@@ -932,7 +916,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<string>> MigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string migrationIntent, int maxCount, int startIndex, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<string>> MigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -941,17 +925,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             if (resourceGroupName == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
-            }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
             }
             if (farmId == null)
             {
@@ -965,9 +938,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
             }
-            if (migrationIntent == null)
+            if (intent == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "migrationIntent");
+                throw new ValidationException(ValidationRules.CannotBeNull, "intent");
             }
             if (migrationParameters == null)
             {
@@ -987,7 +960,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("farmId", farmId);
                 tracingParameters.Add("shareName", shareName);
-                tracingParameters.Add("migrationIntent", migrationIntent);
+                tracingParameters.Add("intent", intent);
                 tracingParameters.Add("maxCount", maxCount);
                 tracingParameters.Add("startIndex", startIndex);
                 tracingParameters.Add("migrationParameters", migrationParameters);
@@ -1006,12 +979,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(Client.ApiVersion)));
             }
-            if (migrationIntent != null)
+            if (intent != null)
             {
-                _queryParameters.Add(string.Format("migrationIntent={0}", System.Uri.EscapeDataString(migrationIntent)));
+                _queryParameters.Add(string.Format("Intent={0}", System.Uri.EscapeDataString(intent)));
             }
-            _queryParameters.Add(string.Format("maxCount={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(maxCount, Client.SerializationSettings).Trim('"'))));
-            _queryParameters.Add(string.Format("startIndex={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(startIndex, Client.SerializationSettings).Trim('"'))));
+            _queryParameters.Add(string.Format("MaxCount={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(maxCount, Client.SerializationSettings).Trim('"'))));
+            _queryParameters.Add(string.Format("StartIndex={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(startIndex, Client.SerializationSettings).Trim('"'))));
             if (_queryParameters.Count > 0)
             {
                 _url += (_url.Contains("?") ? "&" : "?") + string.Join("&", _queryParameters);
@@ -1019,7 +992,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             // Create HTTP transport objects
             var _httpRequest = new HttpRequestMessage();
             HttpResponseMessage _httpResponse = null;
-            _httpRequest.Method = new HttpMethod("PUT");
+            _httpRequest.Method = new HttpMethod("POST");
             _httpRequest.RequestUri = new System.Uri(_url);
             // Set Headers
             if (Client.GenerateClientRequestId != null && Client.GenerateClientRequestId.Value)

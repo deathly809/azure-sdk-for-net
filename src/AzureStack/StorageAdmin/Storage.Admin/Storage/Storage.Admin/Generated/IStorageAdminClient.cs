@@ -76,6 +76,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 
 
         /// <summary>
+        /// Gets the IOperations.
+        /// </summary>
+        IOperations Operations { get; }
+
+        /// <summary>
         /// Gets the IAcquisitionsOperations.
         /// </summary>
         IAcquisitionsOperations Acquisitions { get; }

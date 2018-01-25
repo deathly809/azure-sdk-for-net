@@ -90,17 +90,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
-            }
             if (farmId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
@@ -257,6 +246,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             return _result;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
@@ -293,17 +285,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             if (resourceGroupName == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
-            }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
             }
             if (farmId == null)
             {
@@ -461,6 +442,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             return _result;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
@@ -497,17 +481,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             if (resourceGroupName == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
-            }
-            if (resourceGroupName != null)
-            {
-                if (resourceGroupName.Length > 90)
-                {
-                    throw new ValidationException(ValidationRules.MaxLength, "resourceGroupName", 90);
-                }
-                if (!System.Text.RegularExpressions.Regex.IsMatch(resourceGroupName, "^[-\\w\\._]+$"))
-                {
-                    throw new ValidationException(ValidationRules.Pattern, "resourceGroupName", "^[-\\w\\._]+$");
-                }
             }
             if (farmId == null)
             {
@@ -665,6 +638,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             return _result;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -835,6 +811,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             return _result;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

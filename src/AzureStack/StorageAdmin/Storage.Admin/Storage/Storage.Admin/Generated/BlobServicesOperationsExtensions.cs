@@ -61,6 +61,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 }
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -75,6 +78,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 return operations.ListMetricDefinitionsAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -95,6 +101,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 }
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -109,6 +118,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 return operations.ListMetricsAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -129,6 +141,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 }
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -140,6 +155,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 return operations.ListMetricDefinitionsNextAsync(nextPageLink).GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -157,6 +175,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 }
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
@@ -168,6 +189,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 return operations.ListMetricsNextAsync(nextPageLink).GetAwaiter().GetResult();
             }
 
+            /// <summary>
+            /// TODO
+            /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>

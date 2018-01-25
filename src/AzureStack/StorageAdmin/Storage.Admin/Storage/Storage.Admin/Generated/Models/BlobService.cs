@@ -40,8 +40,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="version">TODO</param>
-        /// <param name="healthStatus">Possible values include: 'Unknown',
-        /// 'Healthy', 'Warning', 'Critical'</param>
+        /// <param name="healthStatus">TODO. Possible values include:
+        /// 'Unknown', 'Healthy', 'Warning', 'Critical'</param>
         /// <param name="frontEndCallbackThreadsCount">TODO</param>
         /// <param
         /// name="frontEndCpuBasedKeepAliveThrottlingEnabled">TODO</param>
@@ -65,6 +65,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param
         /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
         /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
+        /// <param name="frontEndHttpListenPort">TODO</param>
+        /// <param name="backEndHttpListenPort">TODO</param>
         /// <param name="blobSvcContainerGcInterval">TODO</param>
         /// <param name="blobSvcShallowGcInterval">TODO</param>
         /// <param
@@ -104,11 +106,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.version ")]
+        [JsonProperty(PropertyName = "properties.version")]
         public string Version { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Unknown', 'Healthy',
+        /// Gets or sets TODO. Possible values include: 'Unknown', 'Healthy',
         /// 'Warning', 'Critical'
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthStatus")]
@@ -199,11 +201,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public bool? FrontEndUseSlaTimeInAvailability { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "properties.settings.frontEndHttpListenPort")]
         public int? FrontEndHttpListenPort { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "properties.settings.backEndHttpListenPort")]
         public int? BackEndHttpListenPort { get; set; }

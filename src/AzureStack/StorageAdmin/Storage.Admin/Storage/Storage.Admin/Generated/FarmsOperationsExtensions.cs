@@ -34,6 +34,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The name of the farm.
             /// </param>
             /// <param name='settingAccessStringProperty'>
+            /// TODO
             /// </param>
             public static Farm Create(this IFarmsOperations operations, string resourceGroupName, string farmId, string settingAccessStringProperty = default(string))
             {
@@ -53,6 +54,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The name of the farm.
             /// </param>
             /// <param name='settingAccessStringProperty'>
+            /// TODO
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -118,6 +120,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The name of the farm.
             /// </param>
             /// <param name='settingAccessStringProperty'>
+            /// TODO
             /// </param>
             public static Farm Update(this IFarmsOperations operations, string resourceGroupName, string farmId, string settingAccessStringProperty = default(string))
             {
@@ -137,6 +140,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The name of the farm.
             /// </param>
             /// <param name='settingAccessStringProperty'>
+            /// TODO
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -316,6 +320,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The name of the farm.
             /// </param>
             /// <param name='operationId'>
+            /// Operation identifier.
             /// </param>
             public static string GetGarbageCollectionState(this IFarmsOperations operations, string resourceGroupName, string farmId, string operationId)
             {
@@ -335,6 +340,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The name of the farm.
             /// </param>
             /// <param name='operationId'>
+            /// Operation identifier.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

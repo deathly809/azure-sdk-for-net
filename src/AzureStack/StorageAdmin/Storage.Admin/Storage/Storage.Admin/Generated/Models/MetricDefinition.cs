@@ -15,6 +15,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public partial class MetricDefinition
     {
         /// <summary>
@@ -28,12 +31,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MetricDefinition class.
         /// </summary>
-        /// <param name="unit">Possible values include: 'Count', 'Bytes',
+        /// <param name="name">TODO</param>
+        /// <param name="unit">TODO. Possible values include: 'Count', 'Bytes',
         /// 'Seconds', 'CountPerSecond', 'BytesPerSecond'</param>
-        /// <param name="primaryAggregationType">Possible values include:
+        /// <param name="primaryAggregationType">TODO. Possible values include:
         /// 'None', 'Average', 'Total', 'Minimum', 'Maximum', 'Last'</param>
         /// <param name="metricAvailabilities">TODO</param>
-        public MetricDefinition(object name = default(object), string unit = default(string), string primaryAggregationType = default(string), IList<MetricAvailability> metricAvailabilities = default(IList<MetricAvailability>))
+        public MetricDefinition(LocalizableString name = default(LocalizableString), string unit = default(string), string primaryAggregationType = default(string), IList<MetricAvailability> metricAvailabilities = default(IList<MetricAvailability>))
         {
             Name = name;
             Unit = unit;
@@ -48,19 +52,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets TODO
         /// </summary>
         [JsonProperty(PropertyName = "name")]
-        public object Name { get; private set; }
+        public LocalizableString Name { get; private set; }
 
         /// <summary>
-        /// Gets possible values include: 'Count', 'Bytes', 'Seconds',
+        /// Gets TODO. Possible values include: 'Count', 'Bytes', 'Seconds',
         /// 'CountPerSecond', 'BytesPerSecond'
         /// </summary>
         [JsonProperty(PropertyName = "unit")]
         public string Unit { get; private set; }
 
         /// <summary>
-        /// Gets possible values include: 'None', 'Average', 'Total',
+        /// Gets TODO. Possible values include: 'None', 'Average', 'Total',
         /// 'Minimum', 'Maximum', 'Last'
         /// </summary>
         [JsonProperty(PropertyName = "primaryAggregationType")]

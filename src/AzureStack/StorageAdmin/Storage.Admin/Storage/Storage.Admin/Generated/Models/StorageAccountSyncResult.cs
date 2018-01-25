@@ -13,6 +13,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public partial class StorageAccountSyncResult
     {
         /// <summary>
@@ -47,25 +50,25 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "CorrelationId")]
+        [JsonProperty(PropertyName = "correlationId")]
         public string CorrelationId { get; private set; }
 
         /// <summary>
         /// Gets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "FrontdoorLocation")]
+        [JsonProperty(PropertyName = "frontdoorLocation")]
         public string FrontdoorLocation { get; private set; }
 
         /// <summary>
         /// Gets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "TimeStamp")]
+        [JsonProperty(PropertyName = "timeStamp")]
         public string TimeStamp { get; private set; }
 
         /// <summary>
         /// Gets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "Message")]
+        [JsonProperty(PropertyName = "message")]
         public string Message { get; private set; }
 
     }

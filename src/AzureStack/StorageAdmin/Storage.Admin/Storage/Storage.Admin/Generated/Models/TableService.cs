@@ -40,8 +40,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="version">TODO</param>
-        /// <param name="healthStatus">Possible values include: 'Unknown',
-        /// 'Healthy', 'Warning', 'Critical'</param>
+        /// <param name="healthStatus">TODO. Possible values include:
+        /// 'Unknown', 'Healthy', 'Warning', 'Critical'</param>
         /// <param name="frontEndCallbackThreadsCount">TODO</param>
         /// <param
         /// name="frontEndCpuBasedKeepAliveThrottlingEnabled">TODO</param>
@@ -65,6 +65,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param
         /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
         /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
+        /// <param name="frontEndHttpListenPort">TODO</param>
+        /// <param name="backEndHttpListenPort">TODO</param>
         public TableService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpListenPort = default(int?), int? backEndHttpListenPort = default(int?))
             : base(id, name, type, location, tags)
         {
@@ -97,11 +99,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.version ")]
+        [JsonProperty(PropertyName = "properties.version")]
         public string Version { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Unknown', 'Healthy',
+        /// Gets or sets TODO. Possible values include: 'Unknown', 'Healthy',
         /// 'Warning', 'Critical'
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthStatus")]
@@ -192,11 +194,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public bool? FrontEndUseSlaTimeInAvailability { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "properties.properties.frontEndHttpListenPort")]
         public int? FrontEndHttpListenPort { get; set; }
 
         /// <summary>
+        /// Gets or sets TODO
         /// </summary>
         [JsonProperty(PropertyName = "properties.properties.backEndHttpListenPort")]
         public int? BackEndHttpListenPort { get; set; }

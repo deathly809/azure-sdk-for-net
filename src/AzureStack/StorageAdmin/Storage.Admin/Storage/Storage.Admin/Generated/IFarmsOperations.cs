@@ -33,6 +33,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='settingAccessStringProperty'>
+        /// TODO
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -85,6 +86,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='settingAccessStringProperty'>
+        /// TODO
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -209,6 +211,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// The name of the farm.
         /// </param>
         /// <param name='operationId'>
+        /// Operation identifier.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

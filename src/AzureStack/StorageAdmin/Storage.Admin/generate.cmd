@@ -4,4 +4,4 @@
 ::
 
 @echo off
-call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/storage latest BrianLPeterson current azure-rest-api-specs %CD%
+call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/storage latest deathly809 azs.storage.admin azure-rest-api-specs %CD%

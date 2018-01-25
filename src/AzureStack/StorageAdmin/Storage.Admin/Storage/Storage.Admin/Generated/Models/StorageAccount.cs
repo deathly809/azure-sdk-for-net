@@ -44,9 +44,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Storage Account. Possible values include: 'Standard_LRS',
         /// 'Standard_GRS', 'Standard_ZRS', 'Standard_RAGRS',
         /// 'Premium_LRS'</param>
-        /// <param name="provisioningState">Current state of storage account.
-        /// Possible values include: 'PreCreate', 'Created',
-        /// 'Suspended'</param>
+        /// <param name="provisioningState">TODO. Possible values include:
+        /// 'PreCreate', 'Created', 'Suspended'</param>
         /// <param name="primaryEndpoints">Gets the URLs that are used to
         /// perform a retrieval of a public blob, queue, or table object. Note
         /// that Standard_ZRS and Premium_LRS accounts only return the blob
@@ -56,10 +55,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="alternateName">Used during undelete operation</param>
         /// <param name="primaryLocation">Gets the location of the primary data
         /// center for the storage account.</param>
-        /// <param name="statusOfPrimary">Gets the status indicating whether
-        /// the primary location of the storage account is available or
-        /// unavailable. Possible values include: 'available',
-        /// 'unavailable'</param>
+        /// <param name="statusOfPrimary">TODO. Possible values include:
+        /// 'available', 'unavailable'</param>
         /// <param name="tenantSubscriptionId">TODO</param>
         /// <param name="tenantStorageAccountName">TODO</param>
         /// <param name="tenantResourceGroupName">TODO</param>
@@ -130,11 +127,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public string AccountType { get; private set; }
 
         /// <summary>
-        /// Gets current state of storage account. Possible values include:
-        /// 'PreCreate', 'Created', 'Suspended'
+        /// Gets or sets TODO. Possible values include: 'PreCreate', 'Created',
+        /// 'Suspended'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
-        public string ProvisioningState { get; private set; }
+        public string ProvisioningState { get; set; }
 
         /// <summary>
         /// Gets the URLs that are used to perform a retrieval of a public
@@ -164,12 +161,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public string PrimaryLocation { get; private set; }
 
         /// <summary>
-        /// Gets the status indicating whether the primary location of the
-        /// storage account is available or unavailable. Possible values
-        /// include: 'available', 'unavailable'
+        /// Gets or sets TODO. Possible values include: 'available',
+        /// 'unavailable'
         /// </summary>
         [JsonProperty(PropertyName = "properties.statusOfPrimary")]
-        public string StatusOfPrimary { get; private set; }
+        public string StatusOfPrimary { get; set; }
 
         /// <summary>
         /// Gets TODO

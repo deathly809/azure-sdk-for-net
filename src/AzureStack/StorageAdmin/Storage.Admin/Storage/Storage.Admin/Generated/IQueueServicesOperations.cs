@@ -48,6 +48,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Thrown when a required parameter is null
         /// </exception>
         Task<AzureOperationResponse<QueueService>> GetWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
@@ -70,6 +73,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Thrown when a required parameter is null
         /// </exception>
         Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
         /// </param>
@@ -92,6 +98,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Thrown when a required parameter is null
         /// </exception>
         Task<AzureOperationResponse<IPage<Metric>>> ListMetricsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>
@@ -111,6 +120,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Thrown when a required parameter is null
         /// </exception>
         Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
         /// </param>

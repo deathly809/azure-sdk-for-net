@@ -17,6 +17,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class Share : Resource
     {
@@ -41,8 +44,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="totalCapacity">TODO</param>
         /// <param name="usedCapacity">TODO</param>
         /// <param name="freeCapacity">TODO</param>
-        /// <param name="healthStatus">Possible values include: 'Unknown',
-        /// 'Healthy', 'Warning', 'Critical'</param>
+        /// <param name="healthStatus">TODO. Possible values include:
+        /// 'Unknown', 'Healthy', 'Warning', 'Critical'</param>
         public Share(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string shareName = default(string), string uncPath = default(string), long? totalCapacity = default(long?), long? usedCapacity = default(long?), long? freeCapacity = default(long?), string healthStatus = default(string))
             : base(id, name, type, location, tags)
         {
@@ -91,7 +94,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public long? FreeCapacity { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Unknown', 'Healthy',
+        /// Gets or sets TODO. Possible values include: 'Unknown', 'Healthy',
         /// 'Warning', 'Critical'
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthStatus")]

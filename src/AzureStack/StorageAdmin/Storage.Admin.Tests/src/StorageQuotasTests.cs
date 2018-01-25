@@ -66,7 +66,7 @@ namespace Storage.Tests
                 var name = "TestCreateQuota";
                 IgnoreExceptions(() => client.StorageQuotas.Delete(Location, name));
 
-                var parameters = new StorageQuotaParameters()
+                var parameters = new StorageCreationProperties()
                 {
                     CapacityInGb = -100000000,
                     NumberOfStorageAccounts = -1000000000
@@ -88,7 +88,7 @@ namespace Storage.Tests
                 var quotaName = "TestUpdateQuota";
                 IgnoreExceptions(() => client.StorageQuotas.Delete(Location, quotaName));
 
-                var parameters = new StorageQuotaParameters()
+                var parameters = new StorageCreationProperties()
                 {
                     CapacityInGb = 50,
                     NumberOfStorageAccounts = 100
@@ -115,7 +115,7 @@ namespace Storage.Tests
                 var name = $"TestDeleteQuota";
                 IgnoreExceptions(() => client.StorageQuotas.Delete(Location, name));
 
-                var parameters = new StorageQuotaParameters() 
+                var parameters = new StorageCreationProperties() 
                 {
                     CapacityInGb = 0,
                     NumberOfStorageAccounts = -1
