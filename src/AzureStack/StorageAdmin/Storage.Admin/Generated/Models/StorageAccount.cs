@@ -66,7 +66,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="customDomain">Gets the custom domain the user assigned
         /// to this storage account.</param>
         /// <param name="acquisitionOperationCount">TODO</param>
-        /// <param name="deletedTime">TODO</param>
+        /// <param name="deletedTime">The date-time when the storage account
+        /// was deleted.</param>
         /// <param name="accountStatus">TODO. Possible values include:
         /// 'Active', 'Deleted', 'OutOfRetentionPeriod', 'Recycled'</param>
         /// <param name="recoveredTime">TODO</param>
@@ -206,7 +207,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public int? AcquisitionOperationCount { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the date-time when the storage account was deleted.
         /// </summary>
         [JsonProperty(PropertyName = "properties.deletedTime")]
         public System.DateTime? DeletedTime { get; set; }

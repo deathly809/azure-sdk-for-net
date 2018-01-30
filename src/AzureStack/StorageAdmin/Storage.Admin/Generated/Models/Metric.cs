@@ -38,7 +38,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="startTime">TODO</param>
         /// <param name="endTime">TODO</param>
         /// <param name="metricValues">List of metric values.</param>
-        public Metric(string name = default(string), string metricUnit = default(string), string timeGrain = default(string), System.DateTime? startTime = default(System.DateTime?), System.DateTime? endTime = default(System.DateTime?), IList<MetricValue> metricValues = default(IList<MetricValue>))
+        public Metric(LocalizableString name = default(LocalizableString), string metricUnit = default(string), string timeGrain = default(string), System.DateTime? startTime = default(System.DateTime?), System.DateTime? endTime = default(System.DateTime?), IList<MetricValue> metricValues = default(IList<MetricValue>))
         {
             Name = name;
             MetricUnit = metricUnit;
@@ -55,10 +55,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets TODO
         /// </summary>
         [JsonProperty(PropertyName = "name")]
-        public string Name { get; set; }
+        public LocalizableString Name { get; private set; }
 
         /// <summary>
         /// Gets or sets TODO. Possible values include: 'Count', 'Bytes',

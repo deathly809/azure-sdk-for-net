@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public StorageAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Create or update an existing storage quota
+        /// Create or update an existing storage quota.
         /// </summary>
         /// <param name='location'>
         /// Location of storage accounts.
@@ -386,7 +386,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -436,7 +436,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Retrieve an existing quota
+        /// Returns a storage quota.
         /// </summary>
         /// <param name='location'>
         /// Location of storage accounts.
@@ -564,7 +564,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -632,7 +632,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Get a list of quotas for this location
+        /// Returns a list of all storage quotas at the given location.
         /// </summary>
         /// <param name='location'>
         /// Location of storage accounts.
@@ -819,7 +819,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Get a list of quotas for this location
+        /// Returns a list of all storage quotas at the given location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

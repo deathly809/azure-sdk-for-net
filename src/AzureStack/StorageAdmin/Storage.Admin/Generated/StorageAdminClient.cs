@@ -59,11 +59,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public string ApiVersion { get; private set; }
 
         /// <summary>
-        /// TODO
-        /// </summary>
-        public string AcquisitionId { get; set; }
-
-        /// <summary>
         /// Gets or sets the preferred language for the response.
         /// </summary>
         public string AcceptLanguage { get; set; }

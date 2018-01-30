@@ -21,9 +21,16 @@ namespace Storage.Tests
                 Assert.Equal(expected.Location, found.Location);
                 Assert.Equal(expected.Name, found.Name);
                 Assert.Equal(expected.ShareName, found.ShareName);
-                foreach(var expectedTag in expected.Tags)
+                if (expected.Tags != null)
                 {
-                    Assert.True(found.Tags.ContainsKey(expectedTag.Key));
+                    Assert.NotNull(found.Tags);
+                    foreach (var expectedTag in expected.Tags)
+                    {
+                        Assert.True(found.Tags.ContainsKey(expectedTag.Key));
+                    }
+                } else
+                {
+                    Assert.Null(found.Tags);
                 }
                 Assert.Equal(expected.TotalCapacity, found.TotalCapacity);
                 Assert.Equal(expected.Type, found.Type);
@@ -32,8 +39,7 @@ namespace Storage.Tests
             }
         }
 
-        private void ValidateShare(Share share)
-        {
+        private void ValidateShare(Share share) {
             Assert.NotNull(share);
             Assert.NotNull(share.FreeCapacity);
             Assert.NotNull(share.HealthStatus);
@@ -41,7 +47,6 @@ namespace Storage.Tests
             Assert.NotNull(share.Location);
             Assert.NotNull(share.Name);
             Assert.NotNull(share.ShareName);
-            //Assert.NotNull(share.Tags);
             Assert.NotNull(share.TotalCapacity);
             Assert.NotNull(share.Type);
             Assert.NotNull(share.UncPath);
@@ -49,52 +54,87 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void GetShare()
-        {
+        public void GetShare() {
             RunTest((client) => {
-                //   var retrieved = client.Shares.Get(Location);
-                //   AssertSharesAreSame(result, retrieved);
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach (var share in shares)
+                    {
+                        var sName = ExtractName(share.Name);
+                        var result = client.Shares.Get(ResourceGroupName, fName, sName);
+                        AssertAreEqual(share, result);
+                        return;
+                    }
+                }
             });
         }
 
         [Fact]
-        public void GetAllShares()
-        {
+        public void GetAllShares() {
             RunTest((client) => {
-                //var results = client.Shares.List(Location);
-                //foreach (var result in results)
-                //{
-                //    var retrieved = client.Shares.Get(Location, result.Name.Replace(Location + "/", ""));
-                //    AssertSharesAreSame(result, retrieved);
-                //}
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach (var share in shares)
+                    {
+                        var sName = ExtractName(share.Name);
+                        var result = client.Shares.Get(ResourceGroupName, fName, sName);
+                        AssertAreEqual(share, result);
+                    }
+                }
             });
         }
 
         [Fact]
-        public void ListAllShares()
-        {
+        public void ListShares() {
             RunTest((client) => {
-                /*      var result = client.Shares.List(Location);
-                        Common.WriteIEnumerableToFile(result, "ListAllShares.txt"); */
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    shares.ForEach(ValidateShare);
+                }
             });
         }
 
         [Fact]
-        public void ListAllShareMetricDefinitions()
-        {
+        public void ListAllShareMetricDefinitions() {
             RunTest((client) => {
-               // var result = client.Shares.ListMetricDefinitions(Location);
-               // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach (var share in shares)
+                    {
+                        var sName = ExtractName(share.Name);
+                        var metricDefinitions = client.Shares.ListMetricDefinitions(ResourceGroupName, fName, sName);
+                    }
+                }
             });
         }
 
 
         [Fact]
-        public void ListAllShareMetricsDefinitions()
-        {
+        public void ListAllShareMetricsDefinitions() {
             RunTest((client) => {
-                // var result = client.Shares.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllShareMetricDefinitions.txt");
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach (var share in shares)
+                    {
+                        var sName = ExtractName(share.Name);
+                        var metrics = client.Shares.ListMetrics(ResourceGroupName, fName, sName);
+                    }
+                }
             });
         }
     }

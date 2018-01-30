@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public StorageAdminClient Client { get; private set; }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of storage shares.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -80,7 +80,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<Share>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<Share>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -214,7 +214,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<Share>>();
+            var _result = new AzureOperationResponse<IList<Share>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -227,7 +227,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<Share>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<Share>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -247,7 +247,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metrics for a storage share.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -452,7 +452,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metric definitions for a storage share.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -657,7 +657,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a storage share.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -794,7 +794,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -862,7 +862,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of storage shares.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -888,7 +888,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<Share>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<Share>>> ListNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (nextPageLink == null)
             {
@@ -1002,7 +1002,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IPage<Share>>();
+            var _result = new AzureOperationResponse<IList<Share>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1015,7 +1015,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<Share>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<Share>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -1035,7 +1035,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metrics for a storage share.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -1208,7 +1208,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metric definitions for a storage share.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

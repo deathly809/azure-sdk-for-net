@@ -22,7 +22,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class StorageQuotasOperationsExtensions
     {
             /// <summary>
-            /// Create or update an existing storage quota
+            /// Create or update an existing storage quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -42,7 +42,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Create or update an existing storage quota
+            /// Create or update an existing storage quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -105,7 +105,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Retrieve an existing quota
+            /// Returns a storage quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -122,7 +122,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Retrieve an existing quota
+            /// Returns a storage quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -145,7 +145,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of quotas for this location
+            /// Returns a list of all storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -159,7 +159,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of quotas for this location
+            /// Returns a list of all storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -179,7 +179,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of quotas for this location
+            /// Returns a list of all storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -193,7 +193,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of quotas for this location
+            /// Returns a list of all storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

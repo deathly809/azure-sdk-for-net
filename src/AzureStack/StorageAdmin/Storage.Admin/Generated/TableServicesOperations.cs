@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public StorageAdminClient Client { get; private set; }
 
         /// <summary>
-        /// TODO
+        /// Returns the default table servie.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -247,7 +247,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metric definitions for the default table service.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -443,7 +443,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metrics for the default table service.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// The name of the resource group within the user's subscription.
@@ -639,7 +639,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metric definitions for the default table service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -812,7 +812,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// TODO
+        /// Returns a list of metrics for the default table service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

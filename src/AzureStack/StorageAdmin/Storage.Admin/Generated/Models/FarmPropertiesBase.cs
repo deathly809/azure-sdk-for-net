@@ -16,7 +16,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Storage farm properties base object.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class FarmPropertiesBase

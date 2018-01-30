@@ -22,7 +22,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class StorageAccountsOperationsExtensions
     {
             /// <summary>
-            /// TODO
+            /// Returns a list of storage accounts.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -42,7 +42,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of storage accounts.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -68,7 +68,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a specific storage account
+            /// Returns the requested storage account.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -88,7 +88,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a specific storage account
+            /// Returns the requested storage account.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -114,7 +114,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Undelete a deleted storage account.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -134,7 +134,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Undelete a deleted storage account.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -157,7 +157,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of storage accounts.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -171,7 +171,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of storage accounts.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

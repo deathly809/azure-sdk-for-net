@@ -22,7 +22,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class TableServicesOperationsExtensions
     {
             /// <summary>
-            /// TODO
+            /// Returns the default table servie.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -39,7 +39,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the default table servie.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -62,7 +62,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -79,7 +79,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -102,7 +102,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -119,7 +119,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -142,7 +142,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -156,7 +156,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -176,7 +176,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -190,7 +190,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for the default table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

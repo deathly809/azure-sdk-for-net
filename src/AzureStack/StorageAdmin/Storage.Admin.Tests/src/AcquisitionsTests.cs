@@ -38,37 +38,52 @@ namespace Storage.Tests
         [Fact]
         public void ListAllAcquisitions() {
             RunTest((client) => {
-                //var result = client.Acquisitions.List(Location);
-                //Common.WriteIEnumerableToFile<Acquisition>(result, "ListAllAcquisitions.txt");
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms) {
+                    var name = ExtractName(farm.Name);
+                    var result = client.Acquisitions.List(ResourceGroupName, name);
+                    Common.WriteIEnumerableToFile<Acquisition>(result, "ListAllAcquisitions.txt");
+                }
             });
         }
 
         [Fact]
         public void GetAcquisition() {
             RunTest((client) => {
-                //var result = client.Acquisitions.List(Location).First();
-                //var retrieved = client.Acquisitions.Get(Location, result.Name.Replace(Location + "/", ""));
-                //ValidateAcquisition(retrieved);
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var acquisitions = client.Acquisitions.List(ResourceGroupName, fName);
+                    foreach (var acquisition in acquisitions)
+                    {
+                        var aName = ExtractName(acquisition.Name);
+                        var retrieved = client.Acquisitions.Get(Location, fName, aName);
+                        ValidateAcquisition(retrieved);
+                        goto done;
+                    }
+                }
+                done:;
             });
         }
 
         [Fact]
         public void GetAllAcquisitions() {
             RunTest((client) => {
-                //var results = client.Acquisitions.List(Location);
-                //foreach(var result in results)
-                //{
-                //    var retrieved = client.Acquisitions.Get(Location, result.Name.Replace(Location + "/", ""));
-                //    AssertAreEqual(result, retrieved);
-                //}
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var acquisitions = client.Acquisitions.List(ResourceGroupName, fName);
+                    foreach (var acquisition in acquisitions)
+                    {
+                        var aName = ExtractName(acquisition.Name);
+                        var retrieved = client.Acquisitions.Get(Location, fName, aName);
+                        ValidateAcquisition(retrieved);
+                    }
+                }
             });
         }
-
-        [Fact]
-        public void DeleteAcquisition() {
-            RunTest((client) => {
-                //client.Acquisitions.Delete(Location, name);
-            });
-        }
+        
     }
 }

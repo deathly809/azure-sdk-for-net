@@ -65,9 +65,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param
         /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
         /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
+        /// <param name="frontEndHttpsListenPort">TODO</param>
         /// <param name="frontEndHttpListenPort">TODO</param>
-        /// <param name="backEndHttpListenPort">TODO</param>
-        public TableService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpListenPort = default(int?), int? backEndHttpListenPort = default(int?))
+        public TableService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpsListenPort = default(int?), int? frontEndHttpListenPort = default(int?))
             : base(id, name, type, location, tags)
         {
             Version = version;
@@ -86,8 +86,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
             FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds;
             FrontEndThreadPoolBasedKeepAlivePercentage = frontEndThreadPoolBasedKeepAlivePercentage;
             FrontEndUseSlaTimeInAvailability = frontEndUseSlaTimeInAvailability;
+            FrontEndHttpsListenPort = frontEndHttpsListenPort;
             FrontEndHttpListenPort = frontEndHttpListenPort;
-            BackEndHttpListenPort = backEndHttpListenPort;
             CustomInit();
         }
 
@@ -112,98 +112,98 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndCallbackThreadsCount")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndCallbackThreadsCount")]
         public int? FrontEndCallbackThreadsCount { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndCpuBasedKeepAliveThrottlingEnabled")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingEnabled")]
         public bool? FrontEndCpuBasedKeepAliveThrottlingEnabled { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold")]
         public double? FrontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle")]
         public double? FrontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds")]
         public int? FrontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndMemoryThrottlingEnabled")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndMemoryThrottlingEnabled")]
         public bool? FrontEndMemoryThrottlingEnabled { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndMaxMillisecondsBetweenMemorySamples")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndMaxMillisecondsBetweenMemorySamples")]
         public int? FrontEndMaxMillisecondsBetweenMemorySamples { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndMemoryThrottleThresholdSettings")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndMemoryThrottleThresholdSettings")]
         public string FrontEndMemoryThrottleThresholdSettings { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndMinThreadPoolThreads")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndMinThreadPoolThreads")]
         public int? FrontEndMinThreadPoolThreads { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndThreadPoolBasedKeepAliveIOCompletionThreshold")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAliveIOCompletionThreshold")]
         public int? FrontEndThreadPoolBasedKeepAliveIOCompletionThreshold { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold")]
         public int? FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds")]
         public int? FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndThreadPoolBasedKeepAlivePercentage")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndThreadPoolBasedKeepAlivePercentage")]
         public double? FrontEndThreadPoolBasedKeepAlivePercentage { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndUseSlaTimeInAvailability")]
+        [JsonProperty(PropertyName = "properties.settings.frontEndUseSlaTimeInAvailability")]
         public bool? FrontEndUseSlaTimeInAvailability { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.frontEndHttpListenPort")]
-        public int? FrontEndHttpListenPort { get; set; }
+        [JsonProperty(PropertyName = "properties.settings.frontEndHttpsListenPort")]
+        public int? FrontEndHttpsListenPort { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.properties.backEndHttpListenPort")]
-        public int? BackEndHttpListenPort { get; set; }
+        [JsonProperty(PropertyName = "properties.settings.frontEndHttpListenPort")]
+        public int? FrontEndHttpListenPort { get; set; }
 
     }
 }

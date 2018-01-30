@@ -39,11 +39,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
-        /// <param name="shareName">TODO</param>
-        /// <param name="uncPath">TODO</param>
-        /// <param name="totalCapacity">TODO</param>
-        /// <param name="usedCapacity">TODO</param>
-        /// <param name="freeCapacity">TODO</param>
+        /// <param name="shareName">The name of the storage share.</param>
+        /// <param name="uncPath">The UNC path to the storage share.</param>
+        /// <param name="totalCapacity">The total capacity of the storage share
+        /// in bytes.</param>
+        /// <param name="usedCapacity">The used capacity of the storage share
+        /// in bytes.</param>
+        /// <param name="freeCapacity">The free space of the storage share in
+        /// bytes.</param>
         /// <param name="healthStatus">TODO. Possible values include:
         /// 'Unknown', 'Healthy', 'Warning', 'Critical'</param>
         public Share(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string shareName = default(string), string uncPath = default(string), long? totalCapacity = default(long?), long? usedCapacity = default(long?), long? freeCapacity = default(long?), string healthStatus = default(string))
@@ -64,31 +67,31 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the name of the storage share.
         /// </summary>
         [JsonProperty(PropertyName = "properties.shareName")]
         public string ShareName { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the UNC path to the storage share.
         /// </summary>
         [JsonProperty(PropertyName = "properties.uncPath")]
         public string UncPath { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the total capacity of the storage share in bytes.
         /// </summary>
         [JsonProperty(PropertyName = "properties.totalCapacity")]
         public long? TotalCapacity { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the used capacity of the storage share in bytes.
         /// </summary>
         [JsonProperty(PropertyName = "properties.usedCapacity")]
         public long? UsedCapacity { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the free space of the storage share in bytes.
         /// </summary>
         [JsonProperty(PropertyName = "properties.freeCapacity")]
         public long? FreeCapacity { get; set; }

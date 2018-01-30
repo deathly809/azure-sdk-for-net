@@ -13,6 +13,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -22,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class BlobServicesOperationsExtensions
     {
             /// <summary>
-            /// TODO
+            /// Returns the default blob service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -39,7 +41,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the default blob service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -62,7 +64,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the list of metric definitions for the default blob service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -73,13 +75,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static IPage<MetricDefinition> ListMetricDefinitions(this IBlobServicesOperations operations, string resourceGroupName, string farmId)
+            public static IEnumerable<MetricDefinition> ListMetricDefinitions(this IBlobServicesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.ListMetricDefinitionsAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the list of metric definitions for the default blob service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -93,7 +95,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsAsync(this IBlobServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<MetricDefinition>> ListMetricDefinitionsAsync(this IBlobServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListMetricDefinitionsWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -102,7 +104,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the list of metric for the blob service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -113,13 +115,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static IPage<Metric> ListMetrics(this IBlobServicesOperations operations, string resourceGroupName, string farmId)
+            public static IEnumerable<Metric> ListMetrics(this IBlobServicesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.ListMetricsAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the list of metric for the blob service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -133,77 +135,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Metric>> ListMetricsAsync(this IBlobServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<Metric>> ListMetricsAsync(this IBlobServicesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListMetricsWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// TODO
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IPage<MetricDefinition> ListMetricDefinitionsNext(this IBlobServicesOperations operations, string nextPageLink)
-            {
-                return operations.ListMetricDefinitionsNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// TODO
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IPage<MetricDefinition>> ListMetricDefinitionsNextAsync(this IBlobServicesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListMetricDefinitionsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// TODO
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IPage<Metric> ListMetricsNext(this IBlobServicesOperations operations, string nextPageLink)
-            {
-                return operations.ListMetricsNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// TODO
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IPage<Metric>> ListMetricsNextAsync(this IBlobServicesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListMetricsNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

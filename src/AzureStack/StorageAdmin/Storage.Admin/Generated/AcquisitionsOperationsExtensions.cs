@@ -13,6 +13,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -22,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class AcquisitionsOperationsExtensions
     {
             /// <summary>
-            /// TODO
+            /// Returns the requested page blob acquisition.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -33,13 +35,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static void Delete(this IAcquisitionsOperations operations, string resourceGroupName, string farmId)
+            /// <param name='acquisitionId'>
+            /// The ID of page blob acquisition.
+            /// </param>
+            public static Acquisition Get(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string acquisitionId)
             {
-                operations.DeleteAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, farmId, acquisitionId).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the requested page blob acquisition.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -49,57 +54,23 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// </param>
             /// <param name='farmId'>
             /// The name of the farm.
+            /// </param>
+            /// <param name='acquisitionId'>
+            /// The ID of page blob acquisition.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Acquisition> GetAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string acquisitionId, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false)).Dispose();
-            }
-
-            /// <summary>
-            /// TODO
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
-            /// </param>
-            /// <param name='farmId'>
-            /// The name of the farm.
-            /// </param>
-            public static Acquisition Get(this IAcquisitionsOperations operations, string resourceGroupName, string farmId)
-            {
-                return operations.GetAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// TODO
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
-            /// </param>
-            /// <param name='farmId'>
-            /// The name of the farm.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<Acquisition> GetAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, acquisitionId, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of acquistions
+            /// Returns a list of blob acquistions.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -113,13 +84,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='filter'>
             /// TODO
             /// </param>
-            public static IPage<Acquisition> List(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string))
+            public static IList<Acquisition> List(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string))
             {
                 return operations.ListAsync(resourceGroupName, farmId, filter).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of acquistions
+            /// Returns a list of blob acquistions.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -136,43 +107,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Acquisition>> ListAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<Acquisition>> ListAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, filter, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get a list of acquistions
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IPage<Acquisition> ListNext(this IAcquisitionsOperations operations, string nextPageLink)
-            {
-                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get a list of acquistions
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IPage<Acquisition>> ListNextAsync(this IAcquisitionsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

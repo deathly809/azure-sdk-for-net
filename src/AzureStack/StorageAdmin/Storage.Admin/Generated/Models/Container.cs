@@ -34,11 +34,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="accountname">Name of account container belongs
         /// too.</param>
         /// <param name="containername">Name of the container.</param>
-        /// <param name="containerid">TODO</param>
+        /// <param name="containerid">The container id.</param>
         /// <param name="accountid">GUID of account.</param>
         /// <param name="usedBytesInPrimaryVolume">Number of bytes used by the
         /// primary volume.</param>
-        /// <param name="containerState">TODO</param>
+        /// <param name="containerState">The current state of the
+        /// container.</param>
         public Container(string sharename = default(string), string accountname = default(string), string containername = default(string), long? containerid = default(long?), string accountid = default(string), long? usedBytesInPrimaryVolume = default(long?), string containerState = default(string))
         {
             Sharename = sharename;
@@ -75,7 +76,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public string Containername { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the container id.
         /// </summary>
         [JsonProperty(PropertyName = "containerid")]
         public long? Containerid { get; set; }
@@ -93,7 +94,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public long? UsedBytesInPrimaryVolume { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the current state of the container.
         /// </summary>
         [JsonProperty(PropertyName = "containerState")]
         public string ContainerState { get; set; }

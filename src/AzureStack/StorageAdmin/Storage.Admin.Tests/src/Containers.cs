@@ -7,19 +7,8 @@ namespace Storage.Tests
 {
     public class ContainersTests : StorageTestBase
     {
-        private void AssertAreEqual(Container expected, Container found) {
-            if (expected == null)
-            {
-                Assert.NotNull(found);
-            }
-            else
-            {
-                ValidateContainer(found);
-            }
-        }
 
-        private void ValidateContainer(Container container)
-        {
+        private void ValidateContainer(Container container) {
             Assert.NotNull(container);
             Assert.NotNull(container.Accountid);
             Assert.NotNull(container.Accountname);
@@ -30,46 +19,81 @@ namespace Storage.Tests
             Assert.NotNull(container.UsedBytesInPrimaryVolume);
         }
 
-        [Fact]
-        public void GetContainer()
+        private void ValidateDestinationShare(Share share)
         {
-            RunTest((client) => {
-             //   var retrieved = client.Containers.Get(Location);
-             //   AssertContainersAreSame(result, retrieved);
-            });
+            Assert.NotNull(share);
+            Assert.NotNull(share.FreeCapacity);
+            Assert.NotNull(share.HealthStatus);
+            Assert.NotNull(share.Id);
+            Assert.NotNull(share.Location);
+            Assert.NotNull(share.Name);
+            Assert.NotNull(share.ShareName);
+            Assert.NotNull(share.TotalCapacity);
+            Assert.NotNull(share.Type);
+            Assert.NotNull(share.UncPath);
+            Assert.NotNull(share.UsedCapacity);
         }
 
         [Fact]
-        public void List()
+        public void ListContainers()
         {
             RunTest((client) => {
-               // var result = client.Containers.List(Location);
-               // Common.WriteIEnumerableToFile(result, "ListAllContainers.txt");
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach(var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach(var share in shares)
+                    {
+                        var sName = ExtractName(share.Name);
+                        var intent = "Migration";
+                        var containers = client.Containers.List(ResourceGroupName, fName, sName, intent, 10, 0);
+                        containers.ForEach(ValidateContainer);
+                    }
+                }
             });
         }
-
+        
         [Fact]
         public void ListDestinationShares()
         {
             RunTest((client) => {
-                // var result = client.Containers.ListDestinationShares(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllDestinationShares.txt");
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach (var share in shares)
+                    {
+                        var sName = ExtractName(share.Name);
+                        var destinationShares = client.Containers.ListDestinationShares(ResourceGroupName, fName, sName);
+                        destinationShares.ForEach(ValidateDestinationShare);
+                    }
+                }
             });
         }
 
-        [Fact]
-        public void MigrateShare()
+        [Fact(Skip = "No way to migrate a share currently.")]
+        public void MigrateThenCancelShare()
         {
             RunTest((client) => {
-                // var result = client.Containers.MigrateShare(Location);
-            });
-        }
-
-        [Fact]
-        public void CancelMigration()
-        {
-            RunTest((client) => {
-                // var result = client.Containers.CancelMigration(Location);
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var shares = client.Shares.List(ResourceGroupName, fName);
+                    foreach (var share in shares)
+                    {
+                        var shareName = "";
+                        var intent = "ContainerMigration";
+                        var storageAccountName = "";
+                        var containerName= "";
+                        var destinationShareUNCPath= "";
+                        var migrationParameters = new MigrationParameters(storageAccountName, containerName, destinationShareUNCPath);
+                        var operationId = client.Containers.Migrate(ResourceGroupName, fName, shareName, intent, 1, 0, migrationParameters);
+                        client.Containers.CancelMigration(ResourceGroupName, fName, operationId);
+                    }
+                }
             });
         }
     }

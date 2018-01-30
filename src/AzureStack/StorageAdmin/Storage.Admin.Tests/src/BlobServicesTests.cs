@@ -7,21 +7,10 @@ namespace Storage.Tests
 {
     public class BlobServicesTests : StorageTestBase
     {
-        private void AssertAreEqual(BlobService expected, BlobService found) {
-            if (expected == null)
-            {
-                Assert.NotNull(found);
-            }
-            else
-            {
-                ValidateBlobService(found);
-            }
-        }
 
         private void ValidateBlobService(BlobService blobService)
         {
             Assert.NotNull(blobService);
-            Assert.NotNull(blobService.BackEndHttpListenPort);
             Assert.NotNull(blobService.BlobSvcContainerGcInterval);
             Assert.NotNull(blobService.BlobSvcShallowGcInterval);
             Assert.NotNull(blobService.BlobSvcStreamMapMinContainerOccupancyPercent);
@@ -31,6 +20,7 @@ namespace Storage.Tests
             Assert.NotNull(blobService.FrontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold);
             Assert.NotNull(blobService.FrontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle);
             Assert.NotNull(blobService.FrontEndHttpListenPort);
+            Assert.NotNull(blobService.FrontEndHttpsListenPort);
             Assert.NotNull(blobService.FrontEndMaxMillisecondsBetweenMemorySamples);
             Assert.NotNull(blobService.FrontEndMemoryThrottleThresholdSettings);
             Assert.NotNull(blobService.FrontEndMemoryThrottlingEnabled);
@@ -41,7 +31,6 @@ namespace Storage.Tests
             Assert.NotNull(blobService.FrontEndThreadPoolBasedKeepAliveWorkerThreadThreshold);
             Assert.NotNull(blobService.FrontEndUseSlaTimeInAvailability);
             Assert.NotNull(blobService.Id);
-            Assert.NotNull(blobService.HealthStatus);
             Assert.NotNull(blobService.Location);
             Assert.NotNull(blobService.Name);
             Assert.NotNull(blobService.Type);
@@ -52,35 +41,40 @@ namespace Storage.Tests
         public void GetBlobService()
         {
             RunTest((client) => {
-             //   var retrieved = client.BlobServices.Get(Location);
-             //   AssertBlobServicesAreSame(result, retrieved);
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var blobService = client.BlobServices.Get(ResourceGroupName, fName);
+                    ValidateBlobService(blobService);
+                }
             });
         }
 
         [Fact]
-        public void ListAllShares()
+        public void ListBlobServiceMetricDefinitions()
         {
             RunTest((client) => {
-                /*      var result = client.BlobServices.List(Location);
-                        Common.WriteIEnumerableToFile(result, "ListAllBlobServices.txt"); */
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var blobService = client.BlobServices.Get(ResourceGroupName, fName);
+                    var metricDefinitions = client.BlobServices.ListMetricDefinitions(ResourceGroupName, fName);
+                }
             });
         }
 
         [Fact]
-        public void ListAllBlobServiceMetricDefinitions()
-        {
+        public void ListBlobServiceMetrics() {
             RunTest((client) => {
-               // var result = client.BlobServices.ListMetricDefinitions(Location);
-               // Common.WriteIEnumerableToFile(result, "ListAllBlobServiceMetricDefinitions.txt");
-            });
-        }
-
-        [Fact]
-        public void ListAllBlobServiceMetricsDefinitions()
-        {
-            RunTest((client) => {
-                // var result = client.BlobServices.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllBlobServiceMetricDefinitions.txt");
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var blobService = client.BlobServices.Get(ResourceGroupName, fName);
+                    var metricDefinitions = client.BlobServices.ListMetrics(ResourceGroupName, fName);
+                }
             });
         }
     }

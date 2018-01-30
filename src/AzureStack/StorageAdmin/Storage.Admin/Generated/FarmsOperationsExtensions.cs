@@ -22,7 +22,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class FarmsOperationsExtensions
     {
             /// <summary>
-            /// Create a new farm
+            /// Create a new storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -42,7 +42,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Create a new farm
+            /// Create a new storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -68,7 +68,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get an existing farm
+            /// Get a storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -85,7 +85,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get an existing farm
+            /// Get a storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -108,7 +108,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Update an existing farm.
+            /// Update an existing storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -128,7 +128,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Update an existing farm.
+            /// Update an existing storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -154,7 +154,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metric definitions.
+            /// Returns a list of metric definitions for a storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -171,7 +171,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metric definitions.
+            /// Returns a list of metric definitions for a storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -194,7 +194,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metrics.
+            /// Returns a list of storage farm metrics.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -211,7 +211,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metrics.
+            /// Returns a list of storage farm metrics.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -234,7 +234,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of all farms.
+            /// Returns a list of all storage farms.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -248,7 +248,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of all farms.
+            /// Returns a list of all storage farms.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -268,7 +268,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Start garbage collection on deleted storage objects.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -279,13 +279,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static string StartGarbageCollection(this IFarmsOperations operations, string resourceGroupName, string farmId)
+            public static void StartGarbageCollection(this IFarmsOperations operations, string resourceGroupName, string farmId)
             {
-                return operations.StartGarbageCollectionAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
+                operations.StartGarbageCollectionAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// TODO
+            /// Start garbage collection on deleted storage objects.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -299,16 +299,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<string> StartGarbageCollectionAsync(this IFarmsOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task StartGarbageCollectionAsync(this IFarmsOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.StartGarbageCollectionWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.StartGarbageCollectionWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the current state of garbage collection.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -328,7 +325,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns the current state of garbage collection.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -354,7 +351,44 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metric definitions.
+            /// Start garbage collection on deleted storage objects.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group within the user's subscription.
+            /// </param>
+            /// <param name='farmId'>
+            /// The name of the farm.
+            /// </param>
+            public static void BeginStartGarbageCollection(this IFarmsOperations operations, string resourceGroupName, string farmId)
+            {
+                operations.BeginStartGarbageCollectionAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Start garbage collection on deleted storage objects.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group within the user's subscription.
+            /// </param>
+            /// <param name='farmId'>
+            /// The name of the farm.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginStartGarbageCollectionAsync(this IFarmsOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginStartGarbageCollectionWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Returns a list of metric definitions for a storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -368,7 +402,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metric definitions.
+            /// Returns a list of metric definitions for a storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -388,7 +422,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metrics.
+            /// Returns a list of storage farm metrics.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -402,7 +436,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get the list of metrics.
+            /// Returns a list of storage farm metrics.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -422,7 +456,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of all farms.
+            /// Returns a list of all storage farms.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -436,7 +470,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a list of all farms.
+            /// Returns a list of all storage farms.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

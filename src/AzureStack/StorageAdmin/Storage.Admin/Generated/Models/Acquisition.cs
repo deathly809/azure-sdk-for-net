@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// The acquisition of page blob.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class Acquisition : Resource
@@ -39,15 +39,21 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
-        /// <param name="filePath">TODO</param>
-        /// <param name="maximumblobsize">TODO</param>
-        /// <param name="status">TODO. Possible values include: 'InProgress',
-        /// 'Success', 'Failed'</param>
-        /// <param name="susbcriptionid">TODO</param>
-        /// <param name="storageaccount">TODO</param>
-        /// <param name="container">TODO</param>
-        /// <param name="blob">TODO</param>
-        /// <param name="acquisitionid">TODO</param>
+        /// <param name="filePath">The file path of the page blob file on
+        /// storage cluster.</param>
+        /// <param name="maximumblobsize">The maximum size of the page
+        /// blob.</param>
+        /// <param name="status">The status of the page blob acquisition.
+        /// Possible values include: 'InProgress', 'Success', 'Failed'</param>
+        /// <param name="susbcriptionid">ID of the subscription where the page
+        /// blob is in.</param>
+        /// <param name="storageaccount">The storage account where the page
+        /// blob is in.</param>
+        /// <param name="container">The container where the page blob is
+        /// in.</param>
+        /// <param name="blob">The name of the page blob.</param>
+        /// <param name="acquisitionid">The ID of page blob
+        /// acquisition.</param>
         public Acquisition(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string filePath = default(string), long? maximumblobsize = default(long?), string status = default(string), string susbcriptionid = default(string), string storageaccount = default(string), string container = default(string), string blob = default(string), string acquisitionid = default(string))
             : base(id, name, type, location, tags)
         {
@@ -68,50 +74,51 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the file path of the page blob file on storage
+        /// cluster.
         /// </summary>
         [JsonProperty(PropertyName = "properties.filePath")]
         public string FilePath { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the maximum size of the page blob.
         /// </summary>
         [JsonProperty(PropertyName = "properties.maximumblobsize")]
         public long? Maximumblobsize { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO. Possible values include: 'InProgress',
-        /// 'Success', 'Failed'
+        /// Gets or sets the status of the page blob acquisition. Possible
+        /// values include: 'InProgress', 'Success', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.status")]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets ID of the subscription where the page blob is in.
         /// </summary>
         [JsonProperty(PropertyName = "properties.susbcriptionid")]
         public string Susbcriptionid { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the storage account where the page blob is in.
         /// </summary>
         [JsonProperty(PropertyName = "properties.storageaccount")]
         public string Storageaccount { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the container where the page blob is in.
         /// </summary>
         [JsonProperty(PropertyName = "properties.container")]
         public string Container { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the name of the page blob.
         /// </summary>
         [JsonProperty(PropertyName = "properties.blob")]
         public string Blob { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the ID of page blob acquisition.
         /// </summary>
         [JsonProperty(PropertyName = "properties.acquisitionid")]
         public string Acquisitionid { get; set; }

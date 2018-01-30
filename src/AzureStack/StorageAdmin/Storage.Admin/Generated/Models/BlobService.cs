@@ -65,13 +65,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param
         /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
         /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
+        /// <param name="frontEndHttpsListenPort">TODO</param>
         /// <param name="frontEndHttpListenPort">TODO</param>
-        /// <param name="backEndHttpListenPort">TODO</param>
         /// <param name="blobSvcContainerGcInterval">TODO</param>
         /// <param name="blobSvcShallowGcInterval">TODO</param>
         /// <param
         /// name="blobSvcStreamMapMinContainerOccupancyPercent">TODO</param>
-        public BlobService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpListenPort = default(int?), int? backEndHttpListenPort = default(int?), int? blobSvcContainerGcInterval = default(int?), int? blobSvcShallowGcInterval = default(int?), int? blobSvcStreamMapMinContainerOccupancyPercent = default(int?))
+        public BlobService(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string version = default(string), string healthStatus = default(string), int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpsListenPort = default(int?), int? frontEndHttpListenPort = default(int?), int? blobSvcContainerGcInterval = default(int?), int? blobSvcShallowGcInterval = default(int?), int? blobSvcStreamMapMinContainerOccupancyPercent = default(int?))
             : base(id, name, type, location, tags)
         {
             Version = version;
@@ -90,8 +90,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
             FrontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds;
             FrontEndThreadPoolBasedKeepAlivePercentage = frontEndThreadPoolBasedKeepAlivePercentage;
             FrontEndUseSlaTimeInAvailability = frontEndUseSlaTimeInAvailability;
+            FrontEndHttpsListenPort = frontEndHttpsListenPort;
             FrontEndHttpListenPort = frontEndHttpListenPort;
-            BackEndHttpListenPort = backEndHttpListenPort;
             BlobSvcContainerGcInterval = blobSvcContainerGcInterval;
             BlobSvcShallowGcInterval = blobSvcShallowGcInterval;
             BlobSvcStreamMapMinContainerOccupancyPercent = blobSvcStreamMapMinContainerOccupancyPercent;
@@ -203,14 +203,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.settings.frontEndHttpListenPort")]
-        public int? FrontEndHttpListenPort { get; set; }
+        [JsonProperty(PropertyName = "properties.settings.frontEndHttpsListenPort")]
+        public int? FrontEndHttpsListenPort { get; set; }
 
         /// <summary>
         /// Gets or sets TODO
         /// </summary>
-        [JsonProperty(PropertyName = "properties.settings.backEndHttpListenPort")]
-        public int? BackEndHttpListenPort { get; set; }
+        [JsonProperty(PropertyName = "properties.settings.frontEndHttpListenPort")]
+        public int? FrontEndHttpListenPort { get; set; }
 
         /// <summary>
         /// Gets or sets TODO

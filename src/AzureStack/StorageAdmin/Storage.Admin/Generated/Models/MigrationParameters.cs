@@ -15,7 +15,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Parameters for container migration.
     /// </summary>
     public partial class MigrationParameters
     {

@@ -34,28 +34,31 @@ namespace Storage.Tests
         [Fact]
         public void ListAllStorageQuotas() {
             RunTest((client) => {
-                var result = client.StorageQuotas.List(Location);
-                Common.WriteIEnumerableToFile<StorageQuota>(result, "ListAllStorageQuotas.txt");
+                var quotas = client.StorageQuotas.List(Location);
+                quotas.ForEach(ValidateQuota);
+                Common.WriteIEnumerableToFile<StorageQuota>(quotas, "ListAllStorageQuotas.txt");
             });
         }
 
         [Fact]
         public void GetStorageQuota() {
             RunTest((client) => {
-                var result = client.StorageQuotas.List(Location).First();
-                var retrieved = client.StorageQuotas.Get(Location, result.Name.Replace(Location + "/", ""));
-                ValidateQuota(retrieved);
+                var quota = client.StorageQuotas.List(Location).First();
+                var qName = ExtractName(quota.Name);
+                var result = client.StorageQuotas.Get(Location, qName);
+                AssertAreEqual(quota, result);
             });
         }
 
         [Fact]
         public void GetAllStorageQuotas() {
             RunTest((client) => {
-                var results = client.StorageQuotas.List(Location);
-                foreach(var result in results)
+                var quotas = client.StorageQuotas.List(Location);
+                foreach(var quota in quotas)
                 {
-                    var retrieved = client.StorageQuotas.Get(Location, result.Name.Replace(Location + "/", ""));
-                    AssertAreEqual(result, retrieved);
+                    var qName = ExtractName(quota.Name);
+                    var result= client.StorageQuotas.Get(Location, qName);
+                    AssertAreEqual(quota, result);
                 }
             });
         }

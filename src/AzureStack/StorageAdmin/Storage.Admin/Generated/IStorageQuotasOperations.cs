@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public partial interface IStorageQuotasOperations
     {
         /// <summary>
-        /// Create or update an existing storage quota
+        /// Create or update an existing storage quota.
         /// </summary>
         /// <param name='location'>
         /// Location of storage accounts.
@@ -74,7 +74,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Retrieve an existing quota
+        /// Returns a storage quota.
         /// </summary>
         /// <param name='location'>
         /// Location of storage accounts.
@@ -99,7 +99,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<StorageQuota>> GetWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of quotas for this location
+        /// Returns a list of all storage quotas at the given location.
         /// </summary>
         /// <param name='location'>
         /// Location of storage accounts.
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<StorageQuota>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of quotas for this location
+        /// Returns a list of all storage quotas at the given location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

@@ -55,9 +55,17 @@ namespace Storage.Tests
                 Assert.Equal(expected.RetentionPeriodForDeletedStorageAccountsInDays, found.RetentionPeriodForDeletedStorageAccountsInDays);
                 Assert.Equal(expected.SettingsPollingIntervalInSecond, found.SettingsPollingIntervalInSecond);
                 Assert.Equal(expected.SettingsStore, found.SettingsStore);
-                foreach (var expectedTag in expected.Tags)
+                if (expected.Tags == null)
                 {
-                    Assert.True(found.Tags.ContainsKey(expectedTag.Key));
+                    Assert.Null(found.Tags);
+                }
+                else
+                {
+                    Assert.NotNull(found.Tags);
+                    foreach (var expectedTag in expected.Tags)
+                    {
+                        Assert.True(found.Tags.ContainsKey(expectedTag.Key));
+                    }
                 }
                 Assert.Equal(expected.ToleranceFactorForEgress, found.ToleranceFactorForEgress);
                 Assert.Equal(expected.ToleranceFactorForIngress, found.ToleranceFactorForIngress);
@@ -88,7 +96,6 @@ namespace Storage.Tests
             Assert.NotNull(farm.FeedbackRefreshIntervalInSeconds);
             Assert.NotNull(farm.GracePeriodForFullThrottlingInRefreshIntervals);
             Assert.NotNull(farm.GracePeriodMaxThrottleProbability);
-            Assert.NotNull(farm.HealthStatus);
             Assert.NotNull(farm.HostStyleHttpPort);
             Assert.NotNull(farm.HostStyleHttpsPort);
             Assert.NotNull(farm.Id);
@@ -125,58 +132,51 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void ListAllStorageFarms()
+        public void ListFarms()
         {
             RunTest((client) => {
-                //var result = client.Farms.List();
-                //Common.WriteIEnumerableToFile(result, "ListAllStorageFarms.txt");
+                var result = client.Farms.List(ResourceGroupName);
+                Common.WriteIEnumerableToFile(result, "ListAllStorageFarms.txt");
+                result.ForEach(ValidateFarm);
             });
         }
 
         [Fact]
-        public void GetStorageFarm()
+        public void GetFarm()
         {
             RunTest((client) => {
-                //var result = client.Farms.List(Location).First();
-                //var retrieved = client.Farms.Get();
-                //ValidateFarm(retrieved);
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach(var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var result = client.Farms.Get(ResourceGroupName, fName);
+                    AssertAreEqual(farm, result);
+                    break;
+                }
             });
         }
 
         [Fact]
-        public void GetAllStorageFarms()
+        public void GetAllFarms()
         {
             RunTest((client) => {
-                //var results = client.Farms.List(Location);
-                //foreach (var result in results)
-                //{
-                //    var retrieved = client.Farms.Get();
-                //    AssertAreEqual(result, retrieved);
-                //}
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var result = client.Farms.Get(ResourceGroupName, fName);
+                    AssertAreEqual(farm, result);
+                }
             });
         }
 
-        [Fact]
+        [Fact(Skip="This is supposed to be removed from RP.")]
         public void CreateFarm()
         {
             RunTest((client) => {
-                //var name = "TestCreateFarm";
-
-                //var retrieved = client.Farms.Create();
-
-                //retrieved = client.Farms.Get();
-            });
-        }
-
-        [Fact]
-        public void UpdateFarm()
-        {
-            RunTest((client) => {
-                //var FarmName = "TestUpdateFarm";
-
-                //var retrieved = client.Farms.Create();
-
-                //retrieved = client.Farms.Update();
+                // This will return an error: 
+                // {"error":{"code":"LocationRequired","message":"The location property is required for this definition."}}
+                client.Farms.Create(ResourceGroupName, "jeffsFarm");
             });
         }
 
@@ -184,8 +184,13 @@ namespace Storage.Tests
         public void ListAllFarmMetricDefinitions()
         {
             RunTest((client) => {
-                // var result = client.Farms.ListMetricDefinitions(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllFarmMetricDefinitions.txt");
+            var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var result = client.Farms.ListMetricDefinitions(ResourceGroupName, fName);
+                    Common.WriteIEnumerableToFile(result, "ListAllFarmMetricDefinitions.txt");
+                }
             });
         }
 
@@ -193,27 +198,27 @@ namespace Storage.Tests
         public void ListAllFarmMetricsDefinitions()
         {
             RunTest((client) => {
-                // var result = client.Farms.ListMetrics(Location);
-                // Common.WriteIEnumerableToFile(result, "ListAllFarmMetricDefinitions.txt");
+            var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    var result = client.Farms.ListMetrics(ResourceGroupName, fName);
+                    Common.WriteIEnumerableToFile(result, "ListAllFarmMetricDefinitions.txt");
+                }
             });
         }
 
         [Fact]
-        public void ListAllFarmStartGarbageCollection()
+        public void ForAllFarmsStartGarbageCollection()
         {
             RunTest((client) => {
-                // var result = client.Farms.StartGarbageCollection();
+                var farms = client.Farms.List(ResourceGroupName);
+                foreach (var farm in farms)
+                {
+                    var fName = ExtractName(farm.Name);
+                    client.Farms.StartGarbageCollection(ResourceGroupName, fName);
+                }
             });
         }
-
-        [Fact]
-        public void GetFarmStartGarbageCollectionState()
-        {
-            RunTest((client) => {
-                // var result = client.Farms.GetGarbageCollectionState();
-            });
-        }
-
-        // Delete Farm????
     }
 }

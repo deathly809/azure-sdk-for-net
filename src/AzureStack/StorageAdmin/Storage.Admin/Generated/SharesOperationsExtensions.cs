@@ -13,6 +13,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
     using Models;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -22,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class SharesOperationsExtensions
     {
             /// <summary>
-            /// TODO
+            /// Returns a list of storage shares.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -33,13 +35,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// The name of the farm.
             /// </param>
-            public static IPage<Share> List(this ISharesOperations operations, string resourceGroupName, string farmId)
+            public static IList<Share> List(this ISharesOperations operations, string resourceGroupName, string farmId)
             {
                 return operations.ListAsync(resourceGroupName, farmId).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of storage shares.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -53,7 +55,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Share>> ListAsync(this ISharesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<Share>> ListAsync(this ISharesOperations operations, string resourceGroupName, string farmId, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -62,7 +64,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -82,7 +84,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -108,7 +110,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -128,7 +130,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -154,7 +156,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -174,7 +176,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -200,7 +202,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of storage shares.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -208,13 +210,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='nextPageLink'>
             /// The NextLink from the previous successful call to List operation.
             /// </param>
-            public static IPage<Share> ListNext(this ISharesOperations operations, string nextPageLink)
+            public static IList<Share> ListNext(this ISharesOperations operations, string nextPageLink)
             {
                 return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of storage shares.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -225,7 +227,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Share>> ListNextAsync(this ISharesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<Share>> ListNextAsync(this ISharesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -234,7 +236,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -248,7 +250,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metrics for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -268,7 +270,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -282,7 +284,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// TODO
+            /// Returns a list of metric definitions for a storage share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
