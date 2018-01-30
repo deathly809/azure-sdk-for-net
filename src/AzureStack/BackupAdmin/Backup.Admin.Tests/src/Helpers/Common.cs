@@ -270,7 +270,7 @@ public static class Extensions
     /// <returns></returns>
     public static IList<T> PageToList<T>(this IPage<T> start, Func<string, IPage<T>> getNext) {
         List<T> result = new List<T>();
-        Commerce.Tests.Common.MapOverIPage(start, getNext, (page) => {
+        Backup.Tests.Common.MapOverIPage(start, getNext, (page) => {
             result.Add(page);
         });
         return result;

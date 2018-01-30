@@ -13,8 +13,6 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
     using Models;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -32,7 +30,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='resourceGroup'>
             /// Name of the resource group.
             /// </param>
-            public static IEnumerable<BackupLocation> List(this IBackupLocationsOperations operations, string resourceGroup)
+            public static IPage<BackupLocation> List(this IBackupLocationsOperations operations, string resourceGroup)
             {
                 return operations.ListAsync(resourceGroup).GetAwaiter().GetResult();
             }
@@ -49,7 +47,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IEnumerable<BackupLocation>> ListAsync(this IBackupLocationsOperations operations, string resourceGroup, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<BackupLocation>> ListAsync(this IBackupLocationsOperations operations, string resourceGroup, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroup, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -212,6 +210,40 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             public static async Task<string> BeginCreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginCreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Get the list of backup locations.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            public static IPage<BackupLocation> ListNext(this IBackupLocationsOperations operations, string nextPageLink)
+            {
+                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Get the list of backup locations.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='nextPageLink'>
+            /// The NextLink from the previous successful call to List operation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<IPage<BackupLocation>> ListNextAsync(this IBackupLocationsOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

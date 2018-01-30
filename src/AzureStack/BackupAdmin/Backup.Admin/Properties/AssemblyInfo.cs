@@ -3,8 +3,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Resources;
 
-[assembly: AssemblyTitle("Microsoft Azure Stack Commerce Admin Management Library")]
-[assembly: AssemblyDescription("Provides management functionality for Microsoft Azure Stack Commerce Admin Resources.")]
+[assembly: AssemblyTitle("Microsoft Azure Stack Backup Admin Management Library")]
+[assembly: AssemblyDescription("Provides management functionality for Microsoft Azure Stack Backup Admin Resources.")]
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]

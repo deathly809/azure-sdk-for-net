@@ -16,6 +16,8 @@ namespace Backup.Tests
             // Empty
         }
 
+        public const string ResourceGroupName = "System.local";
+
         protected override void ValidateClient(BackupAdminClient client)
         {
             // validate creation
