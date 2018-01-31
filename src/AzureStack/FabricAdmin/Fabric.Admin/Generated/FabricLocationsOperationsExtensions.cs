@@ -103,6 +103,46 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
+            /// Create or update a fabric location.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='fabricObject'>
+            /// Fabric Location object.
+            /// </param>
+            public static FabricLocation CreateOrUpdate(this IFabricLocationsOperations operations, string location, FabricLocation fabricObject)
+            {
+                return operations.CreateOrUpdateAsync(location, fabricObject).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Create or update a fabric location.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='fabricObject'>
+            /// Fabric Location object.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<FabricLocation> CreateOrUpdateAsync(this IFabricLocationsOperations operations, string location, FabricLocation fabricObject, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(location, fabricObject, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Get a list of all fabric locations.
             /// </summary>
             /// <param name='operations'>

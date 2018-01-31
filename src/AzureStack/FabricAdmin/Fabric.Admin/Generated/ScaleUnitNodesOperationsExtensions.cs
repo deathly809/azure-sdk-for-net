@@ -23,6 +23,46 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class ScaleUnitNodesOperationsExtensions
     {
             /// <summary>
+            /// Shutdown a scale unit node.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            public static OperationStatus Shutdown(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode)
+            {
+                return operations.ShutdownAsync(location, scaleUnitNode).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Shutdown a scale unit node.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<OperationStatus> ShutdownAsync(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ShutdownWithHttpMessagesAsync(location, scaleUnitNode, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Power off a scale unit node.
             /// </summary>
             /// <param name='operations'>
@@ -183,6 +223,52 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
+            /// Repairs a node of the cluster.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            /// <param name='bareMetalNode'>
+            /// Description of a node.
+            /// </param>
+            public static OperationStatus Repair(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, BareMetalNodeDescription bareMetalNode)
+            {
+                return operations.RepairAsync(location, scaleUnitNode, bareMetalNode).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Repairs a node of the cluster.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            /// <param name='bareMetalNode'>
+            /// Description of a node.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<OperationStatus> RepairAsync(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, BareMetalNodeDescription bareMetalNode, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.RepairWithHttpMessagesAsync(location, scaleUnitNode, bareMetalNode, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Get a specific scale unit node.
             /// </summary>
             /// <param name='operations'>
@@ -257,6 +343,46 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             public static async Task<IPage<ScaleUnitNode>> ListAsync(this IScaleUnitNodesOperations operations, string location, ODataQuery<ScaleUnitNode> odataQuery = default(ODataQuery<ScaleUnitNode>), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Shutdown a scale unit node.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            public static OperationStatus BeginShutdown(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode)
+            {
+                return operations.BeginShutdownAsync(location, scaleUnitNode).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Shutdown a scale unit node.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<OperationStatus> BeginShutdownAsync(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginShutdownWithHttpMessagesAsync(location, scaleUnitNode, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -417,6 +543,52 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             public static async Task<OperationStatus> BeginStopMaintenanceModeAsync(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginStopMaintenanceModeWithHttpMessagesAsync(location, scaleUnitNode, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Repairs a node of the cluster.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            /// <param name='bareMetalNode'>
+            /// Description of a node.
+            /// </param>
+            public static OperationStatus BeginRepair(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, BareMetalNodeDescription bareMetalNode)
+            {
+                return operations.BeginRepairAsync(location, scaleUnitNode, bareMetalNode).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Repairs a node of the cluster.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnitNode'>
+            /// Name of the scale unit node.
+            /// </param>
+            /// <param name='bareMetalNode'>
+            /// Description of a node.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<OperationStatus> BeginRepairAsync(this IScaleUnitNodesOperations operations, string location, string scaleUnitNode, BareMetalNodeDescription bareMetalNode, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginRepairWithHttpMessagesAsync(location, scaleUnitNode, bareMetalNode, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

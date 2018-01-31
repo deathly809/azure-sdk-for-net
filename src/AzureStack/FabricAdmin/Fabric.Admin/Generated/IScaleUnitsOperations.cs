@@ -25,6 +25,35 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IScaleUnitsOperations
     {
         /// <summary>
+        /// Scale out a scale unit.
+        /// </summary>
+        /// <param name='location'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='scaleUnit'>
+        /// Name of the scale units.
+        /// </param>
+        /// <param name='nodeList'>
+        /// A list of input data that allows for adding a set of scale unit
+        /// nodes.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<OperationStatus>> ScaleOutWithHttpMessagesAsync(string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Get a scale unit.
         /// </summary>
         /// <param name='location'>
@@ -74,6 +103,35 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Thrown when a required parameter is null
         /// </exception>
         Task<AzureOperationResponse<IPage<ScaleUnit>>> ListWithHttpMessagesAsync(string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Scale out a scale unit.
+        /// </summary>
+        /// <param name='location'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='scaleUnit'>
+        /// Name of the scale units.
+        /// </param>
+        /// <param name='nodeList'>
+        /// A list of input data that allows for adding a set of scale unit
+        /// nodes.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<OperationStatus>> BeginScaleOutWithHttpMessagesAsync(string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get a list of all scale units at a location.
         /// </summary>

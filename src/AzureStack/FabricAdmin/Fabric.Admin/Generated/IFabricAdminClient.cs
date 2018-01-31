@@ -71,6 +71,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
 
 
         /// <summary>
+        /// Gets the IFabricOperations.
+        /// </summary>
+        IFabricOperations Fabric { get; }
+
+        /// <summary>
         /// Gets the IEdgeGatewaysOperations.
         /// </summary>
         IEdgeGatewaysOperations EdgeGateways { get; }

@@ -76,6 +76,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IFabricOperations.
+        /// </summary>
+        public virtual IFabricOperations Fabric { get; private set; }
+
+        /// <summary>
         /// Gets the IEdgeGatewaysOperations.
         /// </summary>
         public virtual IEdgeGatewaysOperations EdgeGateways { get; private set; }
@@ -366,6 +371,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </summary>
         private void Initialize()
         {
+            Fabric = new FabricOperations(this);
             EdgeGateways = new EdgeGatewaysOperations(this);
             EdgeGatewayPools = new EdgeGatewayPoolsOperations(this);
             FabricLocations = new FabricLocationsOperations(this);

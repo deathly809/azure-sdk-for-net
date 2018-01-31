@@ -23,6 +23,52 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class ScaleUnitsOperationsExtensions
     {
             /// <summary>
+            /// Scale out a scale unit.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnit'>
+            /// Name of the scale units.
+            /// </param>
+            /// <param name='nodeList'>
+            /// A list of input data that allows for adding a set of scale unit nodes.
+            /// </param>
+            public static OperationStatus ScaleOut(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList)
+            {
+                return operations.ScaleOutAsync(location, scaleUnit, nodeList).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Scale out a scale unit.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnit'>
+            /// Name of the scale units.
+            /// </param>
+            /// <param name='nodeList'>
+            /// A list of input data that allows for adding a set of scale unit nodes.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<OperationStatus> ScaleOutAsync(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.ScaleOutWithHttpMessagesAsync(location, scaleUnit, nodeList, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Get a scale unit.
             /// </summary>
             /// <param name='operations'>
@@ -97,6 +143,52 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             public static async Task<IPage<ScaleUnit>> ListAsync(this IScaleUnitsOperations operations, string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Scale out a scale unit.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnit'>
+            /// Name of the scale units.
+            /// </param>
+            /// <param name='nodeList'>
+            /// A list of input data that allows for adding a set of scale unit nodes.
+            /// </param>
+            public static OperationStatus BeginScaleOut(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList)
+            {
+                return operations.BeginScaleOutAsync(location, scaleUnit, nodeList).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Scale out a scale unit.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='scaleUnit'>
+            /// Name of the scale units.
+            /// </param>
+            /// <param name='nodeList'>
+            /// A list of input data that allows for adding a set of scale unit nodes.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<OperationStatus> BeginScaleOutAsync(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginScaleOutWithHttpMessagesAsync(location, scaleUnit, nodeList, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

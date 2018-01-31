@@ -13,6 +13,7 @@ internal static partial class SdkInfo
             {
                 new Tuple<string, string, string>("Fabric.Admin", "EdgeGatewayPools", "2016-05-01"),
                 new Tuple<string, string, string>("Fabric.Admin", "EdgeGateways", "2016-05-01"),
+                new Tuple<string, string, string>("Fabric.Admin", "Fabric", "2016-05-01"),
                 new Tuple<string, string, string>("Fabric.Admin", "FabricLocations", "2016-05-01"),
                 new Tuple<string, string, string>("Fabric.Admin", "FileShares", "2016-05-01"),
                 new Tuple<string, string, string>("Fabric.Admin", "InfraRoleInstances", "2016-05-01"),
