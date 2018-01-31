@@ -85,12 +85,13 @@ namespace Backup.Tests
             });
         }
 
-        [Fact(Skip ="Internal server exception")]
+        [Fact]
         public void TestCreateBackup() {
             RunTest((client) => {
                 client.BackupLocations.CreateBackup(ResourceGroupName, "local");
             });
         }
+        
 
     }
 }
