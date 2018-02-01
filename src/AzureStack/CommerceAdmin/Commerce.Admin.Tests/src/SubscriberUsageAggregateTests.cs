@@ -51,8 +51,7 @@ namespace Commerce.Tests
 
                 var subscriberUsageAggregates = client.SubscriberUsageAggregates.List(start, end);
                 Assert.NotNull(subscriberUsageAggregates);
-                Assert.NotNull(subscriberUsageAggregates.Value);
-                subscriberUsageAggregates.Value.ForEach(ValidateUsageAggregate);
+                subscriberUsageAggregates.ForEach(ValidateUsageAggregate);
             });
         }
 

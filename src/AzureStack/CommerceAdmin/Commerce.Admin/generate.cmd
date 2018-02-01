@@ -5,5 +5,6 @@
 
 @echo off
 call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/commerce latest deathly809 azs.commerce.admin azure-rest-api-specs %CD%
-rem move Commerce\Commerce.Admin\Generated .
-rem rd Commerce /S /Q
+rd Generated /S /Q
+move Commerce\Commerce.Admin\Generated .
+rd Commerce /S /Q

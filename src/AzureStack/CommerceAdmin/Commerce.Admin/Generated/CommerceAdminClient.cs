@@ -290,7 +290,7 @@ namespace Microsoft.AzureStack.Management.Commerce.Admin
         {
             Operations = new Operations(this);
             SubscriberUsageAggregates = new SubscriberUsageAggregatesOperations(this);
-            BaseUri = new System.Uri("https://management.local.azurestack.external");
+            BaseUri = new System.Uri("https://adminmanagement.local.azurestack.external");
             ApiVersion = "2015-06-01-preview";
             AcceptLanguage = "en-US";
             LongRunningOperationRetryTimeout = 30;
