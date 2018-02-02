@@ -42,13 +42,13 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
 
         /// <summary>
         /// Subscription credentials which uniquely identify Microsoft Azure
-        /// subscription.The subscription ID forms part of the URI for every
+        /// subscription.  The subscription ID forms part of the URI for every
         /// service call.
         /// </summary>
         string SubscriptionId { get; set; }
 
         /// <summary>
-        /// Client Api Version.
+        /// Client API version.
         /// </summary>
         string ApiVersion { get; }
 

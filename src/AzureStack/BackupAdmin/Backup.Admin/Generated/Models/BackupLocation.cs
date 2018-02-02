@@ -37,15 +37,16 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
+        /// <param name="location">Location of the resource.</param>
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="path">Path to the update location</param>
         /// <param name="userName">Username to access the location.</param>
         /// <param name="password">Password to access the location.</param>
         /// <param name="encryptionKeyBase64">Encryption key.</param>
-        /// <param name="backupFrequencyInMinutes">How often a backup is
-        /// performed.</param>
-        /// <param name="availableCapacity">Free space in location.</param>
+        /// <param name="backupFrequencyInMinutes">The interval, in minutes, of
+        /// backups.</param>
+        /// <param name="availableCapacity">Free space at the backup
+        /// location.</param>
         /// <param name="isBackupSchedulerEnabled">True if the backup scheduler
         /// is enabled.</param>
         /// <param name="nextBackupTime">The scheduled time of the next
@@ -96,13 +97,13 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         public string EncryptionKeyBase64 { get; set; }
 
         /// <summary>
-        /// Gets or sets how often a backup is performed.
+        /// Gets or sets the interval, in minutes, of backups.
         /// </summary>
         [JsonProperty(PropertyName = "properties.externalStoreDefault.backupFrequencyInMinutes")]
         public string BackupFrequencyInMinutes { get; set; }
 
         /// <summary>
-        /// Gets or sets free space in location.
+        /// Gets or sets free space at the backup location.
         /// </summary>
         [JsonProperty(PropertyName = "properties.externalStoreDefault.availableCapacity")]
         public string AvailableCapacity { get; set; }

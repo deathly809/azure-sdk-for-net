@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
     public partial interface IBackupLocationsOperations
     {
         /// <summary>
-        /// Get the list of backup locations.
+        /// Returns the list of backup locations.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -46,32 +46,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<BackupLocation>>> ListWithHttpMessagesAsync(string resourceGroup, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create a new backup location.
-        /// </summary>
-        /// <param name='resourceGroup'>
-        /// Name of the resource group.
-        /// </param>
-        /// <param name='backup'>
-        /// Backup location object.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <exception cref="Microsoft.Rest.Azure.CloudException">
-        /// Thrown when the operation returned an invalid status code
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.ValidationException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        Task<AzureOperationResponse<BackupLocation>> UpdateWithHttpMessagesAsync(string resourceGroup, ExternalStore backup, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <summary>
-        /// Get a specific backup location based on name
+        /// Returns a specific backup location based on name.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -96,7 +71,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// </exception>
         Task<AzureOperationResponse<BackupLocation>> GetWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Backup a specific location.
+        /// Back up a specific location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -119,9 +94,37 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<string>> CreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<LongRunningOperationStatus>> CreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Backup a specific location.
+        /// Create a new backup location.
+        /// </summary>
+        /// <param name='resourceGroup'>
+        /// Name of the resource group.
+        /// </param>
+        /// <param name='backupLocation'>
+        /// Name of the backup location.
+        /// </param>
+        /// <param name='backup'>
+        /// Backup location object.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<BackupLocation>> UpdateWithHttpMessagesAsync(string resourceGroup, string backupLocation, BackupLocation backup, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Back up a specific location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -144,9 +147,37 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<string>> BeginCreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<LongRunningOperationStatus>> BeginCreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get the list of backup locations.
+        /// Create a new backup location.
+        /// </summary>
+        /// <param name='resourceGroup'>
+        /// Name of the resource group.
+        /// </param>
+        /// <param name='backupLocation'>
+        /// Name of the backup location.
+        /// </param>
+        /// <param name='backup'>
+        /// Backup location object.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<BackupLocation>> BeginUpdateWithHttpMessagesAsync(string resourceGroup, string backupLocation, BackupLocation backup, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Returns the list of backup locations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

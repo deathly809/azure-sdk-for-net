@@ -18,6 +18,15 @@ namespace Backup.Tests
 
         public const string ResourceGroupName = "System.local";
 
+        protected string ExtractName(string name) {
+            if(name.Contains("/"))
+            {
+                var idx = name.LastIndexOf('/');
+                name = name.Substring(idx + 1);
+            }
+            return name;
+        }
+
         protected override void ValidateClient(BackupAdminClient client)
         {
             // validate creation

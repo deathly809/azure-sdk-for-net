@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Describes the supported rest operation.
+    /// Describes the supported REST operation.
     /// </summary>
     public partial class Operation
     {

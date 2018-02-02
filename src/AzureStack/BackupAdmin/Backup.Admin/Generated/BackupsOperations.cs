@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         public BackupAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Get a list of backups from a location.
+        /// Returns a list of backups from a location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -179,7 +179,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -247,7 +247,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         }
 
         /// <summary>
-        /// Get a backup from a location based on name.
+        /// Returns a backup from a location based on name.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -384,7 +384,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200 && (int)_statusCode != 400)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -614,7 +614,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200 && (int)_statusCode != 202)
+            if ((int)_statusCode != 200 && (int)_statusCode != 202 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try

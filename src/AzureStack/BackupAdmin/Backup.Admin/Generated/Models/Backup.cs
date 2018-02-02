@@ -37,7 +37,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
+        /// <param name="location">Location of the resource.</param>
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="backupDataVersion">Version of the backup data.</param>
         /// <param name="backupId">Unique GUID for the backup.</param>
@@ -45,8 +45,9 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// <param name="status">Current status of the backup. Possible values
         /// include: 'Creating', 'Queued', 'Running', 'Deleted', 'Failed',
         /// 'PartialSucceeded', 'Succeeded'</param>
-        /// <param name="createdDateTime">Creation time of backup.</param>
-        /// <param name="timeTakenToCreate">Duration to create backup.</param>
+        /// <param name="createdDateTime">Creation time of the backup.</param>
+        /// <param name="timeTakenToCreate">Duration to create the
+        /// backup.</param>
         public Backup(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string backupDataVersion = default(string), string backupId = default(string), IList<RoleOperationStatus> roleStatus = default(IList<RoleOperationStatus>), string status = default(string), System.DateTime? createdDateTime = default(System.DateTime?), string timeTakenToCreate = default(string))
             : base(id, name, type, location, tags)
         {
@@ -91,13 +92,13 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or sets creation time of backup.
+        /// Gets or sets creation time of the backup.
         /// </summary>
         [JsonProperty(PropertyName = "properties.backupInfo.createdDateTime")]
         public System.DateTime? CreatedDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets duration to create backup.
+        /// Gets or sets duration to create the backup.
         /// </summary>
         [JsonProperty(PropertyName = "properties.backupInfo.timeTakenToCreate")]
         public string TimeTakenToCreate { get; set; }

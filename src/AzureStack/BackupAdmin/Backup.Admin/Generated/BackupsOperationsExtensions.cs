@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
     public static partial class BackupsOperationsExtensions
     {
             /// <summary>
-            /// Get a list of backups from a location.
+            /// Returns a list of backups from a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -41,7 +41,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get a list of backups from a location.
+            /// Returns a list of backups from a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -64,7 +64,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get a backup from a location based on name.
+            /// Returns a backup from a location based on name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -84,7 +84,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get a backup from a location based on name.
+            /// Returns a backup from a location based on name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

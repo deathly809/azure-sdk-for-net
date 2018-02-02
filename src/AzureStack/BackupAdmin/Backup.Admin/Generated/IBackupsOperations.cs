@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
     public partial interface IBackupsOperations
     {
         /// <summary>
-        /// Get a list of backups from a location.
+        /// Returns a list of backups from a location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -49,7 +49,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// </exception>
         Task<AzureOperationResponse<IEnumerable<Backup>>> ListWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a backup from a location based on name.
+        /// Returns a backup from a location based on name.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.

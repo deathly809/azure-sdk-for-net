@@ -22,7 +22,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
     public static partial class BackupLocationsOperationsExtensions
     {
             /// <summary>
-            /// Get the list of backup locations.
+            /// Returns the list of backup locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -36,7 +36,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get the list of backup locations.
+            /// Returns the list of backup locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -56,47 +56,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Create a new backup location.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroup'>
-            /// Name of the resource group.
-            /// </param>
-            /// <param name='backup'>
-            /// Backup location object.
-            /// </param>
-            public static BackupLocation Update(this IBackupLocationsOperations operations, string resourceGroup, ExternalStore backup)
-            {
-                return operations.UpdateAsync(resourceGroup, backup).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Create a new backup location.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroup'>
-            /// Name of the resource group.
-            /// </param>
-            /// <param name='backup'>
-            /// Backup location object.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<BackupLocation> UpdateAsync(this IBackupLocationsOperations operations, string resourceGroup, ExternalStore backup, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.UpdateWithHttpMessagesAsync(resourceGroup, backup, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get a specific backup location based on name
+            /// Returns a specific backup location based on name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -113,7 +73,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get a specific backup location based on name
+            /// Returns a specific backup location based on name.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -136,7 +96,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Backup a specific location.
+            /// Back up a specific location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -147,13 +107,13 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='backupLocation'>
             /// Name of the backup location.
             /// </param>
-            public static string CreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
+            public static LongRunningOperationStatus CreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
             {
                 return operations.CreateBackupAsync(resourceGroup, backupLocation).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Backup a specific location.
+            /// Back up a specific location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -167,7 +127,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<string> CreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<LongRunningOperationStatus> CreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.CreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -176,7 +136,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Backup a specific location.
+            /// Create a new backup location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -187,13 +147,59 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='backupLocation'>
             /// Name of the backup location.
             /// </param>
-            public static string BeginCreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
+            /// <param name='backup'>
+            /// Backup location object.
+            /// </param>
+            public static BackupLocation Update(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, BackupLocation backup)
+            {
+                return operations.UpdateAsync(resourceGroup, backupLocation, backup).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Create a new backup location.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroup'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='backupLocation'>
+            /// Name of the backup location.
+            /// </param>
+            /// <param name='backup'>
+            /// Backup location object.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<BackupLocation> UpdateAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, BackupLocation backup, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.UpdateWithHttpMessagesAsync(resourceGroup, backupLocation, backup, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Back up a specific location.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroup'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='backupLocation'>
+            /// Name of the backup location.
+            /// </param>
+            public static LongRunningOperationStatus BeginCreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
             {
                 return operations.BeginCreateBackupAsync(resourceGroup, backupLocation).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Backup a specific location.
+            /// Back up a specific location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -207,7 +213,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<string> BeginCreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<LongRunningOperationStatus> BeginCreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginCreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -216,7 +222,53 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get the list of backup locations.
+            /// Create a new backup location.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroup'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='backupLocation'>
+            /// Name of the backup location.
+            /// </param>
+            /// <param name='backup'>
+            /// Backup location object.
+            /// </param>
+            public static BackupLocation BeginUpdate(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, BackupLocation backup)
+            {
+                return operations.BeginUpdateAsync(resourceGroup, backupLocation, backup).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Create a new backup location.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroup'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='backupLocation'>
+            /// Name of the backup location.
+            /// </param>
+            /// <param name='backup'>
+            /// Backup location object.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<BackupLocation> BeginUpdateAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, BackupLocation backup, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginUpdateWithHttpMessagesAsync(resourceGroup, backupLocation, backup, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
+            /// Returns the list of backup locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -230,7 +282,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Get the list of backup locations.
+            /// Returns the list of backup locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

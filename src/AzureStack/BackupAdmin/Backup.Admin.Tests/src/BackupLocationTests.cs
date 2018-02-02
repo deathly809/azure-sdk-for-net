@@ -3,13 +3,14 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.Backup.Admin;
-using Microsoft.AzureStack.Management.Backup.Admin.Models;
-using System;
-using Xunit;
 
 namespace Backup.Tests
 {
+    using Microsoft.AzureStack.Management.Backup.Admin;
+    using Microsoft.AzureStack.Management.Backup.Admin.Models;
+    using System;
+    using Xunit;
+
     public class BackupLocationTests : BackupTestBase
     {
 
@@ -57,7 +58,7 @@ namespace Backup.Tests
         }
 
         [Fact]
-        public void TestListSubscriberUsageAggregatesFromLastTwoDays() {
+        public void TestListBackupLocations() {
             RunTest((client) => {
                 var backupLocations = client.BackupLocations.List(ResourceGroupName);
                 Common.MapOverIPage(backupLocations, client.BackupLocations.ListNext, ValidateBackupLocation);
@@ -86,12 +87,26 @@ namespace Backup.Tests
         }
 
         [Fact]
+        public void TestUpdateBackupLocation() {
+            RunTest((client) => {
+                var backupLocation = new BackupLocation("", "local", "Microsoft.Backup.Admin/backupLocation", "local");
+
+                backupLocation.Path = @"\\100.68.71.192\Share";
+                backupLocation.UserName = @"AzureStack\AzureStackAdmin";
+                backupLocation.Password = "!!123abc";
+                backupLocation.EncryptionKeyBase64 = "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ==";
+
+                client.BackupLocations.Update(ResourceGroupName, "local" ,backupLocation);
+            });
+        }
+
+        [Fact]
         public void TestCreateBackup() {
             RunTest((client) => {
                 client.BackupLocations.CreateBackup(ResourceGroupName, "local");
             });
         }
-        
+
 
     }
 }
