@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension?api-version=2015-12-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMGRiYWI3NmUtMDM3ZC00NzYyLWFhNGMtMzQxMDUzNTMyNGY2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvYXJ0aWZhY3RUeXBlcy9WTUV4dGVuc2lvbj9hcGktdmVyc2lvbj0yMDE1LTEyLTAxLXByZXZpZXc=",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "b7052080-f06d-4ea2-9255-541a54444bc4"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "[\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/BGInfo/versions/2.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/CustomScriptExtension/versions/1.8\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/CustomScriptForLinux/versions/1.5.2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Extensions/types/DockerExtension/versions/1.1.1606092330\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Powershell/types/DSC/versions/2.19.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Security/types/IaaSAntimalware/versions/1.4.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Diagnostics/types/IaaSDiagnostics/versions/1.10.1.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/JsonADDomainExtension/versions/1.3\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.EnterpriseCloud.Monitoring/types/MicrosoftMonitoringAgent/versions/1.0.10900.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/OSPatchingForLinux/versions/2.3.0.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/VMAccessAgent/versions/2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/VMAccessForLinux/versions/1.4.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  }\r\n]",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "6354"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Tue, 31 Oct 2017 23:55:05 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv3SWFtPJqhFEfQflsb3b8ROxKCnxqEHpGoLodamyNyslIT8wiH6qirnjb+lg0GQfl92NrucbisvPoNzT8DYQoq5HfIpzvi4E2qjiq0DzSYUuTE9KMZTtEveMyXLxOqGZ8YTT6NlQ6brT3filN2ULJ"
+        ],
+        "x-ms-correlation-request-id": [
+          "1768a7cd-f4f2-4f44-936f-731ee5f25daf"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14879"
+        ],
+        "x-ms-request-id": [
+          "1768a7cd-f4f2-4f44-936f-731ee5f25daf"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20171031T235505Z:1768a7cd-f4f2-4f44-936f-731ee5f25daf"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "SubscriptionId": "0dbab76e-037d-4762-aa4c-3410535324f6"
+  }
+}

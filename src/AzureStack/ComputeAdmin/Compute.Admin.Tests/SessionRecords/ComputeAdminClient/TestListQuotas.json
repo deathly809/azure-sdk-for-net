@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/quotas?api-version=2015-12-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMGRiYWI3NmUtMDM3ZC00NzYyLWFhNGMtMzQxMDUzNTMyNGY2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvcXVvdGFzP2FwaS12ZXJzaW9uPTIwMTUtMTItMDEtcHJldmlldw==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "5717dfe7-c7db-468b-8abf-a3ca29feab7b"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n      \"name\": \"Default Quota\",\r\n      \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n      \"location\": \"local\",\r\n      \"properties\": {\r\n        \"virtualMachineCount\": 20,\r\n        \"coresLimit\": 50,\r\n        \"availabilitySetCount\": 10,\r\n        \"vmScaleSetCount\": 20\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "328"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Tue, 31 Oct 2017 23:55:12 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvmj0ootju/MYgCHzCLvyYbq8uuonPgsmqfHuTuDDWvSribWnbyv/4B08SuaprafmwU4U5INNH7Y4ihQRsAGKQREKp6z3o7BU5R04OpaTkbHfnR9F/JACZIzN2RIg9iAOweuHYkkCGi8yK5Q1rpMZW"
+        ],
+        "x-ms-correlation-request-id": [
+          "21fb9ae6-e9dd-42d2-bbe8-8680f971ccbf"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14854"
+        ],
+        "x-ms-request-id": [
+          "21fb9ae6-e9dd-42d2-bbe8-8680f971ccbf"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20171031T235512Z:21fb9ae6-e9dd-42d2-bbe8-8680f971ccbf"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "SubscriptionId": "0dbab76e-037d-4762-aa4c-3410535324f6"
+  }
+}
