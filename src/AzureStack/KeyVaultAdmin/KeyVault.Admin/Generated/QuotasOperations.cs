@@ -218,7 +218,7 @@ namespace Microsoft.AzureStack.Management.KeyVault.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page<Quota>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page1<Quota>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

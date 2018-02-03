@@ -3,13 +3,12 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.KeyVault.Admin;
-using Microsoft.AzureStack.Management.KeyVault.Admin.Models;
-using System;
-using Xunit;
-
 namespace KeyVault.Tests
 {
+    using Microsoft.AzureStack.Management.KeyVault.Admin;
+    using Microsoft.AzureStack.Management.KeyVault.Admin.Models;
+    using Xunit;
+
     public class SubscriberUsageAggregateTests : KeyVaultTestBase
     {
 
@@ -20,6 +19,9 @@ namespace KeyVault.Tests
             Assert.NotNull(ua.Type);
         }
 
+        /// <summary>
+        /// Test that we can retrieve subscriber ussage aggregates over the last two days.
+        /// </summary>
         [Fact]
         public void TestListSubscriberUsageAggregatesFromLastTwoDays() {
             RunTest((client) => {

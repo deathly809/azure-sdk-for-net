@@ -76,6 +76,11 @@ namespace Microsoft.AzureStack.Management.KeyVault.Admin
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IOperations.
+        /// </summary>
+        public virtual IOperations Operations { get; private set; }
+
+        /// <summary>
         /// Gets the IQuotasOperations.
         /// </summary>
         public virtual IQuotasOperations Quotas { get; private set; }
@@ -281,6 +286,7 @@ namespace Microsoft.AzureStack.Management.KeyVault.Admin
         /// </summary>
         private void Initialize()
         {
+            Operations = new Operations(this);
             Quotas = new QuotasOperations(this);
             BaseUri = new System.Uri("https://management.local.azurestack.external");
             ApiVersion = "2017-02-01-preview";

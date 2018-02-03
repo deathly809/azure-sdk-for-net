@@ -71,6 +71,11 @@ namespace Microsoft.AzureStack.Management.KeyVault.Admin
 
 
         /// <summary>
+        /// Gets the IOperations.
+        /// </summary>
+        IOperations Operations { get; }
+
+        /// <summary>
         /// Gets the IQuotasOperations.
         /// </summary>
         IQuotasOperations Quotas { get; }

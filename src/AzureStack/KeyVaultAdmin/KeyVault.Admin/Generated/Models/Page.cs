@@ -26,7 +26,7 @@ namespace Microsoft.AzureStack.Management.KeyVault.Admin.Models
          /// <summary>
          /// Gets the link to the next page.
          /// </summary>
-         [JsonProperty("")]
+         [JsonProperty("nextLink")]
          public string NextPageLink { get; private set; }
 
          [JsonProperty("value")]
