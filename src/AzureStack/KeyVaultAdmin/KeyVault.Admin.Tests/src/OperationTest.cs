@@ -11,7 +11,7 @@ namespace KeyVault.Tests
     public class OperationTest : KeyVaultTestBase
     {
 
-        [Fact]
+        [Fact(Skip ="ARM Compliance bug against KeyVault (waiting on fix)")]
         public void TestListOperations() {
             RunTest((client) => {
                 var operations = client.Operations.List();
