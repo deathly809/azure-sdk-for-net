@@ -70,7 +70,7 @@ namespace InfrastructureInsights.Tests
         [Fact]
         public void TestListRegionHealths() {
             RunTest((client) => {
-                var list = client.RegionHealths.List(Location);
+                var list = client.RegionHealths.List(ResourceGroupName);
                 Common.MapOverIPage(list, client.RegionHealths.ListNext, ValidateRegionHealth);
                 Common.WriteIPagesToFile(list, client.RegionHealths.ListNext, "ListAllRegionHealths.txt");
             });
@@ -79,10 +79,11 @@ namespace InfrastructureInsights.Tests
         [Fact]
         public void TestGetRegionHealth() {
             RunTest((client) => {
-                var regionHealth = client.RegionHealths.List(Location).GetFirst();
+                var regionHealth = client.RegionHealths.List(ResourceGroupName).GetFirst();
                 if (regionHealth != null)
                 {
-                    var retrieved = client.RegionHealths.Get(regionHealth.Location, regionHealth.Location);
+                    var regionName = ExtractName(regionHealth.Name);
+                    var retrieved = client.RegionHealths.Get(ResourceGroupName, regionName);
                     AssertRegionHealthsAreSame(regionHealth, retrieved);
                 }
             });
@@ -91,9 +92,10 @@ namespace InfrastructureInsights.Tests
         [Fact]
         public void TestGetAllRegionHealths() {
             RunTest((client) => {
-                var list = client.RegionHealths.List(Location);
+                var list = client.RegionHealths.List(ResourceGroupName);
                 Common.MapOverIPage(list, client.RegionHealths.ListNext, (regionHealth) => {
-                    var retrieved = client.RegionHealths.Get(regionHealth.Location, regionHealth.Location);
+                    var regionName = ExtractName(regionHealth.Name);
+                    var retrieved = client.RegionHealths.Get(ResourceGroupName, regionName);
                     AssertRegionHealthsAreSame(regionHealth, retrieved);
                 });
             });

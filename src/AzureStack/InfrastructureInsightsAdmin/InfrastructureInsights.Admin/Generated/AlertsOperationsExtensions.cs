@@ -23,30 +23,36 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public static partial class AlertsOperationsExtensions
     {
             /// <summary>
-            /// Returns the list of all alerts in a given location.
+            /// Returns the list of all alerts in a given region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
+            /// </param>
+            /// <param name='region'>
+            /// Name of the region
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<Alert> List(this IAlertsOperations operations, string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>))
+            public static IPage<Alert> List(this IAlertsOperations operations, string resourceGroupName, string region, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, region, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Returns the list of all alerts in a given location.
+            /// Returns the list of all alerts in a given region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
+            /// </param>
+            /// <param name='region'>
+            /// Name of the region
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
@@ -54,39 +60,45 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Alert>> ListAsync(this IAlertsOperations operations, string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Alert>> ListAsync(this IAlertsOperations operations, string resourceGroupName, string region, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, region, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get an alert.
+            /// Returns the requested an alert.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
+            /// </param>
+            /// <param name='region'>
+            /// Name of the region
             /// </param>
             /// <param name='alertName'>
             /// Name of the alert.
             /// </param>
-            public static Alert Get(this IAlertsOperations operations, string location, string alertName)
+            public static Alert Get(this IAlertsOperations operations, string resourceGroupName, string region, string alertName)
             {
-                return operations.GetAsync(location, alertName).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, region, alertName).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get an alert.
+            /// Returns the requested an alert.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
+            /// </param>
+            /// <param name='region'>
+            /// Name of the region
             /// </param>
             /// <param name='alertName'>
             /// Name of the alert.
@@ -94,22 +106,25 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Alert> GetAsync(this IAlertsOperations operations, string location, string alertName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Alert> GetAsync(this IAlertsOperations operations, string resourceGroupName, string region, string alertName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, alertName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, region, alertName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Close an alert.
+            /// Closes the given alert.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
+            /// </param>
+            /// <param name='region'>
+            /// Name of the region
             /// </param>
             /// <param name='alertName'>
             /// Name of the alert.
@@ -120,19 +135,22 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='alert'>
             /// Updated Alert Parameter.
             /// </param>
-            public static Alert Close(this IAlertsOperations operations, string location, string alertName, string user, Alert alert)
+            public static Alert Close(this IAlertsOperations operations, string resourceGroupName, string region, string alertName, string user, Alert alert)
             {
-                return operations.CloseAsync(location, alertName, user, alert).GetAwaiter().GetResult();
+                return operations.CloseAsync(resourceGroupName, region, alertName, user, alert).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Close an alert.
+            /// Closes the given alert.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
+            /// </param>
+            /// <param name='region'>
+            /// Name of the region
             /// </param>
             /// <param name='alertName'>
             /// Name of the alert.
@@ -146,16 +164,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Alert> CloseAsync(this IAlertsOperations operations, string location, string alertName, string user, Alert alert, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Alert> CloseAsync(this IAlertsOperations operations, string resourceGroupName, string region, string alertName, string user, Alert alert, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CloseWithHttpMessagesAsync(location, alertName, user, alert, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CloseWithHttpMessagesAsync(resourceGroupName, region, alertName, user, alert, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Returns the list of all alerts in a given location.
+            /// Returns the list of all alerts in a given region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -169,7 +187,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
 
             /// <summary>
-            /// Returns the list of all alerts in a given location.
+            /// Returns the list of all alerts in a given region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

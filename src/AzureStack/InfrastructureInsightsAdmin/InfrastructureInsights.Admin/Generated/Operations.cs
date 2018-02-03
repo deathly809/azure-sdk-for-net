@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         public InfrastructureInsightsAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Get the list of support rest operations.
+        /// Returns a list of support rest operations.
         /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -224,7 +224,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Get the list of support rest operations.
+        /// Returns a list of support rest operations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

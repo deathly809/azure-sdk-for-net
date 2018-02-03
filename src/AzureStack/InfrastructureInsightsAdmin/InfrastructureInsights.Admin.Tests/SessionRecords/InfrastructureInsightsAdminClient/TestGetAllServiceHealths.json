@@ -1,26 +1,26 @@
 {
   "Entries": [
     {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocz9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocz9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "bef04d1e-8bbd-4593-ba33-d1efa0757419"
+          "556b1a0f-810b-4a5d-9a23-8dfbaaf5141e"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.26011.01",
+          "FxVersion/4.6.25211.01",
           "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/46de1123-1db7-4577-ab11-5119da85a646\",\r\n      \"name\": \"46de1123-1db7-4577-ab11-5119da85a646\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"46de1123-1db7-4577-ab11-5119da85a646\",\r\n        \"displayName\": \"Storage\",\r\n        \"namespace\": \"Microsoft.Storage.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/f8e5902d-ce7e-4856-8dd8-a1aaeba5660d\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/f8e5902d-ce7e-4856-8dd8-a1aaeba5660d/infraRoles/Storage\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/5b37a053-c72a-4d93-8e9d-f6bca29d7fbd\",\r\n      \"name\": \"5b37a053-c72a-4d93-8e9d-f6bca29d7fbd\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"5b37a053-c72a-4d93-8e9d-f6bca29d7fbd\",\r\n        \"displayName\": \"Key Vault\",\r\n        \"namespace\": \"Microsoft.KeyVault.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local/infraRoles/Key Vault\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/5cac279c-e53e-4bc2-9f99-406d872d826c\",\r\n      \"name\": \"5cac279c-e53e-4bc2-9f99-406d872d826c\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"5cac279c-e53e-4bc2-9f99-406d872d826c\",\r\n        \"displayName\": \"Compute\",\r\n        \"namespace\": \"Microsoft.Compute.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Compute.Admin/\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Compute.Admin/infraRoles/Compute\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/7a3a30dc-a29d-4201-9a70-0a2c49ee0919\",\r\n      \"name\": \"7a3a30dc-a29d-4201-9a70-0a2c49ee0919\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"7a3a30dc-a29d-4201-9a70-0a2c49ee0919\",\r\n        \"displayName\": \"Network\",\r\n        \"namespace\": \"Microsoft.Network.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Network.Admin/\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Network.Admin/infraRoles/Network\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/9a36b57c-0821-43e5-b55d-90cb572f16d9\",\r\n      \"name\": \"9a36b57c-0821-43e5-b55d-90cb572f16d9\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"9a36b57c-0821-43e5-b55d-90cb572f16d9\",\r\n        \"displayName\": \"Updates\",\r\n        \"namespace\": \"Microsoft.Update.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local/infraRoles/Updates\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Unknown\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n      \"name\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n        \"displayName\": \"Region Management\",\r\n        \"namespace\": \"Microsoft.InfrastructureInsights.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/infraRoles/Region Management\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Unknown\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n      \"name\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n        \"displayName\": \"Capacity\",\r\n        \"namespace\": \"Microsoft.Fabric.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Capacity\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/fc8b6101-c4b9-4bf5-9511-3133987ee3eb\",\r\n      \"name\": \"fc8b6101-c4b9-4bf5-9511-3133987ee3eb\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"fc8b6101-c4b9-4bf5-9511-3133987ee3eb\",\r\n        \"displayName\": \"Infrastructure backup\",\r\n        \"namespace\": \"Microsoft.Backup.Admin\",\r\n        \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Backup.Admin/\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Backup.Admin/infraRoles/Infrastructure backup\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"usageMetrics\": [\r\n          {\r\n            \"name\": \"Physical memory\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"GB\",\r\n                \"value\": 87.113105773925781\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"GB\",\r\n                \"value\": 426.9140625\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Physical storage\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"TB\",\r\n                \"value\": 0.33942607790231705\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"TB\",\r\n                \"value\": 2.141836129128933\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Public IP address pools\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"One\",\r\n                \"value\": 35.0\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"One\",\r\n                \"value\": 220.0\r\n              }\r\n            ]\r\n          }\r\n        ],\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 1,\r\n          \"warningAlertCount\": 1\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "7417"
+          "823"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 24 Jan 2018 20:57:34 GMT"
+          "Sat, 03 Feb 2018 05:04:50 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvig92wNffbABxgEDsOknM6JezxG/lkP0Pf9kfunvIIk4C2wrsDMphG2gVD2qkmpZkF1Q9GiU6LQB4nW3vG4RWOvh64UANWH0Zzf8xwD9EBYmoBEjzsdmiKWaWMSYbOgAc4Z1Os/PEX/vD4kcJB90E"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvEdTWZz5MhCG27KOGNP8xxI0Ln16kwf49ske7B7oBGRnPG4wdj7TdYwZav8WmFrop5dD4iVrDf3Y7NvaQOVwBCIC6wDI6UI8ByhPEZKg12tE3n7xYzWxzVNPS/6sd/wsfPbK0TpLHWRliSIbVT4YL"
         ],
         "x-ms-correlation-request-id": [
-          "56e04030-35ca-442a-8e0f-10e08238b566"
+          "9c26c435-63e1-47bf-96ec-50d7d866a009"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14776"
+          "13933"
         ],
         "x-ms-request-id": [
-          "56e04030-35ca-442a-8e0f-10e08238b566"
+          "9c26c435-63e1-47bf-96ec-50d7d866a009"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180124T205735Z:56e04030-35ca-442a-8e0f-10e08238b566"
+          "LOCAL:20180203T050451Z:9c26c435-63e1-47bf-96ec-50d7d866a009"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -65,26 +65,26 @@
       "StatusCode": 200
     },
     {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/46de1123-1db7-4577-ab11-5119da85a646?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy80NmRlMTEyMy0xZGI3LTQ1NzctYWIxMS01MTE5ZGE4NWE2NDY/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocz9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "ce888e43-7cc4-4fb1-9b9e-c22b848fc937"
+          "a1fc2b6d-67bd-4690-b111-29555c4f0985"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.26011.01",
+          "FxVersion/4.6.25211.01",
           "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/46de1123-1db7-4577-ab11-5119da85a646\",\r\n  \"name\": \"46de1123-1db7-4577-ab11-5119da85a646\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"46de1123-1db7-4577-ab11-5119da85a646\",\r\n    \"displayName\": \"Storage\",\r\n    \"namespace\": \"Microsoft.Storage.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/f8e5902d-ce7e-4856-8dd8-a1aaeba5660d\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/f8e5902d-ce7e-4856-8dd8-a1aaeba5660d/infraRoles/Storage\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/293f6f98-334c-45b6-84dc-69d9487c8051\",\r\n      \"name\": \"293f6f98-334c-45b6-84dc-69d9487c8051\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"293f6f98-334c-45b6-84dc-69d9487c8051\",\r\n        \"displayName\": \"Infrastructure backup\",\r\n        \"namespace\": \"Microsoft.Backup.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Backup.Admin/\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Backup.Admin/infraRoles/Infrastructure backup\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/295e7140-41ee-4e11-bcf1-1f66cb177278\",\r\n      \"name\": \"295e7140-41ee-4e11-bcf1-1f66cb177278\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"295e7140-41ee-4e11-bcf1-1f66cb177278\",\r\n        \"displayName\": \"Updates\",\r\n        \"namespace\": \"Microsoft.Update.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local/infraRoles/Updates\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Unknown\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/64df1a36-55ad-46e1-8552-18a6447fc725\",\r\n      \"name\": \"64df1a36-55ad-46e1-8552-18a6447fc725\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"64df1a36-55ad-46e1-8552-18a6447fc725\",\r\n        \"displayName\": \"Storage\",\r\n        \"namespace\": \"Microsoft.Storage.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/04fc6333-fbdc-4e06-8f30-3ad178548189\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/04fc6333-fbdc-4e06-8f30-3ad178548189/infraRoles/Storage\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/8e109a48-73cb-45fa-98b5-97125c781bd9\",\r\n      \"name\": \"8e109a48-73cb-45fa-98b5-97125c781bd9\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"8e109a48-73cb-45fa-98b5-97125c781bd9\",\r\n        \"displayName\": \"Key Vault\",\r\n        \"namespace\": \"Microsoft.KeyVault.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local/infraRoles/Key Vault\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/acab7e30-5d39-47bf-9a92-aba743df6013\",\r\n      \"name\": \"acab7e30-5d39-47bf-9a92-aba743df6013\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"acab7e30-5d39-47bf-9a92-aba743df6013\",\r\n        \"displayName\": \"Compute\",\r\n        \"namespace\": \"Microsoft.Compute.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Compute.Admin/\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Compute.Admin/infraRoles/Compute\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n      \"name\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n        \"displayName\": \"Region Management\",\r\n        \"namespace\": \"Microsoft.InfrastructureInsights.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/infraRoles/Region Management\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Unknown\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/c1971c58-eb01-4761-bbe2-8c897fc30e56\",\r\n      \"name\": \"c1971c58-eb01-4761-bbe2-8c897fc30e56\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"c1971c58-eb01-4761-bbe2-8c897fc30e56\",\r\n        \"displayName\": \"Network\",\r\n        \"namespace\": \"Microsoft.Network.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Network.Admin/\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Network.Admin/infraRoles/Network\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        },\r\n        \"healthState\": \"Healthy\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n      \"name\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"registrationId\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n        \"displayName\": \"Capacity\",\r\n        \"namespace\": \"Microsoft.Fabric.Admin\",\r\n        \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local\",\r\n        \"serviceLocation\": \"local\",\r\n        \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Capacity\",\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 1,\r\n          \"warningAlertCount\": 1\r\n        },\r\n        \"healthState\": \"Critical\"\r\n      }\r\n    }\r\n  ]\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "968"
+          "7418"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -96,7 +96,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
+          "Sat, 03 Feb 2018 05:04:50 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +105,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv5aEFJ2Q32dc9NVAoCcp3TxnXY7tiInaI4rqJJH8dPeHydItlLm6OJjVgqcAZDRi48FCkUB/4gncyuUSixX7nyNAHsOThwEKbqESAbH1UalcpHH9WS8kfivn5C+bhQdwXbsuOQBZ3pR/xZIA72jcp"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvF/OoC2DS4GOumrivs6LHLog0OVv2lNKfIhQcdVCEqXi8JbfsWDRR4dtMkMT8A4dGCnCyS4Ynwvx8vpRRskfCnr32dR1XK/xOYThHzYNppiEa3/5+ZcE7PSaX9gNamoH1mzGWoj+C3xqWcXb/j7GI"
         ],
         "x-ms-correlation-request-id": [
-          "216be6ae-ec42-4781-998f-7d037864ac1d"
+          "3ead26a4-f480-43c7-8c59-980023cfbd64"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14775"
+          "13932"
         ],
         "x-ms-request-id": [
-          "216be6ae-ec42-4781-998f-7d037864ac1d"
+          "3ead26a4-f480-43c7-8c59-980023cfbd64"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180124T205735Z:216be6ae-ec42-4781-998f-7d037864ac1d"
+          "LOCAL:20180203T050451Z:3ead26a4-f480-43c7-8c59-980023cfbd64"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -129,407 +129,23 @@
       "StatusCode": 200
     },
     {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/5b37a053-c72a-4d93-8e9d-f6bca29d7fbd?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy81YjM3YTA1My1jNzJhLTRkOTMtOGU5ZC1mNmJjYTI5ZDdmYmQ/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/293f6f98-334c-45b6-84dc-69d9487c8051?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy8yOTNmNmY5OC0zMzRjLTQ1YjYtODRkYy02OWQ5NDg3YzgwNTE/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "3e8a5e4b-49d2-4011-a16a-9f766fc29b00"
+          "efd823b1-bde4-411b-b66d-f1ebea01aeb6"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.26011.01",
+          "FxVersion/4.6.25211.01",
           "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/5b37a053-c72a-4d93-8e9d-f6bca29d7fbd\",\r\n  \"name\": \"5b37a053-c72a-4d93-8e9d-f6bca29d7fbd\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"5b37a053-c72a-4d93-8e9d-f6bca29d7fbd\",\r\n    \"displayName\": \"Key Vault\",\r\n    \"namespace\": \"Microsoft.KeyVault.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local/infraRoles/Key Vault\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
-      "ResponseHeaders": {
-        "Content-Length": [
-          "921"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ],
-        "Expires": [
-          "-1"
-        ],
-        "Cache-Control": [
-          "no-cache"
-        ],
-        "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
-        ],
-        "Pragma": [
-          "no-cache"
-        ],
-        "Server": [
-          "Microsoft-HTTPAPI/2.0"
-        ],
-        "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvGzSgY2fJd7blO2tTt0RsOQGRIZ3AxDlr7LkDjagSSAkDGZJUl+8y6RKn0a+MCGX9QTvImuTESFf9ZmJ5K5aBSW3VDq2ywUozECddNmrJRtRCA4iZmx0RGVCE3Qx8jwM8hv3QR99JHO8PvGjFmmGK"
-        ],
-        "x-ms-correlation-request-id": [
-          "1de1d8dd-543b-45ed-907b-01d28ce1222e"
-        ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14774"
-        ],
-        "x-ms-request-id": [
-          "1de1d8dd-543b-45ed-907b-01d28ce1222e"
-        ],
-        "x-ms-routing-request-id": [
-          "LOCAL:20180124T205735Z:1de1d8dd-543b-45ed-907b-01d28ce1222e"
-        ],
-        "Strict-Transport-Security": [
-          "max-age=31536000; includeSubDomains"
-        ],
-        "X-Content-Type-Options": [
-          "nosniff"
-        ]
-      },
-      "StatusCode": 200
-    },
-    {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/5cac279c-e53e-4bc2-9f99-406d872d826c?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy81Y2FjMjc5Yy1lNTNlLTRiYzItOWY5OS00MDZkODcyZDgyNmM/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
-      "RequestMethod": "GET",
-      "RequestBody": "",
-      "RequestHeaders": {
-        "x-ms-client-request-id": [
-          "402a022d-948e-49b4-971a-285bf1ac7ea9"
-        ],
-        "accept-language": [
-          "en-US"
-        ],
-        "User-Agent": [
-          "FxVersion/4.6.26011.01",
-          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
-        ]
-      },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/5cac279c-e53e-4bc2-9f99-406d872d826c\",\r\n  \"name\": \"5cac279c-e53e-4bc2-9f99-406d872d826c\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"5cac279c-e53e-4bc2-9f99-406d872d826c\",\r\n    \"displayName\": \"Compute\",\r\n    \"namespace\": \"Microsoft.Compute.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Compute.Admin/\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Compute.Admin/infraRoles/Compute\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
-      "ResponseHeaders": {
-        "Content-Length": [
-          "883"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ],
-        "Expires": [
-          "-1"
-        ],
-        "Cache-Control": [
-          "no-cache"
-        ],
-        "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
-        ],
-        "Pragma": [
-          "no-cache"
-        ],
-        "Server": [
-          "Microsoft-HTTPAPI/2.0"
-        ],
-        "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvW8coPFodysSluzMbNRtv1bId/kDFney0j/lT8CKECfQ89MW9uzAJftDDJU4H6QdYbnM9Ye8MILSbgJsEdSBj5OZx+ZHJKHE0nCsNJckFyn82BDMjm419jnFnm0v6fr41JAVElikArvvUqjCBUx63"
-        ],
-        "x-ms-correlation-request-id": [
-          "094585b4-5326-43ef-a54a-c66f1494abb3"
-        ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14773"
-        ],
-        "x-ms-request-id": [
-          "094585b4-5326-43ef-a54a-c66f1494abb3"
-        ],
-        "x-ms-routing-request-id": [
-          "LOCAL:20180124T205735Z:094585b4-5326-43ef-a54a-c66f1494abb3"
-        ],
-        "Strict-Transport-Security": [
-          "max-age=31536000; includeSubDomains"
-        ],
-        "X-Content-Type-Options": [
-          "nosniff"
-        ]
-      },
-      "StatusCode": 200
-    },
-    {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/7a3a30dc-a29d-4201-9a70-0a2c49ee0919?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy83YTNhMzBkYy1hMjlkLTQyMDEtOWE3MC0wYTJjNDllZTA5MTk/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
-      "RequestMethod": "GET",
-      "RequestBody": "",
-      "RequestHeaders": {
-        "x-ms-client-request-id": [
-          "1e93abcc-b674-4754-be77-d8ac2b5e7f33"
-        ],
-        "accept-language": [
-          "en-US"
-        ],
-        "User-Agent": [
-          "FxVersion/4.6.26011.01",
-          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
-        ]
-      },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/7a3a30dc-a29d-4201-9a70-0a2c49ee0919\",\r\n  \"name\": \"7a3a30dc-a29d-4201-9a70-0a2c49ee0919\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"7a3a30dc-a29d-4201-9a70-0a2c49ee0919\",\r\n    \"displayName\": \"Network\",\r\n    \"namespace\": \"Microsoft.Network.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Network.Admin/\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Network.Admin/infraRoles/Network\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
-      "ResponseHeaders": {
-        "Content-Length": [
-          "883"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ],
-        "Expires": [
-          "-1"
-        ],
-        "Cache-Control": [
-          "no-cache"
-        ],
-        "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
-        ],
-        "Pragma": [
-          "no-cache"
-        ],
-        "Server": [
-          "Microsoft-HTTPAPI/2.0"
-        ],
-        "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvt6gDjK3G75XHggy2vN316fENOa7b5pz7F50SbIuTtWgwYzNWgUQSdr4l54m8SBXn2uZJJzGv0XxEG1ytEEjxn/F3gYesAWJq4NrZgqdqgWsadsuEUtUeocDAV3yHxG5hLkOocsFKDTz4Z1Lf3gcV"
-        ],
-        "x-ms-correlation-request-id": [
-          "eb9ef360-34b9-4b9d-abfb-74bbb07dc973"
-        ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14772"
-        ],
-        "x-ms-request-id": [
-          "eb9ef360-34b9-4b9d-abfb-74bbb07dc973"
-        ],
-        "x-ms-routing-request-id": [
-          "LOCAL:20180124T205735Z:eb9ef360-34b9-4b9d-abfb-74bbb07dc973"
-        ],
-        "Strict-Transport-Security": [
-          "max-age=31536000; includeSubDomains"
-        ],
-        "X-Content-Type-Options": [
-          "nosniff"
-        ]
-      },
-      "StatusCode": 200
-    },
-    {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/9a36b57c-0821-43e5-b55d-90cb572f16d9?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy85YTM2YjU3Yy0wODIxLTQzZTUtYjU1ZC05MGNiNTcyZjE2ZDk/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
-      "RequestMethod": "GET",
-      "RequestBody": "",
-      "RequestHeaders": {
-        "x-ms-client-request-id": [
-          "7bb9246c-6598-4351-8784-8e1c369db095"
-        ],
-        "accept-language": [
-          "en-US"
-        ],
-        "User-Agent": [
-          "FxVersion/4.6.26011.01",
-          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
-        ]
-      },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/9a36b57c-0821-43e5-b55d-90cb572f16d9\",\r\n  \"name\": \"9a36b57c-0821-43e5-b55d-90cb572f16d9\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"9a36b57c-0821-43e5-b55d-90cb572f16d9\",\r\n    \"displayName\": \"Updates\",\r\n    \"namespace\": \"Microsoft.Update.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local/infraRoles/Updates\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Unknown\"\r\n  }\r\n}",
-      "ResponseHeaders": {
-        "Content-Length": [
-          "923"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ],
-        "Expires": [
-          "-1"
-        ],
-        "Cache-Control": [
-          "no-cache"
-        ],
-        "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
-        ],
-        "Pragma": [
-          "no-cache"
-        ],
-        "Server": [
-          "Microsoft-HTTPAPI/2.0"
-        ],
-        "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvC+XE3UpD18eKa4afKG8a6BiyJM9oxZSUBHPWajyKpvqwLw02N4PCMlgPG4tmW16L4HXrnvku+OCPBTQm1I2wr09SSbVw5m4WpRuuIVV7LueWvp7U2RgOfK5HBCKnF2/daC3uX35ZvyX2V7f7XqHH"
-        ],
-        "x-ms-correlation-request-id": [
-          "373963f9-3a83-4e22-bdd0-185a1bb1959b"
-        ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14771"
-        ],
-        "x-ms-request-id": [
-          "373963f9-3a83-4e22-bdd0-185a1bb1959b"
-        ],
-        "x-ms-routing-request-id": [
-          "LOCAL:20180124T205735Z:373963f9-3a83-4e22-bdd0-185a1bb1959b"
-        ],
-        "Strict-Transport-Security": [
-          "max-age=31536000; includeSubDomains"
-        ],
-        "X-Content-Type-Options": [
-          "nosniff"
-        ]
-      },
-      "StatusCode": 200
-    },
-    {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/bb58377f-3d7d-4d7f-b3b3-d433d422bf9e?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9iYjU4Mzc3Zi0zZDdkLTRkN2YtYjNiMy1kNDMzZDQyMmJmOWU/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
-      "RequestMethod": "GET",
-      "RequestBody": "",
-      "RequestHeaders": {
-        "x-ms-client-request-id": [
-          "397d688f-26f8-4a56-93cb-f3df62927373"
-        ],
-        "accept-language": [
-          "en-US"
-        ],
-        "User-Agent": [
-          "FxVersion/4.6.26011.01",
-          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
-        ]
-      },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n  \"name\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n    \"displayName\": \"Region Management\",\r\n    \"namespace\": \"Microsoft.InfrastructureInsights.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/infraRoles/Region Management\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Unknown\"\r\n  }\r\n}",
-      "ResponseHeaders": {
-        "Content-Length": [
-          "987"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ],
-        "Expires": [
-          "-1"
-        ],
-        "Cache-Control": [
-          "no-cache"
-        ],
-        "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
-        ],
-        "Pragma": [
-          "no-cache"
-        ],
-        "Server": [
-          "Microsoft-HTTPAPI/2.0"
-        ],
-        "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvqFZdJ44nE7dZyRxv4QS5TSJu5rK+ViDDEKh+trZsEbd1bKyjZ+NM9SkPQLzKlE0NBgpJ5pUGyOY+oKMLxBJ703x8eCSO4sPQRIGWeHqgt1/wWxO/oyEVmRoxSFUXIhv2HE0cTLcHWh4MgG6/gXYR"
-        ],
-        "x-ms-correlation-request-id": [
-          "6d8dc68e-548c-4a94-b915-f3cdd98f28c2"
-        ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14770"
-        ],
-        "x-ms-request-id": [
-          "6d8dc68e-548c-4a94-b915-f3cdd98f28c2"
-        ],
-        "x-ms-routing-request-id": [
-          "LOCAL:20180124T205736Z:6d8dc68e-548c-4a94-b915-f3cdd98f28c2"
-        ],
-        "Strict-Transport-Security": [
-          "max-age=31536000; includeSubDomains"
-        ],
-        "X-Content-Type-Options": [
-          "nosniff"
-        ]
-      },
-      "StatusCode": 200
-    },
-    {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/e56bc7b8-c8b5-4e25-b00c-4f951effb22c?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9lNTZiYzdiOC1jOGI1LTRlMjUtYjAwYy00Zjk1MWVmZmIyMmM/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
-      "RequestMethod": "GET",
-      "RequestBody": "",
-      "RequestHeaders": {
-        "x-ms-client-request-id": [
-          "402b461b-1f39-4106-94ce-faa16368ba6b"
-        ],
-        "accept-language": [
-          "en-US"
-        ],
-        "User-Agent": [
-          "FxVersion/4.6.26011.01",
-          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
-        ]
-      },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n  \"name\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n    \"displayName\": \"Capacity\",\r\n    \"namespace\": \"Microsoft.Fabric.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Capacity\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
-      "ResponseHeaders": {
-        "Content-Length": [
-          "925"
-        ],
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ],
-        "Expires": [
-          "-1"
-        ],
-        "Cache-Control": [
-          "no-cache"
-        ],
-        "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
-        ],
-        "Pragma": [
-          "no-cache"
-        ],
-        "Server": [
-          "Microsoft-HTTPAPI/2.0"
-        ],
-        "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv0iyymUjSvNoSc6g+vej8xN8PB5veg6taz3JX3O6fcDrDGRN3Vg/o8PdPtSTnpxKp5VoIOX94iwsXa1eueqxHrEUp23dRGTH4tFx4OLa3DqHwyYlXkcu3lRnLowQgMqGokP/Q4fIZNT3FdGcBlrs9"
-        ],
-        "x-ms-correlation-request-id": [
-          "dac55091-3539-4a19-84d1-854095a29405"
-        ],
-        "x-ms-ratelimit-remaining-subscription-reads": [
-          "14769"
-        ],
-        "x-ms-request-id": [
-          "dac55091-3539-4a19-84d1-854095a29405"
-        ],
-        "x-ms-routing-request-id": [
-          "LOCAL:20180124T205736Z:dac55091-3539-4a19-84d1-854095a29405"
-        ],
-        "Strict-Transport-Security": [
-          "max-age=31536000; includeSubDomains"
-        ],
-        "X-Content-Type-Options": [
-          "nosniff"
-        ]
-      },
-      "StatusCode": 200
-    },
-    {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/fc8b6101-c4b9-4bf5-9511-3133987ee3eb?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9mYzhiNjEwMS1jNGI5LTRiZjUtOTUxMS0zMTMzOTg3ZWUzZWI/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
-      "RequestMethod": "GET",
-      "RequestBody": "",
-      "RequestHeaders": {
-        "x-ms-client-request-id": [
-          "62504386-10a9-45e6-bfd1-e32a6549c782"
-        ],
-        "accept-language": [
-          "en-US"
-        ],
-        "User-Agent": [
-          "FxVersion/4.6.26011.01",
-          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
-        ]
-      },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/fc8b6101-c4b9-4bf5-9511-3133987ee3eb\",\r\n  \"name\": \"fc8b6101-c4b9-4bf5-9511-3133987ee3eb\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"fc8b6101-c4b9-4bf5-9511-3133987ee3eb\",\r\n    \"displayName\": \"Infrastructure backup\",\r\n    \"namespace\": \"Microsoft.Backup.Admin\",\r\n    \"routePrefix\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Backup.Admin/\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/system.local/providers/Microsoft.Backup.Admin/infraRoles/Infrastructure backup\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/293f6f98-334c-45b6-84dc-69d9487c8051\",\r\n  \"name\": \"293f6f98-334c-45b6-84dc-69d9487c8051\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"293f6f98-334c-45b6-84dc-69d9487c8051\",\r\n    \"displayName\": \"Infrastructure backup\",\r\n    \"namespace\": \"Microsoft.Backup.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Backup.Admin/\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Backup.Admin/infraRoles/Infrastructure backup\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
           "908"
@@ -544,7 +160,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 24 Jan 2018 20:57:35 GMT"
+          "Sat, 03 Feb 2018 05:04:50 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -553,19 +169,467 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv6rUrDxbKGyyn11/lTQ8scws4CS5NWtWG2tNyqSeJQN1pUfSA6Wltxd6diY2oNlQ49OGaH6YdyVRLLk2zf07JgPk9EJ4B8Ba8+42xiwQ74G9hTHnAoIjKg3YJ6pNrEIVLu/0HLnjlJIpXnqVQWMPV"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvddcFKqDRBmYw0rLefS0fSCsCswFgOs2CUQq3V1HTw/LDXrss5xtg+u8a4JxPrWO3JRp4/es0FIkXNcLn538pbYzuETBjuYsuxseIdaOB79QBc9WDuFse12dm6DpZA0VBPs+R1sUCdHLUhwTzynAs"
         ],
         "x-ms-correlation-request-id": [
-          "d202374d-e59b-4031-80b0-e9d40578be9f"
+          "3bc7a141-cb49-4709-8bd2-c50b03cc34ae"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14768"
+          "13931"
         ],
         "x-ms-request-id": [
-          "d202374d-e59b-4031-80b0-e9d40578be9f"
+          "3bc7a141-cb49-4709-8bd2-c50b03cc34ae"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180124T205736Z:d202374d-e59b-4031-80b0-e9d40578be9f"
+          "LOCAL:20180203T050451Z:3bc7a141-cb49-4709-8bd2-c50b03cc34ae"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/295e7140-41ee-4e11-bcf1-1f66cb177278?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy8yOTVlNzE0MC00MWVlLTRlMTEtYmNmMS0xZjY2Y2IxNzcyNzg/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "ee187451-00da-4432-a260-3d08f2ad156a"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/295e7140-41ee-4e11-bcf1-1f66cb177278\",\r\n  \"name\": \"295e7140-41ee-4e11-bcf1-1f66cb177278\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"295e7140-41ee-4e11-bcf1-1f66cb177278\",\r\n    \"displayName\": \"Updates\",\r\n    \"namespace\": \"Microsoft.Update.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Update.Admin/updateLocations/local/infraRoles/Updates\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Unknown\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "923"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvWCtz6mY+5Whpcn2TT7Z8xQD4A5284MbiM9AJJLXhNYnfigkJroCS6Ya8a6b2OjSTgylBMg1As9pej8EJQ1Pl0T2enyhE6n2FnNiCLA1Tx8gjZLKZ1aeAOlHhTWoZ2zcvArmcWMIEbzamw1NU8qaW"
+        ],
+        "x-ms-correlation-request-id": [
+          "2216a1ba-9623-40d7-b5ab-fd96dcc0723e"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13930"
+        ],
+        "x-ms-request-id": [
+          "2216a1ba-9623-40d7-b5ab-fd96dcc0723e"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050451Z:2216a1ba-9623-40d7-b5ab-fd96dcc0723e"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/64df1a36-55ad-46e1-8552-18a6447fc725?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy82NGRmMWEzNi01NWFkLTQ2ZTEtODU1Mi0xOGE2NDQ3ZmM3MjU/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "75e3b492-b803-4c8a-a3bb-cdd3516c95a7"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/64df1a36-55ad-46e1-8552-18a6447fc725\",\r\n  \"name\": \"64df1a36-55ad-46e1-8552-18a6447fc725\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"64df1a36-55ad-46e1-8552-18a6447fc725\",\r\n    \"displayName\": \"Storage\",\r\n    \"namespace\": \"Microsoft.Storage.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/04fc6333-fbdc-4e06-8f30-3ad178548189\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Storage.Admin/farms/04fc6333-fbdc-4e06-8f30-3ad178548189/infraRoles/Storage\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "968"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvId15SYVgcWsOhPaJLjIJo0R912drPNVLpE1qORQGZH5b57FiaV832Y76pnvuhhoPfdh732QepKRTn66Gescgs1gDlEOMSugK4xWobQGnr9bU7qCyyGC7bIRUlsgw4ZO8snlL5o5I6xUMceC7FpWy"
+        ],
+        "x-ms-correlation-request-id": [
+          "e1736533-4a97-45ae-86f1-42d9849bb905"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13929"
+        ],
+        "x-ms-request-id": [
+          "e1736533-4a97-45ae-86f1-42d9849bb905"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050451Z:e1736533-4a97-45ae-86f1-42d9849bb905"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/8e109a48-73cb-45fa-98b5-97125c781bd9?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy84ZTEwOWE0OC03M2NiLTQ1ZmEtOThiNS05NzEyNWM3ODFiZDk/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "8fac8531-ef44-4957-818e-b1a8431079ee"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/8e109a48-73cb-45fa-98b5-97125c781bd9\",\r\n  \"name\": \"8e109a48-73cb-45fa-98b5-97125c781bd9\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"8e109a48-73cb-45fa-98b5-97125c781bd9\",\r\n    \"displayName\": \"Key Vault\",\r\n    \"namespace\": \"Microsoft.KeyVault.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.KeyVault.Admin/locations/local/infraRoles/Key Vault\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "921"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvDWPcKWe0iJCDmY5jqntNseRqFdRc3EgEPVI+tY7VEg+KM4AX6RJ9AdHnrUBrjwe87ddpWQpLnl6liTN3BdoIEZRBMqUnd3RaLGoIsSdSa0c31jCXF4I3uA6Zhwhp4ikmzr7jShWfqm6A6YZmdBqk"
+        ],
+        "x-ms-correlation-request-id": [
+          "8a9f70a8-37a8-4978-94ae-e6e7a34d0202"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13928"
+        ],
+        "x-ms-request-id": [
+          "8a9f70a8-37a8-4978-94ae-e6e7a34d0202"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050451Z:8a9f70a8-37a8-4978-94ae-e6e7a34d0202"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/acab7e30-5d39-47bf-9a92-aba743df6013?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9hY2FiN2UzMC01ZDM5LTQ3YmYtOWE5Mi1hYmE3NDNkZjYwMTM/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "7df7c71e-8258-4575-a9ad-3f69c6fb2e3b"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/acab7e30-5d39-47bf-9a92-aba743df6013\",\r\n  \"name\": \"acab7e30-5d39-47bf-9a92-aba743df6013\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"acab7e30-5d39-47bf-9a92-aba743df6013\",\r\n    \"displayName\": \"Compute\",\r\n    \"namespace\": \"Microsoft.Compute.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Compute.Admin/\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Compute.Admin/infraRoles/Compute\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "883"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvnkM4Dn/+szYnFEimnSn/VKSScWylkx9F9ePkctPqnHQM5pDlwkNyBTFXnW0yt/+ru+vCg/nnsVOC6k/7teJSAWxSyIaiYvkLgxkS9QIvNVarrCbIovblCc7uf5MWpWChNLOTIMEC5LSKxK05+Ukt"
+        ],
+        "x-ms-correlation-request-id": [
+          "6c832d93-7a33-4a6b-aa06-87d70ac8d8a7"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13927"
+        ],
+        "x-ms-request-id": [
+          "6c832d93-7a33-4a6b-aa06-87d70ac8d8a7"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050451Z:6c832d93-7a33-4a6b-aa06-87d70ac8d8a7"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/bb58377f-3d7d-4d7f-b3b3-d433d422bf9e?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9iYjU4Mzc3Zi0zZDdkLTRkN2YtYjNiMy1kNDMzZDQyMmJmOWU/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "26a6027a-91a0-484d-9a63-4ec9e5dca03c"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n  \"name\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"bb58377f-3d7d-4d7f-b3b3-d433d422bf9e\",\r\n    \"displayName\": \"Region Management\",\r\n    \"namespace\": \"Microsoft.InfrastructureInsights.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/infraRoles/Region Management\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Unknown\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "987"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvj+ggehlwfA2HcPXWLS1n76xNThH3UXKTpjbbGqKuvvbHuCLsXJiFUJRFOp35upuMxD8cdGzYvjnPSG7YS8UbsT8YdIZa082KnOYM1EvxQNSpAUykbWQWJhDoudB1jW4JxhjiUeX88j7DAeBHpvWx"
+        ],
+        "x-ms-correlation-request-id": [
+          "ad5d6a40-6054-478b-a40f-92d211d8080b"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13926"
+        ],
+        "x-ms-request-id": [
+          "ad5d6a40-6054-478b-a40f-92d211d8080b"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050451Z:ad5d6a40-6054-478b-a40f-92d211d8080b"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/c1971c58-eb01-4761-bbe2-8c897fc30e56?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9jMTk3MWM1OC1lYjAxLTQ3NjEtYmJlMi04Yzg5N2ZjMzBlNTY/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "6e42cd59-eebf-4605-88e2-2f71f4a755a3"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/c1971c58-eb01-4761-bbe2-8c897fc30e56\",\r\n  \"name\": \"c1971c58-eb01-4761-bbe2-8c897fc30e56\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"c1971c58-eb01-4761-bbe2-8c897fc30e56\",\r\n    \"displayName\": \"Network\",\r\n    \"namespace\": \"Microsoft.Network.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Network.Admin/\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Network.Admin/infraRoles/Network\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    },\r\n    \"healthState\": \"Healthy\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "883"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvhyA1es+jgTB9BnaeAnP8o0qX6u3c3aqiOQBE/d0DGD2uBrAiOlymo1WvVsMfSBDyCWD9lF6Do3jByVHu8Jk7XPEdAIBqz/JuJhtnOEWNBszjYiHL4Zuy+aPtYi9tgomM+yhlWZnW9CcMuUnwtb3g"
+        ],
+        "x-ms-correlation-request-id": [
+          "a2f022e6-f4e7-4a45-a0eb-5d9665edc449"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13924"
+        ],
+        "x-ms-request-id": [
+          "a2f022e6-f4e7-4a45-a0eb-5d9665edc449"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050451Z:a2f022e6-f4e7-4a45-a0eb-5d9665edc449"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/e56bc7b8-c8b5-4e25-b00c-4f951effb22c?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbC9zZXJ2aWNlSGVhbHRocy9lNTZiYzdiOC1jOGI1LTRlMjUtYjAwYy00Zjk1MWVmZmIyMmM/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "9422fec4-8ae1-4160-83e9-e3b09d165dd2"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local/serviceHealths/e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n  \"name\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"registrationId\": \"e56bc7b8-c8b5-4e25-b00c-4f951effb22c\",\r\n    \"displayName\": \"Capacity\",\r\n    \"namespace\": \"Microsoft.Fabric.Admin\",\r\n    \"routePrefix\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local\",\r\n    \"serviceLocation\": \"local\",\r\n    \"infraURI\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Capacity\",\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 1,\r\n      \"warningAlertCount\": 1\r\n    },\r\n    \"healthState\": \"Critical\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "926"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Sat, 03 Feb 2018 05:04:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRviGjuIY3ZJ6eg4/JP9JyFFc5AD3sHQgg9quzpxZ0GtgMMyIxVZeAu8illG8qhnljROUkzzzFr2Q2T81G2Yxws+6I1nGfQItebpYn6r0J7g0E268j1/RM9saqM9cetLa3EUMuvXVJpeYqlmqM0YDG+"
+        ],
+        "x-ms-correlation-request-id": [
+          "4f5682bc-27bc-41d5-8e20-872f538f1399"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "13923"
+        ],
+        "x-ms-request-id": [
+          "4f5682bc-27bc-41d5-8e20-872f538f1399"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180203T050452Z:4f5682bc-27bc-41d5-8e20-872f538f1399"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -579,6 +643,6 @@
   ],
   "Names": {},
   "Variables": {
-    "SubscriptionId": "8827b0fb-6039-47eb-a7e8-35ca9d2a7a00"
+    "SubscriptionId": "b7a57872-f429-4eb3-b26a-5108178380a5"
   }
 }

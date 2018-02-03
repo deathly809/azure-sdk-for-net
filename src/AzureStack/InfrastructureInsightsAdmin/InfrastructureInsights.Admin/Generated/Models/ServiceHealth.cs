@@ -39,16 +39,14 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
-        /// <param name="alertSummary">Gets or sets the alert summary.</param>
-        /// <param name="healthState">Gets or sets the health status.</param>
-        /// <param name="namespaceProperty">Gets or sets the name
-        /// space.</param>
-        /// <param name="registrationId">Gets or sets the registration
-        /// id.</param>
-        /// <param name="routePrefix">Gets or sets the route prefix.</param>
-        /// <param name="displayName">Name of the alert.</param>
+        /// <param name="alertSummary">Alert summary.</param>
+        /// <param name="healthState">Health status.</param>
+        /// <param name="namespaceProperty">Name space.</param>
+        /// <param name="registrationId">Registration id.</param>
+        /// <param name="routePrefix">Route prefix.</param>
+        /// <param name="displayName">Name of the service.</param>
         /// <param name="serviceLocation">Location of the service.</param>
-        /// <param name="infraURI">The route prefix to the alert.</param>
+        /// <param name="infraURI">The route prefix to the service.</param>
         public ServiceHealth(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), AlertSummary alertSummary = default(AlertSummary), string healthState = default(string), string namespaceProperty = default(string), string registrationId = default(string), string routePrefix = default(string), string displayName = default(string), string serviceLocation = default(string), string infraURI = default(string))
             : base(id, name, type, location, tags)
         {
@@ -69,37 +67,37 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the alert summary.
+        /// Gets or sets alert summary.
         /// </summary>
         [JsonProperty(PropertyName = "properties.alertSummary")]
         public AlertSummary AlertSummary { get; set; }
 
         /// <summary>
-        /// Gets or sets the health status.
+        /// Gets or sets health status.
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthState")]
         public string HealthState { get; set; }
 
         /// <summary>
-        /// Gets or sets the name space.
+        /// Gets or sets name space.
         /// </summary>
         [JsonProperty(PropertyName = "properties.namespace")]
         public string NamespaceProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets the registration id.
+        /// Gets or sets registration id.
         /// </summary>
         [JsonProperty(PropertyName = "properties.registrationId")]
         public string RegistrationId { get; set; }
 
         /// <summary>
-        /// Gets or sets the route prefix.
+        /// Gets or sets route prefix.
         /// </summary>
         [JsonProperty(PropertyName = "properties.routePrefix")]
         public string RoutePrefix { get; set; }
 
         /// <summary>
-        /// Gets or sets name of the alert.
+        /// Gets or sets name of the service.
         /// </summary>
         [JsonProperty(PropertyName = "properties.displayName")]
         public string DisplayName { get; set; }
@@ -111,7 +109,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public string ServiceLocation { get; set; }
 
         /// <summary>
-        /// Gets or sets the route prefix to the alert.
+        /// Gets or sets the route prefix to the service.
         /// </summary>
         [JsonProperty(PropertyName = "properties.infraURI")]
         public string InfraURI { get; set; }

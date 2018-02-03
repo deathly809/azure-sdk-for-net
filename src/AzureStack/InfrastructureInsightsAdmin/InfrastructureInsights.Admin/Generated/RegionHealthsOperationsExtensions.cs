@@ -23,30 +23,30 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public static partial class RegionHealthsOperationsExtensions
     {
             /// <summary>
-            /// Get the list of all regions health status.
+            /// Returns a list of region's health status.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<RegionHealth> List(this IRegionHealthsOperations operations, string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>))
+            public static IPage<RegionHealth> List(this IRegionHealthsOperations operations, string resourceGroupName, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get the list of all regions health status.
+            /// Returns a list of region's health status.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
@@ -54,39 +54,39 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<RegionHealth>> ListAsync(this IRegionHealthsOperations operations, string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<RegionHealth>> ListAsync(this IRegionHealthsOperations operations, string resourceGroupName, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get health status of a region.
+            /// Returns the requested health status of a region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
             /// </param>
             /// <param name='region'>
             /// Name of the region
             /// </param>
-            public static RegionHealth Get(this IRegionHealthsOperations operations, string location, string region)
+            public static RegionHealth Get(this IRegionHealthsOperations operations, string resourceGroupName, string region)
             {
-                return operations.GetAsync(location, region).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, region).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get health status of a region.
+            /// Returns the requested health status of a region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location name.
+            /// <param name='resourceGroupName'>
+            /// resourceGroupName.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -94,16 +94,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<RegionHealth> GetAsync(this IRegionHealthsOperations operations, string location, string region, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RegionHealth> GetAsync(this IRegionHealthsOperations operations, string resourceGroupName, string region, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, region, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, region, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get the list of all regions health status.
+            /// Returns a list of region's health status.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +117,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
 
             /// <summary>
-            /// Get the list of all regions health status.
+            /// Returns a list of region's health status.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

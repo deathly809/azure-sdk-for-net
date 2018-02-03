@@ -39,23 +39,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Location where resource is location.</param>
         /// <param name="tags">List of key value pairs.</param>
-        /// <param name="alertSummary">Gets or sets the alert summary.</param>
-        /// <param name="healthState">Gets or sets the health status.</param>
-        /// <param name="namespaceProperty">Gets or sets the name
-        /// space.</param>
-        /// <param name="registrationId">Gets or sets the registration
-        /// id.</param>
-        /// <param name="routePrefix">Gets or sets the route prefix.</param>
-        /// <param name="resourceLocation">Gets or sets the resource
-        /// location.</param>
-        /// <param name="resourceName">Gets or sets the resource name.</param>
-        /// <param name="resourceDisplayName">Gets or sets the resource display
-        /// name.</param>
-        /// <param name="resourceType">Gets or sets the resource type.</param>
-        /// <param name="resourceURI">Gets or sets the resource uri.</param>
-        /// <param name="rpRegistrationId">Gets or sets the resource provider
-        /// registration id.</param>
-        /// <param name="usageMetrics">Gets or sets the usage metrics.</param>
+        /// <param name="alertSummary">Alert summary.</param>
+        /// <param name="healthState">Health status.</param>
+        /// <param name="namespaceProperty">Name space.</param>
+        /// <param name="registrationId">Registration id.</param>
+        /// <param name="routePrefix">Route prefix.</param>
+        /// <param name="resourceLocation">Resource location.</param>
+        /// <param name="resourceName">Resource name.</param>
+        /// <param name="resourceDisplayName">Resource display name.</param>
+        /// <param name="resourceType">Resource type.</param>
+        /// <param name="resourceURI">Resource URI.</param>
+        /// <param name="rpRegistrationId">Resource provider registration
+        /// Id.</param>
+        /// <param name="usageMetrics">Usage metrics.</param>
         public ResourceHealth(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), AlertSummary alertSummary = default(AlertSummary), string healthState = default(string), string namespaceProperty = default(string), string registrationId = default(string), string routePrefix = default(string), string resourceLocation = default(string), string resourceName = default(string), string resourceDisplayName = default(string), string resourceType = default(string), string resourceURI = default(string), string rpRegistrationId = default(string), IList<UsageMetrics> usageMetrics = default(IList<UsageMetrics>))
             : base(id, name, type, location, tags)
         {
@@ -80,73 +76,73 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the alert summary.
+        /// Gets or sets alert summary.
         /// </summary>
         [JsonProperty(PropertyName = "properties.alertSummary")]
         public AlertSummary AlertSummary { get; set; }
 
         /// <summary>
-        /// Gets or sets the health status.
+        /// Gets or sets health status.
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthState")]
         public string HealthState { get; set; }
 
         /// <summary>
-        /// Gets or sets the name space.
+        /// Gets or sets name space.
         /// </summary>
         [JsonProperty(PropertyName = "properties.namespace")]
         public string NamespaceProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets the registration id.
+        /// Gets or sets registration id.
         /// </summary>
         [JsonProperty(PropertyName = "properties.registrationId")]
         public string RegistrationId { get; set; }
 
         /// <summary>
-        /// Gets or sets the route prefix.
+        /// Gets or sets route prefix.
         /// </summary>
         [JsonProperty(PropertyName = "properties.routePrefix")]
         public string RoutePrefix { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource location.
+        /// Gets or sets resource location.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceLocation")]
         public string ResourceLocation { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource name.
+        /// Gets or sets resource name.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceName")]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource display name.
+        /// Gets or sets resource display name.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceDisplayName")]
         public string ResourceDisplayName { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource type.
+        /// Gets or sets resource type.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceType")]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource uri.
+        /// Gets or sets resource URI.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceURI")]
         public string ResourceURI { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource provider registration id.
+        /// Gets or sets resource provider registration Id.
         /// </summary>
         [JsonProperty(PropertyName = "properties.rpRegistrationId")]
         public string RpRegistrationId { get; set; }
 
         /// <summary>
-        /// Gets or sets the usage metrics.
+        /// Gets or sets usage metrics.
         /// </summary>
         [JsonProperty(PropertyName = "properties.usageMetrics")]
         public IList<UsageMetrics> UsageMetrics { get; set; }

@@ -52,10 +52,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         public InfrastructureInsightsAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Get a list of resources?.
+        /// Returns a list of each resource's health under a service.
         /// </summary>
-        /// <param name='location'>
-        /// Location name.
+        /// <param name='resourceGroupName'>
+        /// resourceGroupName.
+        /// </param>
+        /// <param name='region'>
+        /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
         /// Service registration id.
@@ -84,15 +87,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<ResourceHealth>>> ListWithHttpMessagesAsync(string location, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<ResourceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (location == null)
+            if (resourceGroupName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "location");
+                throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
+            }
+            if (region == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "region");
             }
             if (serviceRegistrationId == null)
             {
@@ -110,16 +117,18 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
-                tracingParameters.Add("location", location);
+                tracingParameters.Add("resourceGroupName", resourceGroupName);
+                tracingParameters.Add("region", region);
                 tracingParameters.Add("serviceRegistrationId", serviceRegistrationId);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths/{serviceRegistrationId}/resourceHealths").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
+            _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
+            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
             _url = _url.Replace("{serviceRegistrationId}", System.Uri.EscapeDataString(serviceRegistrationId));
             List<string> _queryParameters = new List<string>();
             if (odataQuery != null)
@@ -192,7 +201,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -260,10 +269,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Get health information about a resources.
+        /// Returns the requested health information about a resource.
         /// </summary>
-        /// <param name='location'>
-        /// Location name.
+        /// <param name='resourceGroupName'>
+        /// resourceGroupName.
+        /// </param>
+        /// <param name='region'>
+        /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
         /// Service registration id.
@@ -295,15 +307,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<ResourceHealth>> GetWithHttpMessagesAsync(string location, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ResourceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (location == null)
+            if (resourceGroupName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "location");
+                throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
+            }
+            if (region == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "region");
             }
             if (serviceRegistrationId == null)
             {
@@ -324,7 +340,8 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("location", location);
+                tracingParameters.Add("resourceGroupName", resourceGroupName);
+                tracingParameters.Add("region", region);
                 tracingParameters.Add("serviceRegistrationId", serviceRegistrationId);
                 tracingParameters.Add("resourceRegistrationId", resourceRegistrationId);
                 tracingParameters.Add("filter", filter);
@@ -333,9 +350,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths/{resourceRegistrationId}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths/{serviceRegistrationId}/resourceHealths/{resourceRegistrationId}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
+            _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
+            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
             _url = _url.Replace("{serviceRegistrationId}", System.Uri.EscapeDataString(serviceRegistrationId));
             _url = _url.Replace("{resourceRegistrationId}", System.Uri.EscapeDataString(resourceRegistrationId));
             List<string> _queryParameters = new List<string>();
@@ -473,7 +491,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Get a list of resources?.
+        /// Returns a list of each resource's health under a service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -578,7 +596,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try

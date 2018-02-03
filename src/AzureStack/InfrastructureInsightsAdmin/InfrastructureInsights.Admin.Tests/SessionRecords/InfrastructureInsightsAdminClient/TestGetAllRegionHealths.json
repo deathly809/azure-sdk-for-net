@@ -1,26 +1,26 @@
 {
   "Entries": [
     {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocz9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocz9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "2a5c48ea-f98b-4299-bf0f-01838aeb14ab"
+          "a2ac38f8-37c5-43c2-acd6-1b8acc3d7bf9"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.26011.01",
+          "FxVersion/4.6.25211.01",
           "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"usageMetrics\": [\r\n          {\r\n            \"name\": \"Physical memory\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"GB\",\r\n                \"value\": 74.654632568359375\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"GB\",\r\n                \"value\": 438.7822265625\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Physical storage\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"TB\",\r\n                \"value\": 0.15171295776963234\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"TB\",\r\n                \"value\": 2.3295492492616177\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Public IP address pools\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"One\",\r\n                \"value\": 31.0\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"One\",\r\n                \"value\": 224.0\r\n              }\r\n            ]\r\n          }\r\n        ],\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 0,\r\n          \"warningAlertCount\": 0\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"usageMetrics\": [\r\n          {\r\n            \"name\": \"Physical memory\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"GB\",\r\n                \"value\": 87.113105773925781\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"GB\",\r\n                \"value\": 426.9140625\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Physical storage\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"TB\",\r\n                \"value\": 0.33942607790231705\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"TB\",\r\n                \"value\": 2.141836129128933\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Public IP address pools\",\r\n            \"metricsValue\": [\r\n              {\r\n                \"name\": \"Used\",\r\n                \"unit\": \"One\",\r\n                \"value\": 35.0\r\n              },\r\n              {\r\n                \"name\": \"Available\",\r\n                \"unit\": \"One\",\r\n                \"value\": 220.0\r\n              }\r\n            ]\r\n          }\r\n        ],\r\n        \"alertSummary\": {\r\n          \"criticalAlertCount\": 1,\r\n          \"warningAlertCount\": 1\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "827"
+          "823"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 24 Jan 2018 20:57:28 GMT"
+          "Sat, 03 Feb 2018 05:04:52 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvOhKRvNAP2a1aqgPDUNyJs3p5oGVh59WLL1Wm23pJAjahV8Ym3H5I/N6RteOLL1ZW4vksqIxnmGyhupmuWM8mfG3yJB/T+PPLT+JaieYyhXsaVwA1l7r5Yv0LGYTIOj5LVLvEPVkpwCyidrXODmCs"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv72VqgaMxppwiwnqlS03UYCZ+aPTuvE7Xx2GkglZh32sYo3JTWqNIPyMJbL9pQHBcX0sUhopTL80aZOqtwPUdNxHe+JJfDazS674gQs5afTG8JWGlYMTYjZxEKtMb6Ckrue+jVSnqSTmTSDA8D0Wc"
         ],
         "x-ms-correlation-request-id": [
-          "00dc77c0-164f-40fa-81a1-85b64e7f0037"
+          "6f87f54b-2591-46d3-94ea-0dcea31b3b6c"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14845"
+          "13915"
         ],
         "x-ms-request-id": [
-          "00dc77c0-164f-40fa-81a1-85b64e7f0037"
+          "6f87f54b-2591-46d3-94ea-0dcea31b3b6c"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180124T205728Z:00dc77c0-164f-40fa-81a1-85b64e7f0037"
+          "LOCAL:20180203T050452Z:6f87f54b-2591-46d3-94ea-0dcea31b3b6c"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -65,26 +65,26 @@
       "StatusCode": 200
     },
     {
-      "RequestUri": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODgyN2IwZmItNjAzOS00N2ViLWE3ZTgtMzVjYTlkMmE3YTAwL3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbD9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
+      "RequestUri": "/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvYjdhNTc4NzItZjQyOS00ZWIzLWIyNmEtNTEwODE3ODM4MGE1L3Jlc291cmNlR3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LkluZnJhc3RydWN0dXJlSW5zaWdodHMuQWRtaW4vcmVnaW9uSGVhbHRocy9sb2NhbD9hcGktdmVyc2lvbj0yMDE2LTA1LTAx",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "72ee89ed-7101-4bde-a637-dd6e1111252b"
+          "dc63b722-46d3-43d8-9d15-dbc75a133737"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.26011.01",
+          "FxVersion/4.6.25211.01",
           "Microsoft.AzureStack.Management.InfrastructureInsights.Admin.InfrastructureInsightsAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n  \"name\": \"local\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"usageMetrics\": [\r\n      {\r\n        \"name\": \"Physical memory\",\r\n        \"metricsValue\": [\r\n          {\r\n            \"name\": \"Used\",\r\n            \"unit\": \"GB\",\r\n            \"value\": 74.654632568359375\r\n          },\r\n          {\r\n            \"name\": \"Available\",\r\n            \"unit\": \"GB\",\r\n            \"value\": 438.7822265625\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Physical storage\",\r\n        \"metricsValue\": [\r\n          {\r\n            \"name\": \"Used\",\r\n            \"unit\": \"TB\",\r\n            \"value\": 0.15171295776963234\r\n          },\r\n          {\r\n            \"name\": \"Available\",\r\n            \"unit\": \"TB\",\r\n            \"value\": 2.3295492492616177\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Public IP address pools\",\r\n        \"metricsValue\": [\r\n          {\r\n            \"name\": \"Used\",\r\n            \"unit\": \"One\",\r\n            \"value\": 31.0\r\n          },\r\n          {\r\n            \"name\": \"Available\",\r\n            \"unit\": \"One\",\r\n            \"value\": 224.0\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 0,\r\n      \"warningAlertCount\": 0\r\n    }\r\n  }\r\n}",
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/b7a57872-f429-4eb3-b26a-5108178380a5/resourceGroups/System.local/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/local\",\r\n  \"name\": \"local\",\r\n  \"type\": \"Microsoft.InfrastructureInsights.Admin/regionHealths\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"usageMetrics\": [\r\n      {\r\n        \"name\": \"Physical memory\",\r\n        \"metricsValue\": [\r\n          {\r\n            \"name\": \"Used\",\r\n            \"unit\": \"GB\",\r\n            \"value\": 87.113105773925781\r\n          },\r\n          {\r\n            \"name\": \"Available\",\r\n            \"unit\": \"GB\",\r\n            \"value\": 426.9140625\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Physical storage\",\r\n        \"metricsValue\": [\r\n          {\r\n            \"name\": \"Used\",\r\n            \"unit\": \"TB\",\r\n            \"value\": 0.33942607790231705\r\n          },\r\n          {\r\n            \"name\": \"Available\",\r\n            \"unit\": \"TB\",\r\n            \"value\": 2.141836129128933\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Public IP address pools\",\r\n        \"metricsValue\": [\r\n          {\r\n            \"name\": \"Used\",\r\n            \"unit\": \"One\",\r\n            \"value\": 35.0\r\n          },\r\n          {\r\n            \"name\": \"Available\",\r\n            \"unit\": \"One\",\r\n            \"value\": 220.0\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"alertSummary\": {\r\n      \"criticalAlertCount\": 1,\r\n      \"warningAlertCount\": 1\r\n    }\r\n  }\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "815"
+          "811"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -96,7 +96,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 24 Jan 2018 20:57:28 GMT"
+          "Sat, 03 Feb 2018 05:04:52 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +105,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv+eMHmgTHYbs+baYeZZgprmbBwpqWkF+zoXUbl6GhKZtnaOwB/vustxUwD3+x5j2myzTvdEz9xADFZDGOuVlcg7e4QC0XVqDikQFLxGupFe5xWzAFMlRCOcxDXnVYFN2f/vKoQp05GAg/BOGpCvsd"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvCiAy5K8wfUjH5V3dIZLvcOavgf3NhuVHmv/6r911voQrw7+MVeW9/EIU7Yu+ePNBT7H+p3YMvSlo8qP3CzRD/8dczygEgsaE4Dwgokpa5kXfL59QHz/Yw/5tY03lwLevCHuDspn/ebPQz8Szidw+"
         ],
         "x-ms-correlation-request-id": [
-          "1f14e3b8-dd58-494d-bb4b-9e2c0235c70a"
+          "4eec2d3e-ff69-4a45-ba95-9ff07563904c"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14844"
+          "13914"
         ],
         "x-ms-request-id": [
-          "1f14e3b8-dd58-494d-bb4b-9e2c0235c70a"
+          "4eec2d3e-ff69-4a45-ba95-9ff07563904c"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180124T205728Z:1f14e3b8-dd58-494d-bb4b-9e2c0235c70a"
+          "LOCAL:20180203T050453Z:4eec2d3e-ff69-4a45-ba95-9ff07563904c"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -131,6 +131,6 @@
   ],
   "Names": {},
   "Variables": {
-    "SubscriptionId": "8827b0fb-6039-47eb-a7e8-35ca9d2a7a00"
+    "SubscriptionId": "b7a57872-f429-4eb3-b26a-5108178380a5"
   }
 }

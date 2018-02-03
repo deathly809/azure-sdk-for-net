@@ -25,10 +25,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public partial interface IAlertsOperations
     {
         /// <summary>
-        /// Returns the list of all alerts in a given location.
+        /// Returns the list of all alerts in a given region.
         /// </summary>
-        /// <param name='location'>
-        /// Location name.
+        /// <param name='resourceGroupName'>
+        /// resourceGroupName.
+        /// </param>
+        /// <param name='region'>
+        /// Name of the region
         /// </param>
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
@@ -48,12 +51,15 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<Alert>>> ListWithHttpMessagesAsync(string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Alert>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get an alert.
+        /// Returns the requested an alert.
         /// </summary>
-        /// <param name='location'>
-        /// Location name.
+        /// <param name='resourceGroupName'>
+        /// resourceGroupName.
+        /// </param>
+        /// <param name='region'>
+        /// Name of the region
         /// </param>
         /// <param name='alertName'>
         /// Name of the alert.
@@ -73,12 +79,15 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Alert>> GetWithHttpMessagesAsync(string location, string alertName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Alert>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string alertName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Close an alert.
+        /// Closes the given alert.
         /// </summary>
-        /// <param name='location'>
-        /// Location name.
+        /// <param name='resourceGroupName'>
+        /// resourceGroupName.
+        /// </param>
+        /// <param name='region'>
+        /// Name of the region
         /// </param>
         /// <param name='alertName'>
         /// Name of the alert.
@@ -104,9 +113,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Alert>> CloseWithHttpMessagesAsync(string location, string alertName, string user, Alert alert, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Alert>> CloseWithHttpMessagesAsync(string resourceGroupName, string region, string alertName, string user, Alert alert, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns the list of all alerts in a given location.
+        /// Returns the list of all alerts in a given region.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
