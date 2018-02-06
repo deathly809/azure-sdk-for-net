@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Get an infra role description.
+    /// Infra role description.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class InfraRole : Resource
@@ -40,10 +40,15 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="location">Region Location of resource.</param>
         /// <param name="tags">List of key value pairs.</param>
         /// <param name="instances">List of infra role instances.</param>
-        public InfraRole(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<string> instances = default(IList<string>))
+        /// <param name="displayName">Display name for the infra role</param>
+        /// <param name="restartable">Value indicating whether the infra role
+        /// can be restarted.</param>
+        public InfraRole(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<string> instances = default(IList<string>), IList<object> displayName = default(IList<object>), bool? restartable = default(bool?))
             : base(id, name, type, location, tags)
         {
             Instances = instances;
+            DisplayName = displayName;
+            Restartable = restartable;
             CustomInit();
         }
 
@@ -57,6 +62,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.instances")]
         public IList<string> Instances { get; set; }
+
+        /// <summary>
+        /// Gets or sets display name for the infra role
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.displayName")]
+        public IList<object> DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or sets value indicating whether the infra role can be
+        /// restarted.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.restartable")]
+        public bool? Restartable { get; set; }
 
     }
 }

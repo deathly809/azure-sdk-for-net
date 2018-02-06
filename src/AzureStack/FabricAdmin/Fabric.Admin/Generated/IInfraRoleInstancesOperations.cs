@@ -27,6 +27,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <summary>
         /// Power off an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -42,16 +45,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> PowerOffWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> PowerOffWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Power on an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -67,16 +70,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> PowerOnWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> PowerOnWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Shut down an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -92,16 +95,41 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> ShutdownWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> ShutdownWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Reboot an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
+        /// <param name='location'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='infraRoleInstance'>
+        /// Name of an infra role instance.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse> RebootWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Return the requested infra role instance.
+        /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -123,35 +151,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> RebootWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<InfraRoleInstance>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get an infra role instance.
+        /// Returns a list of all infra role instances at a location.
         /// </summary>
-        /// <param name='location'>
-        /// Location of the resource.
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
         /// </param>
-        /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <exception cref="Microsoft.Rest.Azure.CloudException">
-        /// Thrown when the operation returned an invalid status code
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.ValidationException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        Task<AzureOperationResponse<InfraRoleInstance>> GetWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <summary>
-        /// Get a list of all infra role instances at a location.
-        /// </summary>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -173,10 +179,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<InfraRoleInstance>>> ListWithHttpMessagesAsync(string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<InfraRoleInstance>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Power off an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -192,16 +201,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> BeginPowerOffWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> BeginPowerOffWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Power on an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -217,16 +226,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> BeginPowerOnWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> BeginPowerOnWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Shut down an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -242,16 +251,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> BeginShutdownWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> BeginShutdownWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Reboot an infra role instance.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -267,15 +276,12 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> BeginRebootWithHttpMessagesAsync(string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> BeginRebootWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all infra role instances at a location.
+        /// Returns a list of all infra role instances at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

@@ -28,9 +28,18 @@ namespace Fabric.Tests
         protected abstract void ValidateClient(T client);
 
         /// <summary>
-        /// The default location for all admin actions.  Override in derived class as needed.
+        /// The default resource group for all admin actions.  Override in derived class as needed.
         /// </summary>
-        protected string Location = "local";
+        protected string ResourceGroupName = "System.local";
+        
+        protected string ExtractName(string name) {
+            if(name.Contains("/"))
+            {
+                var idx = name.LastIndexOf('/');
+                name = name.Substring(idx + 1);
+            }
+            return name;
+        }
 
         /// <summary>
         /// Run a test that accepts no arguments.  An exception can be 

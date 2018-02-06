@@ -25,8 +25,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IIpPoolsOperations
     {
         /// <summary>
-        /// Get an ip pool.
+        /// Return the requested Ip pool.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -48,10 +51,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IpPool>> GetWithHttpMessagesAsync(string location, string ipPool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IpPool>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create an ip pool.
+        /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -76,10 +82,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> CreateWithHttpMessagesAsync(string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IpPool>> CreateWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all ip pools at a certain location.
+        /// Returns a list of all ip pools at a certain location.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -101,10 +110,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<IpPool>>> ListWithHttpMessagesAsync(string location, ODataQuery<IpPool> odataQuery = default(ODataQuery<IpPool>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<IpPool>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<IpPool> odataQuery = default(ODataQuery<IpPool>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create an ip pool.
+        /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -129,9 +141,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> BeginCreateWithHttpMessagesAsync(string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IpPool>> BeginCreateWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all ip pools at a certain location.
+        /// Returns a list of all ip pools at a certain location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

@@ -25,13 +25,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IEdgeGatewaysOperations
     {
         /// <summary>
-        /// Get an edge gateway by name.
+        /// Returns the requested edge gateway.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='edgeGateway'>
-        /// name of the edge gateway.
+        /// Name of the edge gateway.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -48,10 +51,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<EdgeGateway>> GetWithHttpMessagesAsync(string location, string edgeGateway, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<EdgeGateway>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string edgeGateway, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all edge gateways at a certain location.
+        /// Returns the list of all edge gateways at a certain location.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -73,9 +79,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<EdgeGateway>>> ListWithHttpMessagesAsync(string location, ODataQuery<EdgeGateway> odataQuery = default(ODataQuery<EdgeGateway>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<EdgeGateway>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<EdgeGateway> odataQuery = default(ODataQuery<EdgeGateway>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all edge gateways at a certain location.
+        /// Returns the list of all edge gateways at a certain location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

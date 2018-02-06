@@ -28,15 +28,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus PowerOff(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void PowerOff(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.PowerOffAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.PowerOffAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -45,6 +48,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -54,12 +60,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> PowerOffAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task PowerOffAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.PowerOffWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.PowerOffWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -68,15 +71,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus PowerOn(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void PowerOn(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.PowerOnAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.PowerOnAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -85,6 +91,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -94,12 +103,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> PowerOnAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task PowerOnAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.PowerOnWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.PowerOnWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -108,15 +114,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus Shutdown(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void Shutdown(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.ShutdownAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.ShutdownAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -125,6 +134,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -134,12 +146,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> ShutdownAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task ShutdownAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ShutdownWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.ShutdownWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -148,15 +157,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus Reboot(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void Reboot(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.RebootAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.RebootAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -165,45 +177,8 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
-            /// </param>
-            /// <param name='infraRoleInstance'>
-            /// Name of an infra role instance.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<OperationStatus> RebootAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.RebootWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Get an infra role instance.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
-            /// </param>
-            /// <param name='infraRoleInstance'>
-            /// Name of an infra role instance.
-            /// </param>
-            public static InfraRoleInstance Get(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
-            {
-                return operations.GetAsync(location, infraRoleInstance).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Get an infra role instance.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -214,19 +189,65 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<InfraRoleInstance> GetAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task RebootAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
+                (await operations.RebootWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Return the requested infra role instance.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRoleInstance'>
+            /// Name of an infra role instance.
+            /// </param>
+            public static InfraRoleInstance Get(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
+            {
+                return operations.GetAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Return the requested infra role instance.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRoleInstance'>
+            /// Name of an infra role instance.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<InfraRoleInstance> GetAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all infra role instances at a location.
+            /// Returns a list of all infra role instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -234,16 +255,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<InfraRoleInstance> List(this IInfraRoleInstancesOperations operations, string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>))
+            public static IPage<InfraRoleInstance> List(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all infra role instances at a location.
+            /// Returns a list of all infra role instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -254,9 +278,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<InfraRoleInstance>> ListAsync(this IInfraRoleInstancesOperations operations, string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<InfraRoleInstance>> ListAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -268,15 +292,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus BeginPowerOff(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void BeginPowerOff(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.BeginPowerOffAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.BeginPowerOffAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -285,6 +312,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -294,12 +324,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> BeginPowerOffAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginPowerOffAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginPowerOffWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.BeginPowerOffWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -308,15 +335,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus BeginPowerOn(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void BeginPowerOn(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.BeginPowerOnAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.BeginPowerOnAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -325,6 +355,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -334,12 +367,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> BeginPowerOnAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginPowerOnAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginPowerOnWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.BeginPowerOnWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -348,15 +378,18 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='infraRoleInstance'>
             /// Name of an infra role instance.
             /// </param>
-            public static OperationStatus BeginShutdown(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
+            public static void BeginShutdown(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
             {
-                return operations.BeginShutdownAsync(location, infraRoleInstance).GetAwaiter().GetResult();
+                operations.BeginShutdownAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -365,45 +398,8 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
-            /// </param>
-            /// <param name='infraRoleInstance'>
-            /// Name of an infra role instance.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<OperationStatus> BeginShutdownAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.BeginShutdownWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Reboot an infra role instance.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
-            /// </param>
-            /// <param name='infraRoleInstance'>
-            /// Name of an infra role instance.
-            /// </param>
-            public static OperationStatus BeginReboot(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance)
-            {
-                return operations.BeginRebootAsync(location, infraRoleInstance).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Reboot an infra role instance.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -414,16 +410,56 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> BeginRebootAsync(this IInfraRoleInstancesOperations operations, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginShutdownAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginRebootWithHttpMessagesAsync(location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.BeginShutdownWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
-            /// Get a list of all infra role instances at a location.
+            /// Reboot an infra role instance.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRoleInstance'>
+            /// Name of an infra role instance.
+            /// </param>
+            public static void BeginReboot(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance)
+            {
+                operations.BeginRebootAsync(resourceGroupName, location, infraRoleInstance).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Reboot an infra role instance.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRoleInstance'>
+            /// Name of an infra role instance.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginRebootAsync(this IInfraRoleInstancesOperations operations, string resourceGroupName, string location, string infraRoleInstance, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginRebootWithHttpMessagesAsync(resourceGroupName, location, infraRoleInstance, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Returns a list of all infra role instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -437,7 +473,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all infra role instances at a location.
+            /// Returns a list of all infra role instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

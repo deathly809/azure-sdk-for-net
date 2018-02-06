@@ -22,7 +22,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class FabricOperationsExtensions
     {
             /// <summary>
-            /// Get the list of support rest operations.
+            /// Returns the list of support rest operations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -33,7 +33,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get the list of support rest operations.
+            /// Returns the list of support rest operations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get the list of support rest operations.
+            /// Returns the list of support rest operations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -64,7 +64,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get the list of support rest operations.
+            /// Returns the list of support rest operations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

@@ -23,10 +23,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class MacAddressPoolsOperationsExtensions
     {
             /// <summary>
-            /// Get a MAC address pool.
+            /// Returns the requested MAC address pool.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -34,16 +37,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='macAddressPool'>
             /// Name of the MAC address pool.
             /// </param>
-            public static MacAddressPool Get(this IMacAddressPoolsOperations operations, string location, string macAddressPool)
+            public static MacAddressPool Get(this IMacAddressPoolsOperations operations, string resourceGroupName, string location, string macAddressPool)
             {
-                return operations.GetAsync(location, macAddressPool).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, macAddressPool).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a MAC address pool.
+            /// Returns the requested MAC address pool.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -54,19 +60,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<MacAddressPool> GetAsync(this IMacAddressPoolsOperations operations, string location, string macAddressPool, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<MacAddressPool> GetAsync(this IMacAddressPoolsOperations operations, string resourceGroupName, string location, string macAddressPool, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, macAddressPool, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, macAddressPool, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all MAC address pools at a location.
+            /// Returns a list of all MAC address pools at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -74,16 +83,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<MacAddressPool> List(this IMacAddressPoolsOperations operations, string location, ODataQuery<MacAddressPool> odataQuery = default(ODataQuery<MacAddressPool>))
+            public static IPage<MacAddressPool> List(this IMacAddressPoolsOperations operations, string resourceGroupName, string location, ODataQuery<MacAddressPool> odataQuery = default(ODataQuery<MacAddressPool>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all MAC address pools at a location.
+            /// Returns a list of all MAC address pools at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -94,16 +106,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<MacAddressPool>> ListAsync(this IMacAddressPoolsOperations operations, string location, ODataQuery<MacAddressPool> odataQuery = default(ODataQuery<MacAddressPool>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<MacAddressPool>> ListAsync(this IMacAddressPoolsOperations operations, string resourceGroupName, string location, ODataQuery<MacAddressPool> odataQuery = default(ODataQuery<MacAddressPool>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all MAC address pools at a location.
+            /// Returns a list of all MAC address pools at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all MAC address pools at a location.
+            /// Returns a list of all MAC address pools at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

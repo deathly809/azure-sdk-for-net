@@ -25,8 +25,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IFileSharesOperations
     {
         /// <summary>
-        /// Get a fabric file share.
+        /// Returns the requested fabric file share.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -48,10 +51,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<FileShare>> GetWithHttpMessagesAsync(string location, string fileShare, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<FileShare>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string fileShare, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all fabric file shares at a certain location.
+        /// Returns a list of all fabric file shares at a certain location.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -73,6 +79,6 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IEnumerable<FileShare>>> ListWithHttpMessagesAsync(string location, ODataQuery<FileShare> odataQuery = default(ODataQuery<FileShare>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IEnumerable<FileShare>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<FileShare> odataQuery = default(ODataQuery<FileShare>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

@@ -23,30 +23,30 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class FabricLocationsOperationsExtensions
     {
             /// <summary>
-            /// Get a fabric location.
+            /// Returns the requested fabric location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='fabricLocation'>
             /// Fabric Location.
             /// </param>
-            public static FabricLocation Get(this IFabricLocationsOperations operations, string location, string fabricLocation)
+            public static FabricLocation Get(this IFabricLocationsOperations operations, string resourceGroupName, string fabricLocation)
             {
-                return operations.GetAsync(location, fabricLocation).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, fabricLocation).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a fabric location.
+            /// Returns the requested fabric location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='fabricLocation'>
             /// Fabric Location.
@@ -54,39 +54,39 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<FabricLocation> GetAsync(this IFabricLocationsOperations operations, string location, string fabricLocation, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<FabricLocation> GetAsync(this IFabricLocationsOperations operations, string resourceGroupName, string fabricLocation, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, fabricLocation, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, fabricLocation, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all fabric locations.
+            /// Returns a list of all fabric locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<FabricLocation> List(this IFabricLocationsOperations operations, string location, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>))
+            public static IPage<FabricLocation> List(this IFabricLocationsOperations operations, string resourceGroupName, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all fabric locations.
+            /// Returns a list of all fabric locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
@@ -94,39 +94,41 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<FabricLocation>> ListAsync(this IFabricLocationsOperations operations, string location, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<FabricLocation>> ListAsync(this IFabricLocationsOperations operations, string resourceGroupName, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Create or update a fabric location.
+            /// Creates or updates a fabric location.  This will fail if not called during
+            /// deployment.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='fabricObject'>
             /// Fabric Location object.
             /// </param>
-            public static FabricLocation CreateOrUpdate(this IFabricLocationsOperations operations, string location, FabricLocation fabricObject)
+            public static FabricLocation Create(this IFabricLocationsOperations operations, string resourceGroupName, FabricLocation fabricObject)
             {
-                return operations.CreateOrUpdateAsync(location, fabricObject).GetAwaiter().GetResult();
+                return operations.CreateAsync(resourceGroupName, fabricObject).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Create or update a fabric location.
+            /// Creates or updates a fabric location.  This will fail if not called during
+            /// deployment.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='location'>
-            /// Location of the resource.
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='fabricObject'>
             /// Fabric Location object.
@@ -134,16 +136,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<FabricLocation> CreateOrUpdateAsync(this IFabricLocationsOperations operations, string location, FabricLocation fabricObject, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<FabricLocation> CreateAsync(this IFabricLocationsOperations operations, string resourceGroupName, FabricLocation fabricObject, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(location, fabricObject, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateWithHttpMessagesAsync(resourceGroupName, fabricObject, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all fabric locations.
+            /// Returns a list of all fabric locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -157,7 +159,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all fabric locations.
+            /// Returns a list of all fabric locations.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

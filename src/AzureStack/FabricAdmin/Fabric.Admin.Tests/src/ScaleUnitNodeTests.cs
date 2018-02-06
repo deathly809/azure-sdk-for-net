@@ -60,17 +60,22 @@ namespace Fabric.Tests
         [Fact]
         public void TestListScaleUnitNodes() {
             RunTest((client) => {
-                var scaleUnitNodes = client.ScaleUnitNodes.List(Location);
-                Common.MapOverIPage(scaleUnitNodes, client.ScaleUnitNodes.ListNext, ValidateScaleUnitNode);
-                Common.WriteIPagesToFile(scaleUnitNodes, client.ScaleUnitNodes.ListNext, "ListScaleUnitNodes.txt", ResourceName);
+                OverFabricLocations(client, (fabricLocationName) => {
+                    var scaleUnitNodes = client.ScaleUnitNodes.List(ResourceGroupName, fabricLocationName);
+                    Common.MapOverIPage(scaleUnitNodes, client.ScaleUnitNodes.ListNext, ValidateScaleUnitNode);
+                    Common.WriteIPagesToFile(scaleUnitNodes, client.ScaleUnitNodes.ListNext, "ListScaleUnitNodes.txt", ResourceName);
+                });
             });
         }
 
         [Fact]
         public void TestGetScaleUnitNode() {
             RunTest((client) => {
-                var scaleUnitNode = client.ScaleUnitNodes.List(Location).GetFirst();
-                var retrieved = client.ScaleUnitNodes.Get(Location, scaleUnitNode.Name);
+                var fabricLocationName = GetLocation(client);
+                var scaleUnitNode = client.ScaleUnitNodes.List(ResourceGroupName, fabricLocationName).GetFirst();
+                var scaleUnitNodeName = ExtractName(scaleUnitNode.Name);
+
+                var retrieved = client.ScaleUnitNodes.Get(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
                 AssertScaleUnitNodesAreSame(scaleUnitNode, retrieved);
             });
         }
@@ -78,10 +83,14 @@ namespace Fabric.Tests
         [Fact]
         public void TestGetAllScaleUnitNodes() {
             RunTest((client) => {
-                var scaleUnitNodes = client.ScaleUnitNodes.List(Location);
-                Common.MapOverIPage(scaleUnitNodes, client.ScaleUnitNodes.ListNext, (scaleUnitNode) => {
-                    var retrieved = client.ScaleUnitNodes.Get(Location, scaleUnitNode.Name);
-                    AssertScaleUnitNodesAreSame(scaleUnitNode, retrieved);
+                OverFabricLocations(client, (fabricLocationName) => {
+                    var scaleUnitNodes = client.ScaleUnitNodes.List(ResourceGroupName, fabricLocationName);
+                    Common.MapOverIPage(scaleUnitNodes, client.ScaleUnitNodes.ListNext, (scaleUnitNode) => {
+
+                        var scaleUnitNodeName = ExtractName(scaleUnitNode.Name);
+                        var retrieved = client.ScaleUnitNodes.Get(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
+                        AssertScaleUnitNodesAreSame(scaleUnitNode, retrieved);
+                    });
                 });
             });
         }
@@ -89,13 +98,12 @@ namespace Fabric.Tests
         [Fact]
         public void TestPowerOnScaleUnitNode() {
             RunTest((client) => {
-                var scaleUnitNode = client.ScaleUnitNodes.List(Location).GetFirst();
+                var fabricLocationName = GetLocation(client);
+                var scaleUnitNode = client.ScaleUnitNodes.List(ResourceGroupName, fabricLocationName).GetFirst();
+                var scaleUnitNodeName = ExtractName(scaleUnitNode.Name);
 
-                var provisioningState = client.ScaleUnitNodes.PowerOn(Location, scaleUnitNode.Name);
-                Assert.NotEqual("", provisioningState.ProvisioningState);
-                Assert.Equal("Succeeded", provisioningState.ProvisioningState);
-
-                var sun = client.ScaleUnitNodes.Get(Location, scaleUnitNode.Name);
+                client.ScaleUnitNodes.PowerOn(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
+                var sun = client.ScaleUnitNodes.Get(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
                 Assert.Equal("Running", sun.PowerState);
             });
         }
@@ -103,10 +111,12 @@ namespace Fabric.Tests
         [Fact]
         public void TestStartStopMaintenanceModeUnitNode() {
             RunTest((client) => {
-                var scaleUnitNode = client.ScaleUnitNodes.List(Location).GetFirst();
                 Assert.Throws<CloudException>(() => {
-                    client.ScaleUnitNodes.StartMaintenanceMode(Location, scaleUnitNode.Name);
-                    client.ScaleUnitNodes.StopMaintenanceMode(Location, scaleUnitNode.Name);
+                    var fabricLocationName = GetLocation(client);
+                    var scaleUnitNode = client.ScaleUnitNodes.List(ResourceGroupName, fabricLocationName).GetFirst();
+                    var scaleUnitNodeName = ExtractName(scaleUnitNode.Name);
+                    client.ScaleUnitNodes.StartMaintenanceMode(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
+                    client.ScaleUnitNodes.StopMaintenanceMode(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
                 });
             });
         }
@@ -121,7 +131,8 @@ namespace Fabric.Tests
         [Fact]
         public void TestGetScaleUnitNodeOnTenantVM() {
             RunTest((client) => {
-                Assert.Throws<CloudException>(() => client.ScaleUnitNodes.Get(Location, TenantVMName));
+                var fabricLocationName = GetLocation(client);
+                Assert.Throws<CloudException>(() => client.ScaleUnitNodes.Get(ResourceGroupName, fabricLocationName, TenantVMName));
             });
         }
 
@@ -129,9 +140,8 @@ namespace Fabric.Tests
         public void TestPowerOnOnTenantVM() {
             RunTest((client) => {
                 Assert.Throws<CloudException>(() => {
-                    var provisioningState = client.ScaleUnitNodes.PowerOn(Location, TenantVMName);
-                    Assert.NotEqual("", provisioningState.ProvisioningState);
-                    Assert.Equal("Failed", provisioningState.ProvisioningState);
+                    var fabricLocationName = GetLocation(client);
+                    client.ScaleUnitNodes.PowerOn(ResourceGroupName, fabricLocationName, TenantVMName);
                 });
             });
         }
@@ -141,9 +151,8 @@ namespace Fabric.Tests
         public void TestPowerOffOnTenantVM() {
             RunTest((client) => {
                 Assert.Throws<CloudException>(() => {
-                    var provisioningState = client.ScaleUnitNodes.PowerOff(Location, TenantVMName);
-                    Assert.NotEqual("", provisioningState.ProvisioningState);
-                    Assert.Equal("Failed", provisioningState.ProvisioningState);
+                    var fabricLocationName = GetLocation(client);
+                    client.ScaleUnitNodes.PowerOff(ResourceGroupName, fabricLocationName, TenantVMName);
                 });
             });
         }
@@ -152,9 +161,8 @@ namespace Fabric.Tests
         public void TestStartMaintenanceModeOnTenantVM() {
             RunTest((client) => {
                 Assert.Throws<CloudException>(() => {
-                    var provisioningState = client.ScaleUnitNodes.StartMaintenanceMode(Location, TenantVMName);
-                    Assert.NotEqual("", provisioningState.ProvisioningState);
-                    Assert.Equal("Failed", provisioningState.ProvisioningState);
+                    var fabricLocationName = GetLocation(client);
+                    client.ScaleUnitNodes.StartMaintenanceMode(ResourceGroupName, fabricLocationName, TenantVMName);
                 });
             });
         }
@@ -164,9 +172,11 @@ namespace Fabric.Tests
         [Fact(Skip = "No hardware")]
         public void TestPowerOffScaleUnitNode() {
             RunTest((client) => {
-                var scaleUnitNode = client.ScaleUnitNodes.List(Location).GetFirst();
-                var obj1 = client.ScaleUnitNodes.PowerOff(Location, scaleUnitNode.Name);
-                var obj2 = client.ScaleUnitNodes.PowerOn(Location, scaleUnitNode.Name);
+                var fabricLocationName = GetLocation(client);
+                var scaleUnitNode = client.ScaleUnitNodes.List(ResourceGroupName, fabricLocationName).GetFirst();
+                var scaleUnitNodeName = ExtractName(scaleUnitNode.Name);
+                client.ScaleUnitNodes.PowerOff(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
+                client.ScaleUnitNodes.PowerOn(ResourceGroupName, fabricLocationName, scaleUnitNodeName);
             });
         }
 

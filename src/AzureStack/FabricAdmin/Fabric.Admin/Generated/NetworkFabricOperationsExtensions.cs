@@ -22,10 +22,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class NetworkFabricOperationsExtensions
     {
             /// <summary>
-            /// Get the status of a network fabric operation.
+            /// Returns the status of a network fabric operation.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -36,16 +39,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='networkOperationResult'>
             /// Id of a network fabric operation.
             /// </param>
-            public static OperationStatus Get(this INetworkFabricOperations operations, string location, string provider, string networkOperationResult)
+            public static void Get(this INetworkFabricOperations operations, string resourceGroupName, string location, string provider, string networkOperationResult)
             {
-                return operations.GetAsync(location, provider, networkOperationResult).GetAwaiter().GetResult();
+                operations.GetAsync(resourceGroupName, location, provider, networkOperationResult).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get the status of a network fabric operation.
+            /// Returns the status of a network fabric operation.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -59,12 +65,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> GetAsync(this INetworkFabricOperations operations, string location, string provider, string networkOperationResult, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task GetAsync(this INetworkFabricOperations operations, string resourceGroupName, string location, string provider, string networkOperationResult, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, provider, networkOperationResult, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.GetWithHttpMessagesAsync(resourceGroupName, location, provider, networkOperationResult, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
     }

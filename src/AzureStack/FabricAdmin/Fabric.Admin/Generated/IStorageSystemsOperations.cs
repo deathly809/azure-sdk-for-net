@@ -25,8 +25,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IStorageSystemsOperations
     {
         /// <summary>
-        /// Get a storage subsystem.
+        /// Return the requested storage subsystem.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -48,10 +51,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<StorageSystem>> GetWithHttpMessagesAsync(string location, string storageSubSystem, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<StorageSystem>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string storageSubSystem, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all storage subsystems for a location.
+        /// Returns a list of all storage subsystems for a location.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -73,9 +79,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<StorageSystem>>> ListWithHttpMessagesAsync(string location, ODataQuery<StorageSystem> odataQuery = default(ODataQuery<StorageSystem>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<StorageSystem>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<StorageSystem> odataQuery = default(ODataQuery<StorageSystem>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all storage subsystems for a location.
+        /// Returns a list of all storage subsystems for a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

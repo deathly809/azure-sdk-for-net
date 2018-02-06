@@ -25,8 +25,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IInfraRolesOperations
     {
         /// <summary>
-        /// Get an infra role description.
+        /// Returns the requested infra role description.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -48,10 +51,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<InfraRole>> GetWithHttpMessagesAsync(string location, string infraRole, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<InfraRole>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string infraRole, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all infra roles at a location.
+        /// Returns a list of all infra roles at a location.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -73,9 +79,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<InfraRole>>> ListWithHttpMessagesAsync(string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<InfraRole>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all infra roles at a location.
+        /// Returns a list of all infra roles at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

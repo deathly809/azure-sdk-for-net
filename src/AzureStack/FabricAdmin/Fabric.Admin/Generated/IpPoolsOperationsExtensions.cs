@@ -23,10 +23,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class IpPoolsOperationsExtensions
     {
             /// <summary>
-            /// Get an ip pool.
+            /// Return the requested Ip pool.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -34,16 +37,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='ipPool'>
             /// Ip pool name.
             /// </param>
-            public static IpPool Get(this IIpPoolsOperations operations, string location, string ipPool)
+            public static IpPool Get(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool)
             {
-                return operations.GetAsync(location, ipPool).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, ipPool).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get an ip pool.
+            /// Return the requested Ip pool.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -54,19 +60,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IpPool> GetAsync(this IIpPoolsOperations operations, string location, string ipPool, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IpPool> GetAsync(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, ipPool, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, ipPool, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Create an ip pool.
+            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -77,16 +86,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='pool'>
             /// Ip pool object to send.
             /// </param>
-            public static OperationStatus Create(this IIpPoolsOperations operations, string location, string ipPool, IpPool pool)
+            public static IpPool Create(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, IpPool pool)
             {
-                return operations.CreateAsync(location, ipPool, pool).GetAwaiter().GetResult();
+                return operations.CreateAsync(resourceGroupName, location, ipPool, pool).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Create an ip pool.
+            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -100,19 +112,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> CreateAsync(this IIpPoolsOperations operations, string location, string ipPool, IpPool pool, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IpPool> CreateAsync(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, IpPool pool, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateWithHttpMessagesAsync(location, ipPool, pool, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateWithHttpMessagesAsync(resourceGroupName, location, ipPool, pool, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all ip pools at a certain location.
+            /// Returns a list of all ip pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -120,16 +135,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<IpPool> List(this IIpPoolsOperations operations, string location, ODataQuery<IpPool> odataQuery = default(ODataQuery<IpPool>))
+            public static IPage<IpPool> List(this IIpPoolsOperations operations, string resourceGroupName, string location, ODataQuery<IpPool> odataQuery = default(ODataQuery<IpPool>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all ip pools at a certain location.
+            /// Returns a list of all ip pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -140,19 +158,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<IpPool>> ListAsync(this IIpPoolsOperations operations, string location, ODataQuery<IpPool> odataQuery = default(ODataQuery<IpPool>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<IpPool>> ListAsync(this IIpPoolsOperations operations, string resourceGroupName, string location, ODataQuery<IpPool> odataQuery = default(ODataQuery<IpPool>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Create an ip pool.
+            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -163,16 +184,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='pool'>
             /// Ip pool object to send.
             /// </param>
-            public static OperationStatus BeginCreate(this IIpPoolsOperations operations, string location, string ipPool, IpPool pool)
+            public static IpPool BeginCreate(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, IpPool pool)
             {
-                return operations.BeginCreateAsync(location, ipPool, pool).GetAwaiter().GetResult();
+                return operations.BeginCreateAsync(resourceGroupName, location, ipPool, pool).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Create an ip pool.
+            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -186,16 +210,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> BeginCreateAsync(this IIpPoolsOperations operations, string location, string ipPool, IpPool pool, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IpPool> BeginCreateAsync(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, IpPool pool, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(location, ipPool, pool, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateWithHttpMessagesAsync(resourceGroupName, location, ipPool, pool, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all ip pools at a certain location.
+            /// Returns a list of all ip pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -209,7 +233,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all ip pools at a certain location.
+            /// Returns a list of all ip pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

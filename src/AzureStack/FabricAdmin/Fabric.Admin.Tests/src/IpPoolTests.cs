@@ -48,19 +48,24 @@ namespace Fabric.Tests
         [Fact]
         public void TestListIpPools() {
             RunTest((client) => {
-                var ipPools = client.IpPools.List(Location);
-                Common.MapOverIPage(ipPools, client.IpPools.ListNext, ValidateIpPool);
-                Common.WriteIPagesToFile(ipPools, client.IpPools.ListNext, "ListIpPools.txt", (pool) => pool.Name);
+                OverFabricLocations(client, (fabricLocationName) => {
+                    var ipPools = client.IpPools.List(ResourceGroupName, fabricLocationName);
+                    Common.MapOverIPage(ipPools, client.IpPools.ListNext, ValidateIpPool);
+                    Common.WriteIPagesToFile(ipPools, client.IpPools.ListNext, "ListIpPools.txt", (pool) => pool.Name);
+                });
             });
         }
 
         [Fact]
         public void TestGetIpPool() {
             RunTest((client) => {
-                var ipPool = client.IpPools.List(Location).GetFirst();
+                var locationName = GetLocation(client);
+
+                var ipPool = client.IpPools.List(ResourceGroupName, locationName).GetFirst();
                 if (ipPool != null)
                 {
-                    var retrieved = client.IpPools.Get(Location, ipPool.Name);
+                    var ipPoolName = ExtractName(ipPool.Name);
+                    var retrieved = client.IpPools.Get(ResourceGroupName, locationName, ipPoolName);
                     AssertIpPoolsAreSame(ipPool, retrieved);
                 }
             });
@@ -68,16 +73,20 @@ namespace Fabric.Tests
         [Fact]
         public void TestGetAllIpPools() {
             RunTest((client) => {
-                var ipPools = client.IpPools.List(Location);
-                Common.MapOverIPage(ipPools, client.IpPools.ListNext, (pool) => {
-                    var retrieved = client.IpPools.Get(Location, pool.Name);
-                    AssertIpPoolsAreSame(pool, retrieved);
+                OverFabricLocations(client, (fabricLocationName) => {
+                    var ipPools = client.IpPools.List(ResourceGroupName, fabricLocationName);
+                    Common.MapOverIPage(ipPools, client.IpPools.ListNext, (pool) => {
+
+                        var poolName = ExtractName(pool.Name);
+                        var retrieved = client.IpPools.Get(ResourceGroupName, fabricLocationName, poolName);
+                        AssertIpPoolsAreSame(pool, retrieved);
+                    });
                 });
             });
         }
 
 
-        private IpPool CreateNewIpPool(string ipPoolName, string first = "66" , string second = "66") {
+        private IpPool CreateNewIpPool(string ipPoolName, string first = "66", string second = "66") {
             var ipPool = new IpPool()
             {
                 StartIpAddress = first + "." + second + ".9.1",
@@ -90,17 +99,14 @@ namespace Fabric.Tests
         [Fact]
         public void TestCreateIpPool() {
             RunTest((client) => {
+                var fabricLocationName = GetLocation(client);
 
                 var first = "199";
                 var second = "198";
                 var ipPoolName = "TestIpPool" + first + second;
                 var ipPool = CreateNewIpPool(ipPoolName, first, second);
 
-                var retrieved = client.IpPools.Create(Location, ipPoolName, ipPool);
-                Assert.NotNull(retrieved);
-                Assert.Equal("Succeeded", retrieved.ProvisioningState);
-
-                var test = client.IpPools.Get(Location, ipPoolName);
+                var test = client.IpPools.Create(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
                 Assert.NotNull(test);
                 Assert.NotNull(test.StartIpAddress);
                 Assert.NotNull(test.EndIpAddress);
@@ -115,17 +121,14 @@ namespace Fabric.Tests
         [Fact]
         public void TestUpdateIpPool() {
             RunTest((client) => {
+                var fabricLocationName = GetLocation(client);
 
                 var first = "199";
                 var second = "2";
                 var ipPoolName = "TestIpPool" + first + "" + second;
                 var ipPool = CreateNewIpPool(ipPoolName, first, second);
 
-                var retrieved = client.IpPools.Create(Location, ipPoolName, ipPool);
-                Assert.NotNull(retrieved);
-                Assert.Equal("Succeeded", retrieved.ProvisioningState);
-
-                var test = client.IpPools.Get(Location, ipPoolName);
+                var test = client.IpPools.Create(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
                 Assert.NotNull(test);
                 Assert.NotNull(test.StartIpAddress);
                 Assert.NotNull(test.EndIpAddress);

@@ -25,8 +25,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface ILogicalSubnetsOperations
     {
         /// <summary>
-        /// Get a list of all volumes at a location.
+        /// Returns the requested logical subnet.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -51,10 +54,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<LogicalSubnet>> GetWithHttpMessagesAsync(string location, string logicalNetwork, string logicalSubnet, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<LogicalSubnet>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string logicalNetwork, string logicalSubnet, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all logical subnets.
+        /// Returns a list of all logical subnets.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -79,9 +85,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<LogicalSubnet>>> ListWithHttpMessagesAsync(string location, string logicalNetwork, ODataQuery<LogicalSubnet> odataQuery = default(ODataQuery<LogicalSubnet>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<LogicalSubnet>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, string logicalNetwork, ODataQuery<LogicalSubnet> odataQuery = default(ODataQuery<LogicalSubnet>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all logical subnets.
+        /// Returns a list of all logical subnets.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

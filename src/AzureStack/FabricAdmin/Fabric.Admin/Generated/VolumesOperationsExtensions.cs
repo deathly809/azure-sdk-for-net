@@ -23,10 +23,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class VolumesOperationsExtensions
     {
             /// <summary>
-            /// Get a volume.
+            /// Return the requested a storage volume.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -38,18 +41,21 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Storage pool name.
             /// </param>
             /// <param name='volume'>
-            /// Name of the volume.
+            /// Name of the storage volume.
             /// </param>
-            public static Volume Get(this IVolumesOperations operations, string location, string storageSubSystem, string storagePool, string volume)
+            public static Volume Get(this IVolumesOperations operations, string resourceGroupName, string location, string storageSubSystem, string storagePool, string volume)
             {
-                return operations.GetAsync(location, storageSubSystem, storagePool, volume).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, storageSubSystem, storagePool, volume).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a volume.
+            /// Return the requested a storage volume.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -61,24 +67,27 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Storage pool name.
             /// </param>
             /// <param name='volume'>
-            /// Name of the volume.
+            /// Name of the storage volume.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Volume> GetAsync(this IVolumesOperations operations, string location, string storageSubSystem, string storagePool, string volume, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Volume> GetAsync(this IVolumesOperations operations, string resourceGroupName, string location, string storageSubSystem, string storagePool, string volume, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, storageSubSystem, storagePool, volume, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, storageSubSystem, storagePool, volume, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all volumes at a location.
+            /// Returns a list of all storage volumes at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -92,16 +101,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<Volume> List(this IVolumesOperations operations, string location, string storageSubSystem, string storagePool, ODataQuery<Volume> odataQuery = default(ODataQuery<Volume>))
+            public static IPage<Volume> List(this IVolumesOperations operations, string resourceGroupName, string location, string storageSubSystem, string storagePool, ODataQuery<Volume> odataQuery = default(ODataQuery<Volume>))
             {
-                return operations.ListAsync(location, storageSubSystem, storagePool, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, storageSubSystem, storagePool, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all volumes at a location.
+            /// Returns a list of all storage volumes at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -118,16 +130,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<Volume>> ListAsync(this IVolumesOperations operations, string location, string storageSubSystem, string storagePool, ODataQuery<Volume> odataQuery = default(ODataQuery<Volume>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<Volume>> ListAsync(this IVolumesOperations operations, string resourceGroupName, string location, string storageSubSystem, string storagePool, ODataQuery<Volume> odataQuery = default(ODataQuery<Volume>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, storageSubSystem, storagePool, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, storageSubSystem, storagePool, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all volumes at a location.
+            /// Returns a list of all storage volumes at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -141,7 +153,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all volumes at a location.
+            /// Returns a list of all storage volumes at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

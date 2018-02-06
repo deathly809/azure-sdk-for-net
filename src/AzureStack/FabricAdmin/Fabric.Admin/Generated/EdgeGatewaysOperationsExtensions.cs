@@ -23,50 +23,59 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class EdgeGatewaysOperationsExtensions
     {
             /// <summary>
-            /// Get an edge gateway by name.
+            /// Returns the requested edge gateway.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='edgeGateway'>
-            /// name of the edge gateway.
+            /// Name of the edge gateway.
             /// </param>
-            public static EdgeGateway Get(this IEdgeGatewaysOperations operations, string location, string edgeGateway)
+            public static EdgeGateway Get(this IEdgeGatewaysOperations operations, string resourceGroupName, string location, string edgeGateway)
             {
-                return operations.GetAsync(location, edgeGateway).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, edgeGateway).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get an edge gateway by name.
+            /// Returns the requested edge gateway.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='edgeGateway'>
-            /// name of the edge gateway.
+            /// Name of the edge gateway.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<EdgeGateway> GetAsync(this IEdgeGatewaysOperations operations, string location, string edgeGateway, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<EdgeGateway> GetAsync(this IEdgeGatewaysOperations operations, string resourceGroupName, string location, string edgeGateway, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, edgeGateway, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, edgeGateway, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all edge gateways at a certain location.
+            /// Returns the list of all edge gateways at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -74,16 +83,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<EdgeGateway> List(this IEdgeGatewaysOperations operations, string location, ODataQuery<EdgeGateway> odataQuery = default(ODataQuery<EdgeGateway>))
+            public static IPage<EdgeGateway> List(this IEdgeGatewaysOperations operations, string resourceGroupName, string location, ODataQuery<EdgeGateway> odataQuery = default(ODataQuery<EdgeGateway>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all edge gateways at a certain location.
+            /// Returns the list of all edge gateways at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -94,16 +106,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<EdgeGateway>> ListAsync(this IEdgeGatewaysOperations operations, string location, ODataQuery<EdgeGateway> odataQuery = default(ODataQuery<EdgeGateway>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<EdgeGateway>> ListAsync(this IEdgeGatewaysOperations operations, string resourceGroupName, string location, ODataQuery<EdgeGateway> odataQuery = default(ODataQuery<EdgeGateway>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all edge gateways at a certain location.
+            /// Returns the list of all edge gateways at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all edge gateways at a certain location.
+            /// Returns the list of all edge gateways at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

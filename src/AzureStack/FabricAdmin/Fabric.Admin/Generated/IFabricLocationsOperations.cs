@@ -25,10 +25,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IFabricLocationsOperations
     {
         /// <summary>
-        /// Get a fabric location.
+        /// Returns the requested fabric location.
         /// </summary>
-        /// <param name='location'>
-        /// Location of the resource.
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
         /// </param>
         /// <param name='fabricLocation'>
         /// Fabric Location.
@@ -48,12 +48,12 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<FabricLocation>> GetWithHttpMessagesAsync(string location, string fabricLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<FabricLocation>> GetWithHttpMessagesAsync(string resourceGroupName, string fabricLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all fabric locations.
+        /// Returns a list of all fabric locations.
         /// </summary>
-        /// <param name='location'>
-        /// Location of the resource.
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
         /// </param>
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
@@ -73,12 +73,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<FabricLocation>>> ListWithHttpMessagesAsync(string location, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<FabricLocation>>> ListWithHttpMessagesAsync(string resourceGroupName, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create or update a fabric location.
+        /// Creates or updates a fabric location.  This will fail if not called
+        /// during deployment.
         /// </summary>
-        /// <param name='location'>
-        /// Location of the resource.
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
         /// </param>
         /// <param name='fabricObject'>
         /// Fabric Location object.
@@ -98,9 +99,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<FabricLocation>> CreateOrUpdateWithHttpMessagesAsync(string location, FabricLocation fabricObject, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<FabricLocation>> CreateWithHttpMessagesAsync(string resourceGroupName, FabricLocation fabricObject, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all fabric locations.
+        /// Returns a list of all fabric locations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

@@ -35,17 +35,20 @@ namespace Fabric.Tests
         [Fact]
         public void TestListStorageSystems() {
             RunTest((client) => {
-                var subSystems = client.StorageSystems.List(Location);
-                Common.MapOverIPage(subSystems, client.StorageSystems.ListNext, ValidateStorageSystem);
-                Common.WriteIPagesToFile(subSystems, client.StorageSystems.ListNext, "ListStorageSystems.txt", ResourceName);
+                OverFabricLocations(client, (fabricLocationName) => {
+                    var subSystems = client.StorageSystems.List(ResourceGroupName, fabricLocationName);
+                    Common.MapOverIPage(subSystems, client.StorageSystems.ListNext, ValidateStorageSystem);
+                    Common.WriteIPagesToFile(subSystems, client.StorageSystems.ListNext, "ListStorageSystems.txt", ResourceName);
+                });
             });
         }
 
         [Fact]
         public void TestGetStorageSystem() {
             RunTest((client) => {
-                var subSystem = client.StorageSystems.List(Location).GetFirst();
-                var retrieved = client.StorageSystems.Get(Location, subSystem.Name);
+                var fabricLocationName = GetLocation(client);
+                var subSystem = client.StorageSystems.List(ResourceGroupName, fabricLocationName).GetFirst();
+                var retrieved = client.StorageSystems.Get(ResourceGroupName, fabricLocationName, subSystem.Name);
                 AssertStorageSystemsAreSame(subSystem, retrieved);
             });
         }
@@ -53,13 +56,15 @@ namespace Fabric.Tests
         [Fact]
         public void TestGetAllStorageSystems() {
             RunTest((client) => {
-                var subSystems = client.StorageSystems.List(Location);
-                Common.MapOverIPage(subSystems, client.StorageSystems.ListNext, (subSystem) => {
-                    var retrieved = client.StorageSystems.Get(Location, subSystem.Name);
-                    AssertStorageSystemsAreSame(subSystem, retrieved);
+                OverFabricLocations(client, (fabricLocationName) => {
+                    var subSystems = client.StorageSystems.List(ResourceGroupName, fabricLocationName);
+                    Common.MapOverIPage(subSystems, client.StorageSystems.ListNext, (storageSystem) => {
+                        var storageSystemName = ExtractName(storageSystem.Name);
+                        var retrieved = client.StorageSystems.Get(ResourceGroupName, fabricLocationName, storageSystemName);
+                        AssertStorageSystemsAreSame(storageSystem, retrieved);
+                    });
                 });
             });
         }
-
     }
 }

@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IFabricOperations
     {
         /// <summary>
-        /// Get the list of support rest operations.
+        /// Returns the list of support rest operations.
         /// </summary>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -43,7 +43,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<Operation>>> ListOperationsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get the list of support rest operations.
+        /// Returns the list of support rest operations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

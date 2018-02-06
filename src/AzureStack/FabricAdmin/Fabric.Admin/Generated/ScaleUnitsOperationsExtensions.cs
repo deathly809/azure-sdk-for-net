@@ -28,6 +28,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -37,9 +40,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='nodeList'>
             /// A list of input data that allows for adding a set of scale unit nodes.
             /// </param>
-            public static OperationStatus ScaleOut(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList)
+            public static void ScaleOut(this IScaleUnitsOperations operations, string resourceGroupName, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList)
             {
-                return operations.ScaleOutAsync(location, scaleUnit, nodeList).GetAwaiter().GetResult();
+                operations.ScaleOutAsync(resourceGroupName, location, scaleUnit, nodeList).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -48,6 +51,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -60,19 +66,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> ScaleOutAsync(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task ScaleOutAsync(this IScaleUnitsOperations operations, string resourceGroupName, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ScaleOutWithHttpMessagesAsync(location, scaleUnit, nodeList, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.ScaleOutWithHttpMessagesAsync(resourceGroupName, location, scaleUnit, nodeList, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
-            /// Get a scale unit.
+            /// Returns the requested scale unit.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -80,16 +86,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='scaleUnit'>
             /// Name of the scale units.
             /// </param>
-            public static ScaleUnit Get(this IScaleUnitsOperations operations, string location, string scaleUnit)
+            public static ScaleUnit Get(this IScaleUnitsOperations operations, string resourceGroupName, string location, string scaleUnit)
             {
-                return operations.GetAsync(location, scaleUnit).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, scaleUnit).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a scale unit.
+            /// Returns the requested scale unit.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -100,19 +109,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ScaleUnit> GetAsync(this IScaleUnitsOperations operations, string location, string scaleUnit, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ScaleUnit> GetAsync(this IScaleUnitsOperations operations, string resourceGroupName, string location, string scaleUnit, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, scaleUnit, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, scaleUnit, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all scale units at a location.
+            /// Returns a list of all scale units at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -120,16 +132,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<ScaleUnit> List(this IScaleUnitsOperations operations, string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>))
+            public static IPage<ScaleUnit> List(this IScaleUnitsOperations operations, string resourceGroupName, string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all scale units at a location.
+            /// Returns a list of all scale units at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -140,9 +155,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<ScaleUnit>> ListAsync(this IScaleUnitsOperations operations, string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<ScaleUnit>> ListAsync(this IScaleUnitsOperations operations, string resourceGroupName, string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -154,6 +169,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
             /// <param name='location'>
             /// Location of the resource.
             /// </param>
@@ -163,9 +181,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='nodeList'>
             /// A list of input data that allows for adding a set of scale unit nodes.
             /// </param>
-            public static OperationStatus BeginScaleOut(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList)
+            public static void BeginScaleOut(this IScaleUnitsOperations operations, string resourceGroupName, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList)
             {
-                return operations.BeginScaleOutAsync(location, scaleUnit, nodeList).GetAwaiter().GetResult();
+                operations.BeginScaleOutAsync(resourceGroupName, location, scaleUnit, nodeList).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -173,6 +191,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -186,16 +207,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<OperationStatus> BeginScaleOutAsync(this IScaleUnitsOperations operations, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginScaleOutAsync(this IScaleUnitsOperations operations, string resourceGroupName, string location, string scaleUnit, ScaleOutScaleUnitParametersList nodeList, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginScaleOutWithHttpMessagesAsync(location, scaleUnit, nodeList, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
+                (await operations.BeginScaleOutWithHttpMessagesAsync(resourceGroupName, location, scaleUnit, nodeList, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
-            /// Get a list of all scale units at a location.
+            /// Returns a list of all scale units at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -209,7 +227,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all scale units at a location.
+            /// Returns a list of all scale units at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

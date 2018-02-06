@@ -23,10 +23,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class LogicalNetworksOperationsExtensions
     {
             /// <summary>
-            /// Get a logical network.
+            /// Returns the requested logical network.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -34,16 +37,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='logicalNetwork'>
             /// Name of the logical network.
             /// </param>
-            public static LogicalNetwork Get(this ILogicalNetworksOperations operations, string location, string logicalNetwork)
+            public static LogicalNetwork Get(this ILogicalNetworksOperations operations, string resourceGroupName, string location, string logicalNetwork)
             {
-                return operations.GetAsync(location, logicalNetwork).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, logicalNetwork).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a logical network.
+            /// Returns the requested logical network.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -54,19 +60,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<LogicalNetwork> GetAsync(this ILogicalNetworksOperations operations, string location, string logicalNetwork, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<LogicalNetwork> GetAsync(this ILogicalNetworksOperations operations, string resourceGroupName, string location, string logicalNetwork, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, logicalNetwork, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, logicalNetwork, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all logical networks at a location.
+            /// Returns a list of all logical networks at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -74,16 +83,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<LogicalNetwork> List(this ILogicalNetworksOperations operations, string location, ODataQuery<LogicalNetwork> odataQuery = default(ODataQuery<LogicalNetwork>))
+            public static IPage<LogicalNetwork> List(this ILogicalNetworksOperations operations, string resourceGroupName, string location, ODataQuery<LogicalNetwork> odataQuery = default(ODataQuery<LogicalNetwork>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all logical networks at a location.
+            /// Returns a list of all logical networks at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -94,16 +106,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<LogicalNetwork>> ListAsync(this ILogicalNetworksOperations operations, string location, ODataQuery<LogicalNetwork> odataQuery = default(ODataQuery<LogicalNetwork>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<LogicalNetwork>> ListAsync(this ILogicalNetworksOperations operations, string resourceGroupName, string location, ODataQuery<LogicalNetwork> odataQuery = default(ODataQuery<LogicalNetwork>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all logical networks at a location.
+            /// Returns a list of all logical networks at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all logical networks at a location.
+            /// Returns a list of all logical networks at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

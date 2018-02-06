@@ -25,8 +25,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface ILogicalNetworksOperations
     {
         /// <summary>
-        /// Get a logical network.
+        /// Returns the requested logical network.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -48,10 +51,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<LogicalNetwork>> GetWithHttpMessagesAsync(string location, string logicalNetwork, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<LogicalNetwork>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string logicalNetwork, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all logical networks at a location.
+        /// Returns a list of all logical networks at a location.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -73,9 +79,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListWithHttpMessagesAsync(string location, ODataQuery<LogicalNetwork> odataQuery = default(ODataQuery<LogicalNetwork>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<LogicalNetwork>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<LogicalNetwork> odataQuery = default(ODataQuery<LogicalNetwork>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get a list of all logical networks at a location.
+        /// Returns a list of all logical networks at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

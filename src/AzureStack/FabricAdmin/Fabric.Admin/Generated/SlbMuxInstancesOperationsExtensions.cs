@@ -23,10 +23,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class SlbMuxInstancesOperationsExtensions
     {
             /// <summary>
-            /// Get a software load balancer multiplexer instance.
+            /// Returns the requested software load balancer multiplexer instance.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -34,16 +37,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='slbMuxInstance'>
             /// Name of a SLB Mux instance.
             /// </param>
-            public static SlbMuxInstance Get(this ISlbMuxInstancesOperations operations, string location, string slbMuxInstance)
+            public static SlbMuxInstance Get(this ISlbMuxInstancesOperations operations, string resourceGroupName, string location, string slbMuxInstance)
             {
-                return operations.GetAsync(location, slbMuxInstance).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, slbMuxInstance).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a software load balancer multiplexer instance.
+            /// Returns the requested software load balancer multiplexer instance.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -54,19 +60,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<SlbMuxInstance> GetAsync(this ISlbMuxInstancesOperations operations, string location, string slbMuxInstance, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<SlbMuxInstance> GetAsync(this ISlbMuxInstancesOperations operations, string resourceGroupName, string location, string slbMuxInstance, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, slbMuxInstance, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, slbMuxInstance, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all software load balancer instances at a location.
+            /// Returns a list of all software load balancer instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -74,16 +83,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<SlbMuxInstance> List(this ISlbMuxInstancesOperations operations, string location, ODataQuery<SlbMuxInstance> odataQuery = default(ODataQuery<SlbMuxInstance>))
+            public static IPage<SlbMuxInstance> List(this ISlbMuxInstancesOperations operations, string resourceGroupName, string location, ODataQuery<SlbMuxInstance> odataQuery = default(ODataQuery<SlbMuxInstance>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all software load balancer instances at a location.
+            /// Returns a list of all software load balancer instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -94,16 +106,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<SlbMuxInstance>> ListAsync(this ISlbMuxInstancesOperations operations, string location, ODataQuery<SlbMuxInstance> odataQuery = default(ODataQuery<SlbMuxInstance>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<SlbMuxInstance>> ListAsync(this ISlbMuxInstancesOperations operations, string resourceGroupName, string location, ODataQuery<SlbMuxInstance> odataQuery = default(ODataQuery<SlbMuxInstance>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all software load balancer instances at a location.
+            /// Returns a list of all software load balancer instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all software load balancer instances at a location.
+            /// Returns a list of all software load balancer instances at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

@@ -24,8 +24,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IComputeFabricOperations
     {
         /// <summary>
-        /// Get the status of a compute fabric operation.
+        /// Returns the status of a compute fabric operation.
         /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
         /// <param name='location'>
         /// Location of the resource.
         /// </param>
@@ -44,12 +47,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <exception cref="Microsoft.Rest.Azure.CloudException">
         /// Thrown when the operation returned an invalid status code
         /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<OperationStatus>> GetWithHttpMessagesAsync(string location, string provider, string computeOperationResult, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> GetWithHttpMessagesAsync(string resourceGroupName, string location, string provider, string computeOperationResult, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

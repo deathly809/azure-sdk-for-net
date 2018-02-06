@@ -25,10 +25,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class FileSharesOperationsExtensions
     {
             /// <summary>
-            /// Get a fabric file share.
+            /// Returns the requested fabric file share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -36,16 +39,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='fileShare'>
             /// Fabric file share name.
             /// </param>
-            public static FileShare Get(this IFileSharesOperations operations, string location, string fileShare)
+            public static FileShare Get(this IFileSharesOperations operations, string resourceGroupName, string location, string fileShare)
             {
-                return operations.GetAsync(location, fileShare).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, fileShare).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a fabric file share.
+            /// Returns the requested fabric file share.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -56,19 +62,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<FileShare> GetAsync(this IFileSharesOperations operations, string location, string fileShare, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<FileShare> GetAsync(this IFileSharesOperations operations, string resourceGroupName, string location, string fileShare, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, fileShare, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, fileShare, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all fabric file shares at a certain location.
+            /// Returns a list of all fabric file shares at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -76,16 +85,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IEnumerable<FileShare> List(this IFileSharesOperations operations, string location, ODataQuery<FileShare> odataQuery = default(ODataQuery<FileShare>))
+            public static IEnumerable<FileShare> List(this IFileSharesOperations operations, string resourceGroupName, string location, ODataQuery<FileShare> odataQuery = default(ODataQuery<FileShare>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all fabric file shares at a certain location.
+            /// Returns a list of all fabric file shares at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -96,9 +108,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IEnumerable<FileShare>> ListAsync(this IFileSharesOperations operations, string location, ODataQuery<FileShare> odataQuery = default(ODataQuery<FileShare>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<FileShare>> ListAsync(this IFileSharesOperations operations, string resourceGroupName, string location, ODataQuery<FileShare> odataQuery = default(ODataQuery<FileShare>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

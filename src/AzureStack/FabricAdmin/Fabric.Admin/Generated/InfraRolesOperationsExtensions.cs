@@ -23,10 +23,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class InfraRolesOperationsExtensions
     {
             /// <summary>
-            /// Get an infra role description.
+            /// Returns the requested infra role description.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -34,16 +37,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='infraRole'>
             /// Infra role name.
             /// </param>
-            public static InfraRole Get(this IInfraRolesOperations operations, string location, string infraRole)
+            public static InfraRole Get(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole)
             {
-                return operations.GetAsync(location, infraRole).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, infraRole).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get an infra role description.
+            /// Returns the requested infra role description.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -54,19 +60,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<InfraRole> GetAsync(this IInfraRolesOperations operations, string location, string infraRole, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<InfraRole> GetAsync(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(location, infraRole, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, infraRole, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all infra roles at a location.
+            /// Returns a list of all infra roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -74,16 +83,19 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<InfraRole> List(this IInfraRolesOperations operations, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>))
+            public static IPage<InfraRole> List(this IInfraRolesOperations operations, string resourceGroupName, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>))
             {
-                return operations.ListAsync(location, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Get a list of all infra roles at a location.
+            /// Returns a list of all infra roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
             /// </param>
             /// <param name='location'>
             /// Location of the resource.
@@ -94,16 +106,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<InfraRole>> ListAsync(this IInfraRolesOperations operations, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<InfraRole>> ListAsync(this IInfraRolesOperations operations, string resourceGroupName, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(location, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Get a list of all infra roles at a location.
+            /// Returns a list of all infra roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Get a list of all infra roles at a location.
+            /// Returns a list of all infra roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
