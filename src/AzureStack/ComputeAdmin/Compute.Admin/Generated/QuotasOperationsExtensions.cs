@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
     public static partial class QuotasOperationsExtensions
     {
             /// <summary>
-            /// Gets the quota.
+            /// Returns the requested quota.
             /// </summary>
             /// <remarks>
             /// Get an existing Quota.
@@ -44,7 +44,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Gets the quota.
+            /// Returns the requested quota.
             /// </summary>
             /// <remarks>
             /// Get an existing Quota.
@@ -70,10 +70,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a quota.
+            /// Creates or Updates a Quota.
             /// </summary>
             /// <remarks>
-            /// Create a new Quota.
+            /// Creates or Updates a Quota.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -93,10 +93,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a quota.
+            /// Creates or Updates a Quota.
             /// </summary>
             /// <remarks>
-            /// Create a new Quota.
+            /// Creates or Updates a Quota.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -122,7 +122,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Deletes a quota
+            /// Deletes specified quota
             /// </summary>
             /// <remarks>
             /// Delete an existing quota.
@@ -142,7 +142,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Deletes a quota
+            /// Deletes specified quota
             /// </summary>
             /// <remarks>
             /// Delete an existing quota.

@@ -29,7 +29,8 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         /// <summary>
         /// Initializes a new instance of the ImageDetails class.
         /// </summary>
-        /// <param name="billingPartNumber">Something about billing?.</param>
+        /// <param name="billingPartNumber">The part number is used to bill for
+        /// software costs.</param>
         public ImageDetails(string billingPartNumber = default(string))
         {
             BillingPartNumber = billingPartNumber;
@@ -42,7 +43,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets something about billing?.
+        /// Gets or sets the part number is used to bill for software costs.
         /// </summary>
         [JsonProperty(PropertyName = "billingPartNumber")]
         public string BillingPartNumber { get; set; }

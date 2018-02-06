@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Azure blob information.
+    /// Azure or AzureStack blob information.
     /// </summary>
     public partial class AzureBlob
     {
@@ -29,7 +29,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         /// <summary>
         /// Initializes a new instance of the AzureBlob class.
         /// </summary>
-        /// <param name="uri">URI to azure blob.</param>
+        /// <param name="uri">URI to Azure or AzureStack blob.</param>
         public AzureBlob(string uri = default(string))
         {
             Uri = uri;
@@ -42,7 +42,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets URI to azure blob.
+        /// Gets or sets URI to Azure or AzureStack blob.
         /// </summary>
         [JsonProperty(PropertyName = "uri")]
         public string Uri { get; set; }

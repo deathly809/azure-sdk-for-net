@@ -34,9 +34,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         /// <summary>
         /// Initializes a new instance of the PlatformImage class.
         /// </summary>
-        /// <param name="id">Id of the resource.</param>
+        /// <param name="id">ID of the resource.</param>
         /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Resource type.</param>
+        /// <param name="type">Type of Resource.</param>
         /// <param name="location">Location of the resource.</param>
         /// <param name="osDisk">Operating system used for this platform
         /// image.</param>

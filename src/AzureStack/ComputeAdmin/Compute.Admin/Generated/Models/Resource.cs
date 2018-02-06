@@ -31,9 +31,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Resource class.
         /// </summary>
-        /// <param name="id">Id of the resource.</param>
+        /// <param name="id">ID of the resource.</param>
         /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Resource type.</param>
+        /// <param name="type">Type of Resource.</param>
         /// <param name="location">Location of the resource.</param>
         public Resource(string id = default(string), string name = default(string), string type = default(string), string location = default(string))
         {
@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets id of the resource.
+        /// Gets ID of the resource.
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; private set; }
@@ -62,7 +62,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         public string Name { get; private set; }
 
         /// <summary>
-        /// Gets resource type.
+        /// Gets type of Resource.
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; private set; }

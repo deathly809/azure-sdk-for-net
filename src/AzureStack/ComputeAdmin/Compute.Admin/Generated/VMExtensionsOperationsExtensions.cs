@@ -24,10 +24,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
     public static partial class VMExtensionsOperationsExtensions
     {
             /// <summary>
-            /// Get a platform images.
+            /// Returns requested Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Get a platform image by name.
+            /// Returns requested Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -39,7 +39,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the publisher.
             /// </param>
             /// <param name='type'>
-            /// Type of the extension.
+            /// Type of extension.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -50,10 +50,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Get a platform images.
+            /// Returns requested Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Get a platform image by name.
+            /// Returns requested Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -65,7 +65,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the publisher.
             /// </param>
             /// <param name='type'>
-            /// Type of the extension.
+            /// Type of extension.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -82,10 +82,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a platform images.
+            /// Create a Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Create a new platform image.
+            /// Create a Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -97,13 +97,13 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the publisher.
             /// </param>
             /// <param name='type'>
-            /// Type of the extension.
+            /// Type of extension.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
             /// </param>
             /// <param name='extension'>
-            /// Model of an extension.
+            /// Virtual Machine Extension Image creation properties.
             /// </param>
             public static VMExtension Create(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtension extension)
             {
@@ -111,10 +111,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a platform images.
+            /// Create a Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Create a new platform image.
+            /// Create a Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -126,13 +126,13 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the publisher.
             /// </param>
             /// <param name='type'>
-            /// Type of the extension.
+            /// Type of extension.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
             /// </param>
             /// <param name='extension'>
-            /// Model of an extension.
+            /// Virtual Machine Extension Image creation properties.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -146,10 +146,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Delete a platform images.
+            /// Deletes a Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Delete a platform image by name.
+            /// Deletes specified Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -161,7 +161,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the publisher.
             /// </param>
             /// <param name='type'>
-            /// Type of the extension.
+            /// Type of extension.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -172,10 +172,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Delete a platform images.
+            /// Deletes a Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Delete a platform image by name.
+            /// Deletes specified Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -187,7 +187,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the publisher.
             /// </param>
             /// <param name='type'>
-            /// Type of the extension.
+            /// Type of extension.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -201,10 +201,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Get a list of platform images.
+            /// Returns a list of all Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Get a list of all platform images.
+            /// Returns a list of all Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -218,10 +218,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Get a list of platform images.
+            /// Returns a list of all Virtual Machine Extension Image.
             /// </summary>
             /// <remarks>
-            /// Get a list of all platform images.
+            /// Returns a list of all Virtual Machine Extension Image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.

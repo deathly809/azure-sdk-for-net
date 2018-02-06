@@ -24,10 +24,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
     public static partial class PlatformImagesOperationsExtensions
     {
             /// <summary>
-            /// Gets all platform images.
+            /// Returns all platform images.
             /// </summary>
             /// <remarks>
-            /// Get a list of all platform images.
+            /// Returns a list of all platform images.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -41,10 +41,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Gets all platform images.
+            /// Returns all platform images.
             /// </summary>
             /// <remarks>
-            /// Get a list of all platform images.
+            /// Returns a list of all platform images.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -64,10 +64,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Gets a single platform image.
+            /// Returns the requested platform image.
             /// </summary>
             /// <remarks>
-            /// Get a platform image by name.
+            /// Returns the requested platform image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -82,7 +82,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -93,10 +93,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Gets a single platform image.
+            /// Returns the requested platform image.
             /// </summary>
             /// <remarks>
-            /// Get a platform image by name.
+            /// Returns the requested platform image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -111,7 +111,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -128,10 +128,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a platform image.
+            /// Creates a platform image.
             /// </summary>
             /// <remarks>
-            /// Create a new platform image.
+            /// Creates a new platform image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -146,7 +146,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -160,10 +160,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a platform image.
+            /// Creates a platform image.
             /// </summary>
             /// <remarks>
-            /// Create a new platform image.
+            /// Creates a new platform image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -178,7 +178,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -216,7 +216,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -245,7 +245,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -259,10 +259,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a platform image.
+            /// Creates a platform image.
             /// </summary>
             /// <remarks>
-            /// Create a new platform image.
+            /// Creates a new platform image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -277,7 +277,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.
@@ -291,10 +291,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
 
             /// <summary>
-            /// Create a platform image.
+            /// Creates a platform image.
             /// </summary>
             /// <remarks>
-            /// Create a new platform image.
+            /// Creates a new platform image.
             /// </remarks>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -309,7 +309,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// Name of the offer.
             /// </param>
             /// <param name='sku'>
-            /// Name of the sku.
+            /// Name of the SKU.
             /// </param>
             /// <param name='version'>
             /// The version of the resource.

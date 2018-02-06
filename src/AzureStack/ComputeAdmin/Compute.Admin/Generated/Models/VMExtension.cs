@@ -16,7 +16,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Virtual machine extenion.
+    /// Virtual Machine Extension Image.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class VMExtension : Resource
@@ -32,21 +32,21 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         /// <summary>
         /// Initializes a new instance of the VMExtension class.
         /// </summary>
-        /// <param name="id">Id of the resource.</param>
+        /// <param name="id">ID of the resource.</param>
         /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Resource type.</param>
+        /// <param name="type">Type of Resource.</param>
         /// <param name="location">Location of the resource.</param>
-        /// <param name="vmOsType">Target virtaul machine operating system type
+        /// <param name="vmOsType">Target virtual machine operating system type
         /// necessary for deploying the extension handler. Possible values
         /// include: 'Unknown', 'Windows', 'Linux'</param>
         /// <param name="computeRole">Compute role</param>
-        /// <param name="vmScaleSetEnabled">value indicating whether the
-        /// extension is enabled for virtual machine scale set support</param>
+        /// <param name="vmScaleSetEnabled">Value indicating whether the
+        /// extension is enabled for virtual machine scale set support.</param>
         /// <param name="supportMultipleExtensions">True if supports multiple
         /// extensions.</param>
-        /// <param name="isSystemExtension">Denotes if extension is for system
-        /// or not.</param>
-        /// <param name="sourceBlob">URI to azure blob.</param>
+        /// <param name="isSystemExtension">Indicates if the extension is for
+        /// the system.</param>
+        /// <param name="sourceBlob">URI to Azure or AzureStack blob.</param>
         /// <param name="provisioningState">Provisioning state of extension.
         /// Possible values include: 'Creating', 'Failed', 'Succeeded',
         /// 'Canceled'</param>
@@ -69,7 +69,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets target virtaul machine operating system type necessary
+        /// Gets or sets target virtual machine operating system type necessary
         /// for deploying the extension handler. Possible values include:
         /// 'Unknown', 'Windows', 'Linux'
         /// </summary>
@@ -84,7 +84,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
 
         /// <summary>
         /// Gets or sets value indicating whether the extension is enabled for
-        /// virtual machine scale set support
+        /// virtual machine scale set support.
         /// </summary>
         [JsonProperty(PropertyName = "properties.vmScaleSetEnabled")]
         public bool? VmScaleSetEnabled { get; set; }
@@ -96,13 +96,13 @@ namespace Microsoft.AzureStack.Management.Compute.Admin.Models
         public bool? SupportMultipleExtensions { get; set; }
 
         /// <summary>
-        /// Gets or sets denotes if extension is for system or not.
+        /// Gets or sets indicates if the extension is for the system.
         /// </summary>
         [JsonProperty(PropertyName = "properties.isSystemExtension")]
         public bool? IsSystemExtension { get; set; }
 
         /// <summary>
-        /// Gets or sets URI to azure blob.
+        /// Gets or sets URI to Azure or AzureStack blob.
         /// </summary>
         [JsonProperty(PropertyName = "properties.sourceBlob")]
         public AzureBlob SourceBlob { get; set; }

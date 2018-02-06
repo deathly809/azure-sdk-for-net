@@ -23,12 +23,12 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// QuotasOperations operations.
+    /// VMExtensionsOperations operations.
     /// </summary>
-    internal partial class QuotasOperations : IServiceOperations<ComputeAdminClient>, IQuotasOperations
+    internal partial class VMExtensionsOperations : IServiceOperations<ComputeAdminClient>, IVMExtensionsOperations
     {
         /// <summary>
-        /// Initializes a new instance of the QuotasOperations class.
+        /// Initializes a new instance of the VMExtensionsOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
@@ -36,7 +36,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        internal QuotasOperations(ComputeAdminClient client)
+        internal VMExtensionsOperations(ComputeAdminClient client)
         {
             if (client == null)
             {
@@ -51,16 +51,22 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         public ComputeAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Gets the quota.
+        /// Returns requested Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Get an existing Quota.
+        /// Returns requested Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
-        /// Name of the quota.
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='type'>
+        /// Type of extension.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -83,7 +89,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string locationName, string quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -93,9 +99,17 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
             }
-            if (quota == null)
+            if (publisher == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "quota");
+                throw new ValidationException(ValidationRules.CannotBeNull, "publisher");
+            }
+            if (type == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "type");
+            }
+            if (version == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "version");
             }
             if (Client.ApiVersion == null)
             {
@@ -109,16 +123,20 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("locationName", locationName);
-                tracingParameters.Add("quota", quota);
+                tracingParameters.Add("publisher", publisher);
+                tracingParameters.Add("type", type);
+                tracingParameters.Add("version", version);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quota}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
-            _url = _url.Replace("{quota}", System.Uri.EscapeDataString(quota));
+            _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
+            _url = _url.Replace("{type}", System.Uri.EscapeDataString(type));
+            _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
@@ -217,7 +235,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<Quota>();
+            var _result = new AzureOperationResponse<VMExtension>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -230,7 +248,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Quota>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<VMExtension>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -250,19 +268,25 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         }
 
         /// <summary>
-        /// Create a quota.
+        /// Create a Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Create a new Quota.
+        /// Create a Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
-        /// Name of the quota.
+        /// <param name='publisher'>
+        /// Name of the publisher.
         /// </param>
-        /// <param name='newQuota'>
-        /// New quota to create.
+        /// <param name='type'>
+        /// Type of extension.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
+        /// </param>
+        /// <param name='extension'>
+        /// Virtual Machine Extension Image creation properties.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -285,7 +309,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Quota>> CreateWithHttpMessagesAsync(string locationName, string quota, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtension extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -295,21 +319,25 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
             }
-            if (quota == null)
+            if (publisher == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "quota");
+                throw new ValidationException(ValidationRules.CannotBeNull, "publisher");
+            }
+            if (type == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "type");
+            }
+            if (version == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "version");
             }
             if (Client.ApiVersion == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
             }
-            if (newQuota == null)
+            if (extension == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "newQuota");
-            }
-            if (newQuota != null)
-            {
-                newQuota.Validate();
+                throw new ValidationException(ValidationRules.CannotBeNull, "extension");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -319,17 +347,21 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("locationName", locationName);
-                tracingParameters.Add("quota", quota);
-                tracingParameters.Add("newQuota", newQuota);
+                tracingParameters.Add("publisher", publisher);
+                tracingParameters.Add("type", type);
+                tracingParameters.Add("version", version);
+                tracingParameters.Add("extension", extension);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Create", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quota}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
-            _url = _url.Replace("{quota}", System.Uri.EscapeDataString(quota));
+            _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
+            _url = _url.Replace("{type}", System.Uri.EscapeDataString(type));
+            _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
@@ -373,9 +405,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
 
             // Serialize Request
             string _requestContent = null;
-            if(newQuota != null)
+            if(extension != null)
             {
-                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(newQuota, Client.SerializationSettings);
+                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(extension, Client.SerializationSettings);
                 _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
                 _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
             }
@@ -399,7 +431,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 201)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -434,7 +466,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<Quota>();
+            var _result = new AzureOperationResponse<VMExtension>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -447,7 +479,25 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Quota>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<VMExtension>(_responseContent, Client.DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 201)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<VMExtension>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -467,16 +517,22 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         }
 
         /// <summary>
-        /// Deletes a quota
+        /// Deletes a Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Delete an existing quota.
+        /// Deletes specified Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
-        /// Name of the quota.
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='type'>
+        /// Type of extension.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -496,7 +552,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -506,9 +562,17 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
             }
-            if (quota == null)
+            if (publisher == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "quota");
+                throw new ValidationException(ValidationRules.CannotBeNull, "publisher");
+            }
+            if (type == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "type");
+            }
+            if (version == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "version");
             }
             if (Client.ApiVersion == null)
             {
@@ -522,16 +586,20 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("locationName", locationName);
-                tracingParameters.Add("quota", quota);
+                tracingParameters.Add("publisher", publisher);
+                tracingParameters.Add("type", type);
+                tracingParameters.Add("version", version);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Delete", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quota}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
-            _url = _url.Replace("{quota}", System.Uri.EscapeDataString(quota));
+            _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
+            _url = _url.Replace("{type}", System.Uri.EscapeDataString(type));
+            _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
@@ -645,10 +713,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         }
 
         /// <summary>
-        /// Lists all quotas.
+        /// Returns a list of all Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Get a list of existing quotas.
+        /// Returns a list of all Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
@@ -674,7 +742,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IEnumerable<Quota>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -701,7 +769,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
             List<string> _queryParameters = new List<string>();
@@ -802,7 +870,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IEnumerable<Quota>>();
+            var _result = new AzureOperationResponse<IList<VMExtension>>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -815,7 +883,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Page1<Quota>>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IList<VMExtension>>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

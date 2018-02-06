@@ -19,21 +19,27 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// QuotasOperations operations.
+    /// VMExtensionsOperations operations.
     /// </summary>
-    public partial interface IQuotasOperations
+    public partial interface IVMExtensionsOperations
     {
         /// <summary>
-        /// Gets the quota.
+        /// Returns requested Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Get an existing Quota.
+        /// Returns requested Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
-        /// Name of the quota.
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='type'>
+        /// Type of extension.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -50,21 +56,27 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string locationName, string quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create a quota.
+        /// Create a Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Create a new Quota.
+        /// Create a Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
-        /// Name of the quota.
+        /// <param name='publisher'>
+        /// Name of the publisher.
         /// </param>
-        /// <param name='newQuota'>
-        /// New quota to create.
+        /// <param name='type'>
+        /// Type of extension.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
+        /// </param>
+        /// <param name='extension'>
+        /// Virtual Machine Extension Image creation properties.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -81,18 +93,24 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Quota>> CreateWithHttpMessagesAsync(string locationName, string quota, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtension extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Deletes a quota
+        /// Deletes a Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Delete an existing quota.
+        /// Deletes specified Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
-        /// Name of the quota.
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='type'>
+        /// Type of extension.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -106,12 +124,12 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Lists all quotas.
+        /// Returns a list of all Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
-        /// Get a list of existing quotas.
+        /// Returns a list of all Virtual Machine Extension Image.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
@@ -131,6 +149,6 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IEnumerable<Quota>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

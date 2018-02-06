@@ -19,117 +19,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
     using System.Threading.Tasks;
 
     /// <summary>
-    /// VMExtensionsOperations operations.
+    /// PlatformImagesOperations operations.
     /// </summary>
-    public partial interface IVMExtensionsOperations
+    public partial interface IPlatformImagesOperations
     {
         /// <summary>
-        /// Get a platform images.
+        /// Returns all platform images.
         /// </summary>
         /// <remarks>
-        /// Get a platform image by name.
-        /// </remarks>
-        /// <param name='locationName'>
-        /// Location of the resource.
-        /// </param>
-        /// <param name='publisher'>
-        /// Name of the publisher.
-        /// </param>
-        /// <param name='type'>
-        /// Type of the extension.
-        /// </param>
-        /// <param name='version'>
-        /// The version of the resource.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <exception cref="Microsoft.Rest.Azure.CloudException">
-        /// Thrown when the operation returned an invalid status code
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.ValidationException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <summary>
-        /// Create a platform images.
-        /// </summary>
-        /// <remarks>
-        /// Create a new platform image.
-        /// </remarks>
-        /// <param name='locationName'>
-        /// Location of the resource.
-        /// </param>
-        /// <param name='publisher'>
-        /// Name of the publisher.
-        /// </param>
-        /// <param name='type'>
-        /// Type of the extension.
-        /// </param>
-        /// <param name='version'>
-        /// The version of the resource.
-        /// </param>
-        /// <param name='extension'>
-        /// Model of an extension.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <exception cref="Microsoft.Rest.Azure.CloudException">
-        /// Thrown when the operation returned an invalid status code
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.ValidationException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtension extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <summary>
-        /// Delete a platform images.
-        /// </summary>
-        /// <remarks>
-        /// Delete a platform image by name.
-        /// </remarks>
-        /// <param name='locationName'>
-        /// Location of the resource.
-        /// </param>
-        /// <param name='publisher'>
-        /// Name of the publisher.
-        /// </param>
-        /// <param name='type'>
-        /// Type of the extension.
-        /// </param>
-        /// <param name='version'>
-        /// The version of the resource.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <exception cref="Microsoft.Rest.Azure.CloudException">
-        /// Thrown when the operation returned an invalid status code
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.ValidationException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <summary>
-        /// Get a list of platform images.
-        /// </summary>
-        /// <remarks>
-        /// Get a list of all platform images.
+        /// Returns a list of all platform images.
         /// </remarks>
         /// <param name='locationName'>
         /// Location of the resource.
@@ -149,6 +47,157 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IList<PlatformImage>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Returns the requested platform image.
+        /// </summary>
+        /// <remarks>
+        /// Returns the requested platform image.
+        /// </remarks>
+        /// <param name='locationName'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='offer'>
+        /// Name of the offer.
+        /// </param>
+        /// <param name='sku'>
+        /// Name of the SKU.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<PlatformImage>> GetWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Creates a platform image.
+        /// </summary>
+        /// <remarks>
+        /// Creates a new platform image.
+        /// </remarks>
+        /// <param name='locationName'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='offer'>
+        /// Name of the offer.
+        /// </param>
+        /// <param name='sku'>
+        /// Name of the SKU.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
+        /// </param>
+        /// <param name='newImage'>
+        /// New platform image.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Deletes a platform image
+        /// </summary>
+        /// <remarks>
+        /// Delete a platform image
+        /// </remarks>
+        /// <param name='locationName'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='offer'>
+        /// Name of the offer.
+        /// </param>
+        /// <param name='sku'>
+        /// Name of the SKU.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Creates a platform image.
+        /// </summary>
+        /// <remarks>
+        /// Creates a new platform image.
+        /// </remarks>
+        /// <param name='locationName'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='publisher'>
+        /// Name of the publisher.
+        /// </param>
+        /// <param name='offer'>
+        /// Name of the offer.
+        /// </param>
+        /// <param name='sku'>
+        /// Name of the SKU.
+        /// </param>
+        /// <param name='version'>
+        /// The version of the resource.
+        /// </param>
+        /// <param name='newImage'>
+        /// New platform image.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
