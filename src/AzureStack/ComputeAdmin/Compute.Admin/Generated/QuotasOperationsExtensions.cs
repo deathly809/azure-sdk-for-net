@@ -35,12 +35,12 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='locationName'>
             /// Location of the resource.
             /// </param>
-            /// <param name='quota'>
+            /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
-            public static Quota Get(this IQuotasOperations operations, string locationName, string quota)
+            public static Quota Get(this IQuotasOperations operations, string locationName, string quotaName)
             {
-                return operations.GetAsync(locationName, quota).GetAwaiter().GetResult();
+                return operations.GetAsync(locationName, quotaName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -55,15 +55,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='locationName'>
             /// Location of the resource.
             /// </param>
-            /// <param name='quota'>
+            /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Quota> GetAsync(this IQuotasOperations operations, string locationName, string quota, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Quota> GetAsync(this IQuotasOperations operations, string locationName, string quotaName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(locationName, quota, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(locationName, quotaName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -81,15 +81,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='locationName'>
             /// Location of the resource.
             /// </param>
-            /// <param name='quota'>
+            /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
             /// <param name='newQuota'>
             /// New quota to create.
             /// </param>
-            public static Quota Create(this IQuotasOperations operations, string locationName, string quota, Quota newQuota)
+            public static Quota CreateOrUpdate(this IQuotasOperations operations, string locationName, string quotaName, Quota newQuota)
             {
-                return operations.CreateAsync(locationName, quota, newQuota).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(locationName, quotaName, newQuota).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -104,7 +104,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='locationName'>
             /// Location of the resource.
             /// </param>
-            /// <param name='quota'>
+            /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
             /// <param name='newQuota'>
@@ -113,9 +113,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Quota> CreateAsync(this IQuotasOperations operations, string locationName, string quota, Quota newQuota, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Quota> CreateOrUpdateAsync(this IQuotasOperations operations, string locationName, string quotaName, Quota newQuota, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateWithHttpMessagesAsync(locationName, quota, newQuota, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(locationName, quotaName, newQuota, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -133,12 +133,12 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='locationName'>
             /// Location of the resource.
             /// </param>
-            /// <param name='quota'>
+            /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
-            public static void Delete(this IQuotasOperations operations, string locationName, string quota)
+            public static void Delete(this IQuotasOperations operations, string locationName, string quotaName)
             {
-                operations.DeleteAsync(locationName, quota).GetAwaiter().GetResult();
+                operations.DeleteAsync(locationName, quotaName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -153,15 +153,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='locationName'>
             /// Location of the resource.
             /// </param>
-            /// <param name='quota'>
+            /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IQuotasOperations operations, string locationName, string quota, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IQuotasOperations operations, string locationName, string quotaName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(locationName, quota, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteWithHttpMessagesAsync(locationName, quotaName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>

@@ -82,7 +82,50 @@ namespace Compute.Tests
                 });
             });
         }
-        
+
+        private void ValidateAgainstData(Quota q, int[] d) {
+            Assert.Equal(q.AvailabilitySetCount, d[0]);
+            Assert.Equal(q.CoresLimit, d[1]);
+            Assert.Equal(q.VmScaleSetCount, d[2]);
+            Assert.Equal(q.VirtualMachineCount, d[3]);
+        }
+
+        [Fact]
+        public void CreateUpdateDeleteQuota() {
+            RunTest((client) => {
+                var location = "local";
+                var name = "testQuotaCreateUpdateDelete";
+                var data = new int[]{1,1,1,1 };
+                var newQuota = Create(data[0], data[1], data[2], data[3]);
+                var quota = client.Quotas.CreateOrUpdate(location, name, newQuota);
+                ValidateAgainstData(quota, data);
+                AssertSame(newQuota, quota, false);
+
+                quota.VirtualMachineCount += 1;
+                quota = client.Quotas.CreateOrUpdate(location, name, quota);
+                data[3] += 1;
+                ValidateAgainstData(quota, data);
+
+                quota.AvailabilitySetCount += 1;
+                quota = client.Quotas.CreateOrUpdate(location, name, quota);
+                data[0] += 1;
+                ValidateAgainstData(quota, data);
+
+                quota.VmScaleSetCount += 1;
+                quota = client.Quotas.CreateOrUpdate(location, name, quota);
+                data[2] += 1;
+                ValidateAgainstData(quota, data);
+
+                quota.CoresLimit+= 1;
+                quota = client.Quotas.CreateOrUpdate(location, name, quota);
+                data[1] += 1;
+                ValidateAgainstData(quota, data);
+
+                client.Quotas.Delete(location, name);
+
+            });
+        }
+
         [Fact]
         public void TestCreateQuota() {
             RunTest((client) => {
@@ -102,7 +145,8 @@ namespace Compute.Tests
                 data.ForEach((d) => {
                     var name = quotaNamePrefix + d[4];
                     var newQuota = Create(d[0], d[1], d[2], d[3]);
-                    var quota = client.Quotas.Create(location, name, newQuota);
+                    var quota = client.Quotas.CreateOrUpdate(location, name, newQuota);
+                    ValidateAgainstData(quota, d);
                     var result = client.Quotas.Get(location, name);
                     AssertSame(quota, result, false);
                 });
@@ -129,15 +173,15 @@ namespace Compute.Tests
         public void TestCreateInvalidQuota() {
             RunTest((client) => {
                 var name = "myQuota";
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(-1, 1, 1, 1)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(1, -1, 1, 1)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(1, 1, -1, 1)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(1, 1, 1, -1)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(-1, 0, 0, 0)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(0, -1, 0, 0)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(0, 0, -1, 0)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(0, 0, 0, -1)));
-                Assert.ThrowsAny<System.Exception>(() => client.Quotas.Create("local", name, Create(-1, -1, -1, -1)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(-1, 1, 1, 1)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(1, -1, 1, 1)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(1, 1, -1, 1)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(1, 1, 1, -1)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(-1, 0, 0, 0)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(0, -1, 0, 0)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(0, 0, -1, 0)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(0, 0, 0, -1)));
+                Assert.ThrowsAny<System.Exception>(() => client.Quotas.CreateOrUpdate("local", name, Create(-1, -1, -1, -1)));
 
             });
         }
@@ -148,7 +192,7 @@ namespace Compute.Tests
         public void TestListInvalidLocation() {
             RunTest((client) => {
                 var list = client.Quotas.List("thisisnotarealplace");
-                Assert.Equal(0, list.Count());
+                Assert.Empty(list);
             });
         }
 
@@ -178,7 +222,7 @@ namespace Compute.Tests
                 data.ForEach((d) => {
                     var name = quotaNamePrefix + d[4];
                     var newQuota = Create(d[0], d[1], d[2], d[3]);
-                    var quota = client.Quotas.Create(location, name, newQuota);
+                    var quota = client.Quotas.CreateOrUpdate(location, name, newQuota);
                     var result = client.Quotas.Get(location, name);
                     Assert.Null(quota);
                     Assert.Null(result);
@@ -189,7 +233,7 @@ namespace Compute.Tests
                     var list = client.Quotas.List(location);
                     Assert.Equal(0, list.Count((q) => q.Name.Equals(name)));
                 });
-                
+
             });
         }
 

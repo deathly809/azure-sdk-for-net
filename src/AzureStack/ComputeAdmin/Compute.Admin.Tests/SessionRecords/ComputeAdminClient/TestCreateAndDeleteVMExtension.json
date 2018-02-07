@@ -13,7 +13,7 @@
           "318"
         ],
         "x-ms-client-request-id": [
-          "e62cf7a9-413a-45af-927a-b38435602cde"
+          "ee13bece-3edf-4d8d-a979-166c9d866d5a"
         ],
         "accept-language": [
           "en-US"
@@ -38,7 +38,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:55 GMT"
+          "Wed, 07 Feb 2018 03:42:52 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -47,19 +47,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvhRoZa6Jm0awL8VrLVcXYOPR/Ndcq8GmKtYUr+HNFtI37iXqk63K2RLYhvAE2IL7izeEJdXjzKhR1VHGHEtjAKxvu8sTeXWJPlC83uV57DM6AqlOWG/VCfcEBja81cI7xVjaEqUw/BNEuXLmg5Ytl"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvfwFMJQ0VvGyoAnbUjXvoGyfyuA5itfAD3eLRSvZKSmOpcG7DXpLnkKl4SunGshn3ncAphHPC8CynQO6GDX8FSJWoXzE3Ovte6W3OHZMlv9fZt0zmcxzSKyQHYDpx5jyEbBkQ8JAnxQS8Sr9pegGT"
         ],
         "x-ms-correlation-request-id": [
-          "00fb8e0b-40e9-4242-ac5e-029c75a48d70"
+          "323c7017-e857-49bf-87f8-ba106c64ff68"
         ],
         "x-ms-ratelimit-remaining-subscription-writes": [
-          "1182"
+          "1183"
         ],
         "x-ms-request-id": [
-          "00fb8e0b-40e9-4242-ac5e-029c75a48d70"
+          "323c7017-e857-49bf-87f8-ba106c64ff68"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024356Z:00fb8e0b-40e9-4242-ac5e-029c75a48d70"
+          "LOCAL:20180207T034253Z:323c7017-e857-49bf-87f8-ba106c64ff68"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -77,7 +77,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "a7297d99-48ca-445b-b4b1-5af73722929d"
+          "d0335b5f-a6a3-41f4-ac1b-0a32e6be6f7b"
         ],
         "accept-language": [
           "en-US"
@@ -102,7 +102,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:56 GMT"
+          "Wed, 07 Feb 2018 03:42:54 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -111,19 +111,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvOWnu1RumLpKNky18M0rvNVwPZKFdiJphHjaVciemAaCVp/s3fFH5+n/qFkX4OgrGzqHCVaCDSH8cpQI4SgbBRXXqyS3wV00eDF169/7LUwbjXU+/fG5vkBiknLvUStKIla1tZAbj7vQo+D76RBqE"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvvztCmM+LJu+x0dc8/7no+eLwjUG4dZxvHHfBIKtJ8nY3JLT0yOG8AL+fCtvDUzgwNmvdSZazCOFM+oWxp5cWwPtZpbju38bmvdPF0HlqdC8PX57h6mShOy9xyQysCFXnjPrjI1GKjD4bRFzC4nH3"
         ],
         "x-ms-correlation-request-id": [
-          "4ce8eeb5-6a8b-4675-9470-d0fb1f8e0510"
+          "264ff837-62b7-438f-99d6-8198d4807cb1"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14520"
+          "14563"
         ],
         "x-ms-request-id": [
-          "4ce8eeb5-6a8b-4675-9470-d0fb1f8e0510"
+          "264ff837-62b7-438f-99d6-8198d4807cb1"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024356Z:4ce8eeb5-6a8b-4675-9470-d0fb1f8e0510"
+          "LOCAL:20180207T034254Z:264ff837-62b7-438f-99d6-8198d4807cb1"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -141,7 +141,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "56b95650-c69f-4533-b0a1-3e41b8cab602"
+          "3ac16d6f-41b1-43a6-9d69-2d733f550c6d"
         ],
         "accept-language": [
           "en-US"
@@ -166,7 +166,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:56 GMT"
+          "Wed, 07 Feb 2018 03:42:54 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -175,19 +175,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvn/6JA5SMkd1rc47w4RN67mo0McV0CugWCCHhwEzld6/83544RSHsgDCF/HQbaBr8KQWg0oXH3fBhyH3LzwQ3O9IQCtYHDX7WWiGOsBSY+SWPMcKbWPN4OoiYjigahtjcs004Deavuq1yf5fY7QnL"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv8KsjjzOrmDUd+tVV5Tm6oVzY6a49zEN/fsv2kFvE6Np40XPwo4hggwO0BToiPsG35jhCMscPr94CwYKUwspIcL8kwnB/MuGndkjSF0eOAS7t2yPirJLlxJFT+JKmjVON0eurvaizVLwigb/5c/BJ"
         ],
         "x-ms-correlation-request-id": [
-          "11a642c3-9525-4514-8ba4-6db0c7504ea3"
+          "5b475fed-c803-4074-9884-d68969ad34af"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14519"
+          "14562"
         ],
         "x-ms-request-id": [
-          "11a642c3-9525-4514-8ba4-6db0c7504ea3"
+          "5b475fed-c803-4074-9884-d68969ad34af"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024357Z:11a642c3-9525-4514-8ba4-6db0c7504ea3"
+          "LOCAL:20180207T034254Z:5b475fed-c803-4074-9884-d68969ad34af"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -205,7 +205,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "71619534-473e-42c9-9347-05b5c9777742"
+          "22fdb256-067b-41dc-82b5-ce2d42b90d16"
         ],
         "accept-language": [
           "en-US"
@@ -230,7 +230,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:56 GMT"
+          "Wed, 07 Feb 2018 03:42:54 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -239,19 +239,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvef49UiKadS4rqnMydWtMW7BlzLbJvFb1RBKouppCowFjPpHDec4iZ6pu4vmhmVJimWO+UwUxD76FBRQOc/YZn+eOtQBdmrVLIfdBm0Rb7dktd5Lc+BsHhve5fyBEv+QXsaOugUGCOYwUqxOybNmK"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv9cI4VqKuJNotR1KRCXd2+t+1c8daZ+9TTCslLZVYxDDT/ITih3MoDh15Aj3MBV0MPrOyjvPizmoZnDOzSYEd2HVYH0LBoDkXXitfCBoozshhBduEekb9drb/FiZFRz7A7XYedoQ6nOqhvEPSc24S"
         ],
         "x-ms-correlation-request-id": [
-          "aa701f72-d4b1-432b-ab0c-39a67422e511"
+          "2af6e81c-08a8-4fd5-9265-9206bf74ef0f"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14518"
+          "14561"
         ],
         "x-ms-request-id": [
-          "aa701f72-d4b1-432b-ab0c-39a67422e511"
+          "2af6e81c-08a8-4fd5-9265-9206bf74ef0f"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024357Z:aa701f72-d4b1-432b-ab0c-39a67422e511"
+          "LOCAL:20180207T034254Z:2af6e81c-08a8-4fd5-9265-9206bf74ef0f"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -269,7 +269,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "18f8f891-0a81-43b0-a804-75c97eba04ae"
+          "0009adf2-8ede-4a7e-895d-7b134939f9c1"
         ],
         "accept-language": [
           "en-US"
@@ -294,7 +294,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:56 GMT"
+          "Wed, 07 Feb 2018 03:42:54 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -303,19 +303,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvla4zW+zXnT3tPVV0QxmKj5ITc/XAbcwm7Tr6MIif7spdaAuXOdk7nHkPYVI07lQHGLmW6jS3bmsgfiebiq08tYQPL7RaGK0PAmtMZAknL0bxbaSaHp6gkVnKwTYiOTpnIfVI9t+raebFTgIPO3rn"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvS+JZXEFBp1qRx9LGKjuQgiq6ScKEJ/lSfEYeJGvf11TKhSaK0WBeGB2qqskPuJW4NQfbOydw7GslT7EDxGinOQAllKn8NVzNpgfqRcL8edhX7fi5jO1Tffd1qlVrUVgjW/WA9TO+2ORxko4Ltrsz"
         ],
         "x-ms-correlation-request-id": [
-          "4661a798-7248-43fd-94af-b01787c17654"
+          "65207ac5-493a-4709-8491-6dcdd9144a78"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14517"
+          "14560"
         ],
         "x-ms-request-id": [
-          "4661a798-7248-43fd-94af-b01787c17654"
+          "65207ac5-493a-4709-8491-6dcdd9144a78"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024357Z:4661a798-7248-43fd-94af-b01787c17654"
+          "LOCAL:20180207T034254Z:65207ac5-493a-4709-8491-6dcdd9144a78"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -333,7 +333,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "d6f128f3-e565-4b64-a2bc-6659a47353bf"
+          "3f5d80f6-8daa-42e8-8c8a-6eb90abb3a34"
         ],
         "accept-language": [
           "en-US"
@@ -358,7 +358,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:57 GMT"
+          "Wed, 07 Feb 2018 03:42:55 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -367,19 +367,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvio3XVmWVbfTl7nTGoB00bOo5RJv64IAr+O3ifPt72AQbUhjpGmRPlUmCFOJCdNpA2YSeBG+/Z66VxUVASUsp2/71niIk6+dwCl12lRrCxZCP5PfhZR3SEWimiLELArCTyfL11ZCquzjHlws2d2fW"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvT0A90ozliMolyRfFtXS/mPF6yen/w4IwJUYKyeVevD7twsbeU75F7kSGIzNbZSsDw47C9QvDPfq95QQx3XF4C+YZx+g1K4xAQzRZ4ZunLlm7wpU1my0/QfAjtje8fPkCGvLr0snMHqC6vZ4EFGJG"
         ],
         "x-ms-correlation-request-id": [
-          "83010e8c-ab72-483b-be1c-da83f762acc2"
+          "5855711c-c002-4f49-853b-4f557603c7c7"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14515"
+          "14559"
         ],
         "x-ms-request-id": [
-          "83010e8c-ab72-483b-be1c-da83f762acc2"
+          "5855711c-c002-4f49-853b-4f557603c7c7"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024357Z:83010e8c-ab72-483b-be1c-da83f762acc2"
+          "LOCAL:20180207T034255Z:5855711c-c002-4f49-853b-4f557603c7c7"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -397,7 +397,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "bc454df6-cc03-447c-9373-daf8a7ca6c1b"
+          "c233d8a1-4d5d-4197-9f8f-b5eefc70606c"
         ],
         "accept-language": [
           "en-US"
@@ -422,7 +422,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:57 GMT"
+          "Wed, 07 Feb 2018 03:42:55 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -431,19 +431,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvWXrOEmQ05HO+JTlTuq1BaB2oInPRSTw3/QD8zilHfEDkJ5JgemHkwtj0k3/n9CQ8NtTaxRvuVIPICAI39kvepJtzW9p5W79bnCHUkx5FQv8FYRg5pSnx1y3L2oExdBrPbIQ1w7/EjWqO3i4zdZXk"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvWqLWMCNCLi6vHcGHqeqVsBHYoSLgfkPSJIE3qF9W6MFuVpRj3eQYscWOm5uiTRg8oDYU6P6Cy5zM0gEL0UEbvAu7vQ8L+bxiqwmYIYjrorfbNDYN+UwkeHKaVZ/lb+EqXxDJMrQDuAHGlwnJ5IH7"
         ],
         "x-ms-correlation-request-id": [
-          "4fe4051e-41f0-4e48-b735-8bb0a6bf6d6b"
+          "3d53e33f-988b-44a2-9879-9db3a2ba1026"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14514"
+          "14558"
         ],
         "x-ms-request-id": [
-          "4fe4051e-41f0-4e48-b735-8bb0a6bf6d6b"
+          "3d53e33f-988b-44a2-9879-9db3a2ba1026"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024357Z:4fe4051e-41f0-4e48-b735-8bb0a6bf6d6b"
+          "LOCAL:20180207T034255Z:3d53e33f-988b-44a2-9879-9db3a2ba1026"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -461,7 +461,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "d87ddb35-7e51-4b45-9f9e-58814e3e2f70"
+          "95f35344-83ea-4154-9073-4cf8045d497b"
         ],
         "accept-language": [
           "en-US"
@@ -486,7 +486,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:57 GMT"
+          "Wed, 07 Feb 2018 03:42:55 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -495,19 +495,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv9Tqs0T+iEUBTW6YJNG4bKPAYOGjQSg62UoM6ngqUtw4MFMPEiwX8fVLG1VZ3Sfs5h93LvBhAhfsXFilDRt5EPObRXTnUALI0ImpnV3G8oDv5UrPFlz8iXb8ugyy8p60pByyqOEyPg2jVceuvDfLE"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvxf+ydXTwpdKwiB9pddYY3C68nRtV+TLzxeXT9qkQZFAk44VA8sIzquAP0D1vfeES412Fj7b1j7bn2IiJHqbdW4fX9TqaTMLSBTOhPyt/gUDkg0696chiJBkhy5w8YbfMKsQ4hSR10KtKIOStzGLz"
         ],
         "x-ms-correlation-request-id": [
-          "bdef9573-6150-4a15-8ea0-d535d426b137"
+          "ea00eee3-2d09-4ff1-904a-e31e21b04699"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14513"
+          "14557"
         ],
         "x-ms-request-id": [
-          "bdef9573-6150-4a15-8ea0-d535d426b137"
+          "ea00eee3-2d09-4ff1-904a-e31e21b04699"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024358Z:bdef9573-6150-4a15-8ea0-d535d426b137"
+          "LOCAL:20180207T034255Z:ea00eee3-2d09-4ff1-904a-e31e21b04699"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -525,7 +525,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "586d6d38-817a-4299-9523-65aa318511ba"
+          "270a88c6-9565-4d2b-88b4-6c153f3369b5"
         ],
         "accept-language": [
           "en-US"
@@ -550,7 +550,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:57 GMT"
+          "Wed, 07 Feb 2018 03:42:55 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -559,19 +559,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvKm0Bj1BuVLdsMP5HXm6HFlEnc9bwvoYy9vNN2TAaXI32CqmuxQsaxNZZ6N4Dqj8AnUIAlLoyOfijEyISFl4RFwTcU39ddOmaAol8lQHWtGHTC0qFTSIjTBETqjPQl0y35Hsy8kYIPOV7qaQHugGO"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvVXxQQlu4aOxQMxtWD/nT9l7fWy0S7BiQX3ZTZ8l149p36kca0jnZJ6vFZiddgSf6hejbCYO1ffDT40+OdR2rB8HJB5OreLlNT2kp+MfIB5ujikTJi26dgZEB/LyJ2Ix16hNfU9jzj+Dh5CL04lKG"
         ],
         "x-ms-correlation-request-id": [
-          "b2669c4b-d029-4cf4-90f6-af357922ed51"
+          "29a46d47-4175-4cc7-b392-025a2728cbb6"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14512"
+          "14556"
         ],
         "x-ms-request-id": [
-          "b2669c4b-d029-4cf4-90f6-af357922ed51"
+          "29a46d47-4175-4cc7-b392-025a2728cbb6"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024358Z:b2669c4b-d029-4cf4-90f6-af357922ed51"
+          "LOCAL:20180207T034255Z:29a46d47-4175-4cc7-b392-025a2728cbb6"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -589,7 +589,71 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "d4ed338e-50a7-41fb-b35f-e4ab120c2a6d"
+          "2e0346ed-362e-4776-b844-67c5bb4d8d68"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft/types/MicroExtension/versions/0.2.0\",\r\n  \"name\": null,\r\n  \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n  \"location\": \"local\",\r\n  \"properties\": {\r\n    \"vmOsType\": \"Linux\",\r\n    \"computeRole\": \"N/A\",\r\n    \"vmScaleSetEnabled\": false,\r\n    \"supportMultipleExtensions\": true,\r\n    \"isSystemExtension\": false,\r\n    \"sourceBlob\": {\r\n      \"uri\": \"https://test.blob.local.azurestack.external/test/Microsoft.Powershell.DSC_2.19.0.0.zip\"\r\n    },\r\n    \"provisioningState\": \"Creating\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "600"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Wed, 07 Feb 2018 03:42:55 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvJ/aoS3Fc1Ez04Da+TgRSCCA6LBzE/e/1W80DONSP/UXoxG2kWwhbHFYIa9rVOa1TEDUqPc0ZmrEiHBOfQonOZMB6pVIw0dJIPsxNrRwfJFvrHiqe8Xd9kbhbHPfgSTwqv5g//FC5Z/hwnggpy7fB"
+        ],
+        "x-ms-correlation-request-id": [
+          "642808d7-ecbb-4234-a84c-a95e1af1c3cc"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14555"
+        ],
+        "x-ms-request-id": [
+          "642808d7-ecbb-4234-a84c-a95e1af1c3cc"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180207T034255Z:642808d7-ecbb-4234-a84c-a95e1af1c3cc"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft/types/MicroExtension/versions/0.2.0?api-version=2015-12-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODE1ODQ5OGQtMjdiMS00Y2NmLTlhYTEtZGUwZjkyNTczMWU2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvYXJ0aWZhY3RUeXBlcy9WTUV4dGVuc2lvbi9wdWJsaXNoZXJzL01pY3Jvc29mdC90eXBlcy9NaWNyb0V4dGVuc2lvbi92ZXJzaW9ucy8wLjIuMD9hcGktdmVyc2lvbj0yMDE1LTEyLTAxLXByZXZpZXc=",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "e89f1d45-3021-414a-8871-b419274dae62"
         ],
         "accept-language": [
           "en-US"
@@ -614,7 +678,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:57 GMT"
+          "Wed, 07 Feb 2018 03:42:55 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -623,19 +687,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv2HboH1xg5q0mGZDz7ZVIHFc3UinkU7ACftA2Ri6r2ZI04avJEi7dAd2sxRKXPL9+sb4jDIprFeblxQD+ymRXbxXGc3nsaJKReboNoKZA4IoAkOdVRG1ptn4y+8OtYYEYiBcL4RhXeRyayczh5liV"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv/FsUiMVozPdT9+fwz0LLgkcEF/IfwKzyDrx4kKmmr8qK8QyptBgsTEntO4NOlR30yfiyBw11rTuNb3CIRN14MHe7fFMiXOaxlZ7hUCO6aELC5psrOkWAO4StJ1Ft3fUa44n1NJq0Bco4kPAz1yvR"
         ],
         "x-ms-correlation-request-id": [
-          "e9e08759-1504-41b4-9a7b-f5972e273dfc"
+          "f94f6614-8800-48a1-940a-6c55cb631f2f"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14511"
+          "14554"
         ],
         "x-ms-request-id": [
-          "e9e08759-1504-41b4-9a7b-f5972e273dfc"
+          "f94f6614-8800-48a1-940a-6c55cb631f2f"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024358Z:e9e08759-1504-41b4-9a7b-f5972e273dfc"
+          "LOCAL:20180207T034256Z:f94f6614-8800-48a1-940a-6c55cb631f2f"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -653,7 +717,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "118cb309-02ca-475a-854b-012e763deca9"
+          "88a6f39a-e2dd-4d53-adcc-d2271f26400b"
         ],
         "accept-language": [
           "en-US"
@@ -675,7 +739,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:58 GMT"
+          "Wed, 07 Feb 2018 03:42:56 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -684,19 +748,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvz0K55J+s/rJnTeJCRZGZ5/fw6D8KCxX8BR8kjGSvxNqR8qvs6UDpJzqWK10W5cGCUvmdgsQzVFqEKPA8Syf/Urdy58ip76ckbXDqox1nPTy+fK3JdVZ6svXdcmOnq8iqVNse3ch6/THuQdalJoKy"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvNAvXlyD43EgNm7d1syfpD5c69KaegsDlaIwW+Z72qfiaNNS2Q1r3AQUGGR0g7ggwlfYXdfV4/7Nbz5nazlgjM9KjMhtp5SGrnpzklBI4vpC/wamLiRMWdQBU9nSuJlUa9hXsW+6OonFRzFUkkEQx"
         ],
         "x-ms-correlation-request-id": [
-          "7e880c26-740b-4c9d-981a-ececeeff568c"
+          "9b681851-6dbc-4d2e-942b-93e5483f8147"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14510"
+          "14553"
         ],
         "x-ms-request-id": [
-          "7e880c26-740b-4c9d-981a-ececeeff568c"
+          "9b681851-6dbc-4d2e-942b-93e5483f8147"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024359Z:7e880c26-740b-4c9d-981a-ececeeff568c"
+          "LOCAL:20180207T034256Z:9b681851-6dbc-4d2e-942b-93e5483f8147"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -714,7 +778,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "8a665726-67ea-4aa8-930a-99bd681cf9ba"
+          "0633db31-11a4-4def-8918-66e6abaac0eb"
         ],
         "accept-language": [
           "en-US"
@@ -736,7 +800,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:43:58 GMT"
+          "Wed, 07 Feb 2018 03:42:56 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -745,19 +809,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv0dIngT57u7VgUSOdpRNn4DZ1fEZ2srvyYL0HqCPf+MGRy4TVZQd0cYYJ3GxiJQHKrxgHXZxs+dOJgKxDAtfPoFOPDqR0wb65pHMwiLx4VDHKz45jIdxxlXq07BnbKbZfSNUmxrEqbUh45e/wytFt"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvIncQ2Q/7PJ5RA0eUJaEzTTvJHhXjD0ApV6I423qKg8y5VJrnicra3JGa5fwOTxTQJobuztVs5q7rLv6MvSPWtI5bW683x+mnK0KvbF/llKLvAWTUujrX6QcQ2C2lIzgwmyDsyPtgJhK9Q+VIbmYI"
         ],
         "x-ms-correlation-request-id": [
-          "3a92f684-4296-4487-9cf8-350f82bd9844"
+          "7b4979b5-1b14-45ff-a4d2-5faea0e2f2cc"
         ],
         "x-ms-ratelimit-remaining-subscription-writes": [
-          "1181"
+          "1182"
         ],
         "x-ms-request-id": [
-          "3a92f684-4296-4487-9cf8-350f82bd9844"
+          "7b4979b5-1b14-45ff-a4d2-5faea0e2f2cc"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024358Z:3a92f684-4296-4487-9cf8-350f82bd9844"
+          "LOCAL:20180207T034256Z:7b4979b5-1b14-45ff-a4d2-5faea0e2f2cc"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"

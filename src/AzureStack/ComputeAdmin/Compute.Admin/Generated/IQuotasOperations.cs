@@ -32,7 +32,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
+        /// <param name='quotaName'>
         /// Name of the quota.
         /// </param>
         /// <param name='customHeaders'>
@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string locationName, string quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string locationName, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Creates or Updates a Quota.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
+        /// <param name='quotaName'>
         /// Name of the quota.
         /// </param>
         /// <param name='newQuota'>
@@ -81,7 +81,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Quota>> CreateWithHttpMessagesAsync(string locationName, string quota, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Quota>> CreateOrUpdateWithHttpMessagesAsync(string locationName, string quotaName, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes specified quota
         /// </summary>
@@ -91,7 +91,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <param name='locationName'>
         /// Location of the resource.
         /// </param>
-        /// <param name='quota'>
+        /// <param name='quotaName'>
         /// Name of the quota.
         /// </param>
         /// <param name='customHeaders'>
@@ -106,7 +106,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string quota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Lists all quotas.
         /// </summary>

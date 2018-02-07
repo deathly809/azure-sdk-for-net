@@ -7,7 +7,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "f189675b-677d-4841-ac7d-3b85ff254d2d"
+          "86853f1d-b260-4e0e-8bee-da70b1298552"
         ],
         "accept-language": [
           "en-US"
@@ -17,10 +17,10 @@
           "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n      \"name\": \"Default Quota\",\r\n      \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n      \"location\": \"local\",\r\n      \"properties\": {\r\n        \"virtualMachineCount\": 20,\r\n        \"coresLimit\": 50,\r\n        \"availabilitySetCount\": 10,\r\n        \"vmScaleSetCount\": 20\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n      \"name\": \"Default Quota\",\r\n      \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n      \"location\": \"local\",\r\n      \"properties\": {\r\n        \"virtualMachineCount\": 20,\r\n        \"coresLimit\": 50,\r\n        \"availabilitySetCount\": 10,\r\n        \"vmScaleSetCount\": 20\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas/testQuotaCreateUpdateDelete\",\r\n      \"name\": \"testQuotaCreateUpdateDelete\",\r\n      \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n      \"location\": \"local\",\r\n      \"properties\": {\r\n        \"virtualMachineCount\": 1,\r\n        \"coresLimit\": 1,\r\n        \"availabilitySetCount\": 1,\r\n        \"vmScaleSetCount\": 1\r\n      }\r\n    }\r\n  ]\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "328"
+          "669"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:44:01 GMT"
+          "Wed, 07 Feb 2018 03:42:59 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvF5LX5p0jNlxKSVMWM7uTuVHZKlZ9Pj5ZYrwTWEG9+NXMQo6aeqHy3YwmvWngTiox+7z1KIUJpp+eJOeJP01buhk9DnkkV4Gxxf0H2GkILLhkVr8ytDgV/HUOjNkoKt+wvETeXm60t3mMg8UPRMST"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvayE6V/Q+kYTSRco60fyGZMWw1cGE0qmTqZtmWU9EPN6QJnIPsCu085ioiaQcAuxsr4Zu8fXY8whDGTSXkKRUGtn+VH9yXDFuRyh2mdssYStudp0//sXn1R2PjAnKz+25Q9ntSKUmlRtxyNy4FLuP"
         ],
         "x-ms-correlation-request-id": [
-          "616fe346-9be7-46c9-ab69-dbed18e2d1ae"
+          "1f1063dd-83df-4c57-ba75-5ba9b1b72a58"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14495"
+          "14535"
         ],
         "x-ms-request-id": [
-          "616fe346-9be7-46c9-ab69-dbed18e2d1ae"
+          "1f1063dd-83df-4c57-ba75-5ba9b1b72a58"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024401Z:616fe346-9be7-46c9-ab69-dbed18e2d1ae"
+          "LOCAL:20180207T034259Z:1f1063dd-83df-4c57-ba75-5ba9b1b72a58"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -71,7 +71,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "ad5d96f4-ea9c-4435-ba09-c18a0b16663f"
+          "f8ed5d64-41de-4779-9c7f-2e6e4ba9b409"
         ],
         "accept-language": [
           "en-US"
@@ -96,7 +96,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 02:44:01 GMT"
+          "Wed, 07 Feb 2018 03:42:59 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +105,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvHnQs9CdIOKNpZX03HZY5GMQdaVvdTtdwPz9xXRG/PAYDGUi3SxulvCHMZiCWwerYcnjTig9p3pzGeHfR5nlqP/YwLDCn7ZmHyAzBbWrPlRxSpEUlqbZkB0bAGrfrTpzBAt0yA+YqT+mnR5Z0RbGK"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvg0ygttKQTU7IlvdJSoPwU0sjOGj+LOhPSBE3Ps6mG8HshveBNFIy1k0Ec1X61W7dg5XOjCoyqIlRERSOBAe7cbQXo9u2OVYsUUTIC14wkTW/IEp1NWPYNzmxWLtka3MR9CFfksJcpqAHsfH0uoPJ"
         ],
         "x-ms-correlation-request-id": [
-          "a770d031-87a1-4828-a147-852bc987c1f9"
+          "80945a0a-14fb-4de7-ba19-14fa4cc8c614"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14494"
+          "14534"
         ],
         "x-ms-request-id": [
-          "a770d031-87a1-4828-a147-852bc987c1f9"
+          "80945a0a-14fb-4de7-ba19-14fa4cc8c614"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T024401Z:a770d031-87a1-4828-a147-852bc987c1f9"
+          "LOCAL:20180207T034259Z:80945a0a-14fb-4de7-ba19-14fa4cc8c614"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
