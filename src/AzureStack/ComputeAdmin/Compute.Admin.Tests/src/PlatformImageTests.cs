@@ -14,7 +14,7 @@ namespace Compute.Tests
     public class PlatformImageTests : ComputeTestBase
     {
         private static string VHDUri = "https://test.blob.local.azurestack.external/test/xenial-server-cloudimg-amd64-disk1.vhd";
-        private static int sleepTime = 1; // 30 * 1000 for live runs
+        
         // Helper
         private PlatformImage Create() {
             return new PlatformImage()
@@ -91,12 +91,7 @@ namespace Compute.Tests
                 });
             });
         }
-
-        private void untilFalse(Func<bool> func) {
-            while (func()) System.Threading.Thread.Sleep(sleepTime);
-        }
         
-        [Fact()]
         public void TestCreateAndDeletePlatformImage() {
             RunTest((client) => {
 

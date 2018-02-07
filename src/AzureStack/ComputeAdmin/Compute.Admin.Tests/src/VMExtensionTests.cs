@@ -15,7 +15,7 @@ namespace Compute.Tests
         
         private string publisher = "Microsoft";
         private string type = "MicroExtension";
-        private string version = "0.1.0";
+        private string version = "0.2.0";
 
         // Helper
         private VMExtension Create() {
@@ -23,7 +23,7 @@ namespace Compute.Tests
             {
                 ComputeRole = "N/A",
                 VmScaleSetEnabled = false,
-                SourceBlob = new AzureBlob("https://github.com/Microsoft/PowerShell-DSC-for-Linux/archive/v1.1.1-294.zip"),
+                SourceBlob = new AzureBlob("https://test.blob.local.azurestack.external/test/Microsoft.Powershell.DSC_2.19.0.0.zip"),
                 IsSystemExtension = false,
                 SupportMultipleExtensions = true,
                 VmOsType = OsType.Linux
@@ -92,26 +92,16 @@ namespace Compute.Tests
                 });
             });
         }
+        
+        [Fact]
 
-
-        [Fact(Skip = "Bug, cannot delete VM Extensions")]
-        public void TestCreateVMExtension() {
-            RunTest((client) => {
-                client.VMExtensions.Delete(Location, publisher, type, version);
-                var extension = client.VMExtensions.Create(Location, publisher, type, version, Create());
-                var result = client.VMExtensions.Get(Location, publisher, type, version);
-                AssertSame(extension, result);
-                client.VMExtensions.Delete(Location, publisher, type, version);
-            });
-        }
-
-        [Fact(Skip = "Bug, cannot delete VM Extensions")]
-
-        public void TestDeleteVMExtension() {
+        public void TestCreateAndDeleteVMExtension() {
             RunTest((client) => {
                 // Setup
 
-                client.VMExtensions.Create(Location, publisher, type, version, Create());
+                var extension = client.VMExtensions.Create(Location, publisher, type, version, Create());
+
+                untilFalse(() => client.VMExtensions.Get(Location, publisher, type, version).ProvisioningState == ProvisioningState.Creating);
 
                 // Do
                 client.VMExtensions.Delete(Location, publisher, type, version);
