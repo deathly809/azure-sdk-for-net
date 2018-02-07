@@ -496,7 +496,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
             AzureOperationResponse<PlatformImage> _response = await BeginCreateWithHttpMessagesAsync(locationName, publisher, offer, sku, version, newImage, customHeaders, cancellationToken).ConfigureAwait(false);
@@ -753,7 +753,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {

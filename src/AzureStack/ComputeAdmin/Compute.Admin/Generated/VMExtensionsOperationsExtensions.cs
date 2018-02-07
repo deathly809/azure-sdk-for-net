@@ -105,7 +105,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='extension'>
             /// Virtual Machine Extension Image creation properties.
             /// </param>
-            public static VMExtension Create(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtension extension)
+            public static VMExtension Create(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtensionParameters extension)
             {
                 return operations.CreateAsync(locationName, publisher, type, version, extension).GetAwaiter().GetResult();
             }
@@ -137,7 +137,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VMExtension> CreateAsync(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtension extension, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VMExtension> CreateAsync(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtensionParameters extension, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.CreateWithHttpMessagesAsync(locationName, publisher, type, version, extension, null, cancellationToken).ConfigureAwait(false))
                 {

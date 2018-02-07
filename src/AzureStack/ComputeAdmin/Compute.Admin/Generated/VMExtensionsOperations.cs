@@ -309,7 +309,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtension extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtensionParameters extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {

@@ -93,7 +93,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtension extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtensionParameters extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes a Virtual Machine Extension Image.
         /// </summary>

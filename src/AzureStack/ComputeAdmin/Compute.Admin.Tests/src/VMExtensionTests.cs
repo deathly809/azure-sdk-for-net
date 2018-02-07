@@ -18,8 +18,8 @@ namespace Compute.Tests
         private string version = "0.2.0";
 
         // Helper
-        private VMExtension Create() {
-            return new VMExtension()
+        private VMExtensionParameters Create() {
+            return new VMExtensionParameters()
             {
                 ComputeRole = "N/A",
                 VmScaleSetEnabled = false,

@@ -124,7 +124,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes a platform image
         /// </summary>
@@ -198,6 +198,6 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

@@ -154,7 +154,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='newImage'>
             /// New platform image.
             /// </param>
-            public static PlatformImage Create(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage)
+            public static PlatformImage Create(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage)
             {
                 return operations.CreateAsync(locationName, publisher, offer, sku, version, newImage).GetAwaiter().GetResult();
             }
@@ -189,7 +189,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<PlatformImage> CreateAsync(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<PlatformImage> CreateAsync(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.CreateWithHttpMessagesAsync(locationName, publisher, offer, sku, version, newImage, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -285,7 +285,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='newImage'>
             /// New platform image.
             /// </param>
-            public static PlatformImage BeginCreate(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage)
+            public static PlatformImage BeginCreate(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage)
             {
                 return operations.BeginCreateAsync(locationName, publisher, offer, sku, version, newImage).GetAwaiter().GetResult();
             }
@@ -320,7 +320,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<PlatformImage> BeginCreateAsync(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImage newImage, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<PlatformImage> BeginCreateAsync(this IPlatformImagesOperations operations, string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginCreateWithHttpMessagesAsync(locationName, publisher, offer, sku, version, newImage, null, cancellationToken).ConfigureAwait(false))
                 {

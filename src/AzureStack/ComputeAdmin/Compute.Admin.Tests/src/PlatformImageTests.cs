@@ -18,8 +18,8 @@ namespace Compute.Tests
         private const string MediumVHD = "https://test.blob.local.azurestack.external/test/medium.vhd";
 
         // Helper
-        private PlatformImage Create(string URI = VHDUri) {
-            return new PlatformImage()
+        private PlatformImageParameters Create(string URI = VHDUri) {
+            return new PlatformImageParameters()
             {
                 OsDisk = new OsDisk()
                 {
@@ -145,8 +145,7 @@ namespace Compute.Tests
                 var result = client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version);
                 Assert.Equal(ProvisioningState.Succeeded, result.ProvisioningState);
 
-                result.OsDisk.Uri = TinyVHD;
-                var tinyImage = client.PlatformImages.Create(Location, Publisher, Offer, Sku, Version, result);
+                var tinyImage = client.PlatformImages.Create(Location, Publisher, Offer, Sku, Version, Create(TinyVHD));
                 untilFalse(() => client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version).ProvisioningState == ProvisioningState.Creating);
 
                 Assert.Equal(MediumVHD, tinyImage.OsDisk.Uri);
