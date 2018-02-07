@@ -4,7 +4,7 @@
 ::
 
 @echo off
-call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/fabric latest deathly809 azs.fabric.admin azure-rest-api-specs %CD%
 rd Generated /S /Q
+call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/fabric latest deathly809 azs.fabric.admin azure-rest-api-specs %CD%
 move Fabric\Fabric.Admin\Generated .
 rd Fabric /S /Q

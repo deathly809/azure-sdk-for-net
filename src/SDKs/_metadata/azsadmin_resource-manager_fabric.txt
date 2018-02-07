@@ -1,9 +1,9 @@
-2018-01-31 18:55:40 UTC
+2018-02-07 19:08:53 UTC
 
 1) azure-rest-api-specs repository information
 GitHub user: deathly809
 Branch:      azs.fabric.admin
-Commit:      82626c395e9dc81713756e83e78b979d968f8612
+Commit:      2d7c0179a53f500ba1ede43e45ad33a6c4e4fccc
 
 2) AutoRest information
 Requested version: latest
