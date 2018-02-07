@@ -12,7 +12,7 @@ namespace Compute.Tests
 {
     public class VMExtensionTests : ComputeTestBase
     {
-        
+
         private string publisher = "Microsoft";
         private string type = "MicroExtension";
         private string version = "0.2.0";
@@ -92,7 +92,7 @@ namespace Compute.Tests
                 });
             });
         }
-        
+
         [Fact]
 
         public void TestCreateAndDeleteVMExtension() {
@@ -110,6 +110,32 @@ namespace Compute.Tests
                 var result = client.VMExtensions.Get(Location, publisher, type, version);
                 Assert.Null(result);
             });
+        }
+
+        [Fact]
+        public void TestCreateUpdateVMExtension() {
+            void setupCleanup() {
+                IgnoreExceptions(() => client.VMExtensions.Delete(Location, publisher, type, version));
+            };
+
+            RunTest((client) => {
+                IgnoreExceptions(() => client.VMExtensions.Delete(Location, publisher, type, version));
+
+                var c = Create();
+                var extension = client.VMExtensions.Create(Location, publisher, type, version, c);
+
+                untilFalse(() => client.VMExtensions.Get(Location, publisher, type, version).ProvisioningState == ProvisioningState.Creating);
+
+                c.SupportMultipleExtensions = false;
+                c.VmScaleSetEnabled= true;
+                c.VmOsType= OsType.Windows;
+                var updated = client.VMExtensions.Create(Location, publisher, type, version, c);
+
+                Assert.True(updated.SupportMultipleExtensions);
+                Assert.False(updated.VmScaleSetEnabled);
+                Assert.Equal<OsType?>(OsType.Linux, updated.VmOsType);
+
+            }, setupCleanup, setupCleanup);
         }
     }
 }

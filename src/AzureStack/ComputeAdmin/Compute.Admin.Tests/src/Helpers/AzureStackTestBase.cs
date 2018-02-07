@@ -79,7 +79,7 @@ namespace Compute.Tests
         }
 
         public void IgnoreExceptions(Action action) {
-            try { action(); }
+            try { action.Invoke(); }
             catch (Exception) { }
         }
 

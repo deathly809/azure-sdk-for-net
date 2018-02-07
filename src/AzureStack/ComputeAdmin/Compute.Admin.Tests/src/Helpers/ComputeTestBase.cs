@@ -16,7 +16,7 @@ namespace Compute.Tests
             // Empty
         }
 
-        private static int sleepTime = 1; // 30 * 1000 for live runs
+        private static int sleepTime = 30 * 1000; // for live runs
 
         protected void untilFalse(System.Func<bool> func) {
             while (func()) System.Threading.Thread.Sleep(sleepTime);

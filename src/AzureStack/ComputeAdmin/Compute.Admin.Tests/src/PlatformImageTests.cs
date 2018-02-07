@@ -13,16 +13,18 @@ namespace Compute.Tests
 {
     public class PlatformImageTests : ComputeTestBase
     {
-        private static string VHDUri = "https://test.blob.local.azurestack.external/test/xenial-server-cloudimg-amd64-disk1.vhd";
-        
+        private const string VHDUri = "https://test.blob.local.azurestack.external/test/xenial-server-cloudimg-amd64-disk1.vhd";
+        private const string TinyVHD = "https://test.blob.local.azurestack.external/test/tiny.vhd";
+        private const string MediumVHD = "https://test.blob.local.azurestack.external/test/medium.vhd";
+
         // Helper
-        private PlatformImage Create() {
+        private PlatformImage Create(string URI = VHDUri) {
             return new PlatformImage()
             {
                 OsDisk = new OsDisk()
                 {
                     OsType = OsType.Linux,
-                    Uri = VHDUri
+                    Uri = URI
                 }
             };
         }
@@ -91,7 +93,8 @@ namespace Compute.Tests
                 });
             });
         }
-        
+
+        [Fact]
         public void TestCreateAndDeletePlatformImage() {
             RunTest((client) => {
 
@@ -104,14 +107,49 @@ namespace Compute.Tests
                 DeletePlatformImage(client, Location, Publisher, Offer, Sku, Version);
 
                 // Create
-                var image = client.PlatformImages.Create(Location, Publisher, Offer, Sku, Version, Create());
+                var image = client.PlatformImages.Create(Location, Publisher, Offer, Sku, Version, Create(TinyVHD));
                 Assert.NotNull(image);
-                Assert.Equal(VHDUri, image.OsDisk.Uri);
+                Assert.Equal(TinyVHD, image.OsDisk.Uri);
 
                 untilFalse(() => client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version).ProvisioningState == ProvisioningState.Creating);
 
                 var result = client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version);
                 Assert.Equal(ProvisioningState.Succeeded, result.ProvisioningState);
+
+                // Delete
+                client.PlatformImages.Delete(Location, Publisher, Offer, Sku, Version);
+                result = client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version);
+                Assert.Null(result);
+            });
+        }
+
+        [Fact]
+        public void TestCreateUpdatePlatformImage() {
+            RunTest((client) => {
+
+                var Location = "local";
+                var Publisher = "Test";
+                var Offer = "UbuntuServer";
+                var Sku = "16.04-LTS";
+                var Version = "1.0.0";
+
+                DeletePlatformImage(client, Location, Publisher, Offer, Sku, Version);
+
+                // Create
+                var image = client.PlatformImages.Create(Location, Publisher, Offer, Sku, Version, Create(MediumVHD));
+                Assert.NotNull(image);
+                Assert.Equal(MediumVHD, image.OsDisk.Uri);
+
+                untilFalse(() => client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version).ProvisioningState == ProvisioningState.Creating);
+
+                var result = client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version);
+                Assert.Equal(ProvisioningState.Succeeded, result.ProvisioningState);
+
+                result.OsDisk.Uri = TinyVHD;
+                var tinyImage = client.PlatformImages.Create(Location, Publisher, Offer, Sku, Version, result);
+                untilFalse(() => client.PlatformImages.Get(Location, Publisher, Offer, Sku, Version).ProvisioningState == ProvisioningState.Creating);
+
+                Assert.Equal(MediumVHD, tinyImage.OsDisk.Uri);
 
                 // Delete
                 client.PlatformImages.Delete(Location, Publisher, Offer, Sku, Version);

@@ -7,7 +7,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "3a90ac0e-9ff6-425e-8310-514cb6211376"
+          "01a5622a-9f35-49cb-b682-1c4d0462b9a8"
         ],
         "accept-language": [
           "en-US"
@@ -17,10 +17,10 @@
           "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "[\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/BGInfo/versions/2.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/CustomScriptExtension/versions/1.8\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/CustomScriptForLinux/versions/1.5.2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Extensions/types/DockerExtension/versions/1.1.1606092330\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Powershell/types/DSC/versions/2.19.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Security/types/IaaSAntimalware/versions/1.4.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Diagnostics/types/IaaSDiagnostics/versions/1.10.1.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/JsonADDomainExtension/versions/1.3\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.EnterpriseCloud.Monitoring/types/MicrosoftMonitoringAgent/versions/1.0.10900.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/OSPatchingForLinux/versions/2.3.0.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/VMAccessAgent/versions/2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/VMAccessForLinux/versions/1.4.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  }\r\n]",
+      "ResponseBody": "[\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft/types/MicroExtension/versions/0.2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": true,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/BGInfo/versions/2.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/CustomScriptExtension/versions/1.8\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/CustomScriptForLinux/versions/1.5.2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Extensions/types/DockerExtension/versions/1.1.1606092330\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Powershell/types/DSC/versions/2.19.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Security/types/IaaSAntimalware/versions/1.4.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Azure.Diagnostics/types/IaaSDiagnostics/versions/1.10.1.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/JsonADDomainExtension/versions/1.3\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.EnterpriseCloud.Monitoring/types/MicrosoftMonitoringAgent/versions/1.0.10900.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/OSPatchingForLinux/versions/2.3.0.1\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.Compute/types/VMAccessAgent/versions/2.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Windows\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  },\r\n  {\r\n    \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft.OSTCExtensions/types/VMAccessForLinux/versions/1.4.0.0\",\r\n    \"name\": null,\r\n    \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n    \"location\": \"local\",\r\n    \"properties\": {\r\n      \"vmOsType\": \"Linux\",\r\n      \"computeRole\": \"N/A\",\r\n      \"vmScaleSetEnabled\": false,\r\n      \"supportMultipleExtensions\": false,\r\n      \"isSystemExtension\": false,\r\n      \"sourceBlob\": null,\r\n      \"provisioningState\": \"Succeeded\"\r\n    }\r\n  }\r\n]",
       "ResponseHeaders": {
         "Content-Length": [
-          "6354"
+          "6864"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:56 GMT"
+          "Wed, 07 Feb 2018 22:02:41 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,83 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvrWjR7crjLXaiWyiZQi66Hcs5PJleAtBcr8RQlbdwQggeQPjvQ8cSzJ0W5ya5LPbKOanfgYM9IHQcgAnkuKNuHOJ5Hdo50+MzG/D9Ui6kyMekt4psLbKdi5Vy+8J9mHQHvtDKn6/yIihkIrM4c8kV"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRveVA2uwbDAuVYMUSa/mPsvXfCYh8NQR01rekkcHNGCg807CqR9z6O7UfEkTilDugHi8h4zEZKdXXUQ7mi4Q3j/Qcar1liVHCsgtcXqyspzdeSoQq3v/Wh69hazadLB9mj8HdqYgiWcXSXWAILJ+Rr"
         ],
         "x-ms-correlation-request-id": [
-          "44e01e34-739f-4a59-b0c7-2e0e5d4f46f9"
+          "5fc6baff-1bd4-4e61-87d8-f2d952381471"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14552"
+          "14606"
         ],
         "x-ms-request-id": [
-          "44e01e34-739f-4a59-b0c7-2e0e5d4f46f9"
+          "5fc6baff-1bd4-4e61-87d8-f2d952381471"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034256Z:44e01e34-739f-4a59-b0c7-2e0e5d4f46f9"
+          "LOCAL:20180207T220241Z:5fc6baff-1bd4-4e61-87d8-f2d952381471"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft/types/MicroExtension/versions/0.2.0?api-version=2015-12-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODE1ODQ5OGQtMjdiMS00Y2NmLTlhYTEtZGUwZjkyNTczMWU2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvYXJ0aWZhY3RUeXBlcy9WTUV4dGVuc2lvbi9wdWJsaXNoZXJzL01pY3Jvc29mdC90eXBlcy9NaWNyb0V4dGVuc2lvbi92ZXJzaW9ucy8wLjIuMD9hcGktdmVyc2lvbj0yMDE1LTEyLTAxLXByZXZpZXc=",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "4436d973-0392-4ea0-8c3d-c17738e6a894"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.25211.01",
+          "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/artifactTypes/VMExtension/publishers/Microsoft/types/MicroExtension/versions/0.2.0\",\r\n  \"name\": null,\r\n  \"type\": \"Microsoft.Compute.Admin/locations/artifactTypes/VMExtension/publishers/types/versions/\",\r\n  \"location\": \"local\",\r\n  \"properties\": {\r\n    \"vmOsType\": \"Linux\",\r\n    \"computeRole\": \"N/A\",\r\n    \"vmScaleSetEnabled\": false,\r\n    \"supportMultipleExtensions\": true,\r\n    \"isSystemExtension\": false,\r\n    \"sourceBlob\": null,\r\n    \"provisioningState\": \"Succeeded\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "509"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Wed, 07 Feb 2018 22:02:41 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvH9wMy1rAoDx7Y6gYjA71fBe0FMbcHM1rLNgtz87wwel78Vgd4ZIqwuYoJudm53wXR9fJgVRymGEv6Y3+awhVagd8/i9oBynObT+GnU6imTAbhbyKBrvsVW9dP9+R+1k9ZJX384jagDx4n7OuVe5d"
+        ],
+        "x-ms-correlation-request-id": [
+          "563f07e5-2f7c-4ce4-98f2-758b455f68bc"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14605"
+        ],
+        "x-ms-request-id": [
+          "563f07e5-2f7c-4ce4-98f2-758b455f68bc"
+        ],
+        "x-ms-routing-request-id": [
+          "LOCAL:20180207T220242Z:563f07e5-2f7c-4ce4-98f2-758b455f68bc"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -71,7 +135,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "e945e6b5-c6f2-4e02-8ac0-8016cdcd1c02"
+          "fd1d3c41-2304-4f2b-b895-e9696ece3b8d"
         ],
         "accept-language": [
           "en-US"
@@ -96,7 +160,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:56 GMT"
+          "Wed, 07 Feb 2018 22:02:42 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +169,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvGZBzHJ+US2jQXWjUCi7KNpk1IXJTOvpynQq39VqQaz07PO0s9Uc8XF7UDWNg2SIhp7Kl/WJ2sJ+jlZaQ2F8RfqdNDryW4oTpvveXw1H6XPCUhBQfVu14MJ/OqcvcOEXnDjsU7MJq4skW3AyeE/cn"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv8j5jnQdG/HQadrcFNo8xiEmuvlb6wxy49e14yJyzA8pFmxC59L4WN23PLlc3LkTIH+HHByt6Esc8/nTAK13ibmiRYS50uWSSGjMQCJGK4kue+6Bi2N97UV+knxvTAVWyRqPb4iwEzd+4qoCwDxih"
         ],
         "x-ms-correlation-request-id": [
-          "2a0fd246-58fc-4e1f-a50a-daeb27ce7fda"
+          "130b0db7-9441-4092-9a65-784066fe00d8"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14551"
+          "14604"
         ],
         "x-ms-request-id": [
-          "2a0fd246-58fc-4e1f-a50a-daeb27ce7fda"
+          "130b0db7-9441-4092-9a65-784066fe00d8"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034257Z:2a0fd246-58fc-4e1f-a50a-daeb27ce7fda"
+          "LOCAL:20180207T220242Z:130b0db7-9441-4092-9a65-784066fe00d8"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -135,7 +199,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "ae6464f3-09c7-497a-ac19-edc11f6563b1"
+          "a9e72b4b-8a46-4b5b-8310-699d19af4417"
         ],
         "accept-language": [
           "en-US"
@@ -160,7 +224,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:57 GMT"
+          "Wed, 07 Feb 2018 22:02:42 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -169,19 +233,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvefHDagfKVTCs+n7HwCNwJB7IiEMetEvEc1/v8XbImrnLy2KMqrl9hxBozyo3eio0XYd+WsZRPOjqIezFb01zBodqJi20hXBCkC+wbTCKl7ACccTk0xw854PzDEoMx0qhYopNV4gAS7o3mpItnEgG"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvW8gcY6+b1aAjzqfwIc8HyLAuBV2kVV+SVxdE/vmhqlpScoZehwPIVDUd9H++5OJuBIr7CSdj7tCJsG6T9TS/FS4+ngYVJO5CYR56PMIH8SM8VYfbKm9WNfjpLV+lk59swtB+k9pVIyzZ/D8/lzLV"
         ],
         "x-ms-correlation-request-id": [
-          "bb857224-7be5-45f4-ab0e-a091ce7d5c0b"
+          "99fa2569-32cc-4e15-8669-02ea2e4dc61f"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14550"
+          "14603"
         ],
         "x-ms-request-id": [
-          "bb857224-7be5-45f4-ab0e-a091ce7d5c0b"
+          "99fa2569-32cc-4e15-8669-02ea2e4dc61f"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034257Z:bb857224-7be5-45f4-ab0e-a091ce7d5c0b"
+          "LOCAL:20180207T220242Z:99fa2569-32cc-4e15-8669-02ea2e4dc61f"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -199,7 +263,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "f80e0ee1-4e86-4dec-9de9-85ba2bb20c4b"
+          "712300df-fb06-4338-911f-ab20a189201f"
         ],
         "accept-language": [
           "en-US"
@@ -224,7 +288,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:57 GMT"
+          "Wed, 07 Feb 2018 22:02:42 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -233,19 +297,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv6Fk0VFhoKeAVbX4WDPzHBK+l8HdfHONOXIiEQ50AZAl7wJz4VbJ7MyCNx/aYNuV3AFpnrjuiuuYXY2j30LIkddvALVx76r+3Ltnce6B0KGBgNqurD716ZW4nPcx3UOHxcNee3/Sn76rRZ4HTb7Fn"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvXfxz3vpXkQZYaMV3JZoiV+6abpRO4W3Cz+0TVI4sCEHijTFUbj5qO1e0uv8qSwSQjbqEthCIVWfiLVP44Vuo/k153cZeS1ZraP9mlvZfEGMNsIaLnCQcn0QaeHdo6rtyq1mCwnfmGfVl/vjtA8Ld"
         ],
         "x-ms-correlation-request-id": [
-          "1967ee54-c745-4a10-9a2d-9761e783893f"
+          "b1b9e2d8-485f-48d9-86e3-cb0eb5a241cc"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14549"
+          "14602"
         ],
         "x-ms-request-id": [
-          "1967ee54-c745-4a10-9a2d-9761e783893f"
+          "b1b9e2d8-485f-48d9-86e3-cb0eb5a241cc"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034257Z:1967ee54-c745-4a10-9a2d-9761e783893f"
+          "LOCAL:20180207T220242Z:b1b9e2d8-485f-48d9-86e3-cb0eb5a241cc"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -263,7 +327,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "fc0aed02-fefc-473d-8eb1-8136cd384c4b"
+          "3eb64ba6-1cea-4dcc-9202-04d67d987baf"
         ],
         "accept-language": [
           "en-US"
@@ -288,7 +352,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:57 GMT"
+          "Wed, 07 Feb 2018 22:02:42 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -297,19 +361,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvfsyqvx8aAOFBR5klKJiwMM90b4J2IQaNpwwheMGSy4eCiP2O+UAbDh6y4Ni5hKqQ7R+PSVc3UHzQ34Z2waLsf/PfSm7CHxVMGxxbl+gB0TKvTRkPdZWaDxXiKA25KY08n1dElhHTSllusuhsW/tS"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvZD9+MGxuyshV0B9Nbx7hmWbQAawlelKk2AeBNW2+UrJzjwOgR8r9r6s4QKfMoSPhBs7i+GCnWCPOhAm1mpYlgkA1tTcoxKEn2W5r40RbYfZ2aXfg95zeQ5ZtxIyUZuTtRHcwVa45lPeX+GdQ9gZl"
         ],
         "x-ms-correlation-request-id": [
-          "4d6d871c-f5b8-4018-bb06-d30706f0b820"
+          "9a925e9d-f275-45a9-bdc1-80c46fd07bac"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14548"
+          "14601"
         ],
         "x-ms-request-id": [
-          "4d6d871c-f5b8-4018-bb06-d30706f0b820"
+          "9a925e9d-f275-45a9-bdc1-80c46fd07bac"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034257Z:4d6d871c-f5b8-4018-bb06-d30706f0b820"
+          "LOCAL:20180207T220243Z:9a925e9d-f275-45a9-bdc1-80c46fd07bac"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -327,7 +391,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "8f4a7325-c77a-42da-bca8-d46e93c477b6"
+          "8feff80f-bb2c-4c1f-8263-0fb2be902b5b"
         ],
         "accept-language": [
           "en-US"
@@ -352,7 +416,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:57 GMT"
+          "Wed, 07 Feb 2018 22:02:42 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -361,19 +425,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv4aClZhLM3joedNEYKdRTk/0LdsGH9HqEXZnXL/z/VWU7y8d7EHiP/FtffJCVlQu4pf6z9GOr9cpl2ftk29GbBhX/mcBOyXoU5HII3WxdJnQE17nJ7R7v0YcoIWW2JLxbpwYdpJHhXVOdHOHz4fy8"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv2W7uB4WvdMc3xbJIUMtTu1JuCyWtytnWAVjkT0CI1aaAKCiqjZHSz1tVxbaOFY+af9iMZNxdDNc6FV81jCVAagkwRbSu4c2TiIUeOVbIu8Ehk6Dt/IsMRn2cOQsLAAd+xQSscjNgW2syHvVOgxIa"
         ],
         "x-ms-correlation-request-id": [
-          "a084f09e-4b8f-40b8-ad8e-bb316b82b590"
+          "cfaeee62-8794-43b0-99aa-1388929a160a"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14547"
+          "14600"
         ],
         "x-ms-request-id": [
-          "a084f09e-4b8f-40b8-ad8e-bb316b82b590"
+          "cfaeee62-8794-43b0-99aa-1388929a160a"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034257Z:a084f09e-4b8f-40b8-ad8e-bb316b82b590"
+          "LOCAL:20180207T220243Z:cfaeee62-8794-43b0-99aa-1388929a160a"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -391,7 +455,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "74916a57-4d34-43d1-9c90-76368b12e46e"
+          "e9440edd-7943-40f8-8954-f83975d8627d"
         ],
         "accept-language": [
           "en-US"
@@ -416,7 +480,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:57 GMT"
+          "Wed, 07 Feb 2018 22:02:43 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -425,19 +489,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv5TVBv1AeaxdzhxOfZkeocZO3eMVlNYYtewXw3tD3Er4XzppdP2/fBeh4zII30ZgS4GsRXZfCJs1cBc95241R5gYr5yd2rYHs2TIinKkh3ezDEmneffTfcyqqPFCsmGSZVvJeOIVEBQ89t9ZCuJ/w"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvu6L1FOK67hUGVvXr92iAhSTXrDGe/k7+0DJTy8D0653Md86Osck2Zoybi9W2jVrOnXINpg3Zhh6w4+RJKzd7veAFouHipXn5YnZ686pe6pghuv5yXYp4qeQkzgjEmey0umTPU5XkeFldNYKqAp10"
         ],
         "x-ms-correlation-request-id": [
-          "6f0e4100-0b5a-403c-a897-2110fa36907a"
+          "a088cf52-462e-44c1-a160-9a0ac311ddde"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14546"
+          "14599"
         ],
         "x-ms-request-id": [
-          "6f0e4100-0b5a-403c-a897-2110fa36907a"
+          "a088cf52-462e-44c1-a160-9a0ac311ddde"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034257Z:6f0e4100-0b5a-403c-a897-2110fa36907a"
+          "LOCAL:20180207T220243Z:a088cf52-462e-44c1-a160-9a0ac311ddde"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -455,7 +519,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "d32078bb-a512-4533-829a-4611d3df11e9"
+          "7c2538ba-ee28-46d5-a470-d7bfb257f2c2"
         ],
         "accept-language": [
           "en-US"
@@ -480,7 +544,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:57 GMT"
+          "Wed, 07 Feb 2018 22:02:43 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -489,19 +553,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvXso+z5YuWj19EkjgsPXo9Zf8irG1NeNBeTXisLEbpC8RlEJR8/V8WhpLN48G1DHRAgyvOQ2/AxBAX47B9AyZcSVdjwUwkFElXMo7rWfAtVo60bQrbjD6+MnIQ4ybQG+2GlK+jUgwwpr/APZGYe3W"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvwloM+9W7u5EuMq8F67ecwBM0rLY0mR3f0KEJWoSSoWWDu1QUuTQ5ebiRVuHM+Ov46SC0cQ5KuSoCHJpfuUYjJwHNJwLpQsBLg22LyGGoLmT/DoaL55s200nHEn+51KuOOSZYofZMTxFIa3W2bAdz"
         ],
         "x-ms-correlation-request-id": [
-          "15ca02ae-94f2-44bc-acd5-8e440e554fa8"
+          "bde70133-4035-4080-ac8a-52eb869a539f"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14545"
+          "14598"
         ],
         "x-ms-request-id": [
-          "15ca02ae-94f2-44bc-acd5-8e440e554fa8"
+          "bde70133-4035-4080-ac8a-52eb869a539f"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034258Z:15ca02ae-94f2-44bc-acd5-8e440e554fa8"
+          "LOCAL:20180207T220243Z:bde70133-4035-4080-ac8a-52eb869a539f"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -519,7 +583,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "5a96ab7e-4921-43e4-b460-74a8382f95ed"
+          "192432b6-dc4d-4054-9504-4ac56e451f0b"
         ],
         "accept-language": [
           "en-US"
@@ -544,7 +608,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:58 GMT"
+          "Wed, 07 Feb 2018 22:02:43 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -553,19 +617,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvNrpJjTbDLZAnL/L+8C2zH+JywJrNahbzA4bXIUgJbTApM1s9pJLXIHmm/bmaCHn+jlCc8wfhlbyEE1Yss+LNYriW6RxlRPSPlljiVBHE+MWGczFwYM7VJ2RKwCyq2Rcd4umbspYOFn0yl4k2swHK"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvogBmzAVREQW1/MfL+G9ROmPqKu3Yv7YUjL0aSfnCKxm4wcBBOK8rDqZOougx39B1iLbukghTip6L76VeI27q9pkiHqX4cgJI5ZO5MNFyCVWkmoF5nwqfY8LbK0xQ9RcmnRukR/MH66bUSbJn0Q/l"
         ],
         "x-ms-correlation-request-id": [
-          "26537edb-caa2-470c-aab1-458f5d5778f0"
+          "ceab10a8-ed73-4d57-a0c7-37bccb821121"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14544"
+          "14597"
         ],
         "x-ms-request-id": [
-          "26537edb-caa2-470c-aab1-458f5d5778f0"
+          "ceab10a8-ed73-4d57-a0c7-37bccb821121"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034258Z:26537edb-caa2-470c-aab1-458f5d5778f0"
+          "LOCAL:20180207T220243Z:ceab10a8-ed73-4d57-a0c7-37bccb821121"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -583,7 +647,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "083c05ce-be8b-487b-adde-f9c2a2ac779c"
+          "68ef5b9a-9cd5-4711-baab-885319e1b41c"
         ],
         "accept-language": [
           "en-US"
@@ -608,7 +672,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:58 GMT"
+          "Wed, 07 Feb 2018 22:02:43 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -617,19 +681,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvVV5te6gg72qCRO6olDKCSLHRXEiKjBe4vkogAaUUU3AzSVLyR43pFAbtl5ULLINd7owsVy6Q3JkuF8nK8qJMWIoWa/N4CGSsoHon9tbtFvrSChJSLifzc/VY53I26ZvGXel+4sj/F88s9DSeRbKk"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvJMNTPnr0pU7BPSdHuxT4k3jKCwvwWwmBY84duJNyUOsXrk1skbgNE0LejSQYHg3xnWs6vPAjlfPAP1VC3+KOxPZF/KVdIiD+zg9kC/+i9IXCuIoCtb/41URC2udRq5m1WiwTLm0NrUQ/olhZMdhZ"
         ],
         "x-ms-correlation-request-id": [
-          "119a5125-8df6-450e-b3af-a3b1e882272e"
+          "b32f234a-f579-423b-94de-e7dec0f06607"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14543"
+          "14596"
         ],
         "x-ms-request-id": [
-          "119a5125-8df6-450e-b3af-a3b1e882272e"
+          "b32f234a-f579-423b-94de-e7dec0f06607"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034258Z:119a5125-8df6-450e-b3af-a3b1e882272e"
+          "LOCAL:20180207T220244Z:b32f234a-f579-423b-94de-e7dec0f06607"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -647,7 +711,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "c1710aa2-a1fc-4753-bc5b-3f4d6480b186"
+          "0b28db33-dfcf-43e4-baf2-6c6dccac2590"
         ],
         "accept-language": [
           "en-US"
@@ -672,7 +736,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:58 GMT"
+          "Wed, 07 Feb 2018 22:02:43 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -681,19 +745,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvXk9N35IjJvjR1sQFYC7QIIPvlvCv8lOHEQaSpr2pz2060IZN1OMYAMKtXhTgQ12VKULp7KFy0BWWXfAfTTzK0t+vy9GvU/H3WfdSCf74INbKFwVtYgT8M4Xu4zjVgCp3NxBiySNv/OLtBebryt46"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv9zDv4xmmqzBA6ZROt0d0myjVZ+qEyc7nE2hi9Lu31N9bZrf0D90zt9feAZnlMZFfdC/mkzWyEbjqdMVpYyKD1xXIPgCU+Iwh7ll4HszuqMRLF1swOZW7yzLxEFf1JS7wowsy2DroyDYppyZD3/Bq"
         ],
         "x-ms-correlation-request-id": [
-          "a599c5a0-34d4-4fa1-a076-565dbf233df5"
+          "64c23708-0942-43aa-8d4f-94fb5f7c2c68"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14542"
+          "14595"
         ],
         "x-ms-request-id": [
-          "a599c5a0-34d4-4fa1-a076-565dbf233df5"
+          "64c23708-0942-43aa-8d4f-94fb5f7c2c68"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034258Z:a599c5a0-34d4-4fa1-a076-565dbf233df5"
+          "LOCAL:20180207T220244Z:64c23708-0942-43aa-8d4f-94fb5f7c2c68"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -711,7 +775,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "46aa2b27-14b5-4182-949f-3d11b97c33bf"
+          "b6050bf7-fc52-439a-aa63-9af9441c3286"
         ],
         "accept-language": [
           "en-US"
@@ -736,7 +800,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:58 GMT"
+          "Wed, 07 Feb 2018 22:02:44 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -745,19 +809,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvLoC5u5doPtxBOxy8lkZvwmktHKDCZUSvazW0c5EVopJl2N/P7mE1gwFIXb9+jzIRxNrSAY7qC0csZvQCO2MNQLScjobfjDg2OPMEQFfV8ULS6gaEQsstvZTFxr9TPk0Wbku8D0IzH4rh6bIpzIHu"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvRrcUU1BT9aVvfFj44TdFEYu16Ev5V+UaESHesWfxb+VT64xgEEiGLsDxnmaP62aF3JdPnG2GUrViiI0HGeWN2jnqq02ok0zaOH8rllOqmDe+0tCO5mabFDzkJEQKtCCbOc6QGDGN44uB05CzSmEn"
         ],
         "x-ms-correlation-request-id": [
-          "81aff554-fd63-4953-80f5-6f8bf4a87eb3"
+          "dd30a8cb-b4f5-400e-9925-900025565970"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14541"
+          "14594"
         ],
         "x-ms-request-id": [
-          "81aff554-fd63-4953-80f5-6f8bf4a87eb3"
+          "dd30a8cb-b4f5-400e-9925-900025565970"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034258Z:81aff554-fd63-4953-80f5-6f8bf4a87eb3"
+          "LOCAL:20180207T220244Z:dd30a8cb-b4f5-400e-9925-900025565970"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -775,7 +839,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "9adab105-0a29-49e9-b4af-12a1a6836abe"
+          "91ec79b1-121b-4c8d-b528-44c945866ba6"
         ],
         "accept-language": [
           "en-US"
@@ -800,7 +864,7 @@
           "no-cache"
         ],
         "Date": [
-          "Wed, 07 Feb 2018 03:42:58 GMT"
+          "Wed, 07 Feb 2018 22:02:44 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -809,19 +873,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvKeLd+FLPiyCv2A7SnC6Huza9+UCkkiQzrTxMshj158qCES9FVboqt3J5OOMlIPD1/iHWBX7ULddKhXivW12mIrqtuvmHK+/ygjdeT2Ho5TKSiexfs3hdQwZlGuCMUgy+HHGGTNI/cBCnWJlP3su/"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvjY8DFwIL/gse/clnR5qg1bXKdyxyoRmhC3rN+Y9J//OaLeRbHPWodg2sQRD9okXTP+whDNpyOWApVxR5jiEqUAJf+MvhOtlBWh/EJvCBivhL+sS0YKeq+GjVzRiDaIQhsGPDLzAWiQZeSDkZoIJA"
         ],
         "x-ms-correlation-request-id": [
-          "c1aa1a27-c2a3-4352-af4f-0ae5df8a0eb1"
+          "c6630c6d-4b21-4de9-a2cc-4513e866070f"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14539"
+          "14593"
         ],
         "x-ms-request-id": [
-          "c1aa1a27-c2a3-4352-af4f-0ae5df8a0eb1"
+          "c6630c6d-4b21-4de9-a2cc-4513e866070f"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180207T034259Z:c1aa1a27-c2a3-4352-af4f-0ae5df8a0eb1"
+          "LOCAL:20180207T220244Z:c6630c6d-4b21-4de9-a2cc-4513e866070f"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
