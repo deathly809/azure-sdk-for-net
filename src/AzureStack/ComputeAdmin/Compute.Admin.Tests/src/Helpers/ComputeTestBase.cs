@@ -12,8 +12,7 @@ namespace Compute.Tests
 
     public class ComputeTestBase : AzureStackTestBase<ComputeAdminClient>
     {
-        public ComputeTestBase()
-        {
+        public ComputeTestBase() {
             // Empty
         }
 
@@ -26,9 +25,12 @@ namespace Compute.Tests
         }
 
         protected void AssertSameResource(Resource expected, Resource found) {
-            if(expected == null) {
+            if (expected == null)
+            {
                 Assert.Null(found);
-            } else {
+            }
+            else
+            {
                 Assert.NotNull(found);
                 Assert.Equal(expected.Id, found.Id);
                 Assert.Equal(expected.Location, found.Location);
@@ -37,8 +39,12 @@ namespace Compute.Tests
             }
         }
 
-        protected override void ValidateClient(ComputeAdminClient client)
-        {
+        protected void DeletePlatformImage(ComputeAdminClient client, string Location, string Publisher, string Offer, string Sku, string Version) {
+            Common.RetryExceptionExpected(() =>
+                client.PlatformImages.Delete(Location, Publisher, Offer, Sku, Version), 1);
+        }
+
+        protected override void ValidateClient(ComputeAdminClient client) {
             // validate creation
             Assert.NotNull(client);
 

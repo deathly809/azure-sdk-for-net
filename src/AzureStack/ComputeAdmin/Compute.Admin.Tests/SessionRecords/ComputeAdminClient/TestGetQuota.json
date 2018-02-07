@@ -1,13 +1,13 @@
 {
   "Entries": [
     {
-      "RequestUri": "/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/quotas?api-version=2015-12-01-preview",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMGRiYWI3NmUtMDM3ZC00NzYyLWFhNGMtMzQxMDUzNTMyNGY2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvcXVvdGFzP2FwaS12ZXJzaW9uPTIwMTUtMTItMDEtcHJldmlldw==",
+      "RequestUri": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas?api-version=2015-12-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODE1ODQ5OGQtMjdiMS00Y2NmLTlhYTEtZGUwZjkyNTczMWU2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvcXVvdGFzP2FwaS12ZXJzaW9uPTIwMTUtMTItMDEtcHJldmlldw==",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "614a6b59-406f-4f8d-b432-3d21f9bee09b"
+          "a9882098-64d1-4d66-8056-e75a4e73b8d3"
         ],
         "accept-language": [
           "en-US"
@@ -17,7 +17,7 @@
           "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n      \"name\": \"Default Quota\",\r\n      \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n      \"location\": \"local\",\r\n      \"properties\": {\r\n        \"virtualMachineCount\": 20,\r\n        \"coresLimit\": 50,\r\n        \"availabilitySetCount\": 10,\r\n        \"vmScaleSetCount\": 20\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n      \"name\": \"Default Quota\",\r\n      \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n      \"location\": \"local\",\r\n      \"properties\": {\r\n        \"virtualMachineCount\": 20,\r\n        \"coresLimit\": 50,\r\n        \"availabilitySetCount\": 10,\r\n        \"vmScaleSetCount\": 20\r\n      }\r\n    }\r\n  ]\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
           "328"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Tue, 31 Oct 2017 23:55:12 GMT"
+          "Tue, 06 Feb 2018 23:54:02 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvELIG0Ge6RO7QwYrmQZ5JIi5JYih+M8+UNkBJl4QEdjpht2z1rxriaHeQqwPq08JcMO1iXisPpvfQJrBR6zPEF89fbcp3eejWl9d/fwE3Sjtb1yBVisVg85sGwSNYO5V4nOtKN0n9BDoWyjJNL1ch"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvdwSFN0sjlQUlCN8BqimdBDSbRU4CsydG9pCVtq/E7OewO41RuNbvW9xTpaT/N5ovC2NQoEskhDlqH5peq04mGymP7yvcDEB/awwH736Z+G6x/Gvuw8O2l3NLeDhm8D85KkzOMQl+0z3dd3iWWKFN"
         ],
         "x-ms-correlation-request-id": [
-          "e11758c0-f369-4136-9b2a-daded4ec20b3"
+          "4583b425-a108-4842-8e11-1803f7e4ba2c"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14853"
+          "14682"
         ],
         "x-ms-request-id": [
-          "e11758c0-f369-4136-9b2a-daded4ec20b3"
+          "4583b425-a108-4842-8e11-1803f7e4ba2c"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20171031T235512Z:e11758c0-f369-4136-9b2a-daded4ec20b3"
+          "LOCAL:20180206T235402Z:4583b425-a108-4842-8e11-1803f7e4ba2c"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -65,13 +65,13 @@
       "StatusCode": 200
     },
     {
-      "RequestUri": "/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default%20Quota?api-version=2015-12-01-preview",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMGRiYWI3NmUtMDM3ZC00NzYyLWFhNGMtMzQxMDUzNTMyNGY2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvcXVvdGFzL0RlZmF1bHQlMjBRdW90YT9hcGktdmVyc2lvbj0yMDE1LTEyLTAxLXByZXZpZXc=",
+      "RequestUri": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default%20Quota?api-version=2015-12-01-preview",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvODE1ODQ5OGQtMjdiMS00Y2NmLTlhYTEtZGUwZjkyNTczMWU2L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29tcHV0ZS5BZG1pbi9sb2NhdGlvbnMvbG9jYWwvcXVvdGFzL0RlZmF1bHQlMjBRdW90YT9hcGktdmVyc2lvbj0yMDE1LTEyLTAxLXByZXZpZXc=",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "68733c86-d468-4b4f-ab0d-0736b890fedf"
+          "e74b2d22-461b-453e-b78b-a9f0b97a7f18"
         ],
         "accept-language": [
           "en-US"
@@ -81,7 +81,7 @@
           "Microsoft.AzureStack.Management.Compute.Admin.ComputeAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/0dbab76e-037d-4762-aa4c-3410535324f6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n  \"name\": \"Default Quota\",\r\n  \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n  \"location\": \"local\",\r\n  \"properties\": {\r\n    \"virtualMachineCount\": 20,\r\n    \"coresLimit\": 50,\r\n    \"availabilitySetCount\": 10,\r\n    \"vmScaleSetCount\": 20\r\n  }\r\n}",
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Compute.Admin/locations/local/quotas/Default Quota\",\r\n  \"name\": \"Default Quota\",\r\n  \"type\": \"Microsoft.Compute.Admin/quotas\",\r\n  \"location\": \"local\",\r\n  \"properties\": {\r\n    \"virtualMachineCount\": 20,\r\n    \"coresLimit\": 50,\r\n    \"availabilitySetCount\": 10,\r\n    \"vmScaleSetCount\": 20\r\n  }\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
           "316"
@@ -96,7 +96,7 @@
           "no-cache"
         ],
         "Date": [
-          "Tue, 31 Oct 2017 23:55:12 GMT"
+          "Tue, 06 Feb 2018 23:54:02 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +105,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv/x6U39brNfRUWRO9eVuisXayB9O9iMPVcHf+/3Ag2+iiMkQLj36SIKfYiSyNnNizDY7dDCNGq/W4YbiDvRAuqwf8sGHkrgQMWWHKUABZjxR1OFUjL1b6VycgF44XlNCqV/o4ma+CwNs4ZZvAZ3wf"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvzjkJcfqvUqQfKTYAZC39Z9y5eOK1lL8TdunGX5ryTrBTph2uavYA6Y8ocn4H+8LNCpzAPgQUh4vRNGzu6qJky8cX3TXbgIucAnNABFW0DGPPh5z19VaOJNXZG1mNCT8C5H/PB4sSoEGC7MKnl1me"
         ],
         "x-ms-correlation-request-id": [
-          "9acd010e-628e-42e3-98be-338c533c286a"
+          "d05a62b8-aa14-4f6f-b9de-522aa97c43f3"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14852"
+          "14681"
         ],
         "x-ms-request-id": [
-          "9acd010e-628e-42e3-98be-338c533c286a"
+          "d05a62b8-aa14-4f6f-b9de-522aa97c43f3"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20171031T235512Z:9acd010e-628e-42e3-98be-338c533c286a"
+          "LOCAL:20180206T235403Z:d05a62b8-aa14-4f6f-b9de-522aa97c43f3"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -131,6 +131,6 @@
   ],
   "Names": {},
   "Variables": {
-    "SubscriptionId": "0dbab76e-037d-4762-aa4c-3410535324f6"
+    "SubscriptionId": "8158498d-27b1-4ccf-9aa1-de0f925731e6"
   }
 }
