@@ -89,15 +89,30 @@ namespace Backup.Tests
         [Fact]
         public void TestUpdateBackupLocation() {
             RunTest((client) => {
-                var backupLocation = new BackupLocation("", "local", "Microsoft.Backup.Admin/backupLocation", "local");
+                var backupLocation = new BackupLocation("", "local", "Microsoft.Backup.Admin/backupLocation", "local")
+                {
+                    Path = @"\\100.68.71.192\Share",
+                    UserName = @"AzureStack\AzureStackAdmin",
+                    Password = "!!123abc",
+                    EncryptionKeyBase64 = "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ=="
+                };
 
-                backupLocation.Path = @"\\100.68.71.192\Share";
-                backupLocation.UserName = @"AzureStack\AzureStackAdmin";
-                backupLocation.Password = "!!123abc";
-                backupLocation.EncryptionKeyBase64 = "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ==";
+                var result  = client.BackupLocations.Update(ResourceGroupName, "local" ,backupLocation);
+                Assert.NotNull(result);
 
-                client.BackupLocations.Update(ResourceGroupName, "local" ,backupLocation);
-            });
+                result.Path = null;
+                result.UserName = null;
+                result.Password = null;
+                result.EncryptionKeyBase64 = null;
+
+                result = client.BackupLocations.Update(ResourceGroupName, "local", result);
+
+                Assert.Null(result.Path);
+                Assert.Null(result.UserName);
+                Assert.Empty(result.Password);
+                Assert.Empty(result.EncryptionKeyBase64);
+
+            },null, null, System.Net.HttpStatusCode.OK, false);
         }
 
         [Fact]

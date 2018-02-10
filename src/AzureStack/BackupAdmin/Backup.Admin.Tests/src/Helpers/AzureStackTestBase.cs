@@ -3,7 +3,9 @@
 // license information.
 
 using System;
+using System.Collections.Generic;
 using System.Net;
+using System.Reflection;
 
 using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
 
@@ -45,6 +47,7 @@ namespace Backup.Tests
             Action before = null,
             Action after = null,
             HttpStatusCode status = HttpStatusCode.OK,
+            bool undo = true,
             [System.Runtime.CompilerServices.CallerMemberName]
             string methodName= "testframework_failed") {
 
@@ -59,10 +62,17 @@ namespace Backup.Tests
                 {
                     var client = context.GetServiceClient<T>(handlers: handler);
                     ValidateClient(client);
-
+                    
+                    if (!undo)
+                    {
+                        context.GetType().GetField("undoHandlers", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.IgnoreCase).SetValue(
+                            context,
+                            new List<ResourceGroupCleaner>());
+                    }
                     before?.Invoke();
                     test(client);
                     after?.Invoke();
+
                 }
             }
             catch (Exception ex)
