@@ -277,10 +277,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<IpPool>> CreateWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ProvisioningState>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
-            AzureOperationResponse<IpPool> _response = await BeginCreateWithHttpMessagesAsync(resourceGroupName, location, ipPool, pool, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<ProvisioningState> _response = await BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, location, ipPool, pool, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPutOrPatchOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -528,7 +528,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IpPool>> BeginCreateWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ProvisioningState>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string location, string ipPool, IpPool pool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -566,7 +566,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
                 tracingParameters.Add("ipPool", ipPool);
                 tracingParameters.Add("pool", pool);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "BeginCreate", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginCreateOrUpdate", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
@@ -679,7 +679,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<IpPool>();
+            var _result = new AzureOperationResponse<ProvisioningState>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -692,7 +692,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<IpPool>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<ProvisioningState>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

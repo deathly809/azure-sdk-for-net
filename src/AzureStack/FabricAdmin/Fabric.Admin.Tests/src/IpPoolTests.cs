@@ -13,6 +13,8 @@ namespace Fabric.Tests
     public class IpPoolTests : FabricTestBase
     {
 
+        private const string SUCCESS_MSG = "Succeeded";
+
         private void AssertIpPoolsAreSame(IpPool expected, IpPool found) {
             if (expected == null)
             {
@@ -102,18 +104,13 @@ namespace Fabric.Tests
                 var fabricLocationName = GetLocation(client);
 
                 var first = "199";
-                var second = "198";
+                var second = "196";
                 var ipPoolName = "TestIpPool" + first + second;
                 var ipPool = CreateNewIpPool(ipPoolName, first, second);
 
-                var test = client.IpPools.Create(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
-                Assert.NotNull(test);
-                Assert.NotNull(test.StartIpAddress);
-                Assert.NotNull(test.EndIpAddress);
-                Assert.NotNull(test.EndIpAddress);
-
-                Assert.Equal(ipPool.StartIpAddress, test.StartIpAddress);
-                Assert.Equal(ipPool.EndIpAddress, test.EndIpAddress);
+                var status = client.IpPools.CreateOrUpdate(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
+                Assert.NotNull(status);
+                Assert.Equal(SUCCESS_MSG, status.ProvisioningStateProperty); 
 
             });
         }
@@ -124,18 +121,13 @@ namespace Fabric.Tests
                 var fabricLocationName = GetLocation(client);
 
                 var first = "199";
-                var second = "2";
+                var second = "4";
                 var ipPoolName = "TestIpPool" + first + "" + second;
                 var ipPool = CreateNewIpPool(ipPoolName, first, second);
 
-                var test = client.IpPools.Create(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
-                Assert.NotNull(test);
-                Assert.NotNull(test.StartIpAddress);
-                Assert.NotNull(test.EndIpAddress);
-                Assert.NotNull(test.EndIpAddress);
-
-                Assert.Equal(ipPool.StartIpAddress, test.StartIpAddress);
-                Assert.Equal(ipPool.EndIpAddress, test.EndIpAddress);
+                var status = client.IpPools.CreateOrUpdate(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
+                Assert.NotNull(status);
+                Assert.Equal(SUCCESS_MSG, status.ProvisioningStateProperty);
 
             });
         }

@@ -125,14 +125,15 @@ namespace Fabric.Tests
         // Try on Tenant VMs
 
         // This needs to be setup before the run. 
-        private string TenantVMName = "502828aa-de3a-4ba9-a66c-5ae6d49589d7";
+        private string TenantVMName = "f858418d-d6b9-4dc3-ae65-c92fb8a0be8f";
 
 
         [Fact]
         public void TestGetScaleUnitNodeOnTenantVM() {
             RunTest((client) => {
                 var fabricLocationName = GetLocation(client);
-                Assert.Throws<CloudException>(() => client.ScaleUnitNodes.Get(ResourceGroupName, fabricLocationName, TenantVMName));
+                var result = client.ScaleUnitNodes.Get(ResourceGroupName, fabricLocationName, TenantVMName);
+                Assert.Null(result);
             });
         }
 

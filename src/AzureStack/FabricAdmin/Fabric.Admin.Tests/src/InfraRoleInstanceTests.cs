@@ -123,10 +123,9 @@ namespace Fabric.Tests
         [Fact]
         public void TestGetInfraRoleInstanceOnTenantVM() {
             RunTest((client) => {
-                Assert.Throws<CloudException>(() => {
-                    var fabricLocationName = GetLocation(client);
-                    client.InfraRoleInstances.Get(ResourceGroupName, fabricLocationName, TenantVMName);
-                });
+                var fabricLocationName = GetLocation(client);
+                var result = client.InfraRoleInstances.Get(ResourceGroupName, fabricLocationName, TenantVMName);
+                Assert.Null(result);
             });
         }
 
