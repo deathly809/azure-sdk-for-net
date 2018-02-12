@@ -10,6 +10,7 @@
 
 namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
 {
+    using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
@@ -35,9 +36,11 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Region Location of resource.</param>
         /// <param name="tags">List of key value pairs.</param>
-        public FabricLocation(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
+        /// <param name="properties">Empty object.</param>
+        public FabricLocation(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), object properties = default(object))
             : base(id, name, type, location, tags)
         {
+            Properties = properties;
             CustomInit();
         }
 
@@ -45,6 +48,12 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// An initialization method that performs custom operations like setting defaults
         /// </summary>
         partial void CustomInit();
+
+        /// <summary>
+        /// Gets or sets empty object.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties")]
+        public object Properties { get; set; }
 
     }
 }

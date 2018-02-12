@@ -75,8 +75,8 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<FabricLocation>>> ListWithHttpMessagesAsync(string resourceGroupName, ODataQuery<FabricLocation> odataQuery = default(ODataQuery<FabricLocation>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Creates or updates a fabric location.  This will fail if not called
-        /// during deployment.
+        /// Creates or updates a fabric location.  This will fail if called
+        /// outside deployment.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.

@@ -52,7 +52,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="model">Model of the servers in the cluster.</param>
         /// <param name="totalCapacity">Capacity information for the
         /// cluster.</param>
-        public ScaleUnit(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string scaleUnitType = default(string), int? logicalFaultDomain = default(int?), IList<string> nodes = default(IList<string>), string state = default(string), string model = default(string), ScaleUnitCapacity totalCapacity = default(ScaleUnitCapacity))
+        /// <param name="isMultiNode">Denotes if more than one node in
+        /// cluster.</param>
+        public ScaleUnit(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string scaleUnitType = default(string), int? logicalFaultDomain = default(int?), IList<string> nodes = default(IList<string>), string state = default(string), string model = default(string), ScaleUnitCapacity totalCapacity = default(ScaleUnitCapacity), bool? isMultiNode = default(bool?))
             : base(id, name, type, location, tags)
         {
             ScaleUnitType = scaleUnitType;
@@ -61,6 +63,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
             State = state;
             Model = model;
             TotalCapacity = totalCapacity;
+            IsMultiNode = isMultiNode;
             CustomInit();
         }
 
@@ -106,6 +109,12 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.totalCapacity")]
         public ScaleUnitCapacity TotalCapacity { get; set; }
+
+        /// <summary>
+        /// Gets or sets denotes if more than one node in cluster.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.isMultiNode")]
+        public bool? IsMultiNode { get; set; }
 
     }
 }

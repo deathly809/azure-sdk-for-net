@@ -3,18 +3,22 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.Fabric.Admin;
-using Microsoft.AzureStack.Management.Fabric.Admin.Models;
-using Xunit;
+namespace Fabric.Tests
+{
+    using Microsoft.AzureStack.Management.Fabric.Admin;
+    using Microsoft.AzureStack.Management.Fabric.Admin.Models;
+    using Xunit;
 
-namespace Fabric.Tests {
-    
-    public class FabricLocationTests : FabricTestBase {
+    public class FabricLocationTests : FabricTestBase
+    {
 
         private void AssertFabricLocationEqual(FabricLocation expected, FabricLocation found) {
-            if (expected == null) {
+            if (expected == null)
+            {
                 Assert.Null(found);
-            } else {
+            }
+            else
+            {
                 Assert.True(FabricCommon.ResourceAreSame(expected, found));
 
                 Assert.Equal(expected.Id, found.Id);
@@ -41,7 +45,8 @@ namespace Fabric.Tests {
         public void TestGetFabricLocation() {
             RunTest((client) => {
                 var location = client.FabricLocations.List(ResourceGroupName).GetFirst();
-                if (location != null) {
+                if (location != null)
+                {
                     var fabricLocationName = ExtractName(location.Name);
                     var retrieved = client.FabricLocations.Get(ResourceGroupName, fabricLocationName);
                     AssertFabricLocationEqual(location, retrieved);

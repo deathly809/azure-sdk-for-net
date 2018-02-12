@@ -3,13 +3,12 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.Fabric.Admin;
-using Microsoft.AzureStack.Management.Fabric.Admin.Models;
-using Microsoft.Rest.Azure;
-using Xunit;
-
 namespace Fabric.Tests
 {
+    using Microsoft.AzureStack.Management.Fabric.Admin;
+    using Microsoft.AzureStack.Management.Fabric.Admin.Models;
+    using Microsoft.Rest.Azure;
+    using Xunit;
 
     /// <summary>
     /// Summary description for FabricTest

@@ -146,16 +146,6 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public virtual IMacAddressPoolsOperations MacAddressPools { get; private set; }
 
         /// <summary>
-        /// Gets the IComputeFabricOperations.
-        /// </summary>
-        public virtual IComputeFabricOperations ComputeFabricOperations { get; private set; }
-
-        /// <summary>
-        /// Gets the INetworkFabricOperations.
-        /// </summary>
-        public virtual INetworkFabricOperations NetworkFabricOperations { get; private set; }
-
-        /// <summary>
         /// Gets the IScaleUnitsOperations.
         /// </summary>
         public virtual IScaleUnitsOperations ScaleUnits { get; private set; }
@@ -385,8 +375,6 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             Volumes = new VolumesOperations(this);
             LogicalSubnets = new LogicalSubnetsOperations(this);
             MacAddressPools = new MacAddressPoolsOperations(this);
-            ComputeFabricOperations = new ComputeFabricOperations(this);
-            NetworkFabricOperations = new NetworkFabricOperations(this);
             ScaleUnits = new ScaleUnitsOperations(this);
             ScaleUnitNodes = new ScaleUnitNodesOperations(this);
             SlbMuxInstances = new SlbMuxInstancesOperations(this);

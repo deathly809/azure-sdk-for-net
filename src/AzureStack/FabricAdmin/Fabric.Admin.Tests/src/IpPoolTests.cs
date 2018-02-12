@@ -3,12 +3,11 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.Fabric.Admin;
-using Microsoft.AzureStack.Management.Fabric.Admin.Models;
-using Xunit;
-
 namespace Fabric.Tests
 {
+    using Microsoft.AzureStack.Management.Fabric.Admin;
+    using Microsoft.AzureStack.Management.Fabric.Admin.Models;
+    using Xunit;
 
     public class IpPoolTests : FabricTestBase
     {
@@ -110,7 +109,7 @@ namespace Fabric.Tests
 
                 var status = client.IpPools.CreateOrUpdate(ResourceGroupName, fabricLocationName, ipPoolName, ipPool);
                 Assert.NotNull(status);
-                Assert.Equal(SUCCESS_MSG, status.ProvisioningStateProperty); 
+                Assert.Equal(SUCCESS_MSG, status.ProvisioningStateProperty);
 
             });
         }

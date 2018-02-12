@@ -3,14 +3,13 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.Fabric.Admin;
-using Microsoft.AzureStack.Management.Fabric.Admin.Models;
-using System;
-using Xunit;
-
 namespace Fabric.Tests
 {
-
+    using Microsoft.AzureStack.Management.Fabric.Admin;
+    using Microsoft.AzureStack.Management.Fabric.Admin.Models;
+    using System;
+    using Xunit;
+    
     public class FabricTestBase : AzureStackTestBase<FabricAdminClient>
     {
 
@@ -82,7 +81,6 @@ namespace Fabric.Tests
             Assert.NotNull(client);
 
             // validate objects
-            Assert.NotNull(client.ComputeFabricOperations);
             Assert.NotNull(client.EdgeGateways);
             Assert.NotNull(client.EdgeGatewayPools);
             Assert.NotNull(client.FabricLocations);
@@ -93,7 +91,6 @@ namespace Fabric.Tests
             Assert.NotNull(client.LogicalNetworks);
             Assert.NotNull(client.LogicalSubnets);
             Assert.NotNull(client.MacAddressPools);
-            Assert.NotNull(client.NetworkFabricOperations);
             Assert.NotNull(client.ScaleUnits);
             Assert.NotNull(client.ScaleUnitNodes);
             Assert.NotNull(client.SlbMuxInstances);

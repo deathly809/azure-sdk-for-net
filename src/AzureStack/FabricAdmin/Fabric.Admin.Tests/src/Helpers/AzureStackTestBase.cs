@@ -2,13 +2,12 @@
 // Licensed under the MIT License. See License.txt in the project root for
 // license information.
 
-
-using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
-using System;
-using System.Net;
-
 namespace Fabric.Tests
 {
+    using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
+    using System;
+    using System.Net;
+
     /// <summary>
     /// Base class for all AzureStack tests.  This class should not be modified but extended through a child class.
     /// </summary>
@@ -31,9 +30,9 @@ namespace Fabric.Tests
         /// The default resource group for all admin actions.  Override in derived class as needed.
         /// </summary>
         protected string ResourceGroupName = "System.local";
-        
+
         protected string ExtractName(string name) {
-            if(name.Contains("/"))
+            if (name.Contains("/"))
             {
                 var idx = name.LastIndexOf('/');
                 name = name.Substring(idx + 1);

@@ -141,16 +141,6 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         IMacAddressPoolsOperations MacAddressPools { get; }
 
         /// <summary>
-        /// Gets the IComputeFabricOperations.
-        /// </summary>
-        IComputeFabricOperations ComputeFabricOperations { get; }
-
-        /// <summary>
-        /// Gets the INetworkFabricOperations.
-        /// </summary>
-        INetworkFabricOperations NetworkFabricOperations { get; }
-
-        /// <summary>
         /// Gets the IScaleUnitsOperations.
         /// </summary>
         IScaleUnitsOperations ScaleUnits { get; }

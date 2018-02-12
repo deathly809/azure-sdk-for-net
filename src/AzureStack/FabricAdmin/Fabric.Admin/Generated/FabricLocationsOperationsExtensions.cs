@@ -103,7 +103,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Creates or updates a fabric location.  This will fail if not called during
+            /// Creates or updates a fabric location.  This will fail if called outside
             /// deployment.
             /// </summary>
             /// <param name='operations'>
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Creates or updates a fabric location.  This will fail if not called during
+            /// Creates or updates a fabric location.  This will fail if called outside
             /// deployment.
             /// </summary>
             /// <param name='operations'>
