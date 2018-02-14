@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Metric availability.
     /// </summary>
     public partial class MetricAvailability
     {
@@ -29,8 +29,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MetricAvailability class.
         /// </summary>
-        /// <param name="timeGrain">TODO</param>
-        /// <param name="retention">TODO</param>
+        /// <param name="timeGrain">Time grain.</param>
+        /// <param name="retention">Retention of metric.</param>
         public MetricAvailability(string timeGrain = default(string), string retention = default(string))
         {
             TimeGrain = timeGrain;
@@ -44,13 +44,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets time grain.
         /// </summary>
         [JsonProperty(PropertyName = "timeGrain")]
         public string TimeGrain { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets retention of metric.
         /// </summary>
         [JsonProperty(PropertyName = "retention")]
         public string Retention { get; set; }

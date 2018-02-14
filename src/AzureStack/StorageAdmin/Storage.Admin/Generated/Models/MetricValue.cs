@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Metric value.
     /// </summary>
     public partial class MetricValue
     {
@@ -29,13 +29,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MetricValue class.
         /// </summary>
-        /// <param name="timeStamp">TODO</param>
-        /// <param name="average">TODO</param>
-        /// <param name="minimum">TODO</param>
-        /// <param name="maximum">TODO</param>
-        /// <param name="total">TODO</param>
-        /// <param name="count">TODO</param>
-        /// <param name="properties">TODO</param>
+        /// <param name="timeStamp">Timestamp of metric value.</param>
+        /// <param name="average">Average value of metric.</param>
+        /// <param name="minimum">Minimum value of metric.</param>
+        /// <param name="maximum">Maximum value of metric.</param>
+        /// <param name="total">Total value of metric.</param>
+        /// <param name="count">Count of metric values.</param>
+        /// <param name="properties">Metric value properties.</param>
         public MetricValue(System.DateTime? timeStamp = default(System.DateTime?), double? average = default(double?), double? minimum = default(double?), double? maximum = default(double?), double? total = default(double?), int? count = default(int?), string properties = default(string))
         {
             TimeStamp = timeStamp;
@@ -54,43 +54,43 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets timestamp of metric value.
         /// </summary>
         [JsonProperty(PropertyName = "timeStamp")]
         public System.DateTime? TimeStamp { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets average value of metric.
         /// </summary>
         [JsonProperty(PropertyName = "average")]
         public double? Average { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets minimum value of metric.
         /// </summary>
         [JsonProperty(PropertyName = "minimum")]
         public double? Minimum { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets maximum value of metric.
         /// </summary>
         [JsonProperty(PropertyName = "maximum")]
         public double? Maximum { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets total value of metric.
         /// </summary>
         [JsonProperty(PropertyName = "total")]
         public double? Total { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets count of metric values.
         /// </summary>
         [JsonProperty(PropertyName = "count")]
         public int? Count { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets metric value properties.
         /// </summary>
         [JsonProperty(PropertyName = "properties")]
         public string Properties { get; set; }

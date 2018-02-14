@@ -31,6 +31,16 @@ namespace Storage.Tests
         /// </summary>
         protected string Location = "local";
 
+        public string ExtractName(string name) {
+            if(name.Contains("/"))
+            {
+                var idx = name.LastIndexOf('/');
+                name = name.Substring(idx + 1);
+            }
+            return name;
+        }
+
+
         /// <summary>
         /// Run a test that accepts no arguments.  An exception can be 
         /// </summary>

@@ -54,13 +54,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Create or update an existing storage quota.
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='quotaName'>
-        /// The name of the quota.
+        /// The name of the storage quota.
         /// </param>
         /// <param name='parameters'>
-        /// Parameters used to create or update storage quota
+        /// The properties of quota being created or updated.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -193,7 +193,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -264,10 +264,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Delete an existing quota
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='quotaName'>
-        /// The name of the quota.
+        /// The name of the storage quota.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -436,13 +436,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Returns a storage quota.
+        /// Returns the specified storage quota.
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='quotaName'>
-        /// The name of the quota.
+        /// The name of the storage quota.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -632,10 +632,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Returns a list of all storage quotas at the given location.
+        /// Returns a list of storage quotas at the given location.
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -751,7 +751,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -819,7 +819,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Returns a list of all storage quotas at the given location.
+        /// Returns a list of storage quotas at the given location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -924,7 +924,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try

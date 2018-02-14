@@ -28,13 +28,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='quotaName'>
-            /// The name of the quota.
+            /// The name of the storage quota.
             /// </param>
             /// <param name='parameters'>
-            /// Parameters used to create or update storage quota
+            /// The properties of quota being created or updated.
             /// </param>
             public static StorageQuota CreateOrUpdate(this IStorageQuotasOperations operations, string location, string quotaName, StorageCreationProperties parameters)
             {
@@ -48,13 +48,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='quotaName'>
-            /// The name of the quota.
+            /// The name of the storage quota.
             /// </param>
             /// <param name='parameters'>
-            /// Parameters used to create or update storage quota
+            /// The properties of quota being created or updated.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -74,10 +74,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='quotaName'>
-            /// The name of the quota.
+            /// The name of the storage quota.
             /// </param>
             public static void Delete(this IStorageQuotasOperations operations, string location, string quotaName)
             {
@@ -91,10 +91,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='quotaName'>
-            /// The name of the quota.
+            /// The name of the storage quota.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -105,16 +105,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a storage quota.
+            /// Returns the specified storage quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='quotaName'>
-            /// The name of the quota.
+            /// The name of the storage quota.
             /// </param>
             public static StorageQuota Get(this IStorageQuotasOperations operations, string location, string quotaName)
             {
@@ -122,16 +122,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a storage quota.
+            /// Returns the specified storage quota.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='quotaName'>
-            /// The name of the quota.
+            /// The name of the storage quota.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -145,13 +145,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of all storage quotas at the given location.
+            /// Returns a list of storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             public static IPage<StorageQuota> List(this IStorageQuotasOperations operations, string location)
             {
@@ -159,13 +159,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of all storage quotas at the given location.
+            /// Returns a list of storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='location'>
-            /// Location of storage accounts.
+            /// Resource location.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -179,7 +179,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of all storage quotas at the given location.
+            /// Returns a list of storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -193,7 +193,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of all storage quotas at the given location.
+            /// Returns a list of storage quotas at the given location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

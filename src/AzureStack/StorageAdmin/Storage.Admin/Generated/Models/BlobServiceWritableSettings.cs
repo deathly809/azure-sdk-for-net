@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Settings of blob service.
     /// </summary>
     public partial class BlobServiceWritableSettings : WritableServiceSettings
     {
@@ -31,35 +31,55 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the BlobServiceWritableSettings
         /// class.
         /// </summary>
-        /// <param name="frontEndCallbackThreadsCount">TODO</param>
+        /// <param name="frontEndCallbackThreadsCount">Front end callback
+        /// threads count.</param>
+        /// <param name="frontEndCpuBasedKeepAliveThrottlingEnabled">Switch of
+        /// front end CPU based keep-alive throttling.</param>
         /// <param
-        /// name="frontEndCpuBasedKeepAliveThrottlingEnabled">TODO</param>
+        /// name="frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold">Threshold
+        /// (% percentage) of front end CPU based keep-alive
+        /// throttling.</param>
         /// <param
-        /// name="frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold">TODO</param>
+        /// name="frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle">Threshold
+        /// (% percentage) of requests to throttle in front end CPU based
+        /// keep-alive throttling.</param>
         /// <param
-        /// name="frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle">TODO</param>
+        /// name="frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds">Interval
+        /// (in second) of CPU monitor for front end CPU based keep-alive
+        /// throttling.</param>
+        /// <param name="frontEndMemoryThrottlingEnabled">Switch of front end
+        /// memory throttling.</param>
+        /// <param name="frontEndMaxMillisecondsBetweenMemorySamples">Maxium
+        /// interval (in millisecond) between memory samples of front
+        /// end.</param>
+        /// <param name="frontEndMemoryThrottleThresholdSettings">Front end
+        /// memory throttle threshold settings.</param>
+        /// <param name="frontEndMinThreadPoolThreads">Front end minimum number
+        /// of threads in thread pool.</param>
         /// <param
-        /// name="frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds">TODO</param>
-        /// <param name="frontEndMemoryThrottlingEnabled">TODO</param>
+        /// name="frontEndThreadPoolBasedKeepAliveIOCompletionThreshold">Threshold
+        /// of front end thread pool based keep-alive IO completion.</param>
         /// <param
-        /// name="frontEndMaxMillisecondsBetweenMemorySamples">TODO</param>
-        /// <param name="frontEndMemoryThrottleThresholdSettings">TODO</param>
-        /// <param name="frontEndMinThreadPoolThreads">TODO</param>
+        /// name="frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold">Threshold
+        /// of front end thread pool based keep-alive worker thread.</param>
         /// <param
-        /// name="frontEndThreadPoolBasedKeepAliveIOCompletionThreshold">TODO</param>
-        /// <param
-        /// name="frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold">TODO</param>
-        /// <param
-        /// name="frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds">TODO</param>
-        /// <param
-        /// name="frontEndThreadPoolBasedKeepAlivePercentage">TODO</param>
-        /// <param name="frontEndUseSlaTimeInAvailability">TODO</param>
-        /// <param name="frontEndHttpsListenPort">TODO</param>
-        /// <param name="frontEndHttpListenPort">TODO</param>
-        /// <param name="blobSvcContainerGcInterval">TODO</param>
-        /// <param name="blobSvcShallowGcInterval">TODO</param>
-        /// <param
-        /// name="blobSvcStreamMapMinContainerOccupancyPercent">TODO</param>
+        /// name="frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds">Monitor
+        /// interval (in seconds) of front end thread pool based keep-alive
+        /// monitor.</param>
+        /// <param name="frontEndThreadPoolBasedKeepAlivePercentage">Percentage
+        /// (%) of front end thread pool based keep-alive.</param>
+        /// <param name="frontEndUseSlaTimeInAvailability">Switch of whether
+        /// front end uses SLA time in availability.</param>
+        /// <param name="frontEndHttpsListenPort">The HTTPs port of the storage
+        /// service front end.</param>
+        /// <param name="frontEndHttpListenPort">The HTTP port of the storage
+        /// service front end.</param>
+        /// <param name="blobSvcContainerGcInterval">The interval (in seconds)
+        /// of container garbage collection.</param>
+        /// <param name="blobSvcShallowGcInterval">The interval (in seconds) of
+        /// shallow garbage collection.</param>
+        /// <param name="blobSvcStreamMapMinContainerOccupancyPercent">The
+        /// minimal container occupancy percent for stream mapping.</param>
         public BlobServiceWritableSettings(int? frontEndCallbackThreadsCount = default(int?), bool? frontEndCpuBasedKeepAliveThrottlingEnabled = default(bool?), double? frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold = default(double?), double? frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle = default(double?), int? frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds = default(int?), bool? frontEndMemoryThrottlingEnabled = default(bool?), int? frontEndMaxMillisecondsBetweenMemorySamples = default(int?), string frontEndMemoryThrottleThresholdSettings = default(string), int? frontEndMinThreadPoolThreads = default(int?), int? frontEndThreadPoolBasedKeepAliveIOCompletionThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold = default(int?), int? frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds = default(int?), double? frontEndThreadPoolBasedKeepAlivePercentage = default(double?), bool? frontEndUseSlaTimeInAvailability = default(bool?), int? frontEndHttpsListenPort = default(int?), int? frontEndHttpListenPort = default(int?), int? blobSvcContainerGcInterval = default(int?), int? blobSvcShallowGcInterval = default(int?), int? blobSvcStreamMapMinContainerOccupancyPercent = default(int?))
             : base(frontEndCallbackThreadsCount, frontEndCpuBasedKeepAliveThrottlingEnabled, frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold, frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle, frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds, frontEndMemoryThrottlingEnabled, frontEndMaxMillisecondsBetweenMemorySamples, frontEndMemoryThrottleThresholdSettings, frontEndMinThreadPoolThreads, frontEndThreadPoolBasedKeepAliveIOCompletionThreshold, frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold, frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds, frontEndThreadPoolBasedKeepAlivePercentage, frontEndUseSlaTimeInAvailability, frontEndHttpsListenPort, frontEndHttpListenPort)
         {
@@ -75,19 +95,22 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the interval (in seconds) of container garbage
+        /// collection.
         /// </summary>
         [JsonProperty(PropertyName = "blobSvcContainerGcInterval")]
         public int? BlobSvcContainerGcInterval { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the interval (in seconds) of shallow garbage
+        /// collection.
         /// </summary>
         [JsonProperty(PropertyName = "blobSvcShallowGcInterval")]
         public int? BlobSvcShallowGcInterval { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the minimal container occupancy percent for stream
+        /// mapping.
         /// </summary>
         [JsonProperty(PropertyName = "blobSvcStreamMapMinContainerOccupancyPercent")]
         public int? BlobSvcStreamMapMinContainerOccupancyPercent { get; set; }

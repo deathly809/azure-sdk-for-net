@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Storage share.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class Share : Resource
@@ -34,11 +34,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Share class.
         /// </summary>
-        /// <param name="id">URI of the resource.</param>
-        /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="id">Resource ID.</param>
+        /// <param name="name">Resource Name.</param>
+        /// <param name="type">Resource type.</param>
+        /// <param name="location">Resource location.</param>
+        /// <param name="tags">Resource tags.</param>
         /// <param name="shareName">The name of the storage share.</param>
         /// <param name="uncPath">The UNC path to the storage share.</param>
         /// <param name="totalCapacity">The total capacity of the storage share
@@ -47,8 +47,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// in bytes.</param>
         /// <param name="freeCapacity">The free space of the storage share in
         /// bytes.</param>
-        /// <param name="healthStatus">TODO. Possible values include:
-        /// 'Unknown', 'Healthy', 'Warning', 'Critical'</param>
+        /// <param name="healthStatus">The health status of the storage share.
+        /// Possible values include: 'Unknown', 'Healthy', 'Warning',
+        /// 'Critical'</param>
         public Share(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string shareName = default(string), string uncPath = default(string), long? totalCapacity = default(long?), long? usedCapacity = default(long?), long? freeCapacity = default(long?), string healthStatus = default(string))
             : base(id, name, type, location, tags)
         {
@@ -97,8 +98,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public long? FreeCapacity { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO. Possible values include: 'Unknown', 'Healthy',
-        /// 'Warning', 'Critical'
+        /// Gets or sets the health status of the storage share. Possible
+        /// values include: 'Unknown', 'Healthy', 'Warning', 'Critical'
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthStatus")]
         public string HealthStatus { get; set; }

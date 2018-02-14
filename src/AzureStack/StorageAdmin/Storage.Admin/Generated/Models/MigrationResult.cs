@@ -30,15 +30,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MigrationResult class.
         /// </summary>
-        /// <param name="jobId">TODO</param>
-        /// <param name="sourceShareName">TODO</param>
-        /// <param name="storageAccountName">TODO</param>
-        /// <param name="containerName">TODO</param>
-        /// <param name="destinationShareName">TODO</param>
-        /// <param name="migrationStatus">TODO</param>
-        /// <param name="subEntitiesCompleted">TODO</param>
-        /// <param name="subEntitiesFailed">TODO</param>
-        /// <param name="failureReason">TODO</param>
+        /// <param name="jobId">The migration job ID.</param>
+        /// <param name="sourceShareName">The name of source storage
+        /// share.</param>
+        /// <param name="storageAccountName">The storage account name.</param>
+        /// <param name="containerName">The name of container to be
+        /// migrated.</param>
+        /// <param name="destinationShareName">The name of destination storage
+        /// share.</param>
+        /// <param name="migrationStatus">The migration status.</param>
+        /// <param name="subEntitiesCompleted">The number of entities which
+        /// have been migrated.</param>
+        /// <param name="subEntitiesFailed">The number of entities which failed
+        /// in migration.</param>
+        /// <param name="failureReason">The migration failure reason.</param>
         public MigrationResult(string jobId, string sourceShareName, string storageAccountName, string containerName, string destinationShareName = default(string), string migrationStatus = default(string), long? subEntitiesCompleted = default(long?), long? subEntitiesFailed = default(long?), string failureReason = default(string))
         {
             JobId = jobId;
@@ -59,55 +64,55 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the migration job ID.
         /// </summary>
         [JsonProperty(PropertyName = "jobId")]
         public string JobId { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the name of source storage share.
         /// </summary>
         [JsonProperty(PropertyName = "sourceShareName")]
         public string SourceShareName { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the storage account name.
         /// </summary>
         [JsonProperty(PropertyName = "storageAccountName")]
         public string StorageAccountName { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the name of container to be migrated.
         /// </summary>
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the name of destination storage share.
         /// </summary>
         [JsonProperty(PropertyName = "destinationShareName")]
         public string DestinationShareName { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the migration status.
         /// </summary>
         [JsonProperty(PropertyName = "migrationStatus")]
         public string MigrationStatus { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the number of entities which have been migrated.
         /// </summary>
         [JsonProperty(PropertyName = "subEntitiesCompleted")]
         public long? SubEntitiesCompleted { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the number of entities which failed in migration.
         /// </summary>
         [JsonProperty(PropertyName = "subEntitiesFailed")]
         public long? SubEntitiesFailed { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets the migration failure reason.
         /// </summary>
         [JsonProperty(PropertyName = "failureReason")]
         public string FailureReason { get; set; }

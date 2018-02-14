@@ -24,13 +24,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public partial interface ITableServicesOperations
     {
         /// <summary>
-        /// Returns the default table servie.
+        /// Returns the table servie.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -49,13 +49,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<TableService>> GetWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of metric definitions for the default table service.
+        /// Returns a list of metric definitions for table service.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -74,13 +74,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of metrics for the default table service.
+        /// Returns a list of metrics for table service.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -99,7 +99,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<Metric>>> ListMetricsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of metric definitions for the default table service.
+        /// Returns a list of metric definitions for table service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of metrics for the default table service.
+        /// Returns a list of metrics for table service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

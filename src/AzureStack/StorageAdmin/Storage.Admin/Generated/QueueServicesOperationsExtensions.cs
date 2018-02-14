@@ -22,16 +22,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class QueueServicesOperationsExtensions
     {
             /// <summary>
-            /// Returns the default Queue service.
+            /// Returns the queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static QueueService Get(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
             {
@@ -39,16 +39,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the default Queue service.
+            /// Returns the queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -62,16 +62,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metric definitions for queue service.
+            /// Returns a list of metric definitions for queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IPage<MetricDefinition> ListMetricDefinitions(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
             {
@@ -79,16 +79,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metric definitions for queue service.
+            /// Returns a list of metric definitions for queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -102,16 +102,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metrics for the default queue service.
+            /// Returns a list of metrics for the queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IPage<Metric> ListMetrics(this IQueueServicesOperations operations, string resourceGroupName, string farmId)
             {
@@ -119,16 +119,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metrics for the default queue service.
+            /// Returns a list of metrics for the queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -142,7 +142,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metric definitions for queue service.
+            /// Returns a list of metric definitions for queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -156,7 +156,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metric definitions for queue service.
+            /// Returns a list of metric definitions for queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -176,7 +176,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metrics for the default queue service.
+            /// Returns a list of metrics for the queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -190,7 +190,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the list of metrics for the default queue service.
+            /// Returns a list of metrics for the queue service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

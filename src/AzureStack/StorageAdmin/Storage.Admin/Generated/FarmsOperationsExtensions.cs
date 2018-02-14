@@ -28,13 +28,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='settingAccessStringProperty'>
-            /// TODO
+            /// Setting access string.
             /// </param>
             public static Farm Create(this IFarmsOperations operations, string resourceGroupName, string farmId, string settingAccessStringProperty = default(string))
             {
@@ -48,13 +48,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='settingAccessStringProperty'>
-            /// TODO
+            /// Setting access string.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -68,16 +68,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a storage farm.
+            /// Returns the Storage properties and settings for a specified storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static Farm Get(this IFarmsOperations operations, string resourceGroupName, string farmId)
             {
@@ -85,16 +85,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Get a storage farm.
+            /// Returns the Storage properties and settings for a specified storage farm.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -114,13 +114,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='settingAccessStringProperty'>
-            /// TODO
+            /// Setting access string.
             /// </param>
             public static Farm Update(this IFarmsOperations operations, string resourceGroupName, string farmId, string settingAccessStringProperty = default(string))
             {
@@ -134,13 +134,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='settingAccessStringProperty'>
-            /// TODO
+            /// Setting access string.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -160,10 +160,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IPage<MetricDefinition> ListMetricDefinitions(this IFarmsOperations operations, string resourceGroupName, string farmId)
             {
@@ -177,10 +177,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -200,10 +200,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IPage<Metric> ListMetrics(this IFarmsOperations operations, string resourceGroupName, string farmId)
             {
@@ -217,10 +217,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -240,7 +240,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             public static IPage<Farm> List(this IFarmsOperations operations, string resourceGroupName)
             {
@@ -254,7 +254,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -274,10 +274,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static void StartGarbageCollection(this IFarmsOperations operations, string resourceGroupName, string farmId)
             {
@@ -291,10 +291,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -305,19 +305,19 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the current state of garbage collection.
+            /// Returns the state of the garbage collection job.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='operationId'>
-            /// Operation identifier.
+            /// Operation Id.
             /// </param>
             public static string GetGarbageCollectionState(this IFarmsOperations operations, string resourceGroupName, string farmId, string operationId)
             {
@@ -325,19 +325,19 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the current state of garbage collection.
+            /// Returns the state of the garbage collection job.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='operationId'>
-            /// Operation identifier.
+            /// Operation Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -357,10 +357,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static void BeginStartGarbageCollection(this IFarmsOperations operations, string resourceGroupName, string farmId)
             {
@@ -374,10 +374,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

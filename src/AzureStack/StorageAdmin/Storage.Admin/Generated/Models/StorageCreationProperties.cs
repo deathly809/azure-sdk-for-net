@@ -16,7 +16,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Storage creation properties.
+    /// Properties of the storage quota being created or updated.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class StorageCreationProperties
@@ -32,8 +32,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the StorageCreationProperties class.
         /// </summary>
-        /// <param name="numberOfStorageAccounts">TODO</param>
-        /// <param name="capacityInGb">TODO</param>
+        /// <param name="numberOfStorageAccounts">Total number of storage
+        /// accounts.</param>
+        /// <param name="capacityInGb">Maxium capacity (GB).</param>
         public StorageCreationProperties(int? numberOfStorageAccounts = default(int?), int? capacityInGb = default(int?))
         {
             NumberOfStorageAccounts = numberOfStorageAccounts;
@@ -47,13 +48,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets total number of storage accounts.
         /// </summary>
         [JsonProperty(PropertyName = "properties.numberOfStorageAccounts")]
         public int? NumberOfStorageAccounts { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets maxium capacity (GB).
         /// </summary>
         [JsonProperty(PropertyName = "properties.capacityInGb")]
         public int? CapacityInGb { get; set; }

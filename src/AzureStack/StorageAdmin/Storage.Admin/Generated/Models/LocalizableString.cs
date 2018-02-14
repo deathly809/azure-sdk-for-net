@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Localizable string.
     /// </summary>
     public partial class LocalizableString
     {
@@ -29,8 +29,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the LocalizableString class.
         /// </summary>
-        /// <param name="value">TODO</param>
-        /// <param name="localizedValue">TODO</param>
+        /// <param name="value">Value of the string.</param>
+        /// <param name="localizedValue">Localized value of the string.</param>
         public LocalizableString(string value = default(string), string localizedValue = default(string))
         {
             Value = value;
@@ -44,13 +44,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets value of the string.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets localized value of the string.
         /// </summary>
         [JsonProperty(PropertyName = "localizedValue")]
         public string LocalizedValue { get; set; }

@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Storage quota.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class StorageQuota : Resource
@@ -34,13 +34,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the StorageQuota class.
         /// </summary>
-        /// <param name="id">URI of the resource.</param>
-        /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="numberOfStorageAccounts">TODO</param>
-        /// <param name="capacityInGb">TODO</param>
+        /// <param name="id">Resource ID.</param>
+        /// <param name="name">Resource Name.</param>
+        /// <param name="type">Resource type.</param>
+        /// <param name="location">Resource location.</param>
+        /// <param name="tags">Resource tags.</param>
+        /// <param name="numberOfStorageAccounts">Total number of storage
+        /// accounts.</param>
+        /// <param name="capacityInGb">Maxium capacity (GB).</param>
         public StorageQuota(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), int? numberOfStorageAccounts = default(int?), int? capacityInGb = default(int?))
             : base(id, name, type, location, tags)
         {
@@ -55,13 +56,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets total number of storage accounts.
         /// </summary>
         [JsonProperty(PropertyName = "properties.numberOfStorageAccounts")]
         public int? NumberOfStorageAccounts { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets maxium capacity (GB).
         /// </summary>
         [JsonProperty(PropertyName = "properties.capacityInGb")]
         public int? CapacityInGb { get; set; }

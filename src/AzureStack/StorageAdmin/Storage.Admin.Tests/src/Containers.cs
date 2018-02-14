@@ -85,12 +85,11 @@ namespace Storage.Tests
                     foreach (var share in shares)
                     {
                         var shareName = "";
-                        var intent = "ContainerMigration";
                         var storageAccountName = "";
                         var containerName= "";
                         var destinationShareUNCPath= "";
                         var migrationParameters = new MigrationParameters(storageAccountName, containerName, destinationShareUNCPath);
-                        var operationId = client.Containers.Migrate(ResourceGroupName, fName, shareName, intent, 1, 0, migrationParameters);
+                        var operationId = client.Containers.Migrate(ResourceGroupName, fName, shareName, migrationParameters);
                         client.Containers.CancelMigration(ResourceGroupName, fName, operationId);
                     }
                 }

@@ -24,16 +24,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public partial interface IContainersOperations
     {
         /// <summary>
-        /// Cancel container migration.
+        /// Cancel a container migration job.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='operationId'>
-        /// Operation identifier.
+        /// Operation Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -49,16 +49,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse> CancelMigrationWithHttpMessagesAsync(string resourceGroupName, string farmId, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Sets the status of the share to migrate.
+        /// Returns the status of a container migration job.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='operationId'>
-        /// Operation identifier.
+        /// Operation Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -75,27 +75,28 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<MigrationResult>> MigrateShareWithHttpMessagesAsync(string resourceGroupName, string farmId, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<MigrationResult>> MigrationStatusWithHttpMessagesAsync(string resourceGroupName, string farmId, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns all containers under the given parameters.
+        /// Returns the list of containers which can be migrated in the
+        /// specified share.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='shareName'>
-        /// TODO
+        /// Share name.
         /// </param>
         /// <param name='intent'>
         /// The container migration intent.
         /// </param>
         /// <param name='maxCount'>
-        /// TODO
+        /// The max count of containers.
         /// </param>
         /// <param name='startIndex'>
-        /// TODO
+        /// The start index of get containers.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -114,16 +115,17 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IList<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns all destination shares under the given parameters.
+        /// Returns a list of destination shares that the system considers as
+        /// best candidates for migration.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='shareName'>
-        /// TODO
+        /// Share name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -142,28 +144,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IList<Share>>> ListDestinationSharesWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Migrate a container.
+        /// Starts a container migration job to migrate containers to the
+        /// specified destination share.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='shareName'>
-        /// TODO
-        /// </param>
-        /// <param name='intent'>
-        /// The container migration intent.
-        /// </param>
-        /// <param name='maxCount'>
-        /// TODO
-        /// </param>
-        /// <param name='startIndex'>
-        /// TODO
+        /// Share name.
         /// </param>
         /// <param name='migrationParameters'>
-        /// Parameters needed to perform migration
+        /// The parameters of container migration job.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -180,18 +174,18 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<string>> MigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<string>> MigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Cancel container migration.
+        /// Cancel a container migration job.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='operationId'>
-        /// Operation identifier.
+        /// Operation Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -207,28 +201,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse> BeginCancelMigrationWithHttpMessagesAsync(string resourceGroupName, string farmId, string operationId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Migrate a container.
+        /// Starts a container migration job to migrate containers to the
+        /// specified destination share.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='shareName'>
-        /// TODO
-        /// </param>
-        /// <param name='intent'>
-        /// The container migration intent.
-        /// </param>
-        /// <param name='maxCount'>
-        /// TODO
-        /// </param>
-        /// <param name='startIndex'>
-        /// TODO
+        /// Share name.
         /// </param>
         /// <param name='migrationParameters'>
-        /// Parameters needed to perform migration
+        /// The parameters of container migration job.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -245,28 +231,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<string>> BeginMigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-        /// <summary>
-        /// Returns all destination shares under the given parameters.
-        /// </summary>
-        /// <param name='nextPageLink'>
-        /// The NextLink from the previous successful call to List operation.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        /// <exception cref="Microsoft.Rest.Azure.CloudException">
-        /// Thrown when the operation returned an invalid status code
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.SerializationException">
-        /// Thrown when unable to deserialize the response
-        /// </exception>
-        /// <exception cref="Microsoft.Rest.ValidationException">
-        /// Thrown when a required parameter is null
-        /// </exception>
-        Task<AzureOperationResponse<IList<Share>>> ListDestinationSharesNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<string>> BeginMigrateWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, MigrationParameters migrationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

@@ -24,65 +24,19 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class AcquisitionsOperationsExtensions
     {
             /// <summary>
-            /// Returns the requested page blob acquisition.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
-            /// </param>
-            /// <param name='farmId'>
-            /// The name of the farm.
-            /// </param>
-            /// <param name='acquisitionId'>
-            /// The ID of page blob acquisition.
-            /// </param>
-            public static Acquisition Get(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string acquisitionId)
-            {
-                return operations.GetAsync(resourceGroupName, farmId, acquisitionId).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Returns the requested page blob acquisition.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
-            /// </param>
-            /// <param name='farmId'>
-            /// The name of the farm.
-            /// </param>
-            /// <param name='acquisitionId'>
-            /// The ID of page blob acquisition.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<Acquisition> GetAsync(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string acquisitionId, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, acquisitionId, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
             /// Returns a list of blob acquistions.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='filter'>
-            /// TODO
+            /// Filter string
             /// </param>
             public static IList<Acquisition> List(this IAcquisitionsOperations operations, string resourceGroupName, string farmId, string filter = default(string))
             {
@@ -96,13 +50,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='filter'>
-            /// TODO
+            /// Filter string
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

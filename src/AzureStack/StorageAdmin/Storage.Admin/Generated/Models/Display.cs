@@ -15,7 +15,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
 
     /// <summary>
     /// Contains the localized display information for this particular
-    /// operation / action..
+    /// operation / action.
     /// </summary>
     public partial class Display
     {

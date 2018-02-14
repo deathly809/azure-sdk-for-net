@@ -30,10 +30,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IList<Share> List(this ISharesOperations operations, string resourceGroupName, string farmId)
             {
@@ -47,10 +47,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -70,13 +70,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='shareName'>
-            /// TODO
+            /// Share name.
             /// </param>
             public static IPage<Metric> ListMetrics(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
@@ -90,13 +90,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='shareName'>
-            /// TODO
+            /// Share name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -116,13 +116,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='shareName'>
-            /// TODO
+            /// Share name.
             /// </param>
             public static IPage<MetricDefinition> ListMetricDefinitions(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
@@ -136,13 +136,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='shareName'>
-            /// TODO
+            /// Share name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -162,13 +162,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='shareName'>
-            /// TODO
+            /// Share name.
             /// </param>
             public static Share Get(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName)
             {
@@ -182,13 +182,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='shareName'>
-            /// TODO
+            /// Share name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -196,40 +196,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             public static async Task<Share> GetAsync(this ISharesOperations operations, string resourceGroupName, string farmId, string shareName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, farmId, shareName, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Returns a list of storage shares.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            public static IList<Share> ListNext(this ISharesOperations operations, string nextPageLink)
-            {
-                return operations.ListNextAsync(nextPageLink).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Returns a list of storage shares.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='nextPageLink'>
-            /// The NextLink from the previous successful call to List operation.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<IList<Share>> ListNextAsync(this ISharesOperations operations, string nextPageLink, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.ListNextWithHttpMessagesAsync(nextPageLink, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

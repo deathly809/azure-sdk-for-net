@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Base Resource Object
+    /// Base resource object.
     /// </summary>
     public partial class Resource : IResource
     {
@@ -33,11 +33,11 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Resource class.
         /// </summary>
-        /// <param name="id">URI of the resource.</param>
-        /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="id">Resource ID.</param>
+        /// <param name="name">Resource Name.</param>
+        /// <param name="type">Resource type.</param>
+        /// <param name="location">Resource location.</param>
+        /// <param name="tags">Resource tags.</param>
         public Resource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
         {
             Id = id;
@@ -54,31 +54,31 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets URI of the resource.
+        /// Gets resource ID.
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; private set; }
 
         /// <summary>
-        /// Gets name of the resource.
+        /// Gets resource Name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; private set; }
 
         /// <summary>
-        /// Gets type of resource.
+        /// Gets resource type.
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; private set; }
 
         /// <summary>
-        /// Gets location where resource is location.
+        /// Gets resource location.
         /// </summary>
         [JsonProperty(PropertyName = "location")]
         public string Location { get; private set; }
 
         /// <summary>
-        /// Gets list of key value pairs.
+        /// Gets resource tags.
         /// </summary>
         [JsonProperty(PropertyName = "tags")]
         public IDictionary<string, string> Tags { get; private set; }

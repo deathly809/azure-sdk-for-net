@@ -54,13 +54,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Create a new storage farm.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='settingAccessStringProperty'>
-        /// TODO
+        /// Setting access string.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -262,13 +262,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Get a storage farm.
+        /// Returns the Storage properties and settings for a specified storage farm.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -461,13 +461,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Update an existing storage farm.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='settingAccessStringProperty'>
-        /// TODO
+        /// Setting access string.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -672,10 +672,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Returns a list of metric definitions for a storage farm.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -797,7 +797,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -868,10 +868,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Returns a list of storage farm metrics.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -993,7 +993,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -1064,7 +1064,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Returns a list of all storage farms.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1251,10 +1251,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Start garbage collection on deleted storage objects.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -1270,16 +1270,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         }
 
         /// <summary>
-        /// Returns the current state of garbage collection.
+        /// Returns the state of the garbage collection job.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='operationId'>
-        /// Operation identifier.
+        /// Operation Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1478,10 +1478,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Start garbage collection on deleted storage objects.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1755,7 +1755,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -1928,7 +1928,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try

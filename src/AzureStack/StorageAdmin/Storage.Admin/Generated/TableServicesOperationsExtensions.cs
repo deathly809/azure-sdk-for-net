@@ -22,16 +22,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class TableServicesOperationsExtensions
     {
             /// <summary>
-            /// Returns the default table servie.
+            /// Returns the table servie.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static TableService Get(this ITableServicesOperations operations, string resourceGroupName, string farmId)
             {
@@ -39,16 +39,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns the default table servie.
+            /// Returns the table servie.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -62,16 +62,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metric definitions for the default table service.
+            /// Returns a list of metric definitions for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IPage<MetricDefinition> ListMetricDefinitions(this ITableServicesOperations operations, string resourceGroupName, string farmId)
             {
@@ -79,16 +79,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metric definitions for the default table service.
+            /// Returns a list of metric definitions for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -102,16 +102,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metrics for the default table service.
+            /// Returns a list of metrics for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             public static IPage<Metric> ListMetrics(this ITableServicesOperations operations, string resourceGroupName, string farmId)
             {
@@ -119,16 +119,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metrics for the default table service.
+            /// Returns a list of metrics for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The name of the resource group within the user's subscription.
+            /// Resource group name.
             /// </param>
             /// <param name='farmId'>
-            /// The name of the farm.
+            /// Farm Id.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -142,7 +142,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metric definitions for the default table service.
+            /// Returns a list of metric definitions for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -156,7 +156,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metric definitions for the default table service.
+            /// Returns a list of metric definitions for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -176,7 +176,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metrics for the default table service.
+            /// Returns a list of metrics for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -190,7 +190,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of metrics for the default table service.
+            /// Returns a list of metrics for table service.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

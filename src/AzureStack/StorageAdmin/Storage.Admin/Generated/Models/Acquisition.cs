@@ -34,23 +34,23 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Acquisition class.
         /// </summary>
-        /// <param name="id">URI of the resource.</param>
-        /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="id">Resource ID.</param>
+        /// <param name="name">Resource Name.</param>
+        /// <param name="type">Resource type.</param>
+        /// <param name="location">Resource location.</param>
+        /// <param name="tags">Resource tags.</param>
         /// <param name="filePath">The file path of the page blob file on
         /// storage cluster.</param>
         /// <param name="maximumblobsize">The maximum size of the page
         /// blob.</param>
         /// <param name="status">The status of the page blob acquisition.
         /// Possible values include: 'InProgress', 'Success', 'Failed'</param>
-        /// <param name="susbcriptionid">ID of the subscription where the page
-        /// blob is in.</param>
-        /// <param name="storageaccount">The storage account where the page
-        /// blob is in.</param>
-        /// <param name="container">The container where the page blob is
-        /// in.</param>
+        /// <param name="susbcriptionid">ID of the subscription associated with
+        /// the the page blob.</param>
+        /// <param name="storageaccount">The storage account that holds the
+        /// page blob.</param>
+        /// <param name="container">The container associated with the the page
+        /// blob.</param>
         /// <param name="blob">The name of the page blob.</param>
         /// <param name="acquisitionid">The ID of page blob
         /// acquisition.</param>
@@ -94,19 +94,20 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or sets ID of the subscription where the page blob is in.
+        /// Gets or sets ID of the subscription associated with the the page
+        /// blob.
         /// </summary>
         [JsonProperty(PropertyName = "properties.susbcriptionid")]
         public string Susbcriptionid { get; set; }
 
         /// <summary>
-        /// Gets or sets the storage account where the page blob is in.
+        /// Gets or sets the storage account that holds the page blob.
         /// </summary>
         [JsonProperty(PropertyName = "properties.storageaccount")]
         public string Storageaccount { get; set; }
 
         /// <summary>
-        /// Gets or sets the container where the page blob is in.
+        /// Gets or sets the container associated with the the page blob.
         /// </summary>
         [JsonProperty(PropertyName = "properties.container")]
         public string Container { get; set; }

@@ -15,7 +15,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Parameters for container migration.
+    /// Parameters of container migration job.
     /// </summary>
     public partial class MigrationParameters
     {
@@ -30,16 +30,17 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MigrationParameters class.
         /// </summary>
-        /// <param name="storageAccountName">Share location where container is
-        /// located.</param>
-        /// <param name="containerName">Name of container to migrate.</param>
-        /// <param name="destinationShareUNCPath">UNC path of share where
-        /// container should be places.</param>
-        public MigrationParameters(string storageAccountName, string containerName, string destinationShareUNCPath)
+        /// <param name="storageAccountName">The name of storage account where
+        /// the container locates.</param>
+        /// <param name="containerName">NThe name of the container to be
+        /// migrated.</param>
+        /// <param name="destinationShareUncPath">The UNC path of the
+        /// destination share for migration.</param>
+        public MigrationParameters(string storageAccountName, string containerName, string destinationShareUncPath)
         {
             StorageAccountName = storageAccountName;
             ContainerName = containerName;
-            DestinationShareUNCPath = destinationShareUNCPath;
+            DestinationShareUncPath = destinationShareUncPath;
             CustomInit();
         }
 
@@ -49,22 +50,23 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets share location where container is located.
+        /// Gets or sets the name of storage account where the container
+        /// locates.
         /// </summary>
         [JsonProperty(PropertyName = "storageAccountName")]
         public string StorageAccountName { get; set; }
 
         /// <summary>
-        /// Gets or sets name of container to migrate.
+        /// Gets or sets nThe name of the container to be migrated.
         /// </summary>
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
 
         /// <summary>
-        /// Gets or sets UNC path of share where container should be places.
+        /// Gets or sets the UNC path of the destination share for migration.
         /// </summary>
-        [JsonProperty(PropertyName = "destinationShareUNCPath")]
-        public string DestinationShareUNCPath { get; set; }
+        [JsonProperty(PropertyName = "destinationShareUncPath")]
+        public string DestinationShareUncPath { get; set; }
 
         /// <summary>
         /// Validate the object.
@@ -82,9 +84,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "ContainerName");
             }
-            if (DestinationShareUNCPath == null)
+            if (DestinationShareUncPath == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "DestinationShareUNCPath");
+                throw new ValidationException(ValidationRules.CannotBeNull, "DestinationShareUncPath");
             }
         }
     }

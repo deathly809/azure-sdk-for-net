@@ -46,44 +46,6 @@ namespace Storage.Tests
                 }
             });
         }
-
-        [Fact]
-        public void GetAcquisition() {
-            RunTest((client) => {
-                var farms = client.Farms.List(ResourceGroupName);
-                foreach (var farm in farms)
-                {
-                    var fName = ExtractName(farm.Name);
-                    var acquisitions = client.Acquisitions.List(ResourceGroupName, fName);
-                    foreach (var acquisition in acquisitions)
-                    {
-                        var aName = ExtractName(acquisition.Name);
-                        var retrieved = client.Acquisitions.Get(Location, fName, aName);
-                        ValidateAcquisition(retrieved);
-                        goto done;
-                    }
-                }
-                done:;
-            });
-        }
-
-        [Fact]
-        public void GetAllAcquisitions() {
-            RunTest((client) => {
-                var farms = client.Farms.List(ResourceGroupName);
-                foreach (var farm in farms)
-                {
-                    var fName = ExtractName(farm.Name);
-                    var acquisitions = client.Acquisitions.List(ResourceGroupName, fName);
-                    foreach (var acquisition in acquisitions)
-                    {
-                        var aName = ExtractName(acquisition.Name);
-                        var retrieved = client.Acquisitions.Get(Location, fName, aName);
-                        ValidateAcquisition(retrieved);
-                    }
-                }
-            });
-        }
         
     }
 }

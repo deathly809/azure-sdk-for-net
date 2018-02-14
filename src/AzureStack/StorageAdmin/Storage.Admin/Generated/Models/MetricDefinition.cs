@@ -16,7 +16,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Metric definition.
     /// </summary>
     public partial class MetricDefinition
     {
@@ -31,12 +31,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MetricDefinition class.
         /// </summary>
-        /// <param name="name">TODO</param>
-        /// <param name="unit">TODO. Possible values include: 'Count', 'Bytes',
-        /// 'Seconds', 'CountPerSecond', 'BytesPerSecond'</param>
-        /// <param name="primaryAggregationType">TODO. Possible values include:
-        /// 'None', 'Average', 'Total', 'Minimum', 'Maximum', 'Last'</param>
-        /// <param name="metricAvailabilities">TODO</param>
+        /// <param name="name">Metric name.</param>
+        /// <param name="unit">Metric unit. Possible values include: 'Count',
+        /// 'Bytes', 'Seconds', 'CountPerSecond', 'BytesPerSecond'</param>
+        /// <param name="primaryAggregationType">Aggregation type of metric.
+        /// Possible values include: 'None', 'Average', 'Total', 'Minimum',
+        /// 'Maximum', 'Last'</param>
+        /// <param name="metricAvailabilities">Metric availabilities.</param>
         public MetricDefinition(LocalizableString name = default(LocalizableString), string unit = default(string), string primaryAggregationType = default(string), IList<MetricAvailability> metricAvailabilities = default(IList<MetricAvailability>))
         {
             Name = name;
@@ -52,27 +53,27 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets TODO
+        /// Gets metric name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public LocalizableString Name { get; private set; }
 
         /// <summary>
-        /// Gets TODO. Possible values include: 'Count', 'Bytes', 'Seconds',
-        /// 'CountPerSecond', 'BytesPerSecond'
+        /// Gets metric unit. Possible values include: 'Count', 'Bytes',
+        /// 'Seconds', 'CountPerSecond', 'BytesPerSecond'
         /// </summary>
         [JsonProperty(PropertyName = "unit")]
         public string Unit { get; private set; }
 
         /// <summary>
-        /// Gets TODO. Possible values include: 'None', 'Average', 'Total',
-        /// 'Minimum', 'Maximum', 'Last'
+        /// Gets aggregation type of metric. Possible values include: 'None',
+        /// 'Average', 'Total', 'Minimum', 'Maximum', 'Last'
         /// </summary>
         [JsonProperty(PropertyName = "primaryAggregationType")]
         public string PrimaryAggregationType { get; private set; }
 
         /// <summary>
-        /// Gets TODO
+        /// Gets metric availabilities.
         /// </summary>
         [JsonProperty(PropertyName = "metricAvailabilities")]
         public IList<MetricAvailability> MetricAvailabilities { get; private set; }

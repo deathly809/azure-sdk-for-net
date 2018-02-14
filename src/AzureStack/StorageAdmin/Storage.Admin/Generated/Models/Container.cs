@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Container properties.
     /// </summary>
     public partial class Container
     {
@@ -29,15 +29,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Container class.
         /// </summary>
-        /// <param name="sharename">Name of the share container is
-        /// located.</param>
-        /// <param name="accountname">Name of account container belongs
-        /// too.</param>
-        /// <param name="containername">Name of the container.</param>
-        /// <param name="containerid">The container id.</param>
-        /// <param name="accountid">GUID of account.</param>
-        /// <param name="usedBytesInPrimaryVolume">Number of bytes used by the
-        /// primary volume.</param>
+        /// <param name="sharename">The name of the share where the container
+        /// locates.</param>
+        /// <param name="accountname">The name of storage account where the
+        /// container locates.</param>
+        /// <param name="containername">Container name.</param>
+        /// <param name="containerid">The container ID.</param>
+        /// <param name="accountid">The ID of storage account.</param>
+        /// <param name="usedBytesInPrimaryVolume">The used space (in Bytes) of
+        /// the container in the primary volume.</param>
         /// <param name="containerState">The current state of the
         /// container.</param>
         public Container(string sharename = default(string), string accountname = default(string), string containername = default(string), long? containerid = default(long?), string accountid = default(string), long? usedBytesInPrimaryVolume = default(long?), string containerState = default(string))
@@ -58,37 +58,39 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets name of the share container is located.
+        /// Gets or sets the name of the share where the container locates.
         /// </summary>
         [JsonProperty(PropertyName = "sharename")]
         public string Sharename { get; set; }
 
         /// <summary>
-        /// Gets or sets name of account container belongs too.
+        /// Gets or sets the name of storage account where the container
+        /// locates.
         /// </summary>
         [JsonProperty(PropertyName = "accountname")]
         public string Accountname { get; set; }
 
         /// <summary>
-        /// Gets or sets name of the container.
+        /// Gets or sets container name.
         /// </summary>
         [JsonProperty(PropertyName = "containername")]
         public string Containername { get; set; }
 
         /// <summary>
-        /// Gets or sets the container id.
+        /// Gets or sets the container ID.
         /// </summary>
         [JsonProperty(PropertyName = "containerid")]
         public long? Containerid { get; set; }
 
         /// <summary>
-        /// Gets or sets GUID of account.
+        /// Gets or sets the ID of storage account.
         /// </summary>
         [JsonProperty(PropertyName = "accountid")]
         public string Accountid { get; set; }
 
         /// <summary>
-        /// Gets or sets number of bytes used by the primary volume.
+        /// Gets or sets the used space (in Bytes) of the container in the
+        /// primary volume.
         /// </summary>
         [JsonProperty(PropertyName = "usedBytesInPrimaryVolume")]
         public long? UsedBytesInPrimaryVolume { get; set; }

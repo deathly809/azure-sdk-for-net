@@ -16,7 +16,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Metric information.
     /// </summary>
     public partial class Metric
     {
@@ -31,12 +31,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Metric class.
         /// </summary>
-        /// <param name="name">TODO</param>
-        /// <param name="metricUnit">TODO. Possible values include: 'Count',
-        /// 'Bytes', 'Seconds', 'CountPerSecond', 'BytesPerSecond'</param>
-        /// <param name="timeGrain">TODO</param>
-        /// <param name="startTime">TODO</param>
-        /// <param name="endTime">TODO</param>
+        /// <param name="name">Metric Name.</param>
+        /// <param name="metricUnit">Metric Unit. Possible values include:
+        /// 'Count', 'Bytes', 'Seconds', 'CountPerSecond',
+        /// 'BytesPerSecond'</param>
+        /// <param name="timeGrain">Metric time grain.</param>
+        /// <param name="startTime">Metric start time.</param>
+        /// <param name="endTime">Metric end time.</param>
         /// <param name="metricValues">List of metric values.</param>
         public Metric(LocalizableString name = default(LocalizableString), string metricUnit = default(string), string timeGrain = default(string), System.DateTime? startTime = default(System.DateTime?), System.DateTime? endTime = default(System.DateTime?), IList<MetricValue> metricValues = default(IList<MetricValue>))
         {
@@ -55,32 +56,32 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets TODO
+        /// Gets metric Name.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public LocalizableString Name { get; private set; }
 
         /// <summary>
-        /// Gets or sets TODO. Possible values include: 'Count', 'Bytes',
-        /// 'Seconds', 'CountPerSecond', 'BytesPerSecond'
+        /// Gets or sets metric Unit. Possible values include: 'Count',
+        /// 'Bytes', 'Seconds', 'CountPerSecond', 'BytesPerSecond'
         /// </summary>
         [JsonProperty(PropertyName = "metricUnit")]
         public string MetricUnit { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets metric time grain.
         /// </summary>
         [JsonProperty(PropertyName = "timeGrain")]
         public string TimeGrain { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets metric start time.
         /// </summary>
         [JsonProperty(PropertyName = "startTime")]
         public System.DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets metric end time.
         /// </summary>
         [JsonProperty(PropertyName = "endTime")]
         public System.DateTime? EndTime { get; set; }

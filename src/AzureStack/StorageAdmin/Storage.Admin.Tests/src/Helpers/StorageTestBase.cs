@@ -12,16 +12,7 @@ namespace Storage.Tests
         }
 
         public string ResourceGroupName = "System.local";
-
-        public string ExtractName(string nestedName) {
-            if(nestedName.Contains('/'))
-            {
-                var split = nestedName.Split('/');
-                nestedName = split[split.Length - 1];
-            }
-            return nestedName;
-        }
-
+        
         protected override void ValidateClient(StorageAdminClient client)
         {
             // validate creation

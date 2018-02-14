@@ -34,12 +34,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the FarmCreationProperties class.
         /// </summary>
-        /// <param name="id">URI of the resource.</param>
-        /// <param name="name">Name of the resource.</param>
-        /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="settingAccessStringProperty">TODO</param>
+        /// <param name="id">Resource ID.</param>
+        /// <param name="name">Resource Name.</param>
+        /// <param name="type">Resource type.</param>
+        /// <param name="location">Resource location.</param>
+        /// <param name="tags">Resource tags.</param>
+        /// <param name="settingAccessStringProperty">Setting access
+        /// string.</param>
         public FarmCreationProperties(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string settingAccessStringProperty = default(string))
             : base(id, name, type, location, tags)
         {
@@ -53,7 +54,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets setting access string.
         /// </summary>
         [JsonProperty(PropertyName = "properties.settingAccessString")]
         public string SettingAccessStringProperty { get; set; }

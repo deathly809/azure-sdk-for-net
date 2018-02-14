@@ -27,13 +27,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Create or update an existing storage quota.
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='quotaName'>
-        /// The name of the quota.
+        /// The name of the storage quota.
         /// </param>
         /// <param name='parameters'>
-        /// Parameters used to create or update storage quota
+        /// The properties of quota being created or updated.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -55,10 +55,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Delete an existing quota
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='quotaName'>
-        /// The name of the quota.
+        /// The name of the storage quota.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -74,13 +74,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a storage quota.
+        /// Returns the specified storage quota.
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='quotaName'>
-        /// The name of the quota.
+        /// The name of the storage quota.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -99,10 +99,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<StorageQuota>> GetWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all storage quotas at the given location.
+        /// Returns a list of storage quotas at the given location.
         /// </summary>
         /// <param name='location'>
-        /// Location of storage accounts.
+        /// Resource location.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<StorageQuota>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all storage quotas at the given location.
+        /// Returns a list of storage quotas at the given location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

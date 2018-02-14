@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// TODO
+    /// Storage service.
     /// </summary>
     public partial class Service
     {
@@ -29,9 +29,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the Service class.
         /// </summary>
-        /// <param name="version">TODO</param>
-        /// <param name="healthStatus">TODO. Possible values include:
-        /// 'Unknown', 'Healthy', 'Warning', 'Critical'</param>
+        /// <param name="version">Storage service version.</param>
+        /// <param name="healthStatus">Health status of storage service.
+        /// Possible values include: 'Unknown', 'Healthy', 'Warning',
+        /// 'Critical'</param>
         public Service(string version = default(string), string healthStatus = default(string))
         {
             Version = version;
@@ -45,14 +46,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets TODO
+        /// Gets or sets storage service version.
         /// </summary>
         [JsonProperty(PropertyName = "version")]
         public string Version { get; set; }
 
         /// <summary>
-        /// Gets or sets TODO. Possible values include: 'Unknown', 'Healthy',
-        /// 'Warning', 'Critical'
+        /// Gets or sets health status of storage service. Possible values
+        /// include: 'Unknown', 'Healthy', 'Warning', 'Critical'
         /// </summary>
         [JsonProperty(PropertyName = "healthStatus")]
         public string HealthStatus { get; set; }

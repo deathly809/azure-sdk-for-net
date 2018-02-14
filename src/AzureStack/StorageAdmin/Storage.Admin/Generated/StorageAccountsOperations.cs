@@ -54,13 +54,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Returns a list of storage accounts.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='summary'>
-        /// TODO
+        /// Switch for wheter summary or detailed information is returned.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -184,7 +184,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -255,13 +255,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Returns the requested storage account.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='accountId'>
-        /// The name of the storage account.
+        /// Internal storage account ID, which is not visible to tenant.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -460,13 +460,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// Undelete a deleted storage account.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// The name of the resource group within the user's subscription.
+        /// Resource group name.
         /// </param>
         /// <param name='farmId'>
-        /// The name of the farm.
+        /// Farm Id.
         /// </param>
         /// <param name='accountId'>
-        /// The name of the storage account.
+        /// Internal storage account ID, which is not visible to tenant.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -746,7 +746,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200)
+            if ((int)_statusCode != 200 && (int)_statusCode != 404)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
