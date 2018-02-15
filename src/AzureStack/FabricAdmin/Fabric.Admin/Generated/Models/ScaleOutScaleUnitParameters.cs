@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <summary>
         /// Gets or sets bmc address of the physical machine.
         /// </summary>
-        [JsonProperty(PropertyName = "bmcIv4Address")]
+        [JsonProperty(PropertyName = "bmcIpv4Address")]
         public string BMCIPv4Address { get; set; }
 
         /// <summary>
