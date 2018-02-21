@@ -25,7 +25,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IInfraRolesOperations
     {
         /// <summary>
-        /// Returns the requested infra role description.
+        /// Returns the requested infrastructure role description.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -34,7 +34,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRole'>
-        /// Infra role name.
+        /// Infrastructure role name.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -53,7 +53,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<InfraRole>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string infraRole, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all infra roles at a location.
+        /// Returns a list of all infrastructure roles at a location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -81,7 +81,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<InfraRole>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all infra roles at a location.
+        /// Returns a list of all infrastructure roles at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

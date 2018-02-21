@@ -25,7 +25,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IInfraRoleInstancesOperations
     {
         /// <summary>
-        /// Power off an infra role instance.
+        /// Power off an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -34,7 +34,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> PowerOffWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Power on an infra role instance.
+        /// Power on an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -59,7 +59,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -75,7 +75,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> PowerOnWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Shut down an infra role instance.
+        /// Shut down an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -84,7 +84,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -100,7 +100,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> ShutdownWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Reboot an infra role instance.
+        /// Reboot an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -109,7 +109,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -125,7 +125,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> RebootWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Return the requested infra role instance.
+        /// Return the requested infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -134,7 +134,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -153,7 +153,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<InfraRoleInstance>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all infra role instances at a location.
+        /// Returns a list of all infrastructure role instances at a location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -181,7 +181,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<InfraRoleInstance>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<InfraRoleInstance> odataQuery = default(ODataQuery<InfraRoleInstance>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Power off an infra role instance.
+        /// Power off an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -190,7 +190,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -206,7 +206,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> BeginPowerOffWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Power on an infra role instance.
+        /// Power on an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -215,7 +215,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -231,7 +231,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> BeginPowerOnWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Shut down an infra role instance.
+        /// Shut down an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -240,7 +240,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -256,7 +256,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> BeginShutdownWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Reboot an infra role instance.
+        /// Reboot an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -265,7 +265,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -281,7 +281,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse> BeginRebootWithHttpMessagesAsync(string resourceGroupName, string location, string infraRoleInstance, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all infra role instances at a location.
+        /// Returns a list of all infrastructure role instances at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

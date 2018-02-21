@@ -37,15 +37,16 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         /// <param name="scaleUnitNodeStatus">Status of the physical machine.
         /// Possible values include: 'Running', 'Maintenance',
         /// 'Stopped'</param>
         /// <param name="powerState">PowerState of the physical machine.
         /// Possible values include: 'Stopped', 'Starting', 'Running',
         /// 'Stopping'</param>
-        /// <param name="bmcAddress">Bmc address of the physical
+        /// <param name="bmcAddress">BMC address of the physical
         /// machine.</param>
         /// <param name="scaleUnitName">Cluster name of the physical
         /// machine.</param>
@@ -57,12 +58,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="model">Model of the physical machine.</param>
         /// <param name="serialNumber">Serial number of the physical
         /// machine.</param>
-        /// <param name="biosVersion">Bios version of the physical
-        /// machine.</param>
-        /// <param name="macAddress">MacAddress of the physical
+        /// <param name="biosVersion">BIOS version of the physical
         /// machine.</param>
         /// <param name="capacity">Capacity of the physical machine.</param>
-        public ScaleUnitNode(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string scaleUnitNodeStatus = default(string), string powerState = default(string), string bmcAddress = default(string), string scaleUnitName = default(string), string scaleUnitUri = default(string), bool? canPowerOff = default(bool?), string vendor = default(string), string model = default(string), string serialNumber = default(string), string biosVersion = default(string), string macAddress = default(string), ScaleUnitCapacity capacity = default(ScaleUnitCapacity))
+        public ScaleUnitNode(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string scaleUnitNodeStatus = default(string), string powerState = default(string), string bmcAddress = default(string), string scaleUnitName = default(string), string scaleUnitUri = default(string), bool? canPowerOff = default(bool?), string vendor = default(string), string model = default(string), string serialNumber = default(string), string biosVersion = default(string), ScaleUnitCapacity capacity = default(ScaleUnitCapacity))
             : base(id, name, type, location, tags)
         {
             ScaleUnitNodeStatus = scaleUnitNodeStatus;
@@ -75,7 +74,6 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
             Model = model;
             SerialNumber = serialNumber;
             BiosVersion = biosVersion;
-            MacAddress = macAddress;
             Capacity = capacity;
             CustomInit();
         }
@@ -100,7 +98,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         public string PowerState { get; set; }
 
         /// <summary>
-        /// Gets or sets bmc address of the physical machine.
+        /// Gets or sets BMC address of the physical machine.
         /// </summary>
         [JsonProperty(PropertyName = "properties.bmcAddress")]
         public string BmcAddress { get; set; }
@@ -142,16 +140,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         public string SerialNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets bios version of the physical machine.
+        /// Gets or sets BIOS version of the physical machine.
         /// </summary>
         [JsonProperty(PropertyName = "properties.biosVersion")]
         public string BiosVersion { get; set; }
-
-        /// <summary>
-        /// Gets or sets macAddress of the physical machine.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.macAddress")]
-        public string MacAddress { get; set; }
 
         /// <summary>
         /// Gets or sets capacity of the physical machine.

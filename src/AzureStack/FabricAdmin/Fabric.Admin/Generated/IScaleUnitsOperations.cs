@@ -25,7 +25,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IScaleUnitsOperations
     {
         /// <summary>
-        /// Scale out a scale unit.
+        /// Add a new scale unit.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -110,7 +110,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<ScaleUnit>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<ScaleUnit> odataQuery = default(ODataQuery<ScaleUnit>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Scale out a scale unit.
+        /// Add a new scale unit.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.

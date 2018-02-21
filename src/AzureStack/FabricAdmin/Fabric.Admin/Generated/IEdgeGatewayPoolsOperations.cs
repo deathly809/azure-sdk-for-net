@@ -25,7 +25,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial interface IEdgeGatewayPoolsOperations
     {
         /// <summary>
-        /// Returns the requested edge gateway pool.
+        /// Returns the requested edge gateway pool object.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -53,7 +53,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<EdgeGatewayPool>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string edgeGatewayPool, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all edge gateway pools at a location.
+        /// Returns a list of all edge gateway pool objects at a location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -81,7 +81,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<EdgeGatewayPool>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<EdgeGatewayPool> odataQuery = default(ODataQuery<EdgeGatewayPool>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of all edge gateway pools at a location.
+        /// Returns a list of all edge gateway pool objects at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

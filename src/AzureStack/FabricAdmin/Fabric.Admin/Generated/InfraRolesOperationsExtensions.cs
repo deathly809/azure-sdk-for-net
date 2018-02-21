@@ -23,7 +23,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class InfraRolesOperationsExtensions
     {
             /// <summary>
-            /// Returns the requested infra role description.
+            /// Returns the requested infrastructure role description.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -35,7 +35,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='infraRole'>
-            /// Infra role name.
+            /// Infrastructure role name.
             /// </param>
             public static InfraRole Get(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole)
             {
@@ -43,7 +43,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns the requested infra role description.
+            /// Returns the requested infrastructure role description.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -55,7 +55,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='infraRole'>
-            /// Infra role name.
+            /// Infrastructure role name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -69,7 +69,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all infra roles at a location.
+            /// Returns a list of all infrastructure roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -89,7 +89,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all infra roles at a location.
+            /// Returns a list of all infrastructure roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -115,7 +115,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all infra roles at a location.
+            /// Returns a list of all infrastructure roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -129,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all infra roles at a location.
+            /// Returns a list of all infrastructure roles at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

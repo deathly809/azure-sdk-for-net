@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Representation of a file share resource.
+    /// Object that contains properties of the file share resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class FileShare : Resource
@@ -37,9 +37,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="associatedVolume">Associated volume Id.</param>
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
+        /// <param name="associatedVolume">Associated volume ID.</param>
         /// <param name="uncPath">The UNCPath for the fileshare.</param>
         public FileShare(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string associatedVolume = default(string), string uncPath = default(string))
             : base(id, name, type, location, tags)
@@ -55,7 +56,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets associated volume Id.
+        /// Gets or sets associated volume ID.
         /// </summary>
         [JsonProperty(PropertyName = "properties.associatedVolume")]
         public string AssociatedVolume { get; set; }

@@ -18,8 +18,8 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Represents a cluster - generally this will be a collection of Hosts
-    /// backed by Failover Cluster Manager.
+    /// Represents a cluster. Generally, the cluster will be a collection of
+    /// hosts backed by failover cluster manager.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class ScaleUnit : Resource
@@ -38,9 +38,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="scaleUnitType">Type of the cluster. Possible values
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
+        /// <param name="scaleUnitType">Type of cluster. Possible values
         /// include: 'Unknown', 'ComputeOnly', 'StorageOnly',
         /// 'HyperConverged'</param>
         /// <param name="logicalFaultDomain">Fault domain name of the
@@ -73,8 +74,8 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets type of the cluster. Possible values include:
-        /// 'Unknown', 'ComputeOnly', 'StorageOnly', 'HyperConverged'
+        /// Gets or sets type of cluster. Possible values include: 'Unknown',
+        /// 'ComputeOnly', 'StorageOnly', 'HyperConverged'
         /// </summary>
         [JsonProperty(PropertyName = "properties.scaleUnitType")]
         public string ScaleUnitType { get; set; }

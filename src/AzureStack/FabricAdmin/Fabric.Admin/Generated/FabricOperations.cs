@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public FabricAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns the list of support rest operations.
+        /// Returns the list of support REST operations.
         /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -224,7 +224,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns the list of support rest operations.
+        /// Returns the list of support REST operations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

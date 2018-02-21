@@ -31,7 +31,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Name of the resource group.
         /// </param>
         /// <param name='fabricLocation'>
-        /// Fabric Location.
+        /// Fabric location.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -82,7 +82,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Name of the resource group.
         /// </param>
         /// <param name='fabricObject'>
-        /// Fabric Location object.
+        /// Fabric location object.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

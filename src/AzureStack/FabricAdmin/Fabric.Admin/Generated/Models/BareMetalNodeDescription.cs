@@ -30,7 +30,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <summary>
         /// Initializes a new instance of the BareMetalNodeDescription class.
         /// </summary>
-        /// <param name="bMCIPv4Address">Bmc address of the physical
+        /// <param name="bMCIPv4Address">BMC address of the physical
         /// machine.</param>
         /// <param name="vendor">Vendor of the physical machine.</param>
         /// <param name="model">Model of the physical machine.</param>
@@ -40,7 +40,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// machine.</param>
         /// <param name="computerName">Name of the computer.</param>
         /// <param name="clusterName">Name of the cluster.</param>
-        /// <param name="macAddress">Name of the mac address of the bare metal
+        /// <param name="macAddress">Name of the MAC address of the bare metal
         /// node.</param>
         public BareMetalNodeDescription(string bMCIPv4Address = default(string), string vendor = default(string), string model = default(string), string serialNumber = default(string), string biosVersion = default(string), string computerName = default(string), string clusterName = default(string), string macAddress = default(string))
         {
@@ -61,7 +61,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets bmc address of the physical machine.
+        /// Gets or sets BMC address of the physical machine.
         /// </summary>
         [JsonProperty(PropertyName = "bmcIpv4Address")]
         public string BMCIPv4Address { get; set; }
@@ -103,7 +103,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         public string ClusterName { get; set; }
 
         /// <summary>
-        /// Gets or sets name of the mac address of the bare metal node.
+        /// Gets or sets name of the MAC address of the bare metal node.
         /// </summary>
         [JsonProperty(PropertyName = "macAddress")]
         public string MacAddress { get; set; }

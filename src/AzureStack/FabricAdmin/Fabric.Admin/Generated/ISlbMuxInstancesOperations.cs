@@ -34,7 +34,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='slbMuxInstance'>
-        /// Name of a SLB Mux instance.
+        /// Name of a SLB MUX instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.

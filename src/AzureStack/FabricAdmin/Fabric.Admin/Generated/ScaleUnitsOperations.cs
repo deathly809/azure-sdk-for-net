@@ -52,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public FabricAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Scale out a scale unit.
+        /// Add a new scale unit.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -493,7 +493,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Scale out a scale unit.
+        /// Add a new scale unit.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.

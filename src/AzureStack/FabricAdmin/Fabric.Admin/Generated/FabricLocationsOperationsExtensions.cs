@@ -32,7 +32,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Name of the resource group.
             /// </param>
             /// <param name='fabricLocation'>
-            /// Fabric Location.
+            /// Fabric location.
             /// </param>
             public static FabricLocation Get(this IFabricLocationsOperations operations, string resourceGroupName, string fabricLocation)
             {
@@ -49,7 +49,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Name of the resource group.
             /// </param>
             /// <param name='fabricLocation'>
-            /// Fabric Location.
+            /// Fabric location.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -113,7 +113,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Name of the resource group.
             /// </param>
             /// <param name='fabricObject'>
-            /// Fabric Location object.
+            /// Fabric location object.
             /// </param>
             public static FabricLocation Create(this IFabricLocationsOperations operations, string resourceGroupName, FabricLocation fabricObject)
             {
@@ -131,7 +131,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Name of the resource group.
             /// </param>
             /// <param name='fabricObject'>
-            /// Fabric Location object.
+            /// Fabric location object.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

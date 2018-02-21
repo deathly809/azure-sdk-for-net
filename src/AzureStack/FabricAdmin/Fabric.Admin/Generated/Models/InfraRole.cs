@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Infra role description.
+    /// Infrastructure role description.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class InfraRole : Resource
@@ -37,12 +37,15 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="instances">List of infra role instances.</param>
-        /// <param name="displayName">Display name for the infra role</param>
-        /// <param name="restartable">Value indicating whether the infra role
-        /// can be restarted.</param>
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
+        /// <param name="instances">List of infrastructure role
+        /// instances.</param>
+        /// <param name="displayName">Display name for the infrastructure
+        /// role.</param>
+        /// <param name="restartable">Value indicating whether the
+        /// infrastructure role can be restarted.</param>
         public InfraRole(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<string> instances = default(IList<string>), string displayName = default(string), bool? restartable = default(bool?))
             : base(id, name, type, location, tags)
         {
@@ -58,20 +61,20 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets list of infra role instances.
+        /// Gets or sets list of infrastructure role instances.
         /// </summary>
         [JsonProperty(PropertyName = "properties.instances")]
         public IList<string> Instances { get; set; }
 
         /// <summary>
-        /// Gets or sets display name for the infra role
+        /// Gets or sets display name for the infrastructure role.
         /// </summary>
         [JsonProperty(PropertyName = "properties.displayName")]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Gets or sets value indicating whether the infra role can be
-        /// restarted.
+        /// Gets or sets value indicating whether the infrastructure role can
+        /// be restarted.
         /// </summary>
         [JsonProperty(PropertyName = "properties.restartable")]
         public bool? Restartable { get; set; }

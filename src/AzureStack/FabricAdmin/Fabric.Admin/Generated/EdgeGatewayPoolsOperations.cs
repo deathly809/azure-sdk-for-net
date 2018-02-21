@@ -52,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public FabricAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns the requested edge gateway pool.
+        /// Returns the requested edge gateway pool object.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -257,7 +257,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all edge gateway pools at a location.
+        /// Returns a list of all edge gateway pool objects at a location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -465,7 +465,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all edge gateway pools at a location.
+        /// Returns a list of all edge gateway pool objects at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

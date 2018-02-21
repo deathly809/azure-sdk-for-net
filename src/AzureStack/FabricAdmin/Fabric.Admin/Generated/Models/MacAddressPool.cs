@@ -20,7 +20,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     /// <summary>
     /// This resource represents a MAC address pool.  The default MAC address
     /// pools are used if you set the MAC address type for a virtual machine to
-    /// 'Static'.  If the virtual machine setting is “Dynamic”, the hypervisor
+    /// 'Static'.  If the virtual machine setting is 'Dynamic', the hypervisor
     /// assigns the MAC address.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
@@ -40,9 +40,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="metadata">Metadata related to this MAC pool.</param>
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
+        /// <param name="metadata">Metadata related to the MAC pool.</param>
         /// <param name="startMacAddress">Starting MAC address.</param>
         /// <param name="endMacAddress">Ending MAC address.</param>
         /// <param name="numberOfAllocatedMacAddresses">Number of MAC addresses
@@ -66,7 +67,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets metadata related to this MAC pool.
+        /// Gets or sets metadata related to the MAC pool.
         /// </summary>
         [JsonProperty(PropertyName = "properties.metadata")]
         public IDictionary<string, string> Metadata { get; set; }

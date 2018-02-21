@@ -18,8 +18,8 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// This resource represents a Logical Subnet.  A Logical Subnet comprises
-    /// of subnet/vlan pair.
+    /// This resource represents a logical subnet.  A logical subnet is made of
+    /// a subnet-vlan pair.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class LogicalSubnet : Resource
@@ -38,14 +38,15 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
-        /// <param name="ipPools">All ip pools which belong to this
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
+        /// <param name="ipPools">All IP pools which belong to this
         /// subnet.</param>
-        /// <param name="isPublic">The visiblity status of the ip pool.  If is
-        /// true the associated pools are public ip address pools.</param>
-        /// <param name="metadata">Metadata related to this Logical
-        /// Network.</param>
+        /// <param name="isPublic">The visiblity status of the IP pool.  If is
+        /// true the associated pools are public IP address pools.</param>
+        /// <param name="metadata">Metadata related to the logical
+        /// network.</param>
         public LogicalSubnet(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<string> ipPools = default(IList<string>), bool? isPublic = default(bool?), IDictionary<string, string> metadata = default(IDictionary<string, string>))
             : base(id, name, type, location, tags)
         {
@@ -61,20 +62,20 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets all ip pools which belong to this subnet.
+        /// Gets or sets all IP pools which belong to this subnet.
         /// </summary>
         [JsonProperty(PropertyName = "properties.ipPools")]
         public IList<string> IpPools { get; set; }
 
         /// <summary>
-        /// Gets or sets the visiblity status of the ip pool.  If is true the
-        /// associated pools are public ip address pools.
+        /// Gets or sets the visiblity status of the IP pool.  If is true the
+        /// associated pools are public IP address pools.
         /// </summary>
         [JsonProperty(PropertyName = "properties.isPublic")]
         public bool? IsPublic { get; set; }
 
         /// <summary>
-        /// Gets or sets metadata related to this Logical Network.
+        /// Gets or sets metadata related to the logical network.
         /// </summary>
         [JsonProperty(PropertyName = "properties.metadata")]
         public IDictionary<string, string> Metadata { get; set; }

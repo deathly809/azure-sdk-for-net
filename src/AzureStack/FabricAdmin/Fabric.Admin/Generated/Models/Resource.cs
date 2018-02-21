@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Base Resource Object
+    /// Base resource object.
     /// </summary>
     public partial class Resource : IResource
     {
@@ -36,8 +36,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         public Resource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
         {
             Id = id;
@@ -72,13 +73,13 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         public string Type { get; private set; }
 
         /// <summary>
-        /// Gets or sets region Location of resource.
+        /// Gets or sets the region where the resource is located.
         /// </summary>
         [JsonProperty(PropertyName = "location")]
         public string Location { get; set; }
 
         /// <summary>
-        /// Gets or sets list of key value pairs.
+        /// Gets or sets list of key-value pairs.
         /// </summary>
         [JsonProperty(PropertyName = "tags")]
         public IDictionary<string, string> Tags { get; set; }

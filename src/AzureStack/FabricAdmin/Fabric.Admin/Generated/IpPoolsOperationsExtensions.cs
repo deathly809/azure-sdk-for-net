@@ -23,7 +23,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class IpPoolsOperationsExtensions
     {
             /// <summary>
-            /// Return the requested Ip pool.
+            /// Return the requested IP pool.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -35,7 +35,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='ipPool'>
-            /// Ip pool name.
+            /// IP pool name.
             /// </param>
             public static IpPool Get(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool)
             {
@@ -43,7 +43,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Return the requested Ip pool.
+            /// Return the requested IP pool.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -55,7 +55,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='ipPool'>
-            /// Ip pool name.
+            /// IP pool name.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -69,7 +69,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
+            /// Create an IP pool.  Once created an IP pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -81,10 +81,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='ipPool'>
-            /// Ip pool name.
+            /// IP pool name.
             /// </param>
             /// <param name='pool'>
-            /// Ip pool object to send.
+            /// IP pool object to send.
             /// </param>
             public static ProvisioningState CreateOrUpdate(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, IpPool pool)
             {
@@ -92,7 +92,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
+            /// Create an IP pool.  Once created an IP pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -104,10 +104,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='ipPool'>
-            /// Ip pool name.
+            /// IP pool name.
             /// </param>
             /// <param name='pool'>
-            /// Ip pool object to send.
+            /// IP pool object to send.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all ip pools at a certain location.
+            /// Returns a list of all IP pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -141,7 +141,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all ip pools at a certain location.
+            /// Returns a list of all IP pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -167,7 +167,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
+            /// Create an IP pool.  Once created an IP pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -179,10 +179,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='ipPool'>
-            /// Ip pool name.
+            /// IP pool name.
             /// </param>
             /// <param name='pool'>
-            /// Ip pool object to send.
+            /// IP pool object to send.
             /// </param>
             public static ProvisioningState BeginCreateOrUpdate(this IIpPoolsOperations operations, string resourceGroupName, string location, string ipPool, IpPool pool)
             {
@@ -190,7 +190,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
+            /// Create an IP pool.  Once created an IP pool cannot be deleted.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -202,10 +202,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='ipPool'>
-            /// Ip pool name.
+            /// IP pool name.
             /// </param>
             /// <param name='pool'>
-            /// Ip pool object to send.
+            /// IP pool object to send.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
@@ -219,7 +219,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all ip pools at a certain location.
+            /// Returns a list of all IP pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -233,7 +233,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all ip pools at a certain location.
+            /// Returns a list of all IP pools at a certain location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

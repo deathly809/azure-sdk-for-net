@@ -23,7 +23,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class ScaleUnitsOperationsExtensions
     {
             /// <summary>
-            /// Scale out a scale unit.
+            /// Add a new scale unit.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -46,7 +46,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Scale out a scale unit.
+            /// Add a new scale unit.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -164,7 +164,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Scale out a scale unit.
+            /// Add a new scale unit.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -187,7 +187,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Scale out a scale unit.
+            /// Add a new scale unit.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

@@ -39,8 +39,9 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Region Location of resource.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">The region where the resource is
+        /// located.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         /// <param name="configurationState">Configuration state.</param>
         /// <param name="virtualServer">Virtual server.</param>
         /// <param name="bgpPeers">List of BGP peers.</param>

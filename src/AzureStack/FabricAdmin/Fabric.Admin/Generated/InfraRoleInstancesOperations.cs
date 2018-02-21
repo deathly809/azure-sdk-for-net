@@ -52,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public FabricAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Power off an infra role instance.
+        /// Power off an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -61,7 +61,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -77,7 +77,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Power on an infra role instance.
+        /// Power on an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -86,7 +86,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -102,7 +102,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Shut down an infra role instance.
+        /// Shut down an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -111,7 +111,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -127,7 +127,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Reboot an infra role instance.
+        /// Reboot an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -136,7 +136,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -152,7 +152,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Return the requested infra role instance.
+        /// Return the requested infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -161,7 +161,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -357,7 +357,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all infra role instances at a location.
+        /// Returns a list of all infrastructure role instances at a location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -565,7 +565,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Power off an infra role instance.
+        /// Power off an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -574,7 +574,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -749,7 +749,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Power on an infra role instance.
+        /// Power on an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -758,7 +758,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -933,7 +933,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Shut down an infra role instance.
+        /// Shut down an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -942,7 +942,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1117,7 +1117,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Reboot an infra role instance.
+        /// Reboot an infrastructure role instance.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -1126,7 +1126,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRoleInstance'>
-        /// Name of an infra role instance.
+        /// Name of an infrastructure role instance.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1301,7 +1301,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all infra role instances at a location.
+        /// Returns a list of all infrastructure role instances at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

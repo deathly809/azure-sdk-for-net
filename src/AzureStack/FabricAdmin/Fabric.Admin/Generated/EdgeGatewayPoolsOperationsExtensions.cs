@@ -23,7 +23,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public static partial class EdgeGatewayPoolsOperationsExtensions
     {
             /// <summary>
-            /// Returns the requested edge gateway pool.
+            /// Returns the requested edge gateway pool object.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -43,7 +43,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns the requested edge gateway pool.
+            /// Returns the requested edge gateway pool object.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -69,7 +69,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all edge gateway pools at a location.
+            /// Returns a list of all edge gateway pool objects at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -89,7 +89,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all edge gateway pools at a location.
+            /// Returns a list of all edge gateway pool objects at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -115,7 +115,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all edge gateway pools at a location.
+            /// Returns a list of all edge gateway pool objects at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -129,7 +129,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
-            /// Returns a list of all edge gateway pools at a location.
+            /// Returns a list of all edge gateway pool objects at a location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

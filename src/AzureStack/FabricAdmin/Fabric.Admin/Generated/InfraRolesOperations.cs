@@ -52,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public FabricAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns the requested infra role description.
+        /// Returns the requested infrastructure role description.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -61,7 +61,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='infraRole'>
-        /// Infra role name.
+        /// Infrastructure role name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -257,7 +257,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all infra roles at a location.
+        /// Returns a list of all infrastructure roles at a location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -465,7 +465,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all infra roles at a location.
+        /// Returns a list of all infrastructure roles at a location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

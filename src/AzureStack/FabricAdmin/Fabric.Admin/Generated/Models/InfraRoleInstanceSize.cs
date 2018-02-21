@@ -30,8 +30,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// Initializes a new instance of the InfraRoleInstanceSize class.
         /// </summary>
         /// <param name="memoryGb">The amount of memory, in GB, currently
-        /// assigned to the virtual machine.  In Azure Stack V1, only static
-        /// memory is used for infrastructure VMs.</param>
+        /// assigned to the virtual machine.</param>
         /// <param name="cores">The number of cores assigned to the virtual
         /// machine.</param>
         public InfraRoleInstanceSize(double? memoryGb = default(double?), int? cores = default(int?))
@@ -48,8 +47,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
 
         /// <summary>
         /// Gets or sets the amount of memory, in GB, currently assigned to the
-        /// virtual machine.  In Azure Stack V1, only static memory is used for
-        /// infrastructure VMs.
+        /// virtual machine.
         /// </summary>
         [JsonProperty(PropertyName = "memoryGb")]
         public double? MemoryGb { get; set; }

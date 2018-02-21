@@ -33,8 +33,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// Initializes a new instance of the ScaleOutScaleUnitParametersList
         /// class.
         /// </summary>
-        /// <param name="nodeList">The list of nodes.</param>
-        /// <param name="awaitStorageConvergence">The list of nodes.</param>
+        /// <param name="nodeList">List of nodes in the scale unit.</param>
+        /// <param name="awaitStorageConvergence">Flag indicates if the
+        /// operation should wait for storage to converge before
+        /// returning.</param>
         public ScaleOutScaleUnitParametersList(IList<ScaleOutScaleUnitParameters> nodeList = default(IList<ScaleOutScaleUnitParameters>), bool? awaitStorageConvergence = default(bool?))
         {
             NodeList = nodeList;
@@ -48,13 +50,14 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the list of nodes.
+        /// Gets or sets list of nodes in the scale unit.
         /// </summary>
         [JsonProperty(PropertyName = "nodeList")]
         public IList<ScaleOutScaleUnitParameters> NodeList { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of nodes.
+        /// Gets or sets flag indicates if the operation should wait for
+        /// storage to converge before returning.
         /// </summary>
         [JsonProperty(PropertyName = "awaitStorageConvergence")]
         public bool? AwaitStorageConvergence { get; set; }

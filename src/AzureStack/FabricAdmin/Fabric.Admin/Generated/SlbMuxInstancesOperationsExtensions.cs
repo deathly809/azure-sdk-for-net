@@ -35,7 +35,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='slbMuxInstance'>
-            /// Name of a SLB Mux instance.
+            /// Name of a SLB MUX instance.
             /// </param>
             public static SlbMuxInstance Get(this ISlbMuxInstancesOperations operations, string resourceGroupName, string location, string slbMuxInstance)
             {
@@ -55,7 +55,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             /// Location of the resource.
             /// </param>
             /// <param name='slbMuxInstance'>
-            /// Name of a SLB Mux instance.
+            /// Name of a SLB MUX instance.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

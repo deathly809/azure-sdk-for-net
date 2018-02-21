@@ -31,7 +31,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         /// Initializes a new instance of the ScaleOutScaleUnitParameters
         /// class.
         /// </summary>
-        /// <param name="bMCIPv4Address">Bmc address of the physical
+        /// <param name="bMCIPv4Address">BMC address of the physical
         /// machine.</param>
         /// <param name="computerName">Computer name of the physical
         /// machine.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets bmc address of the physical machine.
+        /// Gets or sets BMC address of the physical machine.
         /// </summary>
         [JsonProperty(PropertyName = "bmcIpv4Address")]
         public string BMCIPv4Address { get; set; }

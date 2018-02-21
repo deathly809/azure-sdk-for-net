@@ -52,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         public FabricAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Return the requested Ip pool.
+        /// Return the requested IP pool.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -61,7 +61,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='ipPool'>
-        /// Ip pool name.
+        /// IP pool name.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -257,7 +257,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
+        /// Create an IP pool.  Once created an IP pool cannot be deleted.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -266,10 +266,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='ipPool'>
-        /// Ip pool name.
+        /// IP pool name.
         /// </param>
         /// <param name='pool'>
-        /// Ip pool object to send.
+        /// IP pool object to send.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -285,7 +285,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all ip pools at a certain location.
+        /// Returns a list of all IP pools at a certain location.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -493,7 +493,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Create an Ip pool.  Once created an Ip pool cannot be deleted.
+        /// Create an IP pool.  Once created an IP pool cannot be deleted.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Name of the resource group.
@@ -502,10 +502,10 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// Location of the resource.
         /// </param>
         /// <param name='ipPool'>
-        /// Ip pool name.
+        /// IP pool name.
         /// </param>
         /// <param name='pool'>
-        /// Ip pool object to send.
+        /// IP pool object to send.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -712,7 +712,7 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         }
 
         /// <summary>
-        /// Returns a list of all ip pools at a certain location.
+        /// Returns a list of all IP pools at a certain location.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
