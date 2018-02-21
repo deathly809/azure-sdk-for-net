@@ -47,8 +47,8 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         public ServiceClientCredentials Credentials { get; private set; }
 
         /// <summary>
-        /// Subscription credentials which uniquely identify Microsoft Azure
-        /// subscription.  The subscription ID forms part of the URI for every service
+        /// Subscription credentials that uniquely identify Microsoft Azure
+        /// subscription. The subscription ID forms part of the URI for every service
         /// call.
         /// </summary>
         public string SubscriptionId { get; set; }

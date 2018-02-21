@@ -7,7 +7,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "ba4d712d-b287-4811-b9c2-d5811cd1616e"
+          "dd15803f-37cb-4ceb-9d1b-131ed0505299"
         ],
         "accept-language": [
           "en-US"
@@ -17,10 +17,10 @@
           "Microsoft.AzureStack.Management.Backup.Admin.BackupAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourceGroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.Backup.Admin/backupLocations\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"externalStoreDefault\": {\r\n          \"path\": \"\\\\\\\\100.68.71.192\\\\Share\",\r\n          \"userName\": \"AzureStack\\\\AzureStackAdmin\",\r\n          \"password\": null,\r\n          \"encryptionKeyBase64\": null,\r\n          \"backupFrequencyInMinutes\": \"\",\r\n          \"availableCapacity\": \"10GB\",\r\n          \"isBackupSchedulerEnabled\": false,\r\n          \"nextBackupTime\": null,\r\n          \"lastBackupTime\": null\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"nextLink\": null\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourceGroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.Backup.Admin/backupLocations\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"externalStoreDefault\": {\r\n          \"path\": \"\\\\\\\\100.68.88.192\\\\C$\\\\backup_test\",\r\n          \"userName\": \"AzureStack\\\\Administrator\",\r\n          \"password\": null,\r\n          \"encryptionKeyBase64\": null,\r\n          \"backupFrequencyInMinutes\": \"\",\r\n          \"availableCapacity\": \"10GB\",\r\n          \"isBackupSchedulerEnabled\": false,\r\n          \"nextBackupTime\": null,\r\n          \"lastBackupTime\": null\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"nextLink\": null\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "555"
+          "563"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Thu, 08 Feb 2018 23:56:26 GMT"
+          "Fri, 16 Feb 2018 23:02:04 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv83pSqAMO3DRtM3f58cdDNeYMz2ne5LpUrphC5vr6NZaxGZkcNEv7qMuWSYP8dQrcrOX+3Ew6tb4LDe7UcpWSdVEwhyyqpmo+u/SRAB2GUX2ANeffvnF44Ib/ZhCJZlrKO4C7c7Llzh5J7W8f6HLN"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvZvNKLueszd0NZ1ZIuaP+vam+8xh6SnZNQCLS84ZxJC+6a3P1QIKbqnqA1rLsVrqSry1I25ZpthZzaxmPi73FWS+B0+yCm2S9+Dn/L0FRStSPBdabPbyYc4gcjFxTSZGX8lccYKff1nIiioLv9rJI"
         ],
         "x-ms-correlation-request-id": [
-          "cd81e79c-a12f-4440-9b8f-07abd12e654f"
+          "8906a070-6eaa-4e06-aa12-b25410c270b0"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14763"
+          "14590"
         ],
         "x-ms-request-id": [
-          "cd81e79c-a12f-4440-9b8f-07abd12e654f"
+          "8906a070-6eaa-4e06-aa12-b25410c270b0"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180208T235626Z:cd81e79c-a12f-4440-9b8f-07abd12e654f"
+          "LOCAL:20180216T230204Z:8906a070-6eaa-4e06-aa12-b25410c270b0"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"

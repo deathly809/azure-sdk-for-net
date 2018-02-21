@@ -434,7 +434,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         }
 
         /// <summary>
-        /// Create a new backup location.
+        /// Update a backup location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -473,15 +473,15 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<LongRunningOperationStatus>> CreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Backup>> CreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send request
-            AzureOperationResponse<LongRunningOperationStatus> _response = await BeginCreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<Backup> _response = await BeginCreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Create a new backup location.
+        /// Update a backup location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -738,7 +738,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<LongRunningOperationStatus>> BeginCreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Backup>> BeginCreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -837,7 +837,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
-            if ((int)_statusCode != 200 && (int)_statusCode != 202 && (int)_statusCode != 500)
+            if ((int)_statusCode != 200 && (int)_statusCode != 202)
             {
                 var ex = new CloudException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
                 try
@@ -872,7 +872,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<LongRunningOperationStatus>();
+            var _result = new AzureOperationResponse<Backup>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -885,7 +885,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<LongRunningOperationStatus>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Backup>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -903,25 +903,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<LongRunningOperationStatus>(_responseContent, Client.DeserializationSettings);
-                }
-                catch (JsonException ex)
-                {
-                    _httpRequest.Dispose();
-                    if (_httpResponse != null)
-                    {
-                        _httpResponse.Dispose();
-                    }
-                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
-                }
-            }
-            // Deserialize Response
-            if ((int)_statusCode == 500)
-            {
-                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-                try
-                {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<LongRunningOperationStatus>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<Backup>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

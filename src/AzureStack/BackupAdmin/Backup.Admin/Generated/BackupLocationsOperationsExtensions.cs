@@ -96,7 +96,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Create a new backup location.
+            /// Update a backup location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -116,7 +116,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Create a new backup location.
+            /// Update a backup location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -153,7 +153,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='backupLocation'>
             /// Name of the backup location.
             /// </param>
-            public static LongRunningOperationStatus CreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
+            public static Backup CreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
             {
                 return operations.CreateBackupAsync(resourceGroup, backupLocation).GetAwaiter().GetResult();
             }
@@ -173,7 +173,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<LongRunningOperationStatus> CreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Backup> CreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.CreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -182,7 +182,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Create a new backup location.
+            /// Update a backup location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -202,7 +202,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             }
 
             /// <summary>
-            /// Create a new backup location.
+            /// Update a backup location.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -239,7 +239,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='backupLocation'>
             /// Name of the backup location.
             /// </param>
-            public static LongRunningOperationStatus BeginCreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
+            public static Backup BeginCreateBackup(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation)
             {
                 return operations.BeginCreateBackupAsync(resourceGroup, backupLocation).GetAwaiter().GetResult();
             }
@@ -259,7 +259,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<LongRunningOperationStatus> BeginCreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Backup> BeginCreateBackupAsync(this IBackupLocationsOperations operations, string resourceGroup, string backupLocation, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginCreateBackupWithHttpMessagesAsync(resourceGroup, backupLocation, null, cancellationToken).ConfigureAwait(false))
                 {

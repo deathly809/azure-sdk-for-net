@@ -14,7 +14,8 @@ namespace Backup.Tests
     public class BackupLocationTests : BackupTestBase
     {
 
-        private void ValidateBackupLocation(BackupLocation location) {
+        private void ValidateBackupLocation(BackupLocation location)
+        {
             Assert.NotNull(location);
 
             // Resource properties
@@ -27,7 +28,8 @@ namespace Backup.Tests
             // TODO: Check with teams.
         }
 
-        private void AssertSame(BackupLocation expected, BackupLocation given) {
+        private void AssertSame(BackupLocation expected, BackupLocation given)
+        {
             if (expected == null)
             {
                 Assert.Null(given);
@@ -58,16 +60,20 @@ namespace Backup.Tests
         }
 
         [Fact]
-        public void TestListBackupLocations() {
-            RunTest((client) => {
+        public void TestListBackupLocations()
+        {
+            RunTest((client) =>
+            {
                 var backupLocations = client.BackupLocations.List(ResourceGroupName);
                 Common.MapOverIPage(backupLocations, client.BackupLocations.ListNext, ValidateBackupLocation);
             });
         }
 
         [Fact]
-        public void TestGetBackupLocation() {
-            RunTest((client) => {
+        public void TestGetBackupLocation()
+        {
+            RunTest((client) =>
+            {
                 var backupLocations = client.BackupLocations.List(ResourceGroupName);
                 var backupLocation = backupLocations.GetFirst();
                 var result = client.BackupLocations.Get(ResourceGroupName, backupLocation.Name);
@@ -76,10 +82,13 @@ namespace Backup.Tests
         }
 
         [Fact]
-        public void TestGetAllBackupLocation() {
-            RunTest((client) => {
+        public void TestGetAllBackupLocation()
+        {
+            RunTest((client) =>
+            {
                 var backupLocations = client.BackupLocations.List(ResourceGroupName);
-                Common.MapOverIPage(backupLocations, client.BackupLocations.ListNext, (backupLocation) => {
+                Common.MapOverIPage(backupLocations, client.BackupLocations.ListNext, (backupLocation) =>
+                {
                     var result = client.BackupLocations.Get(ResourceGroupName, backupLocation.Name);
                     AssertSame(backupLocation, result);
                 });
@@ -87,17 +96,19 @@ namespace Backup.Tests
         }
 
         [Fact]
-        public void TestUpdateBackupLocation() {
-            RunTest((client) => {
-                var backupLocation = new BackupLocation("", "local", "Microsoft.Backup.Admin/backupLocation", "local")
-                {
-                    Path = @"\\100.68.71.192\Share",
-                    UserName = @"AzureStack\AzureStackAdmin",
-                    Password = "!!123abc",
-                    EncryptionKeyBase64 = "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ=="
-                };
+        public void TestUpdateBackupLocation()
+        {
+            RunTest((client) =>
+            {
 
-                var result  = client.BackupLocations.Update(ResourceGroupName, "local" ,backupLocation);
+                var backupLocation = client.BackupLocations.Get(ResourceGroupName, "local");
+
+                backupLocation.Path = @"\\100.68.71.192\Share";
+                backupLocation.UserName = @"AzureStack\AzureStackAdmin";
+                backupLocation.Password = "!!123abc";
+                backupLocation.EncryptionKeyBase64 = "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ==";
+
+                var result = client.BackupLocations.Update(ResourceGroupName, "local", backupLocation);
                 Assert.NotNull(result);
 
                 result.Path = null;
@@ -112,13 +123,16 @@ namespace Backup.Tests
                 Assert.Empty(result.Password);
                 Assert.Empty(result.EncryptionKeyBase64);
 
-            },null, null, System.Net.HttpStatusCode.OK, false);
+            }, null, null, System.Net.HttpStatusCode.OK, false);
         }
 
         [Fact]
-        public void TestCreateBackup() {
-            RunTest((client) => {
-                client.BackupLocations.CreateBackup(ResourceGroupName, "local");
+        public void TestCreateBackup()
+        {
+            RunTest((client) =>
+            {
+                var backup = client.BackupLocations.CreateBackup(ResourceGroupName, "local");
+                Assert.NotNull(backup);
             });
         }
 

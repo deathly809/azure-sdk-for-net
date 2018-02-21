@@ -71,7 +71,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// </exception>
         Task<AzureOperationResponse<BackupLocation>> GetWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create a new backup location.
+        /// Update a backup location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -122,9 +122,9 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<LongRunningOperationStatus>> CreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Backup>> CreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Create a new backup location.
+        /// Update a backup location.
         /// </summary>
         /// <param name='resourceGroup'>
         /// Name of the resource group.
@@ -175,7 +175,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<LongRunningOperationStatus>> BeginCreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Backup>> BeginCreateBackupWithHttpMessagesAsync(string resourceGroup, string backupLocation, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns the list of backup locations.
         /// </summary>

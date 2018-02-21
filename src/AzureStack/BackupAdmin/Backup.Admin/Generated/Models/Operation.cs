@@ -30,10 +30,10 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// Initializes a new instance of the Operation class.
         /// </summary>
         /// <param name="name">The name of the operation being performed on
-        /// this particular object. It should match the action name that
-        /// appears in RBAC / the event service.</param>
+        /// this particular object. This name should match the name that
+        /// appears in RBAC or the event service.</param>
         /// <param name="display">Contains the localized display information
-        /// for this particular operation / action..</param>
+        /// for this particular operation / action.</param>
         public Operation(string name = default(string), Display display = default(Display))
         {
             Name = name;
@@ -48,15 +48,15 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
 
         /// <summary>
         /// Gets or sets the name of the operation being performed on this
-        /// particular object. It should match the action name that appears in
-        /// RBAC / the event service.
+        /// particular object. This name should match the name that appears in
+        /// RBAC or the event service.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets contains the localized display information for this
-        /// particular operation / action..
+        /// particular operation / action.
         /// </summary>
         [JsonProperty(PropertyName = "display")]
         public Display Display { get; set; }

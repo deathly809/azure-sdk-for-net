@@ -7,7 +7,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "283f0d52-baf0-43c0-975f-32a1af1b69ac"
+          "12e8429d-e976-4fff-90ce-ea07aee18a80"
         ],
         "accept-language": [
           "en-US"
@@ -17,10 +17,10 @@
           "Microsoft.AzureStack.Management.Backup.Admin.BackupAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourceGroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.Backup.Admin/backupLocations\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"externalStoreDefault\": {\r\n          \"path\": \"\\\\\\\\100.68.71.192\\\\Share\",\r\n          \"userName\": \"AzureStack\\\\AzureStackAdmin\",\r\n          \"password\": null,\r\n          \"encryptionKeyBase64\": null,\r\n          \"backupFrequencyInMinutes\": \"\",\r\n          \"availableCapacity\": \"10GB\",\r\n          \"isBackupSchedulerEnabled\": false,\r\n          \"nextBackupTime\": null,\r\n          \"lastBackupTime\": null\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"nextLink\": null\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourceGroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.Backup.Admin/backupLocations\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"externalStoreDefault\": {\r\n          \"path\": \"\\\\\\\\100.68.88.192\\\\C$\\\\backup_test\",\r\n          \"userName\": \"AzureStack\\\\Administrator\",\r\n          \"password\": null,\r\n          \"encryptionKeyBase64\": null,\r\n          \"backupFrequencyInMinutes\": \"\",\r\n          \"availableCapacity\": \"10GB\",\r\n          \"isBackupSchedulerEnabled\": false,\r\n          \"nextBackupTime\": null,\r\n          \"lastBackupTime\": null\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"nextLink\": null\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "555"
+          "563"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Thu, 08 Feb 2018 23:56:27 GMT"
+          "Fri, 16 Feb 2018 22:57:00 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvs9cA0nFocdbMd9Aa5ITs/mCjZSizT91SnoYI6PJqHF8sxz5fQDckkK+VXyCLMp0/VDiSm90/xw36U3VaaTP2P5Y5cwqUqWxRuEqeg1EXqaGiBwR0rPYnvRY6pWehenvxCr0bpP6WYa2uJ+2RjMrV"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv/sPhrq7KktnS3IsJ6pzlZ+NymX1wnoX8sVVvrRQ3YAu0didl4NiumQxtgJrM4bKSFRxDci3+SVQadDjR5+t/ojiHHUlaItXNoOhzb0Ar9pD9g57Z0onnZjlsB9FQZfDvCUCKQ1T3/V9TUpqHdT0L"
         ],
         "x-ms-correlation-request-id": [
-          "035b70fb-8acf-40d2-bdf0-9d17afdb170e"
+          "a0b046f4-3ae5-47f8-aab7-a5f141828807"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14755"
+          "14601"
         ],
         "x-ms-request-id": [
-          "035b70fb-8acf-40d2-bdf0-9d17afdb170e"
+          "a0b046f4-3ae5-47f8-aab7-a5f141828807"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180208T235627Z:035b70fb-8acf-40d2-bdf0-9d17afdb170e"
+          "LOCAL:20180216T225701Z:a0b046f4-3ae5-47f8-aab7-a5f141828807"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -71,7 +71,7 @@
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "0ba06f01-acca-4260-80d5-4b8f6788ba67"
+          "21d21a30-c846-4e98-88e8-e54e26d93900"
         ],
         "accept-language": [
           "en-US"
@@ -81,10 +81,10 @@
           "Microsoft.AzureStack.Management.Backup.Admin.BackupAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourceGroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local/backups/9dd75881-1f27-4ab0-8286-499ed1adb6af\",\r\n      \"name\": \"9dd75881-1f27-4ab0-8286-499ed1adb6af\",\r\n      \"type\": \"Microsoft.Backup.Admin/backupLocations/backups\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"backupInfo\": {\r\n          \"backupDataVersion\": null,\r\n          \"backupId\": \"9dd75881-1f27-4ab0-8286-499ed1adb6af\",\r\n          \"roleStatus\": [\r\n            {\r\n              \"roleName\": \"NRP\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"SRP\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"CRP\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultInternalControlPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultInternalDataPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultControlPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultDataPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultNamingService\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"WAS\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"ECE\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"CA\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"ACS\",\r\n              \"status\": \"Succeeded\"\r\n            }\r\n          ],\r\n          \"status\": \"Succeeded\",\r\n          \"createdDateTime\": \"2018-02-08T23:56:09.3417291Z\",\r\n          \"timeTakenToCreate\": \"PT5M45.0963676S\",\r\n          \"stampVersion\": null,\r\n          \"oemVersion\": null,\r\n          \"deploymentID\": null\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"nextLink\": null\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourceGroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local/backups/de038ae0-294d-468d-90a1-fbe5ae028ce2\",\r\n      \"name\": \"de038ae0-294d-468d-90a1-fbe5ae028ce2\",\r\n      \"type\": \"Microsoft.Backup.Admin/backupLocations/backups\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"backupInfo\": {\r\n          \"backupDataVersion\": null,\r\n          \"backupId\": \"de038ae0-294d-468d-90a1-fbe5ae028ce2\",\r\n          \"roleStatus\": [\r\n            {\r\n              \"roleName\": \"NRP\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"SRP\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"CRP\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultInternalControlPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultInternalDataPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultControlPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultDataPlane\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"KeyVaultNamingService\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"WAS\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"ECE\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"CA\",\r\n              \"status\": \"Succeeded\"\r\n            },\r\n            {\r\n              \"roleName\": \"ACS\",\r\n              \"status\": \"Succeeded\"\r\n            }\r\n          ],\r\n          \"status\": \"Succeeded\",\r\n          \"createdDateTime\": \"2018-02-16T16:06:10.1160531Z\",\r\n          \"timeTakenToCreate\": \"PT5M1.5611298S\",\r\n          \"stampVersion\": null,\r\n          \"oemVersion\": null,\r\n          \"deploymentID\": null\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"nextLink\": null\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "1208"
+          "1207"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -96,7 +96,7 @@
           "no-cache"
         ],
         "Date": [
-          "Thu, 08 Feb 2018 23:56:27 GMT"
+          "Fri, 16 Feb 2018 22:57:00 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +105,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvS/fhCiEGBZ4lwH2bL023t2X1MrzOpqoMQ7hscXujust9JGSL0bMh2ce690v8g/9ZrwlUmQWxb0bB22fQmvuKyZKTfIs7w0znpkGdh8FACJtp9r3dRcNzH0e/mFF8deGmN0KOpcqq3e4irqfynUPl"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvUgPQwY6ka6cKYG9oFtd1aAL121C/7o37c6J9a0wxRin7i8qXiXPAFGgn5jOd4NucRWe2TXW2XS6jibUYq9yC/fw4p65ql8brhzJLTzdt4lmIuK741Qn9qwAvQoKJL6oa48adQquhtfSSPEFSJyGk"
         ],
         "x-ms-correlation-request-id": [
-          "48088ce9-844a-4552-b111-c6b453291ce2"
+          "44fedae1-806c-47c3-82ce-5be33c9f29b9"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14754"
+          "14600"
         ],
         "x-ms-request-id": [
-          "48088ce9-844a-4552-b111-c6b453291ce2"
+          "44fedae1-806c-47c3-82ce-5be33c9f29b9"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20180208T235627Z:48088ce9-844a-4552-b111-c6b453291ce2"
+          "LOCAL:20180216T225701Z:44fedae1-806c-47c3-82ce-5be33c9f29b9"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
