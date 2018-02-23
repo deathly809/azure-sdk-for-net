@@ -40,7 +40,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="tags">List of key-value pairs.</param>
         public Resource(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
         {
-            ID = id;
+            Id = id;
             Name = name;
             Type = type;
             Location = location;
@@ -56,8 +56,8 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <summary>
         /// Gets URI of the resource.
         /// </summary>
-        [JsonProperty(PropertyName = "ID")]
-        public string ID { get; private set; }
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; private set; }
 
         /// <summary>
         /// Gets name of the resource.
