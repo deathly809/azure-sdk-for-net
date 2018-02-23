@@ -41,16 +41,16 @@ namespace Microsoft.AzureStack.Management.Update.Admin
         ServiceClientCredentials Credentials { get; }
 
         /// <summary>
-        /// Client Api Version.
-        /// </summary>
-        string ApiVersion { get; }
-
-        /// <summary>
         /// Subscription credentials which uniquely identify Microsoft Azure
         /// subscription.  The subscription ID forms part of the URI for every
         /// service call.
         /// </summary>
         string SubscriptionId { get; set; }
+
+        /// <summary>
+        /// Client Api Version.
+        /// </summary>
+        string ApiVersion { get; }
 
         /// <summary>
         /// Gets or sets the preferred language for the response.
