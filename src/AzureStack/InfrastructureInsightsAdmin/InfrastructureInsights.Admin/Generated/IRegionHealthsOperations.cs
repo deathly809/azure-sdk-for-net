@@ -25,10 +25,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public partial interface IRegionHealthsOperations
     {
         /// <summary>
-        /// Returns a list of region's health status.
+        /// Returns the list of all health status for the region.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
@@ -53,7 +53,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the requested health status of a region.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
@@ -75,7 +75,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// </exception>
         Task<AzureOperationResponse<RegionHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string region, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of region's health status.
+        /// Returns the list of all health status for the region.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

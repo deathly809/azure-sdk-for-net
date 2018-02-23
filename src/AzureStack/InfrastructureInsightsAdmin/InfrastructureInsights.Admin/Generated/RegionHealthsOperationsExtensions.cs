@@ -23,13 +23,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public static partial class RegionHealthsOperationsExtensions
     {
             /// <summary>
-            /// Returns a list of region's health status.
+            /// Returns the list of all health status for the region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
@@ -40,13 +40,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
 
             /// <summary>
-            /// Returns a list of region's health status.
+            /// Returns the list of all health status for the region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
@@ -69,7 +69,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -86,7 +86,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -103,7 +103,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
 
             /// <summary>
-            /// Returns a list of region's health status.
+            /// Returns the list of all health status for the region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -117,7 +117,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
 
             /// <summary>
-            /// Returns a list of region's health status.
+            /// Returns the list of all health status for the region.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

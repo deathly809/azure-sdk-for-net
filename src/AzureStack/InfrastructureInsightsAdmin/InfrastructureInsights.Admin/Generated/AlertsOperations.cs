@@ -55,7 +55,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the list of all alerts in a given region.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
@@ -263,7 +263,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the requested an alert.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
@@ -468,7 +468,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Closes the given alert.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
@@ -480,7 +480,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// The username used to perform the operation.
         /// </param>
         /// <param name='alert'>
-        /// Updated Alert Parameter.
+        /// Updated alert parameter.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.

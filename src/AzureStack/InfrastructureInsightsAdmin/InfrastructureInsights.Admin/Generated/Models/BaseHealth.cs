@@ -30,9 +30,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// Initializes a new instance of the BaseHealth class.
         /// </summary>
         /// <param name="alertSummary">Alert summary.</param>
-        /// <param name="healthState">Health status.</param>
-        /// <param name="namespaceProperty">Name space.</param>
-        /// <param name="registrationId">Registration id.</param>
+        /// <param name="healthState">Health state.</param>
+        /// <param name="namespaceProperty">Namespace of the health
+        /// resource.</param>
+        /// <param name="registrationId">Registration ID.</param>
         /// <param name="routePrefix">Route prefix.</param>
         public BaseHealth(AlertSummary alertSummary = default(AlertSummary), string healthState = default(string), string namespaceProperty = default(string), string registrationId = default(string), string routePrefix = default(string))
         {
@@ -56,19 +57,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public AlertSummary AlertSummary { get; set; }
 
         /// <summary>
-        /// Gets or sets health status.
+        /// Gets or sets health state.
         /// </summary>
         [JsonProperty(PropertyName = "healthState")]
         public string HealthState { get; set; }
 
         /// <summary>
-        /// Gets or sets name space.
+        /// Gets or sets namespace of the health resource.
         /// </summary>
         [JsonProperty(PropertyName = "namespace")]
         public string NamespaceProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets registration id.
+        /// Gets or sets registration ID.
         /// </summary>
         [JsonProperty(PropertyName = "registrationId")]
         public string RegistrationId { get; set; }

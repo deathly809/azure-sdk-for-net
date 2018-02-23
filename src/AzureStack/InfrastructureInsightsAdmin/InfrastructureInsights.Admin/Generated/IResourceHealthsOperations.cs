@@ -28,13 +28,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns a list of each resource's health under a service.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
-        /// Service registration id.
+        /// Service registration ID.
         /// </param>
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
@@ -59,16 +59,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the requested health information about a resource.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
-        /// Service registration id.
+        /// Service registration ID.
         /// </param>
         /// <param name='resourceRegistrationId'>
-        /// Resource registration id.
+        /// Resource registration ID.
         /// </param>
         /// <param name='filter'>
         /// OData filter parameter.

@@ -29,10 +29,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <summary>
         /// Initializes a new instance of the AlertSummary class.
         /// </summary>
-        /// <param name="criticalAlertCount">How many critical alerts this
-        /// service has.</param>
-        /// <param name="warningAlertCount">How many warning alerts this
-        /// service has.</param>
+        /// <param name="criticalAlertCount">The number of critical alerts for
+        /// the service.</param>
+        /// <param name="warningAlertCount">The number of warning alerts for
+        /// the service.</param>
         public AlertSummary(int? criticalAlertCount = default(int?), int? warningAlertCount = default(int?))
         {
             CriticalAlertCount = criticalAlertCount;
@@ -46,13 +46,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets how many critical alerts this service has.
+        /// Gets or sets the number of critical alerts for the service.
         /// </summary>
         [JsonProperty(PropertyName = "criticalAlertCount")]
         public int? CriticalAlertCount { get; set; }
 
         /// <summary>
-        /// Gets or sets how many warning alerts this service has.
+        /// Gets or sets the number of warning alerts for the service.
         /// </summary>
         [JsonProperty(PropertyName = "warningAlertCount")]
         public int? WarningAlertCount { get; set; }

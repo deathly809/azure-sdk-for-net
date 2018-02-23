@@ -29,7 +29,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -49,7 +49,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -75,7 +75,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -95,7 +95,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -133,7 +133,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The username used to perform the operation.
             /// </param>
             /// <param name='alert'>
-            /// Updated Alert Parameter.
+            /// Updated alert parameter.
             /// </param>
             public static Alert Close(this IAlertsOperations operations, string resourceGroupName, string region, string alertName, string user, Alert alert)
             {
@@ -147,7 +147,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
             /// <param name='region'>
             /// Name of the region
@@ -159,7 +159,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The username used to perform the operation.
             /// </param>
             /// <param name='alert'>
-            /// Updated Alert Parameter.
+            /// Updated alert parameter.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.

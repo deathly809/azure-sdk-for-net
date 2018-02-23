@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Contains information related to a regions health.
+    /// Contains information related to the health of a region.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class RegionHealth : Resource
@@ -37,10 +37,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">Location of the resource.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         /// <param name="alertSummary">Summary of alerts.</param>
-        /// <param name="usageMetrics">List of usage metrics for this
+        /// <param name="usageMetrics">List of usage metrics for the
         /// region.</param>
         public RegionHealth(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), AlertSummary alertSummary = default(AlertSummary), IList<UsageMetrics> usageMetrics = default(IList<UsageMetrics>))
             : base(id, name, type, location, tags)
@@ -62,7 +62,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public AlertSummary AlertSummary { get; set; }
 
         /// <summary>
-        /// Gets or sets list of usage metrics for this region.
+        /// Gets or sets list of usage metrics for the region.
         /// </summary>
         [JsonProperty(PropertyName = "properties.usageMetrics")]
         public IList<UsageMetrics> UsageMetrics { get; set; }

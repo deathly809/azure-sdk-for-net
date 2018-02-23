@@ -52,10 +52,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         public InfrastructureInsightsAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns a list of each service's health.
+        /// Returns the list of all resource provider health states.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
@@ -260,10 +260,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Returns the health of the requested service.
+        /// Returns the requested service health object.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
         /// <param name='region'>
         /// Name of the region
@@ -465,7 +465,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Returns a list of each service's health.
+        /// Returns the list of all resource provider health states.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

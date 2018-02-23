@@ -30,10 +30,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// Initializes a new instance of the Metrics class.
         /// </summary>
         /// <param name="name">Name of the usage metric.</param>
-        /// <param name="maCounterName">Name of the usage metric.</param>
-        /// <param name="observedTimestamp">Name of the usage metric.</param>
-        /// <param name="sourceType">Name of the usage metric.</param>
-        /// <param name="sourceName">Source of the metric. Possible values
+        /// <param name="maCounterName">Name of the counter.</param>
+        /// <param name="observedTimestamp">Time counter was observed.</param>
+        /// <param name="sourceType">Type of the source.</param>
+        /// <param name="sourceName">Name of the source. Possible values
         /// include: 'PhysicalNode', 'VirtualMachine',
         /// 'ResourceProvider'</param>
         /// <param name="unit">Unit for the metric. Possible values include:
@@ -63,25 +63,25 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets name of the usage metric.
+        /// Gets or sets name of the counter.
         /// </summary>
         [JsonProperty(PropertyName = "maCounterName")]
         public string MaCounterName { get; set; }
 
         /// <summary>
-        /// Gets or sets name of the usage metric.
+        /// Gets or sets time counter was observed.
         /// </summary>
         [JsonProperty(PropertyName = "observedTimestamp")]
         public System.DateTime? ObservedTimestamp { get; set; }
 
         /// <summary>
-        /// Gets or sets name of the usage metric.
+        /// Gets or sets type of the source.
         /// </summary>
         [JsonProperty(PropertyName = "sourceType")]
         public string SourceType { get; set; }
 
         /// <summary>
-        /// Gets or sets source of the metric. Possible values include:
+        /// Gets or sets name of the source. Possible values include:
         /// 'PhysicalNode', 'VirtualMachine', 'ResourceProvider'
         /// </summary>
         [JsonProperty(PropertyName = "sourceName")]
