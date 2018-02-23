@@ -115,6 +115,92 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
             }
 
             /// <summary>
+            /// Restarts the requestd infrastructure role.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRole'>
+            /// Infrastructure role name.
+            /// </param>
+            public static void Restart(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole)
+            {
+                operations.RestartAsync(resourceGroupName, location, infraRole).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Restarts the requestd infrastructure role.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRole'>
+            /// Infrastructure role name.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task RestartAsync(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.RestartWithHttpMessagesAsync(resourceGroupName, location, infraRole, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
+            /// Restarts the requestd infrastructure role.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRole'>
+            /// Infrastructure role name.
+            /// </param>
+            public static void BeginRestart(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole)
+            {
+                operations.BeginRestartAsync(resourceGroupName, location, infraRole).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Restarts the requestd infrastructure role.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// Name of the resource group.
+            /// </param>
+            /// <param name='location'>
+            /// Location of the resource.
+            /// </param>
+            /// <param name='infraRole'>
+            /// Infrastructure role name.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task BeginRestartAsync(this IInfraRolesOperations operations, string resourceGroupName, string location, string infraRole, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                (await operations.BeginRestartWithHttpMessagesAsync(resourceGroupName, location, infraRole, null, cancellationToken).ConfigureAwait(false)).Dispose();
+            }
+
+            /// <summary>
             /// Returns a list of all infrastructure roles at a location.
             /// </summary>
             /// <param name='operations'>

@@ -1,11 +1,10 @@
-2018-02-21 21:53:44 UTC
+2018-02-23 00:10:25 UTC
 
 1) azure-rest-api-specs repository information
 GitHub user: deathly809
 Branch:      azs.fabric.admin
-Commit:      f95d2bd12637e00f0ced50d845a446625c7ed138
 
 2) AutoRest information
 Requested version: latest
-Bootstrapper version:    C:\Users\jerobins.REDMOND\AppData\Roaming\npm `-- autorest@2.0.4245  
+Bootstrapper version:    C:\Users\jerobins\AppData\Roaming\npm `-- autorest@2.0.4245  
 Latest installed version:    

@@ -81,6 +81,56 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<InfraRole>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<InfraRole> odataQuery = default(ODataQuery<InfraRole>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
+        /// Restarts the requestd infrastructure role.
+        /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
+        /// <param name='location'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='infraRole'>
+        /// Infrastructure role name.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse> RestartWithHttpMessagesAsync(string resourceGroupName, string location, string infraRole, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Restarts the requestd infrastructure role.
+        /// </summary>
+        /// <param name='resourceGroupName'>
+        /// Name of the resource group.
+        /// </param>
+        /// <param name='location'>
+        /// Location of the resource.
+        /// </param>
+        /// <param name='infraRole'>
+        /// Infrastructure role name.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="Microsoft.Rest.Azure.CloudException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="Microsoft.Rest.ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        Task<AzureOperationResponse> BeginRestartWithHttpMessagesAsync(string resourceGroupName, string location, string infraRole, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
         /// Returns a list of all infrastructure roles at a location.
         /// </summary>
         /// <param name='nextPageLink'>
