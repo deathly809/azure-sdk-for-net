@@ -39,11 +39,12 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// <param name="type">Type of resource.</param>
         /// <param name="location">Region Location of resource.</param>
         /// <param name="tags">List of key value pairs.</param>
-        /// <param name="progress">Current progress of update.</param>
+        /// <param name="progress">Current progress of the update run.</param>
         /// <param name="timeStarted">Update start time.</param>
         /// <param name="duration">Duration of the update.</param>
-        /// <param name="state">State of the update run.</param>
-        public UpdateRun(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), Step progress = default(Step), int? timeStarted = default(int?), int? duration = default(int?), string state = default(string))
+        /// <param name="state">State of the update run. Possible values
+        /// include: 'Unknown', 'Succeeded', 'InProgress', 'Failed'</param>
+        public UpdateRun(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), Step progress = default(Step), System.DateTime? timeStarted = default(System.DateTime?), string duration = default(string), string state = default(string))
             : base(id, name, type, location, tags)
         {
             Progress = progress;
@@ -59,7 +60,7 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets current progress of update.
+        /// Gets or sets current progress of the update run.
         /// </summary>
         [JsonProperty(PropertyName = "properties.progress")]
         public Step Progress { get; set; }
@@ -68,16 +69,17 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// Gets or sets update start time.
         /// </summary>
         [JsonProperty(PropertyName = "properties.timeStarted")]
-        public int? TimeStarted { get; set; }
+        public System.DateTime? TimeStarted { get; set; }
 
         /// <summary>
         /// Gets or sets duration of the update.
         /// </summary>
         [JsonProperty(PropertyName = "properties.duration")]
-        public int? Duration { get; set; }
+        public string Duration { get; set; }
 
         /// <summary>
-        /// Gets or sets state of the update run.
+        /// Gets or sets state of the update run. Possible values include:
+        /// 'Unknown', 'Succeeded', 'InProgress', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.state")]
         public string State { get; set; }

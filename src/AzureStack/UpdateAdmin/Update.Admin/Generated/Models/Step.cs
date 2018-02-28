@@ -16,7 +16,7 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Pageable list of update runs.
+    /// Inforamtion about each step of the update process.
     /// </summary>
     public partial class Step
     {
@@ -33,7 +33,7 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// </summary>
         /// <param name="name">Name of the step.</param>
         /// <param name="description">Description of the step.</param>
-        /// <param name="errorMessage">Error message if any.</param>
+        /// <param name="errorMessage">Error message, if any.</param>
         /// <param name="status">State of the step.</param>
         /// <param name="startTimeUtc">Time at which this step started
         /// executing</param>
@@ -70,7 +70,7 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets error message if any.
+        /// Gets or sets error message, if any.
         /// </summary>
         [JsonProperty(PropertyName = "errorMessage")]
         public string ErrorMessage { get; set; }
