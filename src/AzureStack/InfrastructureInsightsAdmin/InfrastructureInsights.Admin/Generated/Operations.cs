@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         public InfrastructureInsightsAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns a list of support rest operations.
+        /// Returns a list of support REST operations.
         /// </summary>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -92,7 +92,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "providers/Microsoft.InfrastructureInsights/operations").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "providers/Microsoft.InfrastructureInsights.Admin/operations").ToString();
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
@@ -224,7 +224,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Returns a list of support rest operations.
+        /// Returns a list of support REST operations.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// This class models an alert resource.
+    /// This object represents an alert resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class Alert : Resource
@@ -37,31 +37,35 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">Location of the resource.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         /// <param name="closedTimestamp">Timestamp when the alert was
         /// closed.</param>
         /// <param name="createdTimestamp">Timestamp when the alert was
         /// created.</param>
         /// <param name="description">Description of the alert.</param>
-        /// <param name="faultId">Fault id of the alert.</param>
-        /// <param name="alertId">Id of the alert.</param>
-        /// <param name="faultTypeId">Fault type id of the alert.</param>
+        /// <param name="faultId">Gets or sets the fault ID of the
+        /// alert.</param>
+        /// <param name="alertId">Gets or sets the ID of the alert.</param>
+        /// <param name="faultTypeId">Gets or sets the fault type ID of the
+        /// alert.</param>
         /// <param name="lastUpdatedTimestamp">Timestamp when the alert was
         /// last updated.</param>
         /// <param name="alertProperties">Properties of the alert.</param>
-        /// <param name="remediation">Admin friendly remediation instructions
-        /// for the alert.</param>
-        /// <param name="resourceRegistrationId">Registration id of the atomic
-        /// component the alert belongs to.  This is null if not associated
-        /// with a resource.</param>
-        /// <param name="resourceProviderRegistrationId">Registration id of the
-        /// service the alert belongs to.</param>
+        /// <param name="remediation">Gets or sets the admin friendly
+        /// remediation instructions for the alert.</param>
+        /// <param name="resourceRegistrationId">Gets or sets the registration
+        /// ID of the resource associated with the alert. If the alert is not
+        /// associated with a resource, the resource registration ID is
+        /// null.</param>
+        /// <param name="resourceProviderRegistrationId">Gets or sets the
+        /// registration ID of the service the alert belongs to.</param>
         /// <param name="severity">Severity of the alert.</param>
         /// <param name="state">State of the alert.</param>
-        /// <param name="title">Title of the alert.</param>
-        /// <param name="impactedResourceId">ResourceId for the impacted
+        /// <param name="title">Gets or sets the Resource ID for the impacted
         /// item.</param>
+        /// <param name="impactedResourceId">Gets or sets the Resource ID for
+        /// the impacted item.</param>
         /// <param name="impactedResourceDisplayName">Display name for the
         /// impacted item.</param>
         /// <param name="closedByUserAlias">User alias who closed the
@@ -113,19 +117,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public IList<IDictionary<string, string>> Description { get; set; }
 
         /// <summary>
-        /// Gets or sets fault id of the alert.
+        /// Gets or sets the fault ID of the alert.
         /// </summary>
         [JsonProperty(PropertyName = "properties.faultId")]
         public string FaultId { get; set; }
 
         /// <summary>
-        /// Gets or sets id of the alert.
+        /// Gets or sets the ID of the alert.
         /// </summary>
         [JsonProperty(PropertyName = "properties.alertId")]
         public string AlertId { get; set; }
 
         /// <summary>
-        /// Gets or sets fault type id of the alert.
+        /// Gets or sets the fault type ID of the alert.
         /// </summary>
         [JsonProperty(PropertyName = "properties.faultTypeId")]
         public string FaultTypeId { get; set; }
@@ -143,20 +147,23 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public IDictionary<string, string> AlertProperties { get; set; }
 
         /// <summary>
-        /// Gets or sets admin friendly remediation instructions for the alert.
+        /// Gets or sets the admin friendly remediation instructions for the
+        /// alert.
         /// </summary>
         [JsonProperty(PropertyName = "properties.remediation")]
         public IList<IDictionary<string, string>> Remediation { get; set; }
 
         /// <summary>
-        /// Gets or sets registration id of the atomic component the alert
-        /// belongs to.  This is null if not associated with a resource.
+        /// Gets or sets the registration ID of the resource associated with
+        /// the alert. If the alert is not associated with a resource, the
+        /// resource registration ID is null.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceRegistrationId")]
         public string ResourceRegistrationId { get; set; }
 
         /// <summary>
-        /// Gets or sets registration id of the service the alert belongs to.
+        /// Gets or sets the registration ID of the service the alert belongs
+        /// to.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceProviderRegistrationId")]
         public string ResourceProviderRegistrationId { get; set; }
@@ -174,13 +181,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public string State { get; set; }
 
         /// <summary>
-        /// Gets or sets title of the alert.
+        /// Gets or sets the Resource ID for the impacted item.
         /// </summary>
         [JsonProperty(PropertyName = "properties.title")]
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets resourceId for the impacted item.
+        /// Gets or sets the Resource ID for the impacted item.
         /// </summary>
         [JsonProperty(PropertyName = "properties.impactedResourceId")]
         public string ImpactedResourceId { get; set; }

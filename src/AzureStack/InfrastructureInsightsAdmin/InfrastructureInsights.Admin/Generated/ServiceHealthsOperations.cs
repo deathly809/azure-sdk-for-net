@@ -52,12 +52,12 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         public InfrastructureInsightsAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns a list of each service's health.
+        /// Returns the list of all resource provider health states.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='odataQuery'>
@@ -84,7 +84,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<ServiceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<ServiceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -94,9 +94,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (Client.ApiVersion == null)
             {
@@ -111,16 +111,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             List<string> _queryParameters = new List<string>();
             if (odataQuery != null)
             {
@@ -260,12 +260,12 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Returns the health of the requested service.
+        /// Returns the requested service health object.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='serviceHealth'>
@@ -292,7 +292,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<ServiceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string serviceHealth, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ServiceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string serviceHealth, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -302,9 +302,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (serviceHealth == null)
             {
@@ -322,17 +322,17 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("serviceHealth", serviceHealth);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths/{serviceHealth}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceHealth}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{serviceHealth}", System.Uri.EscapeDataString(serviceHealth));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
@@ -465,7 +465,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         }
 
         /// <summary>
-        /// Returns a list of each service's health.
+        /// Returns the list of all resource provider health states.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

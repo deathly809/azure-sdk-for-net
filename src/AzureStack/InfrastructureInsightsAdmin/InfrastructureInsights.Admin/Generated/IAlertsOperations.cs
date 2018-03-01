@@ -28,9 +28,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the list of all alerts in a given region.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='odataQuery'>
@@ -51,14 +51,14 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<Alert>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<Alert>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns the requested an alert.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='alertName'>
@@ -79,14 +79,14 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Alert>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string alertName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Alert>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string alertName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Closes the given alert.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='alertName'>
@@ -96,7 +96,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// The username used to perform the operation.
         /// </param>
         /// <param name='alert'>
-        /// Updated Alert Parameter.
+        /// Updated alert parameter.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -113,7 +113,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Alert>> CloseWithHttpMessagesAsync(string resourceGroupName, string region, string alertName, string user, Alert alert, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Alert>> CloseWithHttpMessagesAsync(string resourceGroupName, string location, string alertName, string user, Alert alert, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns the list of all alerts in a given region.
         /// </summary>

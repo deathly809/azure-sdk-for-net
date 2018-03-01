@@ -55,9 +55,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the list of all alerts in a given region.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='odataQuery'>
@@ -84,7 +84,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<Alert>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<Alert>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<Alert> odataQuery = default(ODataQuery<Alert>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -94,9 +94,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (Client.ApiVersion == null)
             {
@@ -111,16 +111,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/alerts").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/alerts").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             List<string> _queryParameters = new List<string>();
             if (odataQuery != null)
             {
@@ -263,9 +263,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the requested an alert.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='alertName'>
@@ -292,7 +292,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Alert>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string alertName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Alert>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string alertName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -302,9 +302,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (alertName == null)
             {
@@ -322,17 +322,17 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("alertName", alertName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/alerts/{alertName}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/alerts/{alertName}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{alertName}", System.Uri.EscapeDataString(alertName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
@@ -468,9 +468,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Closes the given alert.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='alertName'>
@@ -480,7 +480,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// The username used to perform the operation.
         /// </param>
         /// <param name='alert'>
-        /// Updated Alert Parameter.
+        /// Updated alert parameter.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -503,7 +503,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Alert>> CloseWithHttpMessagesAsync(string resourceGroupName, string region, string alertName, string user, Alert alert, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Alert>> CloseWithHttpMessagesAsync(string resourceGroupName, string location, string alertName, string user, Alert alert, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -513,9 +513,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (alertName == null)
             {
@@ -541,7 +541,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("alertName", alertName);
                 tracingParameters.Add("user", user);
                 tracingParameters.Add("alert", alert);
@@ -550,10 +550,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/alerts/{alertName}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/alerts/{alertName}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{alertName}", System.Uri.EscapeDataString(alertName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)

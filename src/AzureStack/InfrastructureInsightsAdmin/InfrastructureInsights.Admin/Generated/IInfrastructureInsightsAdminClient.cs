@@ -41,14 +41,14 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         ServiceClientCredentials Credentials { get; }
 
         /// <summary>
-        /// Subscription credentials which uniquely identify Microsoft Azure
-        /// subscription.The subscription ID forms part of the URI for every
+        /// Subscription credentials that uniquely identify Microsoft Azure
+        /// subscription. The subscription ID forms part of the URI for every
         /// service call.
         /// </summary>
         string SubscriptionId { get; set; }
 
         /// <summary>
-        /// Client Api Version.
+        /// Client API Version.
         /// </summary>
         string ApiVersion { get; }
 

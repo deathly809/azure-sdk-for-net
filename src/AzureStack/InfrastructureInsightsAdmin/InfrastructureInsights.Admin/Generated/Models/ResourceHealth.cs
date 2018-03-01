@@ -37,20 +37,21 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">Location of the resource.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         /// <param name="alertSummary">Alert summary.</param>
-        /// <param name="healthState">Health status.</param>
-        /// <param name="namespaceProperty">Name space.</param>
-        /// <param name="registrationId">Registration id.</param>
+        /// <param name="healthState">Health state.</param>
+        /// <param name="namespaceProperty">Namespace of the health
+        /// resource.</param>
+        /// <param name="registrationId">Registration ID.</param>
         /// <param name="routePrefix">Route prefix.</param>
         /// <param name="resourceLocation">Resource location.</param>
         /// <param name="resourceName">Resource name.</param>
         /// <param name="resourceDisplayName">Resource display name.</param>
         /// <param name="resourceType">Resource type.</param>
-        /// <param name="resourceURI">Resource URI.</param>
-        /// <param name="rpRegistrationId">Resource provider registration
-        /// Id.</param>
+        /// <param name="resourceURI">Gets or sets the resource URI.</param>
+        /// <param name="rpRegistrationId">Gets or sets the resource provider
+        /// registration ID.</param>
         /// <param name="usageMetrics">Usage metrics.</param>
         public ResourceHealth(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), AlertSummary alertSummary = default(AlertSummary), string healthState = default(string), string namespaceProperty = default(string), string registrationId = default(string), string routePrefix = default(string), string resourceLocation = default(string), string resourceName = default(string), string resourceDisplayName = default(string), string resourceType = default(string), string resourceURI = default(string), string rpRegistrationId = default(string), IList<UsageMetrics> usageMetrics = default(IList<UsageMetrics>))
             : base(id, name, type, location, tags)
@@ -82,19 +83,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public AlertSummary AlertSummary { get; set; }
 
         /// <summary>
-        /// Gets or sets health status.
+        /// Gets or sets health state.
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthState")]
         public string HealthState { get; set; }
 
         /// <summary>
-        /// Gets or sets name space.
+        /// Gets or sets namespace of the health resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.namespace")]
         public string NamespaceProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets registration id.
+        /// Gets or sets registration ID.
         /// </summary>
         [JsonProperty(PropertyName = "properties.registrationId")]
         public string RegistrationId { get; set; }
@@ -130,13 +131,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// Gets or sets resource URI.
+        /// Gets or sets the resource URI.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceURI")]
         public string ResourceURI { get; set; }
 
         /// <summary>
-        /// Gets or sets resource provider registration Id.
+        /// Gets or sets the resource provider registration ID.
         /// </summary>
         [JsonProperty(PropertyName = "properties.rpRegistrationId")]
         public string RpRegistrationId { get; set; }

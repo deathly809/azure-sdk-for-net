@@ -18,7 +18,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Holds information about a services health.
+    /// Holds information about the health of a service.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class ServiceHealth : Resource
@@ -37,12 +37,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         /// <param name="id">URI of the resource.</param>
         /// <param name="name">Name of the resource.</param>
         /// <param name="type">Type of resource.</param>
-        /// <param name="location">Location where resource is location.</param>
-        /// <param name="tags">List of key value pairs.</param>
+        /// <param name="location">Location of the resource.</param>
+        /// <param name="tags">List of key-value pairs.</param>
         /// <param name="alertSummary">Alert summary.</param>
-        /// <param name="healthState">Health status.</param>
-        /// <param name="namespaceProperty">Name space.</param>
-        /// <param name="registrationId">Registration id.</param>
+        /// <param name="healthState">Health state.</param>
+        /// <param name="namespaceProperty">Namespace of the health
+        /// resource.</param>
+        /// <param name="registrationId">Registration ID.</param>
         /// <param name="routePrefix">Route prefix.</param>
         /// <param name="displayName">Name of the service.</param>
         /// <param name="serviceLocation">Location of the service.</param>
@@ -73,19 +74,19 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models
         public AlertSummary AlertSummary { get; set; }
 
         /// <summary>
-        /// Gets or sets health status.
+        /// Gets or sets health state.
         /// </summary>
         [JsonProperty(PropertyName = "properties.healthState")]
         public string HealthState { get; set; }
 
         /// <summary>
-        /// Gets or sets name space.
+        /// Gets or sets namespace of the health resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.namespace")]
         public string NamespaceProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets registration id.
+        /// Gets or sets registration ID.
         /// </summary>
         [JsonProperty(PropertyName = "properties.registrationId")]
         public string RegistrationId { get; set; }

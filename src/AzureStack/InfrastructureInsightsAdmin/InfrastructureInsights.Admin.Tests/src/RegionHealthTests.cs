@@ -3,12 +3,11 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.InfrastructureInsights.Admin;
-using Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models;
-using Xunit;
-
 namespace InfrastructureInsights.Tests
 {
+    using Microsoft.AzureStack.Management.InfrastructureInsights.Admin;
+    using Microsoft.AzureStack.Management.InfrastructureInsights.Admin.Models;
+    using Xunit;
 
     public class RegionHealthTests : InfrastructureInsightsTestBase
     {

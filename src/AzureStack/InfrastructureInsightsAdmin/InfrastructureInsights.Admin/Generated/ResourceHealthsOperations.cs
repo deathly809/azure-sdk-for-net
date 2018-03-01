@@ -55,13 +55,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns a list of each resource's health under a service.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
-        /// Service registration id.
+        /// Service registration ID.
         /// </param>
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
@@ -87,7 +87,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IPage<ResourceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IPage<ResourceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -97,9 +97,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (serviceRegistrationId == null)
             {
@@ -118,17 +118,17 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("odataQuery", odataQuery);
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("serviceRegistrationId", serviceRegistrationId);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths/{serviceRegistrationId}/resourceHealths").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{serviceRegistrationId}", System.Uri.EscapeDataString(serviceRegistrationId));
             List<string> _queryParameters = new List<string>();
             if (odataQuery != null)
@@ -272,16 +272,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns the requested health information about a resource.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
-        /// Service registration id.
+        /// Service registration ID.
         /// </param>
         /// <param name='resourceRegistrationId'>
-        /// Resource registration id.
+        /// Resource registration ID.
         /// </param>
         /// <param name='filter'>
         /// OData filter parameter.
@@ -307,7 +307,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<ResourceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<ResourceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -317,9 +317,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "resourceGroupName");
             }
-            if (region == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "region");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (serviceRegistrationId == null)
             {
@@ -341,7 +341,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
-                tracingParameters.Add("region", region);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("serviceRegistrationId", serviceRegistrationId);
                 tracingParameters.Add("resourceRegistrationId", resourceRegistrationId);
                 tracingParameters.Add("filter", filter);
@@ -350,10 +350,10 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths/{serviceRegistrationId}/resourceHealths/{resourceRegistrationId}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths/{resourceRegistrationId}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
-            _url = _url.Replace("{region}", System.Uri.EscapeDataString(region));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{serviceRegistrationId}", System.Uri.EscapeDataString(serviceRegistrationId));
             _url = _url.Replace("{resourceRegistrationId}", System.Uri.EscapeDataString(resourceRegistrationId));
             List<string> _queryParameters = new List<string>();

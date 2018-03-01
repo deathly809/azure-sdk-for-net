@@ -29,20 +29,20 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='serviceRegistrationId'>
-            /// Service registration id.
+            /// Service registration ID.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<ResourceHealth> List(this IResourceHealthsOperations operations, string resourceGroupName, string region, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>))
+            public static IPage<ResourceHealth> List(this IResourceHealthsOperations operations, string resourceGroupName, string location, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>))
             {
-                return operations.ListAsync(resourceGroupName, region, serviceRegistrationId, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, serviceRegistrationId, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -52,13 +52,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='serviceRegistrationId'>
-            /// Service registration id.
+            /// Service registration ID.
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
@@ -66,9 +66,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<ResourceHealth>> ListAsync(this IResourceHealthsOperations operations, string resourceGroupName, string region, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<ResourceHealth>> ListAsync(this IResourceHealthsOperations operations, string resourceGroupName, string location, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, region, serviceRegistrationId, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, serviceRegistrationId, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -81,23 +81,23 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='serviceRegistrationId'>
-            /// Service registration id.
+            /// Service registration ID.
             /// </param>
             /// <param name='resourceRegistrationId'>
-            /// Resource registration id.
+            /// Resource registration ID.
             /// </param>
             /// <param name='filter'>
             /// OData filter parameter.
             /// </param>
-            public static ResourceHealth Get(this IResourceHealthsOperations operations, string resourceGroupName, string region, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string))
+            public static ResourceHealth Get(this IResourceHealthsOperations operations, string resourceGroupName, string location, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string))
             {
-                return operations.GetAsync(resourceGroupName, region, serviceRegistrationId, resourceRegistrationId, filter).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, serviceRegistrationId, resourceRegistrationId, filter).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -107,16 +107,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='serviceRegistrationId'>
-            /// Service registration id.
+            /// Service registration ID.
             /// </param>
             /// <param name='resourceRegistrationId'>
-            /// Resource registration id.
+            /// Resource registration ID.
             /// </param>
             /// <param name='filter'>
             /// OData filter parameter.
@@ -124,9 +124,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ResourceHealth> GetAsync(this IResourceHealthsOperations operations, string resourceGroupName, string region, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ResourceHealth> GetAsync(this IResourceHealthsOperations operations, string resourceGroupName, string location, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, region, serviceRegistrationId, resourceRegistrationId, filter, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, serviceRegistrationId, resourceRegistrationId, filter, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

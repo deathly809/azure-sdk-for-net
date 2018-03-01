@@ -28,13 +28,13 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// Returns a list of each resource's health under a service.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
-        /// Service registration id.
+        /// Service registration ID.
         /// </param>
         /// <param name='odataQuery'>
         /// OData parameters to apply to the operation.
@@ -54,21 +54,21 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<ResourceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<ResourceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, string serviceRegistrationId, ODataQuery<ResourceHealth> odataQuery = default(ODataQuery<ResourceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns the requested health information about a resource.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='serviceRegistrationId'>
-        /// Service registration id.
+        /// Service registration ID.
         /// </param>
         /// <param name='resourceRegistrationId'>
-        /// Resource registration id.
+        /// Resource registration ID.
         /// </param>
         /// <param name='filter'>
         /// OData filter parameter.
@@ -88,7 +88,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<ResourceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<ResourceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string serviceRegistrationId, string resourceRegistrationId, string filter = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns a list of each resource's health under a service.
         /// </summary>

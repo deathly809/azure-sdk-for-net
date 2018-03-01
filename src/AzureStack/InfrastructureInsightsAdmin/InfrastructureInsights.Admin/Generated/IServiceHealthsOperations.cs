@@ -25,12 +25,12 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public partial interface IServiceHealthsOperations
     {
         /// <summary>
-        /// Returns a list of each service's health.
+        /// Returns the list of all resource provider health states.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='odataQuery'>
@@ -51,14 +51,14 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IPage<ServiceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string region, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IPage<ServiceHealth>>> ListWithHttpMessagesAsync(string resourceGroupName, string location, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns the health of the requested service.
+        /// Returns the requested service health object.
         /// </summary>
         /// <param name='resourceGroupName'>
-        /// resourceGroupName.
+        /// The name of the resource group.
         /// </param>
-        /// <param name='region'>
+        /// <param name='location'>
         /// Name of the region
         /// </param>
         /// <param name='serviceHealth'>
@@ -79,9 +79,9 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<ServiceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string region, string serviceHealth, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<ServiceHealth>> GetWithHttpMessagesAsync(string resourceGroupName, string location, string serviceHealth, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of each service's health.
+        /// Returns the list of all resource provider health states.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

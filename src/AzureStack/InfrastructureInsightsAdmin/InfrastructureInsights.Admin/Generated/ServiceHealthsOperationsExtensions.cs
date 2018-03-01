@@ -23,35 +23,35 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
     public static partial class ServiceHealthsOperationsExtensions
     {
             /// <summary>
-            /// Returns a list of each service's health.
+            /// Returns the list of all resource provider health states.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='odataQuery'>
             /// OData parameters to apply to the operation.
             /// </param>
-            public static IPage<ServiceHealth> List(this IServiceHealthsOperations operations, string resourceGroupName, string region, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>))
+            public static IPage<ServiceHealth> List(this IServiceHealthsOperations operations, string resourceGroupName, string location, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>))
             {
-                return operations.ListAsync(resourceGroupName, region, odataQuery).GetAwaiter().GetResult();
+                return operations.ListAsync(resourceGroupName, location, odataQuery).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Returns a list of each service's health.
+            /// Returns the list of all resource provider health states.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='odataQuery'>
@@ -60,44 +60,44 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<ServiceHealth>> ListAsync(this IServiceHealthsOperations operations, string resourceGroupName, string region, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<ServiceHealth>> ListAsync(this IServiceHealthsOperations operations, string resourceGroupName, string location, ODataQuery<ServiceHealth> odataQuery = default(ODataQuery<ServiceHealth>), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, region, odataQuery, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, location, odataQuery, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Returns the health of the requested service.
+            /// Returns the requested service health object.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='serviceHealth'>
             /// Service Health name.
             /// </param>
-            public static ServiceHealth Get(this IServiceHealthsOperations operations, string resourceGroupName, string region, string serviceHealth)
+            public static ServiceHealth Get(this IServiceHealthsOperations operations, string resourceGroupName, string location, string serviceHealth)
             {
-                return operations.GetAsync(resourceGroupName, region, serviceHealth).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, location, serviceHealth).GetAwaiter().GetResult();
             }
 
             /// <summary>
-            /// Returns the health of the requested service.
+            /// Returns the requested service health object.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// resourceGroupName.
+            /// The name of the resource group.
             /// </param>
-            /// <param name='region'>
+            /// <param name='location'>
             /// Name of the region
             /// </param>
             /// <param name='serviceHealth'>
@@ -106,16 +106,16 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<ServiceHealth> GetAsync(this IServiceHealthsOperations operations, string resourceGroupName, string region, string serviceHealth, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<ServiceHealth> GetAsync(this IServiceHealthsOperations operations, string resourceGroupName, string location, string serviceHealth, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, region, serviceHealth, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, location, serviceHealth, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
             }
 
             /// <summary>
-            /// Returns a list of each service's health.
+            /// Returns the list of all resource provider health states.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -129,7 +129,7 @@ namespace Microsoft.AzureStack.Management.InfrastructureInsights.Admin
             }
 
             /// <summary>
-            /// Returns a list of each service's health.
+            /// Returns the list of all resource provider health states.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
