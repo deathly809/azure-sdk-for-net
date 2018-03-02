@@ -32,7 +32,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='publisher'>
@@ -44,9 +44,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='version'>
             /// The version of the resource.
             /// </param>
-            public static VMExtension Get(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version)
+            public static VMExtension Get(this IVMExtensionsOperations operations, string location, string publisher, string type, string version)
             {
-                return operations.GetAsync(locationName, publisher, type, version).GetAwaiter().GetResult();
+                return operations.GetAsync(location, publisher, type, version).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='publisher'>
@@ -73,9 +73,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VMExtension> GetAsync(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VMExtension> GetAsync(this IVMExtensionsOperations operations, string location, string publisher, string type, string version, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(locationName, publisher, type, version, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(location, publisher, type, version, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -90,7 +90,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='publisher'>
@@ -105,9 +105,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='extension'>
             /// Virtual Machine Extension Image creation properties.
             /// </param>
-            public static VMExtension Create(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtensionParameters extension)
+            public static VMExtension Create(this IVMExtensionsOperations operations, string location, string publisher, string type, string version, VMExtensionParameters extension)
             {
-                return operations.CreateAsync(locationName, publisher, type, version, extension).GetAwaiter().GetResult();
+                return operations.CreateAsync(location, publisher, type, version, extension).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -119,7 +119,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='publisher'>
@@ -137,9 +137,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VMExtension> CreateAsync(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, VMExtensionParameters extension, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VMExtension> CreateAsync(this IVMExtensionsOperations operations, string location, string publisher, string type, string version, VMExtensionParameters extension, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateWithHttpMessagesAsync(locationName, publisher, type, version, extension, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateWithHttpMessagesAsync(location, publisher, type, version, extension, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -154,7 +154,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='publisher'>
@@ -166,9 +166,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='version'>
             /// The version of the resource.
             /// </param>
-            public static void Delete(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version)
+            public static void Delete(this IVMExtensionsOperations operations, string location, string publisher, string type, string version)
             {
-                operations.DeleteAsync(locationName, publisher, type, version).GetAwaiter().GetResult();
+                operations.DeleteAsync(location, publisher, type, version).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -180,7 +180,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='publisher'>
@@ -195,9 +195,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IVMExtensionsOperations operations, string locationName, string publisher, string type, string version, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IVMExtensionsOperations operations, string location, string publisher, string type, string version, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(locationName, publisher, type, version, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteWithHttpMessagesAsync(location, publisher, type, version, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -209,12 +209,12 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
-            public static IList<VMExtension> List(this IVMExtensionsOperations operations, string locationName)
+            public static IList<VMExtension> List(this IVMExtensionsOperations operations, string location)
             {
-                return operations.ListAsync(locationName).GetAwaiter().GetResult();
+                return operations.ListAsync(location).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -226,15 +226,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<VMExtension>> ListAsync(this IVMExtensionsOperations operations, string locationName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<VMExtension>> ListAsync(this IVMExtensionsOperations operations, string location, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(locationName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(location, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

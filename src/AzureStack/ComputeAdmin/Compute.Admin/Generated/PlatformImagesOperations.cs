@@ -56,7 +56,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Returns a list of all platform images.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='customHeaders'>
@@ -80,15 +80,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IList<PlatformImage>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<PlatformImage>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (Client.ApiVersion == null)
             {
@@ -101,15 +101,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
@@ -246,7 +246,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Returns the requested platform image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -282,15 +282,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<PlatformImage>> GetWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<PlatformImage>> GetWithHttpMessagesAsync(string location, string publisher, string offer, string sku, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (publisher == null)
             {
@@ -319,7 +319,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("publisher", publisher);
                 tracingParameters.Add("offer", offer);
                 tracingParameters.Add("sku", sku);
@@ -329,9 +329,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
             _url = _url.Replace("{offer}", System.Uri.EscapeDataString(offer));
             _url = _url.Replace("{sku}", System.Uri.EscapeDataString(sku));
@@ -472,7 +472,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Creates a new platform image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -496,10 +496,10 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<PlatformImage>> CreateWithHttpMessagesAsync(string location, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
-            AzureOperationResponse<PlatformImage> _response = await BeginCreateWithHttpMessagesAsync(locationName, publisher, offer, sku, version, newImage, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<PlatformImage> _response = await BeginCreateWithHttpMessagesAsync(location, publisher, offer, sku, version, newImage, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPutOrPatchOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -509,7 +509,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Delete a platform image
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -542,15 +542,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string publisher, string offer, string sku, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (publisher == null)
             {
@@ -579,7 +579,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("publisher", publisher);
                 tracingParameters.Add("offer", offer);
                 tracingParameters.Add("sku", sku);
@@ -589,9 +589,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
             _url = _url.Replace("{offer}", System.Uri.EscapeDataString(offer));
             _url = _url.Replace("{sku}", System.Uri.EscapeDataString(sku));
@@ -714,7 +714,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Creates a new platform image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -753,15 +753,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string locationName, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<PlatformImage>> BeginCreateWithHttpMessagesAsync(string location, string publisher, string offer, string sku, string version, PlatformImageParameters newImage, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (publisher == null)
             {
@@ -794,7 +794,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("publisher", publisher);
                 tracingParameters.Add("offer", offer);
                 tracingParameters.Add("sku", sku);
@@ -805,9 +805,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
             _url = _url.Replace("{offer}", System.Uri.EscapeDataString(offer));
             _url = _url.Replace("{sku}", System.Uri.EscapeDataString(sku));

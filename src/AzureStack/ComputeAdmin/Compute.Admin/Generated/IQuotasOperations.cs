@@ -29,7 +29,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Get an existing Quota.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='quotaName'>
@@ -50,14 +50,14 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string locationName, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Creates or Updates a Quota.
         /// </summary>
         /// <remarks>
         /// Creates or Updates a Quota.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='quotaName'>
@@ -81,14 +81,14 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Quota>> CreateOrUpdateWithHttpMessagesAsync(string locationName, string quotaName, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Quota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes specified quota
         /// </summary>
         /// <remarks>
         /// Delete an existing quota.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='quotaName'>
@@ -106,14 +106,14 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Lists all quotas.
         /// </summary>
         /// <remarks>
         /// Get a list of existing quotas.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='customHeaders'>
@@ -131,6 +131,6 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IEnumerable<Quota>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IEnumerable<Quota>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

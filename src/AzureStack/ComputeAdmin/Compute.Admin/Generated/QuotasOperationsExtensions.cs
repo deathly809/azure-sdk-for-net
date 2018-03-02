@@ -32,15 +32,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
-            public static Quota Get(this IQuotasOperations operations, string locationName, string quotaName)
+            public static Quota Get(this IQuotasOperations operations, string location, string quotaName)
             {
-                return operations.GetAsync(locationName, quotaName).GetAwaiter().GetResult();
+                return operations.GetAsync(location, quotaName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='quotaName'>
@@ -61,9 +61,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Quota> GetAsync(this IQuotasOperations operations, string locationName, string quotaName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Quota> GetAsync(this IQuotasOperations operations, string location, string quotaName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(locationName, quotaName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(location, quotaName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -78,7 +78,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='quotaName'>
@@ -87,9 +87,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='newQuota'>
             /// New quota to create.
             /// </param>
-            public static Quota CreateOrUpdate(this IQuotasOperations operations, string locationName, string quotaName, Quota newQuota)
+            public static Quota CreateOrUpdate(this IQuotasOperations operations, string location, string quotaName, Quota newQuota)
             {
-                return operations.CreateOrUpdateAsync(locationName, quotaName, newQuota).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(location, quotaName, newQuota).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -101,7 +101,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='quotaName'>
@@ -113,9 +113,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Quota> CreateOrUpdateAsync(this IQuotasOperations operations, string locationName, string quotaName, Quota newQuota, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Quota> CreateOrUpdateAsync(this IQuotasOperations operations, string location, string quotaName, Quota newQuota, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(locationName, quotaName, newQuota, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(location, quotaName, newQuota, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -130,15 +130,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='quotaName'>
             /// Name of the quota.
             /// </param>
-            public static void Delete(this IQuotasOperations operations, string locationName, string quotaName)
+            public static void Delete(this IQuotasOperations operations, string location, string quotaName)
             {
-                operations.DeleteAsync(locationName, quotaName).GetAwaiter().GetResult();
+                operations.DeleteAsync(location, quotaName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -150,7 +150,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='quotaName'>
@@ -159,9 +159,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IQuotasOperations operations, string locationName, string quotaName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IQuotasOperations operations, string location, string quotaName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(locationName, quotaName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteWithHttpMessagesAsync(location, quotaName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -173,12 +173,12 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
-            public static IEnumerable<Quota> List(this IQuotasOperations operations, string locationName)
+            public static IEnumerable<Quota> List(this IQuotasOperations operations, string location)
             {
-                return operations.ListAsync(locationName).GetAwaiter().GetResult();
+                return operations.ListAsync(location).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -190,15 +190,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='locationName'>
+            /// <param name='location'>
             /// Location of the resource.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IEnumerable<Quota>> ListAsync(this IQuotasOperations operations, string locationName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IEnumerable<Quota>> ListAsync(this IQuotasOperations operations, string location, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListWithHttpMessagesAsync(locationName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListWithHttpMessagesAsync(location, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

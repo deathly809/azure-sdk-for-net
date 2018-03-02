@@ -56,7 +56,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Returns requested Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -89,15 +89,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string location, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (publisher == null)
             {
@@ -122,7 +122,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("publisher", publisher);
                 tracingParameters.Add("type", type);
                 tracingParameters.Add("version", version);
@@ -131,9 +131,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
             _url = _url.Replace("{type}", System.Uri.EscapeDataString(type));
             _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
@@ -273,7 +273,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Create a Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -309,15 +309,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtensionParameters extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string location, string publisher, string type, string version, VMExtensionParameters extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (publisher == null)
             {
@@ -346,7 +346,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("publisher", publisher);
                 tracingParameters.Add("type", type);
                 tracingParameters.Add("version", version);
@@ -356,9 +356,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
             _url = _url.Replace("{type}", System.Uri.EscapeDataString(type));
             _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
@@ -522,7 +522,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Deletes specified Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -552,15 +552,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (publisher == null)
             {
@@ -585,7 +585,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("publisher", publisher);
                 tracingParameters.Add("type", type);
                 tracingParameters.Add("version", version);
@@ -594,9 +594,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{publisher}", System.Uri.EscapeDataString(publisher));
             _url = _url.Replace("{type}", System.Uri.EscapeDataString(type));
             _url = _url.Replace("{version}", System.Uri.EscapeDataString(version));
@@ -718,7 +718,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Returns a list of all Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='customHeaders'>
@@ -742,15 +742,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (Client.ApiVersion == null)
             {
@@ -763,15 +763,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/VMExtension").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {

@@ -29,7 +29,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Returns requested Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -56,14 +56,14 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<VMExtension>> GetWithHttpMessagesAsync(string location, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Create a Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
         /// Create a Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -93,14 +93,14 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string locationName, string publisher, string type, string version, VMExtensionParameters extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<VMExtension>> CreateWithHttpMessagesAsync(string location, string publisher, string type, string version, VMExtensionParameters extension, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes a Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
         /// Deletes specified Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='publisher'>
@@ -124,14 +124,14 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string publisher, string type, string version, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns a list of all Virtual Machine Extension Image.
         /// </summary>
         /// <remarks>
         /// Returns a list of all Virtual Machine Extension Image.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='customHeaders'>
@@ -149,6 +149,6 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IList<VMExtension>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

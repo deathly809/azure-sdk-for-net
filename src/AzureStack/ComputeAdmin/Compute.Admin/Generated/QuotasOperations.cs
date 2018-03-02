@@ -56,7 +56,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Get an existing Quota.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='quotaName'>
@@ -83,15 +83,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string locationName, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Quota>> GetWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (quotaName == null)
             {
@@ -108,16 +108,16 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("quotaName", quotaName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quotaName}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/quotas/{quotaName}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{quotaName}", System.Uri.EscapeDataString(quotaName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
@@ -255,7 +255,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Creates or Updates a Quota.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='quotaName'>
@@ -285,15 +285,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Quota>> CreateOrUpdateWithHttpMessagesAsync(string locationName, string quotaName, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Quota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, Quota newQuota, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (quotaName == null)
             {
@@ -318,7 +318,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("quotaName", quotaName);
                 tracingParameters.Add("newQuota", newQuota);
                 tracingParameters.Add("cancellationToken", cancellationToken);
@@ -326,9 +326,9 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quotaName}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/quotas/{quotaName}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{quotaName}", System.Uri.EscapeDataString(quotaName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
@@ -472,7 +472,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Delete an existing quota.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='quotaName'>
@@ -496,15 +496,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string locationName, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string location, string quotaName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (quotaName == null)
             {
@@ -521,16 +521,16 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("quotaName", quotaName);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Delete", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quotaName}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/quotas/{quotaName}").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             _url = _url.Replace("{quotaName}", System.Uri.EscapeDataString(quotaName));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
@@ -650,7 +650,7 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <remarks>
         /// Get a list of existing quotas.
         /// </remarks>
-        /// <param name='locationName'>
+        /// <param name='location'>
         /// Location of the resource.
         /// </param>
         /// <param name='customHeaders'>
@@ -674,15 +674,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IEnumerable<Quota>>> ListWithHttpMessagesAsync(string locationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IEnumerable<Quota>>> ListWithHttpMessagesAsync(string location, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.SubscriptionId");
             }
-            if (locationName == null)
+            if (location == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "locationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "location");
             }
             if (Client.ApiVersion == null)
             {
@@ -695,15 +695,15 @@ namespace Microsoft.AzureStack.Management.Compute.Admin
             {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
-                tracingParameters.Add("locationName", locationName);
+                tracingParameters.Add("location", location);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/quotas").ToString();
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
-            _url = _url.Replace("{locationName}", System.Uri.EscapeDataString(locationName));
+            _url = _url.Replace("{location}", System.Uri.EscapeDataString(location));
             List<string> _queryParameters = new List<string>();
             if (Client.ApiVersion != null)
             {
