@@ -174,7 +174,7 @@ namespace Storage.Tests
         public void CreateFarm()
         {
             RunTest((client) => {
-                // This will return an error: 
+                // This will return an error:
                 // {"error":{"code":"LocationRequired","message":"The location property is required for this definition."}}
                 client.Farms.Create(ResourceGroupName, "jeffsFarm");
             });
@@ -195,7 +195,7 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void ListAllFarmMetricsDefinitions()
+        public void ListAllFarmMetrics()
         {
             RunTest((client) => {
             var farms = client.Farms.List(ResourceGroupName);

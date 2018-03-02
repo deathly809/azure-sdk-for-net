@@ -122,7 +122,7 @@ namespace Storage.Tests
 
 
         [Fact]
-        public void ListAllShareMetricsDefinitions() {
+        public void ListAllShareMetrics() {
             RunTest((client) => {
                 var farms = client.Farms.List(ResourceGroupName);
                 foreach (var farm in farms)

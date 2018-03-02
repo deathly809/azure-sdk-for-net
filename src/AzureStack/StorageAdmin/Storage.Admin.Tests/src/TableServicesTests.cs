@@ -7,7 +7,7 @@ namespace Storage.Tests
 {
     public class TableServicesTests : StorageTestBase
     {
-        
+
         private void ValidateTableService(TableService tableService)
         {
             Assert.NotNull(tableService);
@@ -62,7 +62,7 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void ListAllTableServiceMetricsDefinitions()
+        public void ListAllTableServiceMetric()
         {
             RunTest((client) => {
                 var farms = client.Farms.List(ResourceGroupName);

@@ -48,7 +48,7 @@ namespace Storage.Tests
                 }
             });
         }
-        
+
         [Fact]
         public void ListAllQueueServiceMetricDefinitions()
         {
@@ -64,7 +64,7 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void ListAllQueueServiceMetricsDefinitions()
+        public void ListAllQueueServiceMetrics()
         {
             RunTest((client) => {
                 var farms = client.Farms.List(ResourceGroupName);
