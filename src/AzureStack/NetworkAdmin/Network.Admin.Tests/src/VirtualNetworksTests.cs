@@ -23,13 +23,21 @@ namespace Network.Tests
             }
         }
 
-        private void ValidateConfigurationState(VirtualNetworkConfigurationState state) 
+        private void ValidateConfigurationState(VirtualNetworkConfigurationState state)
         {
             Assert.NotNull(state);
             Assert.NotNull(state.Status);
             Assert.NotNull(state.LastUpdatedTime);
             Assert.NotNull(state.VirtualNetworkInterfaceErrors);
             Assert.NotNull(state.HostErrors);
+        }
+
+        private void ValidateNetwork(VirtualNetwork network)
+        {
+            NetworkCommon.ValidateBaseResources(network);
+            Assert.NotNull(network.SubscriptionId);
+            Assert.NotNull(network.TenantResourceUri);
+            ValidateConfigurationState(network.ConfigurationState);
         }
 
         [Fact]
@@ -40,16 +48,12 @@ namespace Network.Tests
                 var networks = client.VirtualNetworks.List();
                 Common.MapOverIPage(networks, client.VirtualNetworks.ListNext, (network) =>
                 {
-                    NetworkCommon.ValidateBaseResources(network);
-
-                    NetworkCommon.ValidateBaseResourceTenant(network);
-
-                    ValidateConfigurationState(network.ConfigurationState);
+                    ValidateNetwork(network);
                 });
 
             });
         }
-        
+
         [Fact]
         public void TestGetAllVirtualNetworksOData()
         {
@@ -61,11 +65,7 @@ namespace Network.Tests
                 var networks = client.VirtualNetworks.List(odataQuery);
                 Common.MapOverIPage(networks, client.VirtualNetworks.ListNext, (network) =>
                 {
-                    NetworkCommon.ValidateBaseResources(network);
-
-                    NetworkCommon.ValidateBaseResourceTenant(network);
-
-                    ValidateConfigurationState(network.ConfigurationState);
+                    ValidateNetwork(network);
                 });
             });
         }

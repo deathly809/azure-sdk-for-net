@@ -3,14 +3,23 @@
 // license information.
 //
 
-using Microsoft.AzureStack.Management.Network.Admin;
-using Microsoft.AzureStack.Management.Network.Admin.Models;
-using Xunit;
 
 namespace Network.Tests
 {
+    using Microsoft.AzureStack.Management.Network.Admin;
+    using Microsoft.AzureStack.Management.Network.Admin.Models;
+    using Xunit;
+
     public class PublicIPAddressesTests : NetworkTestBase
     {
+
+        private void ValidatePublicIpAddress(PublicIpAddress ipAddress)
+        {
+            NetworkCommon.ValidateBaseResources(ipAddress);
+            Assert.NotNull(ipAddress.SubscriptionId);
+            Assert.NotNull(ipAddress.TenantResourceUri);
+            Assert.Equal(ProvisioningState.Succeeded, ipAddress.ProvisioningState);
+        }
 
         [Fact]
         public void TestGetAllPublicIpAddresses()
@@ -18,18 +27,14 @@ namespace Network.Tests
             RunTest((client) =>
             {
                 var addresses = client.PublicIPAddresses.List();
+                Assert.NotNull(addresses);
 
                 // This test should be using the SessionRecord which has an existing PublicIPAddress created
                 if (addresses != null)
                 {
                     addresses.ForEach((address) =>
                     {
-                        NetworkCommon.ValidateBaseResources(address);
-
-                        NetworkCommon.ValidateBaseResourceTenant(address);
-
-                        Assert.NotNull(address.IpAddress);
-                        Assert.NotNull(address.IpPool);
+                        ValidatePublicIpAddress(address);
                     });
                 }
             });
@@ -39,7 +44,7 @@ namespace Network.Tests
         {
             RunTest((client) =>
             {
-                Microsoft.Rest.Azure.OData.ODataQuery<PublicIpAddresses> odataQuery = new Microsoft.Rest.Azure.OData.ODataQuery<PublicIpAddresses>();
+                Microsoft.Rest.Azure.OData.ODataQuery<PublicIpAddress> odataQuery = new Microsoft.Rest.Azure.OData.ODataQuery<PublicIpAddress>();
                 odataQuery.Top = 10;
 
                 var addresses = client.PublicIPAddresses.List(odataQuery);
@@ -49,12 +54,7 @@ namespace Network.Tests
                 {
                     addresses.ForEach((address) =>
                     {
-                        NetworkCommon.ValidateBaseResources(address);
-
-                        NetworkCommon.ValidateBaseResourceTenant(address);
-
-                        Assert.NotNull(address.IpAddress);
-                        Assert.NotNull(address.IpPool);
+                        ValidatePublicIpAddress(address);
                     });
                 }
             });

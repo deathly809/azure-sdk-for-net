@@ -4,5 +4,4 @@
 ::
 
 @echo off
-#call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/network latest sleepyneko features/Azs.Network.Admin azure-rest-api-specs %CD%
-call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/network latest sleepyneko features/Azs.Network.Admin azure-rest-api-specs %CD%
+call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/network latest deathly809 azs.network.admin azure-rest-api-specs %CD%
