@@ -30,7 +30,7 @@ namespace Update.Tests
             Assert.NotNull(update.Version);
         }
 
-        public void AssertAreSame(Models.Update expected, Models.Update found) {
+        void AssertAreSame(Models.Update expected, Models.Update found) {
             Assert.True(ResourceAreSame(expected, found));
 
             if (expected != null)
@@ -55,9 +55,9 @@ namespace Update.Tests
         [Fact]
         public void TestListUpdates() {
             RunTest((client) => {
-                var updateLocations = client.UpdateLocations.List("System.local");
+                var updateLocations = client.UpdateLocations.List("System.Redmond");
                 updateLocations.ForEach((updateLocation) => {
-                    var updates = client.Updates.List("System.local", updateLocation.Name);
+                    var updates = client.Updates.List("System.Redmond", updateLocation.Name);
                     updates.ForEach(ValidateUpdate);
                     Common.WriteIEnumerableToFile(updates, "TestListUpdates.txt");
                 });
@@ -67,12 +67,12 @@ namespace Update.Tests
         [Fact]
         public void TestGetUpdate() {
             RunTest((client) => {
-                var updateLocation = client.UpdateLocations.List("System.local").FirstOrDefault();
+                var updateLocation = client.UpdateLocations.List("System.Redmond").FirstOrDefault();
                 Assert.NotNull(updateLocation);
-                var update = client.Updates.List("System.local", updateLocation.Name).FirstOrDefault();
+                var update = client.Updates.List("System.Redmond", updateLocation.Name).FirstOrDefault();
                 if (update != null)
                 {
-                    var returned = client.Updates.Get("System.local", updateLocation.Name, update.Name);
+                    var returned = client.Updates.Get("System.Redmond", updateLocation.Name, update.Name);
                     AssertAreSame(update, returned);
                 }
             });
@@ -81,11 +81,11 @@ namespace Update.Tests
         [Fact]
         public void TestGetAllUpdates() {
             RunTest((client) => {
-                var updateLocations = client.UpdateLocations.List("System.local");
+                var updateLocations = client.UpdateLocations.List("System.Redmond");
                 updateLocations.ForEach((updateLocation) => {
-                    var updates = client.Updates.List("System.local", updateLocation.Name);
+                    var updates = client.Updates.List("System.Redmond", updateLocation.Name);
                     updates.ForEach((update) => {
-                        var returned = client.Updates.Get("System.local", updateLocation.Name, update.Name);
+                        var returned = client.Updates.Get("System.Redmond", updateLocation.Name, update.Name);
                         AssertAreSame(update, returned);
                     });
                 });

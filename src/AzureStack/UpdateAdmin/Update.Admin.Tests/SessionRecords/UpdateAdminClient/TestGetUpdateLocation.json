@@ -1,26 +1,26 @@
 {
   "Entries": [
     {
-      "RequestUri": "/subscriptions/0ff0bbbe-d68d-4314-8f68-80a808b5a6ec/resourcegroups/System.local/providers/Microsoft.Update.Admin/updateLocations/?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMGZmMGJiYmUtZDY4ZC00MzE0LThmNjgtODBhODA4YjVhNmVjL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LlVwZGF0ZS5BZG1pbi91cGRhdGVMb2NhdGlvbnMvP2FwaS12ZXJzaW9uPTIwMTYtMDUtMDE=",
+      "RequestUri": "/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMjNkNjZmZDEtNDc0My00MmZmLWIzOTEtZTI5ZGM1MWQ3OTllL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5SZWRtb25kL3Byb3ZpZGVycy9NaWNyb3NvZnQuVXBkYXRlLkFkbWluL3VwZGF0ZUxvY2F0aW9ucy8/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "13c843ce-64d5-4102-a9a7-de584f3060d5"
+          "5434b094-951e-4d21-9c63-594914625d9e"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.25211.01",
+          "FxVersion/4.6.26011.01",
           "Microsoft.AzureStack.Management.Update.Admin.UpdateAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/0ff0bbbe-d68d-4314-8f68-80a808b5a6ec/resourceGroups/System.local/providers/Microsoft.Update.Admin/updateLocations/local\",\r\n      \"name\": \"local\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations\",\r\n      \"location\": \"local\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"currentVersion\": \"1.0.170928.1\",\r\n        \"currentOemVersion\": \"0.0\",\r\n        \"state\": \"AppliedSuccessfully\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourceGroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond\",\r\n      \"name\": \"redmond\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations\",\r\n      \"location\": \"redmond\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"currentVersion\": \"1.0.180302.1\",\r\n        \"currentOemVersion\": \"1.0.1709.3\",\r\n        \"lastUpdated\": \"2018-03-03T08:09:12.8824552Z\",\r\n        \"state\": \"AppliedSuccessfully\"\r\n      }\r\n    }\r\n  ]\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "350"
+          "410"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -32,7 +32,7 @@
           "no-cache"
         ],
         "Date": [
-          "Fri, 06 Oct 2017 03:14:48 GMT"
+          "Mon, 05 Mar 2018 19:49:41 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -41,19 +41,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvBPZOaOT5QLvQwL5+z1VfKvxT9hkab3N498zdHKbEsY46gAcVxs4A9CaaRdCKjGr0tT4LiyQhK+NE/oYtYIaWG/I8C26yil2hiWJ6YZtAfiCb55KvL1VspXQ3qDpthRbw9Ah9e9ZpKaiE0aOLlRG4"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvF6whX5Lt94p0C4QueGeMCIfBGF6cfecGCN4fiDCJZ7x7ttz3EJSgG0IDVXKXL2/5id7HkJuVxB6qfXf1jh3ECVW96Q36PhwMHOXkWuLDIddflrQ2C1AmHZl2EZ18CiGVt3F4Yvz0hJwhg+8pFD5E"
         ],
         "x-ms-correlation-request-id": [
-          "e6f758a3-c522-47b1-93c9-bc9ca713b9a6"
+          "caa79df2-5de5-473d-863c-23378b95661f"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14834"
+          "12843"
         ],
         "x-ms-request-id": [
-          "e6f758a3-c522-47b1-93c9-bc9ca713b9a6"
+          "caa79df2-5de5-473d-863c-23378b95661f"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20171006T031448Z:e6f758a3-c522-47b1-93c9-bc9ca713b9a6"
+          "REDMOND:20180305T194941Z:caa79df2-5de5-473d-863c-23378b95661f"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -65,26 +65,26 @@
       "StatusCode": 200
     },
     {
-      "RequestUri": "/subscriptions/0ff0bbbe-d68d-4314-8f68-80a808b5a6ec/resourcegroups/System.local/providers/Microsoft.Update.Admin/updateLocations/local?api-version=2016-05-01",
-      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMGZmMGJiYmUtZDY4ZC00MzE0LThmNjgtODBhODA4YjVhNmVjL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5sb2NhbC9wcm92aWRlcnMvTWljcm9zb2Z0LlVwZGF0ZS5BZG1pbi91cGRhdGVMb2NhdGlvbnMvbG9jYWw/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestUri": "/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMjNkNjZmZDEtNDc0My00MmZmLWIzOTEtZTI5ZGM1MWQ3OTllL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5SZWRtb25kL3Byb3ZpZGVycy9NaWNyb3NvZnQuVXBkYXRlLkFkbWluL3VwZGF0ZUxvY2F0aW9ucy9yZWRtb25kP2FwaS12ZXJzaW9uPTIwMTYtMDUtMDE=",
       "RequestMethod": "GET",
       "RequestBody": "",
       "RequestHeaders": {
         "x-ms-client-request-id": [
-          "85ecad3d-4175-4e87-b65e-8fea24f5ee93"
+          "00ec8ef4-2112-4db6-b99e-ce9fd14fb1fb"
         ],
         "accept-language": [
           "en-US"
         ],
         "User-Agent": [
-          "FxVersion/4.6.25211.01",
+          "FxVersion/4.6.26011.01",
           "Microsoft.AzureStack.Management.Update.Admin.UpdateAdminClient/0.1.0.0"
         ]
       },
-      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/0ff0bbbe-d68d-4314-8f68-80a808b5a6ec/resourcegroups/System.local/providers/Microsoft.Update.Admin/updateLocations/local\",\r\n  \"name\": \"local\",\r\n  \"type\": \"Microsoft.Update.Admin/updateLocations\",\r\n  \"location\": \"local\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"currentVersion\": \"1.0.170928.1\",\r\n    \"currentOemVersion\": \"0.0\",\r\n    \"state\": \"AppliedSuccessfully\"\r\n  }\r\n}",
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond\",\r\n  \"name\": \"redmond\",\r\n  \"type\": \"Microsoft.Update.Admin/updateLocations\",\r\n  \"location\": \"redmond\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"currentVersion\": \"1.0.180302.1\",\r\n    \"currentOemVersion\": \"1.0.1709.3\",\r\n    \"lastUpdated\": \"2018-03-03T08:09:12.8824552Z\",\r\n    \"state\": \"AppliedSuccessfully\"\r\n  }\r\n}",
       "ResponseHeaders": {
         "Content-Length": [
-          "338"
+          "398"
         ],
         "Content-Type": [
           "application/json; charset=utf-8"
@@ -96,7 +96,7 @@
           "no-cache"
         ],
         "Date": [
-          "Fri, 06 Oct 2017 03:14:51 GMT"
+          "Mon, 05 Mar 2018 19:49:41 GMT"
         ],
         "Pragma": [
           "no-cache"
@@ -105,19 +105,19 @@
           "Microsoft-HTTPAPI/2.0"
         ],
         "WWW-Authenticate": [
-          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvbHwsvrGeDRMzQ4Q6S2+r4eAM9QTZG2JF4KkIpz/eQFKL6waudSgS3lR0wJ9LTIphMC2FABYmEWErURu2pBg6Fg42XR+NKJE/A05qvNMAlcM7xM2PXqGlXo2ttT9kK0ypkgqPUgwd4US1h5LMX+6o"
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv6KqwObp1KeZ+qXNeJRPjQ9g+YU2Ur8YoBIhzQpGZ4Kd7b6Z67aP3tfKp12Nb3kRGAX98u7apx1xlGvHhHk+1aaDqFKL6N3CP88F22G6xUYAN3JvDgLPmjzW91YVPPaHnkE/+8GSI4MzYX7+sn1Q6"
         ],
         "x-ms-correlation-request-id": [
-          "6d3dce0a-38b5-48d4-b047-08176c0d347f"
+          "6ca3e2ec-cc0c-4378-9058-9b4134d9bbdf"
         ],
         "x-ms-ratelimit-remaining-subscription-reads": [
-          "14832"
+          "12842"
         ],
         "x-ms-request-id": [
-          "6d3dce0a-38b5-48d4-b047-08176c0d347f"
+          "6ca3e2ec-cc0c-4378-9058-9b4134d9bbdf"
         ],
         "x-ms-routing-request-id": [
-          "LOCAL:20171006T031451Z:6d3dce0a-38b5-48d4-b047-08176c0d347f"
+          "REDMOND:20180305T194941Z:6ca3e2ec-cc0c-4378-9058-9b4134d9bbdf"
         ],
         "Strict-Transport-Security": [
           "max-age=31536000; includeSubDomains"
@@ -131,6 +131,6 @@
   ],
   "Names": {},
   "Variables": {
-    "SubscriptionId": "0ff0bbbe-d68d-4314-8f68-80a808b5a6ec"
+    "SubscriptionId": "23d66fd1-4743-42ff-b391-e29dc51d799e"
   }
 }

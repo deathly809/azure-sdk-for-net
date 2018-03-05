@@ -20,7 +20,7 @@ namespace Update.Tests
             Assert.NotNull(location.State);
         }
 
-        public void AssertAreSame(UpdateLocation expected, UpdateLocation found) {
+        void AssertAreSame(UpdateLocation expected, UpdateLocation found) {
             Assert.True(ResourceAreSame(expected, found));
 
             if (expected != null)
@@ -35,7 +35,7 @@ namespace Update.Tests
         [Fact]
         public void TestListUpdateLocations() {
             RunTest((client) => {
-                var list = client.UpdateLocations.List("System.local");
+                var list = client.UpdateLocations.List("System.Redmond");
                 Common.WriteIEnumerableToFile(list, "TestListUpdateLocations");
                 list.ForEach(ValidateUpdateLocation);
             });
@@ -44,8 +44,8 @@ namespace Update.Tests
         [Fact]
         public void TestGetUpdateLocation() {
             RunTest((client) => {
-                var updateLocation = client.UpdateLocations.List("System.local").FirstOrDefault();
-                var returned = client.UpdateLocations.Get("System.local", updateLocation.Name);
+                var updateLocation = client.UpdateLocations.List("System.Redmond").FirstOrDefault();
+                var returned = client.UpdateLocations.Get("System.Redmond", updateLocation.Name);
                 AssertAreSame(updateLocation, returned);
             });
         }
@@ -53,9 +53,9 @@ namespace Update.Tests
         [Fact]
         public void TestGetAllUpdateLocations() {
             RunTest((client) => {
-                var list = client.UpdateLocations.List("System.local");
+                var list = client.UpdateLocations.List("System.Redmond");
                 list.ForEach((updateLocation) => {
-                    var returned = client.UpdateLocations.Get("System.local", updateLocation.Name);
+                    var returned = client.UpdateLocations.Get("System.Redmond", updateLocation.Name);
                     AssertAreSame(updateLocation, returned);
                 }
                 );
