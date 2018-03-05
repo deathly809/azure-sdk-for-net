@@ -86,8 +86,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='farmId'>
         /// Farm Id.
         /// </param>
-        /// <param name='settingAccessStringProperty'>
-        /// Setting access string.
+        /// <param name='farmObject'>
+        /// Farm to update.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -104,7 +104,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<Farm>> UpdateWithHttpMessagesAsync(string resourceGroupName, string farmId, string settingAccessStringProperty = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<Farm>> UpdateWithHttpMessagesAsync(string resourceGroupName, string farmId, Farm farmObject, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns a list of metric definitions for a storage farm.
         /// </summary>

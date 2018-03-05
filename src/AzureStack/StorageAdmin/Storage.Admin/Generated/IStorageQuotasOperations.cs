@@ -32,7 +32,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='quotaName'>
         /// The name of the storage quota.
         /// </param>
-        /// <param name='parameters'>
+        /// <param name='quotaObject'>
         /// The properties of quota being created or updated.
         /// </param>
         /// <param name='customHeaders'>
@@ -50,7 +50,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<StorageQuota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, StorageCreationProperties parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<StorageQuota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, StorageQuota quotaObject, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Delete an existing quota
         /// </summary>

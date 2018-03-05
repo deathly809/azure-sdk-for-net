@@ -39,6 +39,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="type">Resource type.</param>
         /// <param name="location">Resource location.</param>
         /// <param name="tags">Resource tags.</param>
+        /// <param name="farmId">Farm identifier.</param>
+        /// <param name="version">Resource version.</param>
+        /// <param name="settingsStore">The settings of storage farm.</param>
         /// <param name="settingsPollingIntervalInSecond">The polling interval
         /// (in second).</param>
         /// <param name="retentionPeriodForDeletedStorageAccountsInDays">The
@@ -120,13 +123,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// egress threshold (in Gbp</param>
         /// <param name="toleranceFactorForTotalEgress">Tolerance factor for
         /// total egress.</param>
-        /// <param name="settingsStore">The settings of storage farm.</param>
-        /// <param name="healthStatus">The health status of storage farm.
-        /// Possible values include: 'Unknown', 'Healthy', 'Warning',
-        /// 'Critical'</param>
-        public Farm(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), int? settingsPollingIntervalInSecond = default(int?), int? retentionPeriodForDeletedStorageAccountsInDays = default(int?), int? hostStyleHttpPort = default(int?), int? hostStyleHttpsPort = default(int?), string corsAllowedOriginsList = default(string), string dataCenterUriHostSuffixes = default(string), bool? bandwidthThrottleIsEnabled = default(bool?), int? usageCollectionIntervalInSeconds = default(int?), int? feedbackRefreshIntervalInSeconds = default(int?), int? numberOfAccountsToSync = default(int?), int? defaultThrottleProbabilityDecayIntervalInSeconds = default(int?), int? gracePeriodForFullThrottlingInRefreshIntervals = default(int?), double? gracePeriodMaxThrottleProbability = default(double?), double? overallRequestThresholdInTps = default(double?), double? defaultRequestThresholdInTps = default(double?), double? minimumRequestThresholdInTps = default(double?), double? toleranceFactorForTps = default(double?), double? overallIngressThresholdInGbps = default(double?), double? defaultIngressThresholdInGbps = default(double?), double? minimumIngressThresholdInGbps = default(double?), double? toleranceFactorForIngress = default(double?), double? overallIntranetIngressThresholdInGbps = default(double?), double? defaultIntranetIngressThresholdInGbps = default(double?), double? minimumIntranetIngressThresholdInGbps = default(double?), double? toleranceFactorForIntranetIngress = default(double?), double? overallEgressThresholdInGbps = default(double?), double? defaultEgressThresholdInGbps = default(double?), double? minimumEgressThresholdInGbps = default(double?), double? toleranceFactorForEgress = default(double?), double? overallIntranetEgressThresholdInGbps = default(double?), double? defaultIntranetEgressThresholdInGbps = default(double?), double? minimumIntranetEgressThresholdInGbps = default(double?), double? toleranceFactorForIntranetEgress = default(double?), double? overallTotalIngressThresholdInGbps = default(double?), double? defaultTotalIngressThresholdInGbps = default(double?), double? minimumTotalIngressThresholdInGbps = default(double?), double? toleranceFactorForTotalIngress = default(double?), double? overallTotalEgressThresholdInGbps = default(double?), double? defaultTotalEgressThresholdInGbps = default(double?), double? minimumTotalEgressThresholdInGbps = default(double?), double? toleranceFactorForTotalEgress = default(double?), string settingsStore = default(string), string healthStatus = default(string))
+        public Farm(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string farmId = default(string), string version = default(string), string settingsStore = default(string), int? settingsPollingIntervalInSecond = default(int?), int? retentionPeriodForDeletedStorageAccountsInDays = default(int?), int? hostStyleHttpPort = default(int?), int? hostStyleHttpsPort = default(int?), string corsAllowedOriginsList = default(string), string dataCenterUriHostSuffixes = default(string), bool? bandwidthThrottleIsEnabled = default(bool?), int? usageCollectionIntervalInSeconds = default(int?), int? feedbackRefreshIntervalInSeconds = default(int?), int? numberOfAccountsToSync = default(int?), int? defaultThrottleProbabilityDecayIntervalInSeconds = default(int?), int? gracePeriodForFullThrottlingInRefreshIntervals = default(int?), double? gracePeriodMaxThrottleProbability = default(double?), double? overallRequestThresholdInTps = default(double?), double? defaultRequestThresholdInTps = default(double?), double? minimumRequestThresholdInTps = default(double?), double? toleranceFactorForTps = default(double?), double? overallIngressThresholdInGbps = default(double?), double? defaultIngressThresholdInGbps = default(double?), double? minimumIngressThresholdInGbps = default(double?), double? toleranceFactorForIngress = default(double?), double? overallIntranetIngressThresholdInGbps = default(double?), double? defaultIntranetIngressThresholdInGbps = default(double?), double? minimumIntranetIngressThresholdInGbps = default(double?), double? toleranceFactorForIntranetIngress = default(double?), double? overallEgressThresholdInGbps = default(double?), double? defaultEgressThresholdInGbps = default(double?), double? minimumEgressThresholdInGbps = default(double?), double? toleranceFactorForEgress = default(double?), double? overallIntranetEgressThresholdInGbps = default(double?), double? defaultIntranetEgressThresholdInGbps = default(double?), double? minimumIntranetEgressThresholdInGbps = default(double?), double? toleranceFactorForIntranetEgress = default(double?), double? overallTotalIngressThresholdInGbps = default(double?), double? defaultTotalIngressThresholdInGbps = default(double?), double? minimumTotalIngressThresholdInGbps = default(double?), double? toleranceFactorForTotalIngress = default(double?), double? overallTotalEgressThresholdInGbps = default(double?), double? defaultTotalEgressThresholdInGbps = default(double?), double? minimumTotalEgressThresholdInGbps = default(double?), double? toleranceFactorForTotalEgress = default(double?))
             : base(id, name, type, location, tags)
         {
+            FarmId = farmId;
+            Version = version;
+            SettingsStore = settingsStore;
             SettingsPollingIntervalInSecond = settingsPollingIntervalInSecond;
             RetentionPeriodForDeletedStorageAccountsInDays = retentionPeriodForDeletedStorageAccountsInDays;
             HostStyleHttpPort = hostStyleHttpPort;
@@ -168,8 +170,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
             DefaultTotalEgressThresholdInGbps = defaultTotalEgressThresholdInGbps;
             MinimumTotalEgressThresholdInGbps = minimumTotalEgressThresholdInGbps;
             ToleranceFactorForTotalEgress = toleranceFactorForTotalEgress;
-            SettingsStore = settingsStore;
-            HealthStatus = healthStatus;
             CustomInit();
         }
 
@@ -177,6 +177,24 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// An initialization method that performs custom operations like setting defaults
         /// </summary>
         partial void CustomInit();
+
+        /// <summary>
+        /// Gets or sets farm identifier.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.farmId")]
+        public string FarmId { get; set; }
+
+        /// <summary>
+        /// Gets or sets resource version.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.version")]
+        public string Version { get; set; }
+
+        /// <summary>
+        /// Gets or sets the settings of storage farm.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.settingsStore")]
+        public string SettingsStore { get; set; }
 
         /// <summary>
         /// Gets or sets the polling interval (in second).
@@ -425,19 +443,6 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.settings.toleranceFactorForTotalEgress")]
         public double? ToleranceFactorForTotalEgress { get; set; }
-
-        /// <summary>
-        /// Gets or sets the settings of storage farm.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.settingsStore")]
-        public string SettingsStore { get; set; }
-
-        /// <summary>
-        /// Gets or sets the health status of storage farm. Possible values
-        /// include: 'Unknown', 'Healthy', 'Warning', 'Critical'
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.healthStatus")]
-        public string HealthStatus { get; set; }
 
     }
 }

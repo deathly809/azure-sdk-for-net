@@ -62,7 +62,7 @@ namespace Storage.Tests
         }
 
         [Fact]
-        public void ListAllTableServiceMetric()
+        public void ListAllTableServiceMetrics()
         {
             RunTest((client) => {
                 var farms = client.Farms.List(ResourceGroupName);

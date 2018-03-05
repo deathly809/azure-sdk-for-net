@@ -30,7 +30,6 @@ namespace Storage.Tests
                 Assert.Equal(expected.FeedbackRefreshIntervalInSeconds, found.FeedbackRefreshIntervalInSeconds);
                 Assert.Equal(expected.GracePeriodForFullThrottlingInRefreshIntervals, found.GracePeriodForFullThrottlingInRefreshIntervals);
                 Assert.Equal(expected.GracePeriodMaxThrottleProbability, found.GracePeriodMaxThrottleProbability);
-                Assert.Equal(expected.HealthStatus, found.HealthStatus);
                 Assert.Equal(expected.HostStyleHttpPort, found.HostStyleHttpPort);
                 Assert.Equal(expected.HostStyleHttpsPort, found.HostStyleHttpsPort);
                 Assert.Equal(expected.Id, found.Id);

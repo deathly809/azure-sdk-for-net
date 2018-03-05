@@ -59,7 +59,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='quotaName'>
         /// The name of the storage quota.
         /// </param>
-        /// <param name='parameters'>
+        /// <param name='quotaObject'>
         /// The properties of quota being created or updated.
         /// </param>
         /// <param name='customHeaders'>
@@ -83,7 +83,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<StorageQuota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, StorageCreationProperties parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<StorageQuota>> CreateOrUpdateWithHttpMessagesAsync(string location, string quotaName, StorageQuota quotaObject, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -101,9 +101,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "quotaName");
             }
-            if (parameters == null)
+            if (quotaObject == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "parameters");
+                throw new ValidationException(ValidationRules.CannotBeNull, "quotaObject");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -114,7 +114,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("location", location);
                 tracingParameters.Add("quotaName", quotaName);
-                tracingParameters.Add("parameters", parameters);
+                tracingParameters.Add("quotaObject", quotaObject);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "CreateOrUpdate", tracingParameters);
             }
@@ -167,9 +167,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 
             // Serialize Request
             string _requestContent = null;
-            if(parameters != null)
+            if(quotaObject != null)
             {
-                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(parameters, Client.SerializationSettings);
+                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(quotaObject, Client.SerializationSettings);
                 _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
                 _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
             }

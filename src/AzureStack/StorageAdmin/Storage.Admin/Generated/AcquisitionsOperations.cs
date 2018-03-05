@@ -51,7 +51,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         public StorageAdminClient Client { get; private set; }
 
         /// <summary>
-        /// Returns a list of blob acquistions.
+        /// Returns a list of BLOB acquistions.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Resource group name.

@@ -30,9 +30,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <summary>
         /// Initializes a new instance of the MigrationParameters class.
         /// </summary>
-        /// <param name="storageAccountName">The name of storage account where
-        /// the container locates.</param>
-        /// <param name="containerName">NThe name of the container to be
+        /// <param name="storageAccountName">The name of the storage account
+        /// where the container locates.</param>
+        /// <param name="containerName">The name of the container to be
         /// migrated.</param>
         /// <param name="destinationShareUncPath">The UNC path of the
         /// destination share for migration.</param>
@@ -50,14 +50,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the name of storage account where the container
+        /// Gets or sets the name of the storage account where the container
         /// locates.
         /// </summary>
         [JsonProperty(PropertyName = "storageAccountName")]
         public string StorageAccountName { get; set; }
 
         /// <summary>
-        /// Gets or sets nThe name of the container to be migrated.
+        /// Gets or sets the name of the container to be migrated.
         /// </summary>
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }

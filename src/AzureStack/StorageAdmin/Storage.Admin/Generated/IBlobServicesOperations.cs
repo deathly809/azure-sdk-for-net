@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public partial interface IBlobServicesOperations
     {
         /// <summary>
-        /// Returns the blob service.
+        /// Returns the BLOB service.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Resource group name.
@@ -49,7 +49,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<BlobService>> GetWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns the list of metric definitions for blob service.
+        /// Returns the list of metric definitions for BLOB service.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Resource group name.
@@ -74,7 +74,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of metrics for blob service.
+        /// Returns a list of metrics for BLOB service.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Resource group name.
@@ -99,7 +99,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<Metric>>> ListMetricsWithHttpMessagesAsync(string resourceGroupName, string farmId, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns the list of metric definitions for blob service.
+        /// Returns the list of metric definitions for BLOB service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.
@@ -121,7 +121,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// </exception>
         Task<AzureOperationResponse<IPage<MetricDefinition>>> ListMetricDefinitionsNextWithHttpMessagesAsync(string nextPageLink, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Returns a list of metrics for blob service.
+        /// Returns a list of metrics for BLOB service.
         /// </summary>
         /// <param name='nextPageLink'>
         /// The NextLink from the previous successful call to List operation.

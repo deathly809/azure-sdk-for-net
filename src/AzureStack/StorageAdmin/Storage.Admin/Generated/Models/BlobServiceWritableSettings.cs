@@ -14,7 +14,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     using System.Linq;
 
     /// <summary>
-    /// Settings of blob service.
+    /// Settings of BLOB service.
     /// </summary>
     public partial class BlobServiceWritableSettings : WritableServiceSettings
     {
@@ -74,9 +74,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// service front end.</param>
         /// <param name="frontEndHttpListenPort">The HTTP port of the storage
         /// service front end.</param>
-        /// <param name="blobSvcContainerGcInterval">The interval (in seconds)
+        /// <param name="blobSvcContainerGcInterval">The interval, in seconds,
         /// of container garbage collection.</param>
-        /// <param name="blobSvcShallowGcInterval">The interval (in seconds) of
+        /// <param name="blobSvcShallowGcInterval">The interval ,in seconds, of
         /// shallow garbage collection.</param>
         /// <param name="blobSvcStreamMapMinContainerOccupancyPercent">The
         /// minimal container occupancy percent for stream mapping.</param>
@@ -95,14 +95,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the interval (in seconds) of container garbage
+        /// Gets or sets the interval, in seconds, of container garbage
         /// collection.
         /// </summary>
         [JsonProperty(PropertyName = "blobSvcContainerGcInterval")]
         public int? BlobSvcContainerGcInterval { get; set; }
 
         /// <summary>
-        /// Gets or sets the interval (in seconds) of shallow garbage
+        /// Gets or sets the interval ,in seconds, of shallow garbage
         /// collection.
         /// </summary>
         [JsonProperty(PropertyName = "blobSvcShallowGcInterval")]

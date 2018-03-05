@@ -90,7 +90,7 @@ namespace Storage.Tests
                         var destinationShareUNCPath= "";
                         var migrationParameters = new MigrationParameters(storageAccountName, containerName, destinationShareUNCPath);
                         var operationId = client.Containers.Migrate(ResourceGroupName, fName, shareName, migrationParameters);
-                        client.Containers.CancelMigration(ResourceGroupName, fName, operationId);
+                        client.Containers.CancelMigration(ResourceGroupName, fName, operationId.JobId);
                     }
                 }
             });

@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public partial interface IAcquisitionsOperations
     {
         /// <summary>
-        /// Returns a list of blob acquistions.
+        /// Returns a list of BLOB acquistions.
         /// </summary>
         /// <param name='resourceGroupName'>
         /// Resource group name.

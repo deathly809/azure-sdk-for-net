@@ -12,11 +12,17 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
 {
 
     /// <summary>
-    /// Defines values for LocationStatus.
+    /// Defines values for MigrationState.
     /// </summary>
-    public static class LocationStatus
+    public static class MigrationState
     {
-        public const string Available = "Available";
-        public const string Unavailable = "Unavailable";
+        public const string Active = "Active";
+        public const string Paused = "Paused";
+        public const string Deleted = "Deleted";
+        public const string Rollback = "Rollback";
+        public const string Complete = "Complete";
+        public const string Canceled = "Canceled";
+        public const string Failed = "Failed";
+        public const string All = "All";
     }
 }

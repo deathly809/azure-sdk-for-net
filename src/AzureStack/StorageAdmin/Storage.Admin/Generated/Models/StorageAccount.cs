@@ -45,10 +45,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// include: 'Standard_LRS', 'Standard_GRS', 'Standard_ZRS',
         /// 'Standard_RAGRS', 'Premium_LRS'</param>
         /// <param name="provisioningState">The provisioning state of storage
-        /// account. Possible values include: 'PreCreate', 'Created',
+        /// account. Possible values include: 'Creating', 'Succeeded',
         /// 'Suspended'</param>
         /// <param name="primaryEndpoints">The URLs that are used to perform a
-        /// retrieval of a public blob, queue, or table object.</param>
+        /// retrieval of a public BLOB, queue, or table object.</param>
         /// <param name="creationTime">The creation date and time of storage
         /// account in UTC.</param>
         /// <param name="alternateName">Alternative storage account name being
@@ -56,8 +56,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// <param name="primaryLocation">The primary location for the storage
         /// account.</param>
         /// <param name="statusOfPrimary">The status of primary location of
-        /// storage account. Possible values include: 'available',
-        /// 'unavailable'</param>
+        /// storage account. Possible values include: 'Available',
+        /// 'Unavailable'</param>
         /// <param name="tenantSubscriptionId">Subscription ID of the
         /// subscription under which the storage account locates.</param>
         /// <param name="tenantStorageAccountName">Storage account name from
@@ -90,7 +90,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// 'Deleted', 'AboveQuota', 'Suspended', 'All'</param>
         /// <param name="resourceAdminApiVersion">Storage admin REST API
         /// version.</param>
-        public StorageAccount(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string tenantViewId = default(string), string accountType = default(string), string provisioningState = default(string), IDictionary<string, string> primaryEndpoints = default(IDictionary<string, string>), System.DateTime? creationTime = default(System.DateTime?), string alternateName = default(string), string primaryLocation = default(string), string statusOfPrimary = default(string), string tenantSubscriptionId = default(string), string tenantStorageAccountName = default(string), string tenantResourceGroupName = default(string), string currentOperation = default(string), string customDomain = default(string), int? acquisitionOperationCount = default(int?), System.DateTime? deletedTime = default(System.DateTime?), string accountStatus = default(string), System.DateTime? recoveredTime = default(System.DateTime?), System.DateTime? recycledTime = default(System.DateTime?), string permissions = default(string), string accountId = default(string), string wacInternalState = default(string), string resourceAdminApiVersion = default(string))
+        public StorageAccount(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string tenantViewId = default(string), string accountType = default(string), string provisioningState = default(string), IDictionary<string, string> primaryEndpoints = default(IDictionary<string, string>), string creationTime = default(string), string alternateName = default(string), string primaryLocation = default(string), string statusOfPrimary = default(string), string tenantSubscriptionId = default(string), string tenantStorageAccountName = default(string), string tenantResourceGroupName = default(string), string currentOperation = default(string), string customDomain = default(string), int? acquisitionOperationCount = default(int?), System.DateTime? deletedTime = default(System.DateTime?), string accountStatus = default(string), System.DateTime? recoveredTime = default(System.DateTime?), System.DateTime? recycledTime = default(System.DateTime?), string permissions = default(string), string accountId = default(string), string wacInternalState = default(string), string resourceAdminApiVersion = default(string))
             : base(id, name, type, location, tags)
         {
             TenantViewId = tenantViewId;
@@ -138,14 +138,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
 
         /// <summary>
         /// Gets or sets the provisioning state of storage account. Possible
-        /// values include: 'PreCreate', 'Created', 'Suspended'
+        /// values include: 'Creating', 'Succeeded', 'Suspended'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }
 
         /// <summary>
         /// Gets the URLs that are used to perform a retrieval of a public
-        /// blob, queue, or table object.
+        /// BLOB, queue, or table object.
         /// </summary>
         [JsonProperty(PropertyName = "properties.primaryEndpoints")]
         public IDictionary<string, string> PrimaryEndpoints { get; private set; }
@@ -154,7 +154,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Gets the creation date and time of storage account in UTC.
         /// </summary>
         [JsonProperty(PropertyName = "properties.creationTime")]
-        public System.DateTime? CreationTime { get; private set; }
+        public string CreationTime { get; private set; }
 
         /// <summary>
         /// Gets or sets alternative storage account name being used during
@@ -171,7 +171,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
 
         /// <summary>
         /// Gets or sets the status of primary location of storage account.
-        /// Possible values include: 'available', 'unavailable'
+        /// Possible values include: 'Available', 'Unavailable'
         /// </summary>
         [JsonProperty(PropertyName = "properties.statusOfPrimary")]
         public string StatusOfPrimary { get; set; }

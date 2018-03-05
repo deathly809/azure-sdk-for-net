@@ -24,7 +24,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
     public static partial class AcquisitionsOperationsExtensions
     {
             /// <summary>
-            /// Returns a list of blob acquistions.
+            /// Returns a list of BLOB acquistions.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
@@ -44,7 +44,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             }
 
             /// <summary>
-            /// Returns a list of blob acquistions.
+            /// Returns a list of BLOB acquistions.
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.

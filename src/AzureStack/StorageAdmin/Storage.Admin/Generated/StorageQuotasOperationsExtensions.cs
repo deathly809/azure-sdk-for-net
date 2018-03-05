@@ -33,12 +33,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='quotaName'>
             /// The name of the storage quota.
             /// </param>
-            /// <param name='parameters'>
+            /// <param name='quotaObject'>
             /// The properties of quota being created or updated.
             /// </param>
-            public static StorageQuota CreateOrUpdate(this IStorageQuotasOperations operations, string location, string quotaName, StorageCreationProperties parameters)
+            public static StorageQuota CreateOrUpdate(this IStorageQuotasOperations operations, string location, string quotaName, StorageQuota quotaObject)
             {
-                return operations.CreateOrUpdateAsync(location, quotaName, parameters).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(location, quotaName, quotaObject).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -53,15 +53,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='quotaName'>
             /// The name of the storage quota.
             /// </param>
-            /// <param name='parameters'>
+            /// <param name='quotaObject'>
             /// The properties of quota being created or updated.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<StorageQuota> CreateOrUpdateAsync(this IStorageQuotasOperations operations, string location, string quotaName, StorageCreationProperties parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<StorageQuota> CreateOrUpdateAsync(this IStorageQuotasOperations operations, string location, string quotaName, StorageQuota quotaObject, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(location, quotaName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(location, quotaName, quotaObject, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

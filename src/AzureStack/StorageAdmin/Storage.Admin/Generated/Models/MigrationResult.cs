@@ -31,14 +31,16 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// Initializes a new instance of the MigrationResult class.
         /// </summary>
         /// <param name="jobId">The migration job ID.</param>
-        /// <param name="sourceShareName">The name of source storage
+        /// <param name="sourceShareName">The name of the source storage
         /// share.</param>
         /// <param name="storageAccountName">The storage account name.</param>
-        /// <param name="containerName">The name of container to be
+        /// <param name="containerName">The name of the container to be
         /// migrated.</param>
-        /// <param name="destinationShareName">The name of destination storage
-        /// share.</param>
-        /// <param name="migrationStatus">The migration status.</param>
+        /// <param name="destinationShareName">The name of the destination
+        /// storage share.</param>
+        /// <param name="migrationStatus">The migration status. Possible values
+        /// include: 'Active', 'Paused', 'Deleted', 'Rollback', 'Complete',
+        /// 'Canceled', 'Failed', 'All'</param>
         /// <param name="subEntitiesCompleted">The number of entities which
         /// have been migrated.</param>
         /// <param name="subEntitiesFailed">The number of entities which failed
@@ -70,7 +72,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public string JobId { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of source storage share.
+        /// Gets or sets the name of the source storage share.
         /// </summary>
         [JsonProperty(PropertyName = "sourceShareName")]
         public string SourceShareName { get; set; }
@@ -82,19 +84,21 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public string StorageAccountName { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of container to be migrated.
+        /// Gets or sets the name of the container to be migrated.
         /// </summary>
         [JsonProperty(PropertyName = "containerName")]
         public string ContainerName { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of destination storage share.
+        /// Gets or sets the name of the destination storage share.
         /// </summary>
         [JsonProperty(PropertyName = "destinationShareName")]
         public string DestinationShareName { get; set; }
 
         /// <summary>
-        /// Gets or sets the migration status.
+        /// Gets or sets the migration status. Possible values include:
+        /// 'Active', 'Paused', 'Deleted', 'Rollback', 'Complete', 'Canceled',
+        /// 'Failed', 'All'
         /// </summary>
         [JsonProperty(PropertyName = "migrationStatus")]
         public string MigrationStatus { get; set; }

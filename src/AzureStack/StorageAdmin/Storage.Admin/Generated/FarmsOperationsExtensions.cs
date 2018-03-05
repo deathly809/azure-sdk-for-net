@@ -119,12 +119,12 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// Farm Id.
             /// </param>
-            /// <param name='settingAccessStringProperty'>
-            /// Setting access string.
+            /// <param name='farmObject'>
+            /// Farm to update.
             /// </param>
-            public static Farm Update(this IFarmsOperations operations, string resourceGroupName, string farmId, string settingAccessStringProperty = default(string))
+            public static Farm Update(this IFarmsOperations operations, string resourceGroupName, string farmId, Farm farmObject)
             {
-                return operations.UpdateAsync(resourceGroupName, farmId, settingAccessStringProperty).GetAwaiter().GetResult();
+                return operations.UpdateAsync(resourceGroupName, farmId, farmObject).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -139,15 +139,15 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='farmId'>
             /// Farm Id.
             /// </param>
-            /// <param name='settingAccessStringProperty'>
-            /// Setting access string.
+            /// <param name='farmObject'>
+            /// Farm to update.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Farm> UpdateAsync(this IFarmsOperations operations, string resourceGroupName, string farmId, string settingAccessStringProperty = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Farm> UpdateAsync(this IFarmsOperations operations, string resourceGroupName, string farmId, Farm farmObject, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.UpdateWithHttpMessagesAsync(resourceGroupName, farmId, settingAccessStringProperty, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.UpdateWithHttpMessagesAsync(resourceGroupName, farmId, farmObject, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

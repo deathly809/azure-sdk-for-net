@@ -35,8 +35,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         /// container locates.</param>
         /// <param name="containername">Container name.</param>
         /// <param name="containerid">The container ID.</param>
-        /// <param name="accountid">The ID of storage account.</param>
-        /// <param name="usedBytesInPrimaryVolume">The used space (in Bytes) of
+        /// <param name="accountid">The ID of the storage account.</param>
+        /// <param name="usedBytesInPrimaryVolume">The used space, in bytes, of
         /// the container in the primary volume.</param>
         /// <param name="containerState">The current state of the
         /// container.</param>
@@ -83,13 +83,13 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
         public long? Containerid { get; set; }
 
         /// <summary>
-        /// Gets or sets the ID of storage account.
+        /// Gets or sets the ID of the storage account.
         /// </summary>
         [JsonProperty(PropertyName = "accountid")]
         public string Accountid { get; set; }
 
         /// <summary>
-        /// Gets or sets the used space (in Bytes) of the container in the
+        /// Gets or sets the used space, in bytes, of the container in the
         /// primary volume.
         /// </summary>
         [JsonProperty(PropertyName = "usedBytesInPrimaryVolume")]

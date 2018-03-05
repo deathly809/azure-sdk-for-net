@@ -16,8 +16,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin.Models
     /// </summary>
     public static class StorageAccountState
     {
-        public const string PreCreate = "PreCreate";
-        public const string Created = "Created";
+        public const string Creating = "Creating";
+        public const string Succeeded = "Succeeded";
         public const string Suspended = "Suspended";
     }
 }

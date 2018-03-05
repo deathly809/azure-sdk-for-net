@@ -101,10 +101,10 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.Client.ApiVersion");
             }
-            FarmCreationProperties parameters = new FarmCreationProperties();
+            FarmCreationProperties farmObject = new FarmCreationProperties();
             if (settingAccessStringProperty != null)
             {
-                parameters.SettingAccessStringProperty = settingAccessStringProperty;
+                farmObject.SettingAccessStringProperty = settingAccessStringProperty;
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -115,7 +115,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("farmId", farmId);
-                tracingParameters.Add("parameters", parameters);
+                tracingParameters.Add("farmObject", farmObject);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Create", tracingParameters);
             }
@@ -168,9 +168,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 
             // Serialize Request
             string _requestContent = null;
-            if(parameters != null)
+            if(farmObject != null)
             {
-                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(parameters, Client.SerializationSettings);
+                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(farmObject, Client.SerializationSettings);
                 _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
                 _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
             }
@@ -466,8 +466,8 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <param name='farmId'>
         /// Farm Id.
         /// </param>
-        /// <param name='settingAccessStringProperty'>
-        /// Setting access string.
+        /// <param name='farmObject'>
+        /// Farm to update.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -490,7 +490,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<Farm>> UpdateWithHttpMessagesAsync(string resourceGroupName, string farmId, string settingAccessStringProperty = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<Farm>> UpdateWithHttpMessagesAsync(string resourceGroupName, string farmId, Farm farmObject, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -508,10 +508,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "farmId");
             }
-            FarmCreationProperties parameters = new FarmCreationProperties();
-            if (settingAccessStringProperty != null)
+            if (farmObject == null)
             {
-                parameters.SettingAccessStringProperty = settingAccessStringProperty;
+                throw new ValidationException(ValidationRules.CannotBeNull, "farmObject");
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -522,7 +521,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("farmId", farmId);
-                tracingParameters.Add("parameters", parameters);
+                tracingParameters.Add("farmObject", farmObject);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Update", tracingParameters);
             }
@@ -575,9 +574,9 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
 
             // Serialize Request
             string _requestContent = null;
-            if(parameters != null)
+            if(farmObject != null)
             {
-                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(parameters, Client.SerializationSettings);
+                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(farmObject, Client.SerializationSettings);
                 _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
                 _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
             }
