@@ -21,7 +21,7 @@ namespace Update.Tests
             Assert.NotNull(runs.TimeStarted);
         }
 
-        public void AssertProgressAreSame(Step expected, Step found) {
+        void AssertProgressAreSame(Step expected, Step found) {
             if (expected == null)
             {
                 Assert.Null(found);
@@ -47,7 +47,7 @@ namespace Update.Tests
             }
         }
 
-        public void AssertAreSame(UpdateRun expected, UpdateRun found) {
+        void AssertAreSame(UpdateRun expected, UpdateRun found) {
             Assert.True(ResourceAreSame(expected, found));
 
             if (expected != null)
@@ -62,11 +62,11 @@ namespace Update.Tests
         [Fact]
         public void TestListUpdateRuns() {
             RunTest((client) => {
-                var updateLocations = client.UpdateLocations.List("System.local");
+                var updateLocations = client.UpdateLocations.List("System.Redmond");
                 updateLocations.ForEach((updateLocation) => {
-                    var updates = client.Updates.List("System.local", updateLocation.Name);
+                    var updates = client.Updates.List("System.Redmond", updateLocation.Name);
                     updates.ForEach((update) => {
-                        var runs= client.UpdateRuns.List("System.local", updateLocation.Name, update.Name);
+                        var runs= client.UpdateRuns.List("System.Redmond", updateLocation.Name, update.Name);
                         Common.WriteIEnumerableToFile(runs, "TestListUpdateRuns");
                         runs.ForEach(ValidateUpdateRun);
                     });
@@ -77,15 +77,15 @@ namespace Update.Tests
         [Fact]
         public void TestGetUpdateRun() {
             RunTest((client) => {
-                var updateLocation = client.UpdateLocations.List("System.local").FirstOrDefault();
+                var updateLocation = client.UpdateLocations.List("System.Redmond").FirstOrDefault();
                 Assert.NotNull(updateLocation);
-                var update = client.Updates.List("System.local", updateLocation.Name).FirstOrDefault();
+                var update = client.Updates.List("System.Redmond", updateLocation.Name).FirstOrDefault();
                 if (update != null)
                 {
-                    var run = client.UpdateRuns.List("System.local", updateLocation.Name, update.Name).FirstOrDefault();
+                    var run = client.UpdateRuns.List("System.Redmond", updateLocation.Name, update.Name).FirstOrDefault();
                     if (run != null)
                     {
-                        var returned = client.UpdateRuns.Get("System.local", updateLocation.Name, update.Name, run.Name);
+                        var returned = client.UpdateRuns.Get("System.Redmond", updateLocation.Name, update.Name, run.Name);
                         AssertAreSame(run, returned);
                     }
                 }
@@ -95,13 +95,13 @@ namespace Update.Tests
         [Fact]
         public void TestGetAllUpdateRuns() {
             RunTest((client) => {
-                var updateLocations = client.UpdateLocations.List("System.local");
+                var updateLocations = client.UpdateLocations.List("System.Redmond");
                 updateLocations.ForEach((updateLocation) => {
-                    var updates = client.Updates.List("System.local", updateLocation.Name);
+                    var updates = client.Updates.List("System.Redmond", updateLocation.Name);
                     updates.ForEach((update) => {
-                        var runs = client.UpdateRuns.List("System.local", updateLocation.Name, update.Name);
+                        var runs = client.UpdateRuns.List("System.Redmond", updateLocation.Name, update.Name);
                         runs.ForEach((run) => {
-                            var returned = client.UpdateRuns.Get("System.local", updateLocation.Name, update.Name, run.Name);
+                            var returned = client.UpdateRuns.Get("System.Redmond", updateLocation.Name, update.Name, run.Name);
                         AssertAreSame(run, returned);
                         });
                     });
