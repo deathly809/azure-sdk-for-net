@@ -23,6 +23,8 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
     [Rest.Serialization.JsonTransformation]
     public partial class UpdateRun : Resource
     {
+        private string duration = null;
+
         /// <summary>
         /// Initializes a new instance of the UpdateRun class.
         /// </summary>
@@ -75,7 +77,23 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// Gets or sets duration of the update.
         /// </summary>
         [JsonProperty(PropertyName = "properties.duration")]
-        public string Duration { get; set; }
+        public string Duration {
+            get
+            {
+                return duration;
+            }
+            set
+            {
+                if (value.StartsWith("PT"))
+                {
+                    duration = System.Xml.XmlConvert.ToTimeSpan(value).ToString("g");
+                }
+                else
+                {
+                    duration = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets state of the update run. Possible values include:
