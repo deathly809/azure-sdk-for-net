@@ -24,6 +24,7 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
     public partial class UpdateRun : Resource
     {
         private string duration = null;
+        private System.DateTime? timeStarted = null;
 
         /// <summary>
         /// Initializes a new instance of the UpdateRun class.
@@ -71,7 +72,24 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// Gets or sets update start time.
         /// </summary>
         [JsonProperty(PropertyName = "properties.timeStarted")]
-        public System.DateTime? TimeStarted { get; set; }
+        public System.DateTime? TimeStarted
+        {
+            get
+            {
+                return timeStarted;
+            }
+            set
+            {
+                if (value.HasValue)
+                {
+                    timeStarted = value.Value.ToLocalTime();
+                }
+                else
+                {
+                    timeStarted = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets duration of the update.
