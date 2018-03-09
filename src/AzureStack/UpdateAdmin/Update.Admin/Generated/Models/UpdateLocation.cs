@@ -23,6 +23,8 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
     [Rest.Serialization.JsonTransformation]
     public partial class UpdateLocation : Resource
     {
+        private System.DateTime? lastUpdated;
+
         /// <summary>
         /// Initializes a new instance of the UpdateLocation class.
         /// </summary>
@@ -79,7 +81,24 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// Gets or sets date of last update.
         /// </summary>
         [JsonProperty(PropertyName = "properties.lastUpdated")]
-        public System.DateTime? LastUpdated { get; set; }
+        public System.DateTime? LastUpdated
+        {
+            get
+            {
+                return this.lastUpdated;
+            }
+            set
+            {
+                if (value.HasValue)
+                {
+                    this.lastUpdated = value.Value.ToLocalTime();
+                }
+                else
+                {
+                    this.lastUpdated = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets state with respect to the update. Possible values

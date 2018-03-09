@@ -17,7 +17,6 @@ namespace Update.Tests
             Assert.True(ValidResource(update));
             Assert.NotNull(update.DateAvailable);
             Assert.NotNull(update.Description);
-            Assert.NotNull(update.InstalledDate);
             Assert.NotNull(update.KbLink);
             Assert.NotNull(update.MinVersionRequired);
             Assert.NotNull(update.PackagePath);

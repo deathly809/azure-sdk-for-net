@@ -23,6 +23,9 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
     [Rest.Serialization.JsonTransformation]
     public partial class Update : Resource
     {
+        private System.DateTime? dateAvailable;
+        private System.DateTime? installedDate;
+
         /// <summary>
         /// Initializes a new instance of the Update class.
         /// </summary>
@@ -87,13 +90,47 @@ namespace Microsoft.AzureStack.Management.Update.Admin.Models
         /// Gets or sets date uploaded by provider.
         /// </summary>
         [JsonProperty(PropertyName = "properties.dateAvailable")]
-        public System.DateTime? DateAvailable { get; set; }
+        public System.DateTime? DateAvailable
+        {
+            get
+            {
+                return this.dateAvailable;
+            }
+            set
+            {
+                if (value.HasValue)
+                {
+                    this.dateAvailable = value.Value.ToLocalTime();
+                }
+                else
+                {
+                    this.dateAvailable = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets date update was installed.
         /// </summary>
         [JsonProperty(PropertyName = "properties.installedDate")]
-        public System.DateTime? InstalledDate { get; set; }
+        public System.DateTime? InstalledDate
+        {
+            get
+            {
+                return this.installedDate;
+            }
+            set
+            {
+                if (value.HasValue)
+                {
+                    this.installedDate = value.Value.ToLocalTime();
+                }
+                else
+                {
+                    this.installedDate = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets description of the update.
