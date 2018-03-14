@@ -102,7 +102,10 @@ namespace Update.Tests
                         var runs = client.UpdateRuns.List("System.Redmond", updateLocation.Name, update.Name);
                         runs.ForEach((run) => {
                             var returned = client.UpdateRuns.Get("System.Redmond", updateLocation.Name, update.Name, run.Name);
-                        AssertAreSame(run, returned);
+                            if (run.State != "InProgress")
+                            {
+                                AssertAreSame(run, returned);
+                            }
                         });
                     });
                 });
