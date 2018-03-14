@@ -1,0 +1,267 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMjNkNjZmZDEtNDc0My00MmZmLWIzOTEtZTI5ZGM1MWQ3OTllL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5SZWRtb25kL3Byb3ZpZGVycy9NaWNyb3NvZnQuVXBkYXRlLkFkbWluL3VwZGF0ZUxvY2F0aW9ucy8/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "f40cdb81-6bba-44ac-b086-5f5c05b92919"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.26011.01",
+          "Microsoft.AzureStack.Management.Update.Admin.UpdateAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourceGroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond\",\r\n      \"name\": \"redmond\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations\",\r\n      \"location\": \"redmond\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"currentVersion\": \"1.0.180302.1\",\r\n        \"currentOemVersion\": \"1.0.1709.3\",\r\n        \"lastUpdated\": \"2018-03-12T18:06:03.8271987Z\",\r\n        \"state\": \"UpdateFailed\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "403"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Wed, 14 Mar 2018 19:38:07 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvUiToY6QkOmRuHBAthDiNyJ0dJ1rcStWqlbXRiuA7RFo50aziOxE3h6z5+DxxUEe0oGBjA60HgUaMYwiYgO0nwEu4vYpE6wSAdC7gnFbuMcRy1ceH0CmYX/8OW+mtk5F8Ov4WK/VBe5ICMQzetlrK"
+        ],
+        "x-ms-correlation-request-id": [
+          "b1d3cfc9-2cc7-4002-9f69-3a10707aaa88"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14681"
+        ],
+        "x-ms-request-id": [
+          "b1d3cfc9-2cc7-4002-9f69-3a10707aaa88"
+        ],
+        "x-ms-routing-request-id": [
+          "REDMOND:20180314T193807Z:b1d3cfc9-2cc7-4002-9f69-3a10707aaa88"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMjNkNjZmZDEtNDc0My00MmZmLWIzOTEtZTI5ZGM1MWQ3OTllL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5SZWRtb25kL3Byb3ZpZGVycy9NaWNyb3NvZnQuVXBkYXRlLkFkbWluL3VwZGF0ZUxvY2F0aW9ucy9yZWRtb25kL3VwZGF0ZXM/YXBpLXZlcnNpb249MjAxNi0wNS0wMQ==",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "98cf10e7-1d1e-41d7-9ff2-103919ec6f9b"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.26011.01",
+          "Microsoft.AzureStack.Management.Update.Admin.UpdateAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"value\": [\r\n    {\r\n      \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourceGroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180302.1\",\r\n      \"name\": \"Microsoft1.0.180302.1\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations/updates\",\r\n      \"location\": \"redmond\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"dateAvailable\": \"0001-01-01T00:00:00\",\r\n        \"installedDate\": \"2018-03-03T08:09:12.882Z\",\r\n        \"description\": \"MAS Update 1.0.180302.1\",\r\n        \"state\": \"Installed\",\r\n        \"kbLink\": \"https://aka.ms/azurestackupdate\",\r\n        \"minVersionRequired\": \"1.0.180103.2\",\r\n        \"packagePath\": \"\\\\\\\\SU1FileServer\\\\SU1_Infrastructure_2\\\\Updates\\\\Packages\\\\Microsoft1.0.180302.1\",\r\n        \"packageSizeInMb\": 2144,\r\n        \"updateName\": \"MAS - 1.0.180302.1\",\r\n        \"version\": \"1.0.180302.1\",\r\n        \"updateOemFile\": \"\",\r\n        \"publisher\": \"Microsoft\",\r\n        \"packageType\": \"Microsoft\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourceGroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180305.1\",\r\n      \"name\": \"Microsoft1.0.180305.1\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations/updates\",\r\n      \"location\": \"redmond\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"dateAvailable\": \"0001-01-01T00:00:00\",\r\n        \"description\": \"AzS Update 1.0.180305.1\",\r\n        \"state\": \"Failed\",\r\n        \"kbLink\": \"https://aka.ms/azurestackupdate\",\r\n        \"minVersionRequired\": \"1.0.180103.2\",\r\n        \"packagePath\": \"\\\\\\\\SU1FileServer\\\\SU1_Infrastructure_2\\\\Updates\\\\Packages\\\\Microsoft1.0.180305.1\",\r\n        \"packageSizeInMb\": 2954,\r\n        \"updateName\": \"AzS Update - 1.0.180305.1\",\r\n        \"version\": \"1.0.180305.1\",\r\n        \"updateOemFile\": \"\",\r\n        \"publisher\": \"Microsoft\",\r\n        \"packageType\": \"Microsoft\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourceGroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180312.1\",\r\n      \"name\": \"Microsoft1.0.180312.1\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations/updates\",\r\n      \"location\": \"redmond\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"dateAvailable\": \"0001-01-01T00:00:00\",\r\n        \"installedDate\": \"2018-03-12T18:06:03.8271987Z\",\r\n        \"description\": \"AzS Hotfix 1.0.180312.1\",\r\n        \"state\": \"Installed\",\r\n        \"kbLink\": \"https://aka.ms/azurestackupdate\",\r\n        \"minVersionRequired\": \"1.0.171020.1\",\r\n        \"packagePath\": \"\\\\\\\\SU1FileServer\\\\SU1_Infrastructure_2\\\\Updates\\\\Packages\\\\Microsoft1.0.180312.1\",\r\n        \"packageSizeInMb\": 0,\r\n        \"updateName\": \"AzS Hotfix - 1.0.180312.1\",\r\n        \"version\": \"1.0.180312.1\",\r\n        \"updateOemFile\": \"\",\r\n        \"publisher\": \"Microsoft\",\r\n        \"packageType\": \"Microsoft\"\r\n      }\r\n    },\r\n    {\r\n      \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourceGroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180313.2\",\r\n      \"name\": \"Microsoft1.0.180313.2\",\r\n      \"type\": \"Microsoft.Update.Admin/updateLocations/updates\",\r\n      \"location\": \"redmond\",\r\n      \"tags\": {},\r\n      \"properties\": {\r\n        \"dateAvailable\": \"0001-01-01T00:00:00\",\r\n        \"description\": \"AzS Update 1.0.180313.2\",\r\n        \"state\": \"Ready\",\r\n        \"kbLink\": \"https://aka.ms/azurestackupdate\",\r\n        \"minVersionRequired\": \"1.0.180302.1\",\r\n        \"packagePath\": \"https://updateadminaccount.blob.redmond.ext-u15a2404.masd.stbtest.microsoft.com/180313\",\r\n        \"packageSizeInMb\": 2752,\r\n        \"updateName\": \"AzS Update - 1.0.180313.2\",\r\n        \"version\": \"1.0.180313.2\",\r\n        \"updateOemFile\": \"\",\r\n        \"publisher\": \"Microsoft\",\r\n        \"packageType\": \"Microsoft\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "3065"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Wed, 14 Mar 2018 19:38:07 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvPezK5tsNoXtZFRZzjj+GSoeh5mjA1MAy4i/FsdNjkfEw22H6Qf/3gNGh1B/8ybqlf/pMMjtSq5yxSQ93RwlOA9TgK7f1GvWbwztTiNnFiU0aBZoqvuyvcWoKH8lkFEbf12+Mz3/j3dtMo44fXof0"
+        ],
+        "x-ms-correlation-request-id": [
+          "7a1b420b-a385-4f14-95a7-78aa39bb895e"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14680"
+        ],
+        "x-ms-request-id": [
+          "7a1b420b-a385-4f14-95a7-78aa39bb895e"
+        ],
+        "x-ms-routing-request-id": [
+          "REDMOND:20180314T193808Z:7a1b420b-a385-4f14-95a7-78aa39bb895e"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180313.2/Apply?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMjNkNjZmZDEtNDc0My00MmZmLWIzOTEtZTI5ZGM1MWQ3OTllL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5SZWRtb25kL3Byb3ZpZGVycy9NaWNyb3NvZnQuVXBkYXRlLkFkbWluL3VwZGF0ZUxvY2F0aW9ucy9yZWRtb25kL3VwZGF0ZXMvTWljcm9zb2Z0MS4wLjE4MDMxMy4yL0FwcGx5P2FwaS12ZXJzaW9uPTIwMTYtMDUtMDE=",
+      "RequestMethod": "POST",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "47f8fbe9-ed00-47df-a861-55666572a597"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.26011.01",
+          "Microsoft.AzureStack.Management.Update.Admin.UpdateAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "0"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Wed, 14 Mar 2018 19:38:51 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Location": [
+          "https://adminmanagement.redmond.ext-u15a2404.masd.stbtest.microsoft.com/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180313.2/updateRuns/47f8fbe9-ed00-47df-a861-55666572a597?api-version=2016-05-01"
+        ],
+        "Retry-After": [
+          "60"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvOD0cdx8WtpcdqSdFTvgFc33By34paxXCyn134OlLXGHs+0aEbnCYcj89zvAO8q8qypF1MGy6srfCjtaVDuKAunTnT3X4JS4Gi2eoqMFD+0nSegNc3KvUIRD5lEOMgcwkF5i2lDMPJ2Z1iEw3S7Ga"
+        ],
+        "x-ms-correlation-request-id": [
+          "25c90f2f-90f5-433e-9d6f-5d8e4de92734"
+        ],
+        "x-ms-ratelimit-remaining-subscription-writes": [
+          "1197"
+        ],
+        "x-ms-request-id": [
+          "25c90f2f-90f5-433e-9d6f-5d8e4de92734"
+        ],
+        "x-ms-routing-request-id": [
+          "REDMOND:20180314T193851Z:25c90f2f-90f5-433e-9d6f-5d8e4de92734"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 202
+    },
+    {
+      "RequestUri": "/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180313.2/updateRuns/47f8fbe9-ed00-47df-a861-55666572a597?api-version=2016-05-01",
+      "EncodedRequestUri": "L3N1YnNjcmlwdGlvbnMvMjNkNjZmZDEtNDc0My00MmZmLWIzOTEtZTI5ZGM1MWQ3OTllL3Jlc291cmNlZ3JvdXBzL1N5c3RlbS5SZWRtb25kL3Byb3ZpZGVycy9NaWNyb3NvZnQuVXBkYXRlLkFkbWluL3VwZGF0ZUxvY2F0aW9ucy9yZWRtb25kL3VwZGF0ZXMvTWljcm9zb2Z0MS4wLjE4MDMxMy4yL3VwZGF0ZVJ1bnMvNDdmOGZiZTktZWQwMC00N2RmLWE4NjEtNTU2NjY1NzJhNTk3P2FwaS12ZXJzaW9uPTIwMTYtMDUtMDE=",
+      "RequestMethod": "GET",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "User-Agent": [
+          "FxVersion/4.6.26011.01",
+          "Microsoft.AzureStack.Management.Update.Admin.UpdateAdminClient/0.1.0.0"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180313.2/updateRuns/47f8fbe9-ed00-47df-a861-55666572a597\",\r\n  \"name\": \"47f8fbe9-ed00-47df-a861-55666572a597\",\r\n  \"type\": \"Microsoft.Update.Admin/updateLocations/updates/updateRuns\",\r\n  \"location\": \"redmond\",\r\n  \"tags\": {},\r\n  \"properties\": {\r\n    \"progress\": {\r\n      \"name\": \"Downloading\"\r\n    },\r\n    \"duration\": \"PT0S\",\r\n    \"state\": \"InProgress\"\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "457"
+        ],
+        "Content-Type": [
+          "application/json"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Wed, 14 Mar 2018 19:39:52 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Location": [
+          "https://adminmanagement.redmond.ext-u15a2404.masd.stbtest.microsoft.com/subscriptions/23d66fd1-4743-42ff-b391-e29dc51d799e/resourcegroups/System.Redmond/providers/Microsoft.Update.Admin/updateLocations/redmond/updates/Microsoft1.0.180313.2/updateRuns/47f8fbe9-ed00-47df-a861-55666572a597?api-version=2016-05-01"
+        ],
+        "Retry-After": [
+          "60"
+        ],
+        "Server": [
+          "Microsoft-HTTPAPI/2.0"
+        ],
+        "WWW-Authenticate": [
+          "oYG2MIGzoAMKAQChCwYJKoZIgvcSAQICooGeBIGbYIGYBgkqhkiG9xIBAgICAG+BiDCBhaADAgEFoQMCAQ+ieTB3oAMCARKicARu6Rey8TCfK/oJYTVdEDZmDCUAipC3nFAsySovnPmSfp7PLEOvYuMUMpS9Xj5OFjP84K0b08Nil8fOFnuS7los/7ZO+uvgierxVnsNtP/RiiD+EOMAOyhDFOHl5ESZ1lPOkcP6fHylGwJnRmSTjD8="
+        ],
+        "x-ms-correlation-request-id": [
+          "96d2c3ea-b053-4aa1-9750-baa56639b72e"
+        ],
+        "x-ms-ratelimit-remaining-subscription-reads": [
+          "14668"
+        ],
+        "x-ms-request-id": [
+          "96d2c3ea-b053-4aa1-9750-baa56639b72e"
+        ],
+        "x-ms-routing-request-id": [
+          "REDMOND:20180314T193952Z:96d2c3ea-b053-4aa1-9750-baa56639b72e"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000; includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "SubscriptionId": "23d66fd1-4743-42ff-b391-e29dc51d799e"
+  }
+}

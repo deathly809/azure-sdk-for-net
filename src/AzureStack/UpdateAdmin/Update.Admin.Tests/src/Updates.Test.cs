@@ -90,5 +90,21 @@ namespace Update.Tests
                 });
             });
         }
+
+        [Fact]
+        public void TestApplyUpdate()
+        {
+            RunTest((client) => {
+                var updateLocations = client.UpdateLocations.List("System.Redmond");
+                updateLocations.ForEach((updateLocation) => {
+                    var updates = client.Updates.List("System.Redmond", updateLocation.Name);
+                    var ready = updates.Where(u => u.State == "Ready");
+                    if (ready.Count() > 0)
+                    {
+                        client.Updates.Apply("System.Redmond", updateLocation.Name, ready.First().Name);
+                    }
+                });
+            });
+        }
     }
 }
