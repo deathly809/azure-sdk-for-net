@@ -108,5 +108,28 @@ namespace Update.Tests
                 });
             });
         }
+
+        [Fact]
+        public void TestRerunUpdateRun()
+        {
+            RunTest((client) => {
+                var updateLocations = client.UpdateLocations.List("System.Redmond");
+                updateLocations.ForEach((updateLocation) =>
+                {
+                    var updates = client.Updates.List("System.Redmond", updateLocation.Name);
+                    updates.ForEach((update) =>
+                    {
+                        var runs = client.UpdateRuns.List("System.Redmond", updateLocation.Name, update.Name);
+                        var lastFailed = runs.Where(r => r.State == "Failed").OrderByDescending(r => r.TimeStarted);
+                        if (lastFailed.Count() > 0)
+                        {
+                            var run = lastFailed.First();
+                            client.UpdateRuns.Rerun("System.Redmond", updateLocation.Name, update.Name, run.Name);
+                            return;
+                        }
+                    });
+                });
+            });
+        }
     }
 }
