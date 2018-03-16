@@ -16,18 +16,18 @@ namespace Microsoft.AzureStack.Management.Subscriptions.Admin.Models
     /// <summary>
     /// Represents the acquisition of an add-on plan for a subscription.
     /// </summary>
-    public partial class PlanAcquisitionProperties
+    public partial class PlanAcquisition
     {
         /// <summary>
-        /// Initializes a new instance of the PlanAcquisitionProperties class.
+        /// Initializes a new instance of the PlanAcquisition class.
         /// </summary>
-        public PlanAcquisitionProperties()
+        public PlanAcquisition()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the PlanAcquisitionProperties class.
+        /// Initializes a new instance of the PlanAcquisition class.
         /// </summary>
         /// <param name="acquisitionId">Acquisition identifier.</param>
         /// <param name="id">Identifier in the tenant subscription
@@ -40,7 +40,7 @@ namespace Microsoft.AzureStack.Management.Subscriptions.Admin.Models
         /// values include: 'NotSpecified', 'Accepted', 'Failed',
         /// 'Succeeded'</param>
         /// <param name="acquisitionTime">Acquisition time.</param>
-        public PlanAcquisitionProperties(string acquisitionId = default(string), string id = default(string), string planId = default(string), string externalReferenceId = default(string), string provisioningState = default(string), System.DateTime? acquisitionTime = default(System.DateTime?))
+        public PlanAcquisition(string acquisitionId = default(string), string id = default(string), string planId = default(string), string externalReferenceId = default(string), string provisioningState = default(string), System.DateTime? acquisitionTime = default(System.DateTime?))
         {
             AcquisitionId = acquisitionId;
             Id = id;

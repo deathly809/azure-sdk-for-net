@@ -61,5 +61,16 @@ namespace Backup.Tests
                 });
             });
         }
+
+        [Fact(Skip="BRP not working.")]
+        public void TestRestoreBackup()
+        {
+            RunTest((client) =>
+            {
+                var backup = client.BackupLocations.CreateBackup(ResourceGroupName, backupLocation);
+                Assert.NotNull(backup);
+                client.Backups.Restore(backupLocation, ResourceGroupName, backup.Name);
+            });
+        }
     }
 }

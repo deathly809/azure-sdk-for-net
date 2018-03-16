@@ -4,4 +4,7 @@
 ::
 
 @echo off
-call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/subscriptions latest bganapa stack-admin azure-rest-api-specs %CD%
+rd /S /Q Generated
+:: call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/subscriptions latest deathly809 AzureStack azure-rest-api-specs %CD%
+move Subscriptions\Subscriptions.Admin\Generated .
+rd /S /Q Subscriptions
