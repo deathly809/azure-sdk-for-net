@@ -40,7 +40,7 @@ namespace Subscriptions.Tests
 
         }
 
-        //[Fact]
+        [Fact]
         public void TestListPlans() {
             RunTest((client) => {
                 var allPlans = client.Plans.ListAll();
@@ -56,14 +56,14 @@ namespace Subscriptions.Tests
             });
         }
 
-        //[Fact]
+        [Fact]
         public void TestCreateUpdateThenDeletePlan()
         {
             RunTest((client) => {
                 var location = "local";
-                var rg = "balarg";
-                var name = "testplan";
-                var descriptiopn = "description of the plan";
+                var rg = "testrg";
+                var name = "testplans";
+                var description = "description of the plan";
 
                 var quota = client.Quotas.List(location).First();
 
@@ -74,7 +74,7 @@ namespace Subscriptions.Tests
                         planName: name,
                         displayName: name,
                         location: location,
-                        description: name,
+                        description: description,
                         quotaIds: new List<string> { quota.Id }
                     ));
 
