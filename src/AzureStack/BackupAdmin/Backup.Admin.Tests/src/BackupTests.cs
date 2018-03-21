@@ -67,6 +67,7 @@ namespace Backup.Tests
         {
             RunTest((client) =>
             {
+                var backupLocation = "local";
                 var backup = client.BackupLocations.CreateBackup(ResourceGroupName, backupLocation);
                 Assert.NotNull(backup);
                 client.Backups.Restore(backupLocation, ResourceGroupName, backup.Name);

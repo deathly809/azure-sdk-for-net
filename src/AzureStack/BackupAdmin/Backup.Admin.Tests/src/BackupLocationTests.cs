@@ -46,7 +46,7 @@ namespace Backup.Tests
 
                 // Location properties
                 Assert.Equal(expected.AvailableCapacity, given.AvailableCapacity);
-                Assert.Equal(expected.BackupFrequencyInMinutes, given.BackupFrequencyInMinutes);
+                Assert.Equal(expected.BackupFrequencyInHours, given.BackupFrequencyInHours);
                 Assert.Equal(expected.EncryptionKeyBase64, given.EncryptionKeyBase64);
                 Assert.Equal(expected.IsBackupSchedulerEnabled, given.IsBackupSchedulerEnabled);
                 Assert.Equal(expected.LastBackupTime, given.LastBackupTime);
