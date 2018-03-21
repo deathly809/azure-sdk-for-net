@@ -4,7 +4,7 @@
 ::
 
 @echo off
-call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/backup latest deathly809 azs.backup.admin azure-rest-api-specs %CD%
+call %~dp0..\..\..\..\tools\generate.cmd azsadmin/resource-manager/backup latest deathly809 AzureStack azure-rest-api-specs %CD%
 rd Generated /S /Q
 move Backup\Backup.Admin\Generated .
 rd Backup /S /Q

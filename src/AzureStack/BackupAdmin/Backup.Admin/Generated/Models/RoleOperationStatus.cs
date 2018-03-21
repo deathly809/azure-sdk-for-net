@@ -30,13 +30,13 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// Initializes a new instance of the RoleOperationStatus class.
         /// </summary>
         /// <param name="roleName">Name of the role.</param>
-        /// <param name="operationStatus">Status of the role. Possible values
-        /// include: 'Creating', 'Queued', 'Running', 'Deleted', 'Failed',
+        /// <param name="status">Status of the role. Possible values include:
+        /// 'Creating', 'Queued', 'Running', 'Deleted', 'Failed',
         /// 'PartialSucceeded', 'Succeeded'</param>
-        public RoleOperationStatus(string roleName = default(string), string operationStatus = default(string))
+        public RoleOperationStatus(string roleName = default(string), OperationStatus? status = default(OperationStatus?))
         {
             RoleName = roleName;
-            OperationStatus = operationStatus;
+            Status = status;
             CustomInit();
         }
 
@@ -56,8 +56,8 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// 'Creating', 'Queued', 'Running', 'Deleted', 'Failed',
         /// 'PartialSucceeded', 'Succeeded'
         /// </summary>
-        [JsonProperty(PropertyName = "operationStatus")]
-        public string OperationStatus { get; set; }
+        [JsonProperty(PropertyName = "status")]
+        public OperationStatus? Status { get; set; }
 
     }
 }

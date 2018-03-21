@@ -10,18 +10,81 @@
 
 namespace Microsoft.AzureStack.Management.Backup.Admin.Models
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    using System.Runtime;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Defines values for OperationStatus.
     /// </summary>
-    public static class OperationStatus
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum OperationStatus
     {
-        public const string Creating = "Creating";
-        public const string Queued = "Queued";
-        public const string Running = "Running";
-        public const string Deleted = "Deleted";
-        public const string Failed = "Failed";
-        public const string PartialSucceeded = "PartialSucceeded";
-        public const string Succeeded = "Succeeded";
+        [EnumMember(Value = "Creating")]
+        Creating,
+        [EnumMember(Value = "Queued")]
+        Queued,
+        [EnumMember(Value = "Running")]
+        Running,
+        [EnumMember(Value = "Deleted")]
+        Deleted,
+        [EnumMember(Value = "Failed")]
+        Failed,
+        [EnumMember(Value = "PartialSucceeded")]
+        PartialSucceeded,
+        [EnumMember(Value = "Succeeded")]
+        Succeeded
+    }
+    internal static class OperationStatusEnumExtension
+    {
+        internal static string ToSerializedValue(this OperationStatus? value)
+        {
+            return value == null ? null : ((OperationStatus)value).ToSerializedValue();
+        }
+
+        internal static string ToSerializedValue(this OperationStatus value)
+        {
+            switch( value )
+            {
+                case OperationStatus.Creating:
+                    return "Creating";
+                case OperationStatus.Queued:
+                    return "Queued";
+                case OperationStatus.Running:
+                    return "Running";
+                case OperationStatus.Deleted:
+                    return "Deleted";
+                case OperationStatus.Failed:
+                    return "Failed";
+                case OperationStatus.PartialSucceeded:
+                    return "PartialSucceeded";
+                case OperationStatus.Succeeded:
+                    return "Succeeded";
+            }
+            return null;
+        }
+
+        internal static OperationStatus? ParseOperationStatus(this string value)
+        {
+            switch( value )
+            {
+                case "Creating":
+                    return OperationStatus.Creating;
+                case "Queued":
+                    return OperationStatus.Queued;
+                case "Running":
+                    return OperationStatus.Running;
+                case "Deleted":
+                    return OperationStatus.Deleted;
+                case "Failed":
+                    return OperationStatus.Failed;
+                case "PartialSucceeded":
+                    return OperationStatus.PartialSucceeded;
+                case "Succeeded":
+                    return OperationStatus.Succeeded;
+            }
+            return null;
+        }
     }
 }

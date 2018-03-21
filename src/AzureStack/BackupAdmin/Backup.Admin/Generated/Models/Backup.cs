@@ -48,7 +48,10 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// <param name="createdDateTime">Creation time of the backup.</param>
         /// <param name="timeTakenToCreate">Duration to create the
         /// backup.</param>
-        public Backup(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string backupDataVersion = default(string), string backupId = default(string), IList<RoleOperationStatus> roleStatus = default(IList<RoleOperationStatus>), string status = default(string), System.DateTime? createdDateTime = default(System.DateTime?), string timeTakenToCreate = default(string))
+        /// <param name="deploymentID">Deployment Id of the stamp.</param>
+        /// <param name="stampVersion">Current version.</param>
+        /// <param name="oemVersion">OEM version.</param>
+        public Backup(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string backupDataVersion = default(string), string backupId = default(string), IList<RoleOperationStatus> roleStatus = default(IList<RoleOperationStatus>), OperationStatus? status = default(OperationStatus?), System.DateTime? createdDateTime = default(System.DateTime?), string timeTakenToCreate = default(string), string deploymentID = default(string), string stampVersion = default(string), string oemVersion = default(string))
             : base(id, name, type, location, tags)
         {
             BackupDataVersion = backupDataVersion;
@@ -57,6 +60,9 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
             Status = status;
             CreatedDateTime = createdDateTime;
             TimeTakenToCreate = timeTakenToCreate;
+            DeploymentID = deploymentID;
+            StampVersion = stampVersion;
+            OemVersion = oemVersion;
             CustomInit();
         }
 
@@ -89,7 +95,7 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// 'PartialSucceeded', 'Succeeded'
         /// </summary>
         [JsonProperty(PropertyName = "properties.backupInfo.status")]
-        public string Status { get; set; }
+        public OperationStatus? Status { get; set; }
 
         /// <summary>
         /// Gets or sets creation time of the backup.
@@ -102,6 +108,24 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.backupInfo.timeTakenToCreate")]
         public string TimeTakenToCreate { get; set; }
+
+        /// <summary>
+        /// Gets or sets deployment Id of the stamp.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.backupInfo.deploymentID")]
+        public string DeploymentID { get; set; }
+
+        /// <summary>
+        /// Gets or sets current version.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.backupInfo.stampVersion")]
+        public string StampVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets OEM version.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.backupInfo.oemVersion")]
+        public string OemVersion { get; set; }
 
     }
 }

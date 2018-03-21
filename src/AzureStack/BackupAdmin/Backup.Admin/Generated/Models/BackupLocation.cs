@@ -43,8 +43,8 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// <param name="userName">Username to access the location.</param>
         /// <param name="password">Password to access the location.</param>
         /// <param name="encryptionKeyBase64">Encryption key.</param>
-        /// <param name="backupFrequencyInMinutes">The interval, in minutes, of
-        /// backups.</param>
+        /// <param name="backupFrequencyInHours">The interval, in hours, for
+        /// the frequency that the scheduler takes a backup.</param>
         /// <param name="availableCapacity">Free space at the backup
         /// location.</param>
         /// <param name="isBackupSchedulerEnabled">True if the backup scheduler
@@ -52,18 +52,21 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// <param name="nextBackupTime">The scheduled time of the next
         /// backup.</param>
         /// <param name="lastBackupTime">Time of backup.</param>
-        public BackupLocation(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string path = default(string), string userName = default(string), string password = default(string), string encryptionKeyBase64 = default(string), string backupFrequencyInMinutes = default(string), string availableCapacity = default(string), bool? isBackupSchedulerEnabled = default(bool?), string nextBackupTime = default(string), string lastBackupTime = default(string))
+        /// <param name="backupRetentionPeriodInDays">The retention period, in
+        /// days, for backs in the storage location.</param>
+        public BackupLocation(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string path = default(string), string userName = default(string), string password = default(string), string encryptionKeyBase64 = default(string), string backupFrequencyInHours = default(string), string availableCapacity = default(string), bool? isBackupSchedulerEnabled = default(bool?), string nextBackupTime = default(string), string lastBackupTime = default(string), int? backupRetentionPeriodInDays = default(int?))
             : base(id, name, type, location, tags)
         {
             Path = path;
             UserName = userName;
             Password = password;
             EncryptionKeyBase64 = encryptionKeyBase64;
-            BackupFrequencyInMinutes = backupFrequencyInMinutes;
+            BackupFrequencyInHours = backupFrequencyInHours;
             AvailableCapacity = availableCapacity;
             IsBackupSchedulerEnabled = isBackupSchedulerEnabled;
             NextBackupTime = nextBackupTime;
             LastBackupTime = lastBackupTime;
+            BackupRetentionPeriodInDays = backupRetentionPeriodInDays;
             CustomInit();
         }
 
@@ -97,10 +100,11 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         public string EncryptionKeyBase64 { get; set; }
 
         /// <summary>
-        /// Gets or sets the interval, in minutes, of backups.
+        /// Gets or sets the interval, in hours, for the frequency that the
+        /// scheduler takes a backup.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.externalStoreDefault.backupFrequencyInMinutes")]
-        public string BackupFrequencyInMinutes { get; set; }
+        [JsonProperty(PropertyName = "properties.externalStoreDefault.backupFrequencyInHours")]
+        public string BackupFrequencyInHours { get; set; }
 
         /// <summary>
         /// Gets or sets free space at the backup location.
@@ -125,6 +129,13 @@ namespace Microsoft.AzureStack.Management.Backup.Admin.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.externalStoreDefault.lastBackupTime")]
         public string LastBackupTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the retention period, in days, for backs in the
+        /// storage location.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.externalStoreDefault.backupRetentionPeriodInDays")]
+        public int? BackupRetentionPeriodInDays { get; set; }
 
     }
 }
