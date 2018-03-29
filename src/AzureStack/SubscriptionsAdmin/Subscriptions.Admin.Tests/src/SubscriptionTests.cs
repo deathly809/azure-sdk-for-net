@@ -61,7 +61,7 @@ namespace Subscriptions.Tests
         {
             RunTest((client) =>
             {
-                var subscriptionId = Guid.NewGuid().ToString();
+                var subscriptionId = "f4b955c5-3a24-4daa-a0ef-e832ead97d7d";
                 var delProviderSubId = Environment.GetEnvironmentVariable("SubscriptionId");
                 var tenantId = Environment.GetEnvironmentVariable("AADTenant");
                 var offer = client.Offers.ListAll().GetFirst();
@@ -89,7 +89,11 @@ namespace Subscriptions.Tests
 
                 var deletedSubscription = client.Subscriptions.Get(subscriptionId);
 
-                Assert.Null(deletedSubscription);
+                if (deletedSubscription != null)
+                {
+                    Assert.Equal(deletedSubscription.State, "Deleted");
+                }
+
             });
         }
     }
