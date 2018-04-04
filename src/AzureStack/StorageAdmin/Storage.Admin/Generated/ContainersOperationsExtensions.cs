@@ -140,7 +140,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='startIndex'>
             /// The starting index the resource provider uses.
             /// </param>
-            public static IList<Container> List(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex)
+            public static IList<Container> List(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, string intent, int? maxCount = default(int?), int? startIndex = default(int?))
             {
                 return operations.ListAsync(resourceGroupName, farmId, shareName, intent, maxCount, startIndex).GetAwaiter().GetResult();
             }
@@ -173,7 +173,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<Container>> ListAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<Container>> ListAsync(this IContainersOperations operations, string resourceGroupName, string farmId, string shareName, string intent, int? maxCount = default(int?), int? startIndex = default(int?), CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListWithHttpMessagesAsync(resourceGroupName, farmId, shareName, intent, maxCount, startIndex, null, cancellationToken).ConfigureAwait(false))
                 {

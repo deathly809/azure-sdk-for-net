@@ -323,7 +323,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<IList<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<IList<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int? maxCount = default(int?), int? startIndex = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -381,8 +381,14 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
             {
                 _queryParameters.Add(string.Format("Intent={0}", System.Uri.EscapeDataString(intent)));
             }
-            _queryParameters.Add(string.Format("MaxCount={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(maxCount, Client.SerializationSettings).Trim('"'))));
-            _queryParameters.Add(string.Format("StartIndex={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(startIndex, Client.SerializationSettings).Trim('"'))));
+            if (maxCount != null)
+            {
+                _queryParameters.Add(string.Format("MaxCount={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(maxCount, Client.SerializationSettings).Trim('"'))));
+            }
+            if (startIndex != null)
+            {
+                _queryParameters.Add(string.Format("StartIndex={0}", System.Uri.EscapeDataString(Rest.Serialization.SafeJsonConvert.SerializeObject(startIndex, Client.SerializationSettings).Trim('"'))));
+            }
             if (_queryParameters.Count > 0)
             {
                 _url += (_url.Contains("?") ? "&" : "?") + string.Join("&", _queryParameters);

@@ -116,7 +116,7 @@ namespace Microsoft.AzureStack.Management.Storage.Admin
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<IList<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int maxCount, int startIndex, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<IList<Container>>> ListWithHttpMessagesAsync(string resourceGroupName, string farmId, string shareName, string intent, int? maxCount = default(int?), int? startIndex = default(int?), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Returns a list of destination shares that the system considers as
         /// best candidates for migration.
