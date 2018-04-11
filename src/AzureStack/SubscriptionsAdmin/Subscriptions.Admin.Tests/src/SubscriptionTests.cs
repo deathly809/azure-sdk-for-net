@@ -36,13 +36,13 @@ namespace Subscriptions.Tests
             });
         }
 
-        //[Fact]
+        [Fact]
         public void CheckNameAvailability()
         {
             RunTest((client) =>
             {
                 var result = client.Subscriptions.CheckNameAvailability(new CheckNameAvailabilityDefinition(
-                    name: "Test Sub", resourceType: "Microsoft.Storage/storageAccounts"));
+                    name: "Test Sub", resourceType: "Microsoft.Subscriptions.Admin/plans"));
                 Assert.NotNull(result);
             });
         }
@@ -56,12 +56,12 @@ namespace Subscriptions.Tests
             });
         }
 
-        [Fact]
+      //  [Fact]
         public void CreateUpdateDeleteSubscription()
         {
             RunTest((client) =>
             {
-                var subscriptionId = "f4b955c5-3a24-4daa-a0ef-e832ead97d7d";
+                var subscriptionId = Guid.NewGuid().ToString();
                 var delProviderSubId = Environment.GetEnvironmentVariable("SubscriptionId");
                 var tenantId = Environment.GetEnvironmentVariable("AADTenant");
                 var offer = client.Offers.ListAll().GetFirst();
@@ -91,7 +91,7 @@ namespace Subscriptions.Tests
 
                 if (deletedSubscription != null)
                 {
-                    Assert.Equal(deletedSubscription.State, "Deleted");
+                    Assert.Equal("Deleted", deletedSubscription.State);
                 }
 
             });

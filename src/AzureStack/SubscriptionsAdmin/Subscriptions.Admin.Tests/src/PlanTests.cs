@@ -60,7 +60,7 @@ namespace Subscriptions.Tests
         public void TestCreateUpdateThenDeletePlan()
         {
             RunTest((client) => {
-                var location = "local";
+                var location = "redmond";
                 var rg = "testrg";
                 var name = "testplans";
                 var description = "description of the plan";

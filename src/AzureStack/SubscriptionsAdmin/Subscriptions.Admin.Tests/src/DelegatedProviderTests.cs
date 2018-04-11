@@ -17,9 +17,6 @@ namespace Subscriptions.Tests
             // DelegatedProvider
             Assert.NotNull(subscription);
             Assert.NotNull(subscription.Id);
-            //Assert.NotNull(subscription.Location);
-            //Assert.NotNull(subscription.Name);
-            //Assert.NotNull(subscription.Type);
 
             Assert.NotNull(subscription.OfferId);
             Assert.NotNull(subscription.Owner);
