@@ -25,7 +25,7 @@ namespace Subscriptions.Tests
         [Fact]
         public void TestListQuotas() {
             RunTest((client) => {
-                var quotas = client.Quotas.List("local");
+                var quotas = client.Quotas.List("redmond");
                 quotas.ForEach(q => ValidateQuota(q));
             });
         }

@@ -35,6 +35,7 @@ namespace Subscriptions.Tests
             // Offer
         }
 
+        [Fact]
         public void TestListAllOffers() {
             RunTest((client) => {
                 var allOffers = client.Offers.ListAll();
@@ -98,7 +99,7 @@ namespace Subscriptions.Tests
                 {
                     Description = "This is a test Offer",
                     DisplayName = "Test Offer",
-                    Location = "local",
+                    Location = "redmond",
                     OfferName = offerName,
                     MaxSubscriptionsPerAccount = 100,
                     BasePlanIds = new List<string>() {plan.Id}

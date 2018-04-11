@@ -39,7 +39,7 @@ namespace Subscriptions.Tests
         [Fact]
         public void TestListDirectoryTenants() {
             RunTest((client) => {
-                var directoryTenants = client.DirectoryTenants.List("System.local");
+                var directoryTenants = client.DirectoryTenants.List("System.redmond");
                 directoryTenants.ForEach(client.DirectoryTenants.ListNext, ValidateDirectoryTenant);
             });
         }
@@ -47,9 +47,9 @@ namespace Subscriptions.Tests
         [Fact]
         public void TestGetAllDirectoryTenants() {
             RunTest((client) => {
-                var directoryTenants = client.DirectoryTenants.List("System.local");
+                var directoryTenants = client.DirectoryTenants.List("System.redmond");
                 directoryTenants.ForEach(client.DirectoryTenants.ListNext, (tenant) => {
-                    var result = client.DirectoryTenants.Get("System.local", tenant.Name);
+                    var result = client.DirectoryTenants.Get("System.redmond", tenant.Name);
                     AssertSame(tenant, result);
                 });
             });
@@ -58,32 +58,9 @@ namespace Subscriptions.Tests
         [Fact]
         public void TestGetDirectoryTenant() {
             RunTest((client) => {
-                var tenant = client.DirectoryTenants.List("System.local").GetFirst();
-                var result = client.DirectoryTenants.Get("System.local", tenant.Name);
+                var tenant = client.DirectoryTenants.List("System.redmond").GetFirst();
+                var result = client.DirectoryTenants.Get("System.redmond", tenant.Name);
                 AssertSame(tenant, result);
-            });
-        }
-
-        public void TestCreateUpdateThenDeleteDirectoryTenant() {
-            RunTest((client) => {
-                var directoryTenantName = "azurestackci05.onmicrosoft.in";
-
-                var tenantDir = new DirectoryTenant(location: "local")
-                {
-                    TenantId = Guid.NewGuid().ToString()
-                };
-                tenantDir.TenantId = Guid.NewGuid().ToString();
-                var result = client.DirectoryTenants.CreateOrUpdate("System.local", directoryTenantName, tenantDir);
-
-                var createdTenant = client.DirectoryTenants.Get("System.Local", directoryTenantName);
-                Assert.Equal(tenantDir.TenantId, result.TenantId);
-                Assert.Equal(tenantDir.TenantId, createdTenant.TenantId);
-
-                client.DirectoryTenants.Delete("System.Local", tenantDir.TenantId);
-
-                //Product BUG, the following fails
-                //var deletedTenant = client.DirectoryTenants.Get("System.Local", directoryTenantName);
-                //Assert.Null(deletedTenant);
             });
         }
     }

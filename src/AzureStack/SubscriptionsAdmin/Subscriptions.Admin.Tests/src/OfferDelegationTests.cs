@@ -80,7 +80,7 @@ namespace Subscriptions.Tests
         //Test assumes that there is a delegated provider(reseller) subscription
         public void TestCreateUpdateThenDeleteOfferDelegation() {
             RunTest((client) => {
-                var offer = client.Offers.ListAll().Where(o => !o.DisplayName.Equals("Default Offer")).First();
+                var offer = client.Offers.ListAll().Where(o => !o.DisplayName.Equals("offersub")).First();
                 var subscription = client.Subscriptions.List(new Microsoft.Rest.Azure.OData.ODataQuery<Subscription>("providerNamespace eq 'Microsoft.Subscriptions'")).First();
                 var resourceGroup = Common.GetResourceGroupFromId(offer.Id);
                 var offerDelegationName = "testOfferDelegation";
