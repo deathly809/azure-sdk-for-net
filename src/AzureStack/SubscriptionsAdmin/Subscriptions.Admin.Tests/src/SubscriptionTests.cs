@@ -55,8 +55,31 @@ namespace Subscriptions.Tests
                 Assert.NotEmpty(adminOperations.Value);
             });
         }
+        
+        [Fact]
+        public void TestSetSubscription()
+        {
+            RunTest((client) =>
+            {
+                var subs = client.Subscriptions.List();
+                foreach (var sub in subs)
+                {
+                    var ownerName = "user@microsoft.com";
+                    sub.DisplayName += "-test";
+                    sub.Owner = ownerName;
 
-      //  [Fact]
+                    client.Subscriptions.CreateOrUpdate(sub.SubscriptionId, sub);
+
+                    var updated = client.Subscriptions.Get(sub.SubscriptionId);
+                    Assert.Equal(sub.DisplayName, updated.DisplayName);
+                    Assert.Equal(sub.Owner, updated.Owner);
+
+                    break;
+                }
+            });
+        }
+
+        //  [Fact]
         public void CreateUpdateDeleteSubscription()
         {
             RunTest((client) =>
