@@ -90,6 +90,19 @@ namespace Subscriptions.Tests
         }
 
         [Fact]
+        public void TestSetOffer() {
+            RunTest((client) =>
+            {
+                var offer = client.Offers.ListAll().GetFirst();
+                var rg = Common.GetResourceGroupFromId(offer.Id);
+                offer.DisplayName += "-test";
+                client.Offers.CreateOrUpdate(rg, offer.Name, offer);
+                var updated = client.Offers.Get(rg, offer.Name);
+                Assert.EndsWith("-test", updated.DisplayName);
+            });
+        }
+
+        [Fact]
         public void TestCreateUpdateThenDeleteOffer() {
             RunTest((client) => {
                 var rg = "testrg";

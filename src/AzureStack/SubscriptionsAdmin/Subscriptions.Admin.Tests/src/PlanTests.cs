@@ -55,6 +55,20 @@ namespace Subscriptions.Tests
                 });
             });
         }
+        
+        [Fact]
+        public void TestSetPlan()
+        {
+            RunTest((client) =>
+            {
+                var plan = client.Plans.ListAll().GetFirst();
+                var rg = Common.GetResourceGroupFromId(plan.Id);
+                plan.DisplayName += "-test";
+                client.Plans.CreateOrUpdate(rg, plan.Name, plan);
+                var updated = client.Plans.Get(rg, plan.Name);
+                Assert.EndsWith("-test", updated.DisplayName);
+            });
+        }
 
         [Fact]
         public void TestCreateUpdateThenDeletePlan()
