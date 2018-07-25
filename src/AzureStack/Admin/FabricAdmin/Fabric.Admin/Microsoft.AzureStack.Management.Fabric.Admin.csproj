@@ -12,13 +12,13 @@
         <PackageTags>Microsoft Azure Stack;Fabric;REST HTTP client;azureostackfficial;netcore451511</PackageTags>
         <PackageReleaseNotes>
             <![CDATA[
-                Preview release of the AzureStack Fabric administrator SDK which allows administrators to view and manage infrastructure components.   
-                1) Stop, Start and Shutdown of scale unit nodes. 
-                2) Drain and Resume of scale unit nodes for FRU related activities. 
-                3) Repair of scale unit nodes 
-                4) Restart of Infrastructure role 
-                5) Stop, Start and Shutdown of Infrastructure role instances 
-                6) Create new IpPools 
+                Preview release of the AzureStack Fabric administrator SDK which allows administrators to view and manage infrastructure components.
+                1) Stop, Start and Shutdown of scale unit nodes.
+                2) Drain and Resume of scale unit nodes for FRU related activities.
+                3) Repair of scale unit nodes
+                4) Restart of Infrastructure role
+                5) Stop, Start and Shutdown of Infrastructure role instances
+                6) Create new IpPools
                     Note: Once created an IpPool cannot be removed without a redeployment
             ]]>
         </PackageReleaseNotes>
@@ -27,6 +27,10 @@
     <PropertyGroup>
         <TargetFrameworks>net452;netstandard1.4</TargetFrameworks>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="Partial\**\*.cs" />
+    </ItemGroup>
 
     <!-- Please do not move/edit code below this line -->
     <Import Condition=" Exists('$([MSBuild]::GetPathOfFileAbove(AzSdk.RP.props))') " Project="$([MSBuild]::GetPathOfFileAbove('AzSdk.RP.props'))" />
