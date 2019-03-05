@@ -10,16 +10,11 @@
 
 namespace Microsoft.AzureStack.Management.Fabric.Admin
 {
+    using System;
+
     using Microsoft.Rest;
     using Microsoft.Rest.Azure;
-    using Microsoft.Rest.Serialization;
-    using Models;
-    using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http;
+    using Microsoft.Rest.TransientFaultHandling;
 
     /// <summary>
     /// Fabric Admin Client
@@ -27,11 +22,22 @@ namespace Microsoft.AzureStack.Management.Fabric.Admin
     public partial class FabricAdminClient : ServiceClient<FabricAdminClient>, IFabricAdminClient, IAzureClient
     {
 
-        private int Minute = 60;
+        private const int DefaultNumberOfAttempts = 3;
+        private readonly TimeSpan DefaultBackoffDelta = new TimeSpan(0, 0, 10);
+        private readonly TimeSpan DefaultMaxBackoff = new TimeSpan(0, 0, 10);
+        private readonly TimeSpan DefaultMinBackoff = new TimeSpan(0, 0, 1);
 
-        partial void CustomInitialize()
-        {
-            this.LongRunningOperationRetryTimeout = 3 * Minute;
+        partial void CustomInitialize() {
+            var retryStrategy = new ExponentialBackoffRetryStrategy(
+                DefaultNumberOfAttempts,
+                DefaultMinBackoff,
+                DefaultMaxBackoff,
+                DefaultBackoffDelta);
+
+            var retryPolicy = new RetryPolicy<HttpStatusCodeErrorDetectionStrategy>(retryStrategy);
+
+            this.SetRetryPolicy(retryPolicy);
+
         }
     }
 }
